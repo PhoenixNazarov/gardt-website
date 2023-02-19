@@ -25,4 +25,3 @@ jobs:
       - run: rsync -e "ssh -p 22 -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete --exclude 'start.sh' . root@185.166.197.205:/root/gardt-website
       # Reboot
       - run: ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no root@185.166.197.205 'sudo systemctl start gardt-website'
-
