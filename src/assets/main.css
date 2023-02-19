@@ -1,5 +1,9 @@
 @import './base.css';
 
+/* Fonts */
+@import './fonts/montserrat/montserrat.css';
+@import './fonts/raleway/style.css';
+
 #app {
     font-weight: normal;
 }

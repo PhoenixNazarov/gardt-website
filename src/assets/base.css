@@ -45,9 +45,3 @@ body {
 div {
   line-height: 0;
 }
-
-@font-face {
-  font-family: 'Raleway';
-  src: url(src/assets/fonts/raleway/Raleway-VariableFont_wght.ttf) format('truetype');
-}
-

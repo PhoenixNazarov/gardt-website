@@ -1,8 +1,12 @@
 <template>
-  <div>
-    <h1 style="color: rebeccapurple">футер</h1>
-    <ContactForm/>
+  <div class="footer-container">
+    <ContactForm class="footer-contact-form"/>
+    <div class="hr"></div>
     <Contacts/>
+    <div class="hr"></div>
+    <div class="footer-info">
+      <h1>© 2022, GARDT Landscape Architects</h1>
+    </div>
   </div>
 </template>
 
@@ -17,5 +21,37 @@ export default {
 </script>
 
 <style scoped>
+.footer-container {
+  background-color: #FFFFFF;
+}
 
+.footer-contact-form {
+  margin-bottom: 160px;
+}
+
+.hr {
+  width: 100%;
+  height: 1px;
+  background-color: #02001A;
+  margin-bottom: 1px;
+}
+
+.footer-info {
+  height: 60px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.footer-info h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #01000E;
+  margin-bottom: auto;
+  margin-top: auto;
+
+}
 </style>

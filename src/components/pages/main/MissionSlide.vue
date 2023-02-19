@@ -2,11 +2,9 @@
   <div>
     <div class="mission-slide">
       <div class="mission-text ">
-        <div class="mission-title">
-          <nav style="color: #B9EF1E;">—</nav>
-          <nav>Наша миссия</nav>
-        </div>
-        <h1 class="mission-description">“Мы проектируем точечные<br>
+        <PartName class="mission-title" text="Наша миссия"/>
+        <h1 class="mission-description">
+          “Мы проектируем точечные<br>
           ландшафтные решения для<br>
           людей, которые влияют на<br>
           социальные, экономические и<br>
@@ -20,8 +18,11 @@
 </template>
 
 <script>
+import PartName from "@/components/pages/main/PartName.vue";
+
 export default {
   name: "MissionSlide",
+  components: {PartName},
   created() {
     window.addEventListener('scroll', this.handleScroll);
   },
@@ -54,20 +55,7 @@ export default {
 
 .mission-text {
   margin-left: 100px;
-}
-
-.mission-title {
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 64px;
-  line-height: 78px;
-  /* identical to box height */
-  color: #02001A;
-  display: flex;
-  opacity: 0;
-
-  transform: matrix(1, 0, 0, 1, -10, 0);
+  z-index: 1;
 }
 
 @keyframes title-animate {
@@ -108,7 +96,8 @@ export default {
     right: -400px;
     transform: rotate(20deg);
   }
-  to {  right: -150px;
+  to {
+    right: -150px;
     transform: rotate(0deg);
   }
 }
@@ -118,12 +107,33 @@ export default {
   .mission-title-animate {
     animation: title-animate 1s forwards;
   }
+
   .mission-description-animate {
     animation: description-animate 1s forwards;
   }
+
   .mission-image-animate {
     animation: image-animate 1s forwards;
   }
+}
+
+
+.mission-title nav {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 78px;
+}
+
+.mission-title {
+  /* identical to box height */
+  color: #02001A;
+  opacity: 0;
+
+  transform: matrix(1, 0, 0, 1, -10, 0);
+
+  margin-bottom: 70px;
 }
 
 
@@ -139,7 +149,7 @@ export default {
 
 .mission-image {
   position: absolute;
-  top: -50px;
+  top: -150px;
   right: -400px;
   transform: rotate(20deg);
 }
