@@ -14,7 +14,7 @@
         </h1>
       </div>
 
-      <img class="mission-image" src="src/assets/images/main-mission/Vector%2051.svg" alt="over mission">
+      <img class="mission-image" src="../../../assets/images/main-mission/Vector51.svg" alt="over mission">
     </div>
   </div>
 </template>

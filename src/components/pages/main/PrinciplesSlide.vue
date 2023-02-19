@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="principles-image">
-      <img class="principles-image-inner" src="src/assets/images/main-slider/1а.jpg" alt="" style="max-width: 100%; position: absolute">
-      <img src="src/assets/images/main-slider/1а.jpg" alt="" style="max-width: 100%; opacity: 0">
+      <img class="principles-image-inner" src="../../../assets/images/main-slider/1а.jpg" alt="" style="max-width: 100%; position: absolute">
+      <img src="../../../assets/images/main-slider/1а.jpg" alt="" style="max-width: 100%; opacity: 0">
     </div>
     <div class="" style="min-height: 100vh; background-color: black">
       <h1 style="color: white">Принципы</h1>

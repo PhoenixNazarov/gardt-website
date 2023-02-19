@@ -1,36 +1,36 @@
 <template>
   <div id="main-writer">
     <div class="main-writer-row">
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg.svg" alt="G"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-1.svg" alt="A"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-2.svg" alt="R"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-3.svg" alt="D"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-4.svg" alt="T"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg.svg" alt="G"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-1.svg" alt="A"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-2.svg" alt="R"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-3.svg" alt="D"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-4.svg" alt="T"/>
     </div>
     <div class="main-writer-row">
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-5.svg" alt="L"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-6.svg" alt="a"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-7.svg" alt="n"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-8.svg" alt="d"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-9.svg" alt="s"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-10.svg" alt="c"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-11.svg" alt="a"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-12.svg" style="top: 25px" alt="p"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-13.svg" alt="e"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-5.svg" alt="L"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-6.svg" alt="a"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-7.svg" alt="n"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-8.svg" alt="d"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-9.svg" alt="s"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-10.svg" alt="c"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-11.svg" alt="a"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-12.svg" style="top: 25px" alt="p"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-13.svg" alt="e"/>
     </div>
     <div class="main-writer-row">
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-14.svg" alt="A"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-15.svg" alt="r"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-16.svg" alt="c"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-17.svg" alt="h"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-18.svg" alt="i"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-19.svg" alt="t"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-20.svg" alt="e"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-21.svg" alt="c"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-22.svg" alt="t"/>
-      <img class="main-writer-letter" src="src/assets/images/main-writer/svg-23.svg" alt="s"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-14.svg" alt="A"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-15.svg" alt="r"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-16.svg" alt="c"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-17.svg" alt="h"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-18.svg" alt="i"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-19.svg" alt="t"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-20.svg" alt="e"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-21.svg" alt="c"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-22.svg" alt="t"/>
+      <img class="main-writer-letter" src="../../../../src/assets/images/main-writer/svg-23.svg" alt="s"/>
     </div>
-    <img id="main-writer-rect" src="src/assets/images/main-writer/Rectangle.svg" alt="|"/>
+    <img id="main-writer-rect" src="../../../../src/assets/images/main-writer/Rectangle.svg" alt="|"/>
 
   </div>
 
