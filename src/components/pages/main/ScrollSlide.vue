@@ -11,10 +11,10 @@
       <div class="main-scroll-gradient" style="
       background-color: #02001A; height: 100vh">
         <div style="position: absolute; height: 55vh; width: 100%; top: 0;
-          background: radial-gradient(160% 155% at top, #FFFFFF 30%, rgba(200,255,41,0.5) 45%, transparent 60%);">
+          background: radial-gradient(160% 155% at top, #EFEFEF 30%, rgba(200,255,41,0.5) 45%, transparent 60%);">
         </div>
         <div style="position: absolute; height: 55vh; width: 100%; bottom: 0;
-          background: radial-gradient(160% 155% at bottom, #FFFFFF 30%, rgba(200,255,41,0.5) 45%, transparent 60%);">
+          background: radial-gradient(160% 155% at bottom, #EFEFEF 30%, rgba(200,255,41,0.5) 45%, transparent 60%);">
         </div>
 
       </div>
@@ -67,7 +67,7 @@ export default {
 <style scoped>
 .main-scroll-container {
   min-height: 180vh;
-  background-color: #FFFFFF;
+  background-color: #EFEFEF;
 }
 
 .main-scroll-carriage {
@@ -88,7 +88,7 @@ export default {
   line-height: 96px;
   text-align: center;
   /*color: #181818;*/
-  color: #FFFFFF;
+  color: #EFEFEF;
 }
 
 .main-scroll-outside {

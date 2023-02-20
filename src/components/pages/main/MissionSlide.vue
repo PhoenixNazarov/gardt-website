@@ -50,7 +50,7 @@ export default {
 <style scoped>
 .mission-slide {
   height: 100vh;
-  background-color: #FFFFFF;
+  background-color: #EFEFEF;
 }
 
 .mission-text {

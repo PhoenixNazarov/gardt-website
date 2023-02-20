@@ -2,8 +2,13 @@
 
 /* Fonts */
 @import './fonts/montserrat/montserrat.css';
-@import './fonts/raleway/style.css';
+@import './fonts/raleway/stylesheet.css';
 
 #app {
     font-weight: normal;
+    max-width: 100vw;
+}
+
+*{
+    cursor: default;
 }

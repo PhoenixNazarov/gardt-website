@@ -21,9 +21,6 @@ export default {
 </script>
 
 <style scoped>
-.footer-container {
-  background-color: #FFFFFF;
-}
 
 .footer-contact-form {
   margin-bottom: 160px;
@@ -52,6 +49,5 @@ export default {
   color: #01000E;
   margin-bottom: auto;
   margin-top: auto;
-
 }
 </style>

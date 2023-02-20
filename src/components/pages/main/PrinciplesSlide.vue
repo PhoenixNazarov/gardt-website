@@ -71,7 +71,7 @@ export default {
 <style scoped>
 .principles-container {
   min-height: 100vh;
-  background-color: #FFFFFF;
+  background-color: #EFEFEF;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   padding: 100px;

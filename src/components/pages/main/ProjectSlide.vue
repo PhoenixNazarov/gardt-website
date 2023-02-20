@@ -1,7 +1,6 @@
 <template>
-  <div style="background-color: #FFFFFF; height: 100vh">
+  <div style="background-color: #EFEFEF; height: 100vh">
     <PartName class="project-title" text="Наши проекты" style="margin-left: 100px"/>
-
     <div class="project-slider">
       <img class="project-slider-button left" src="../../../assets/images/slider-controller.svg">
       <div class="project-slider-car">

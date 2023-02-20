@@ -1,8 +1,8 @@
 <template>
-  <li class="btn-navigation-container">
+  <div class="btn-navigation-container">
     <a class="btn-navigation">{{ text }}</a>
     <div class="btn-navigation-underline"></div>
-  </li>
+  </div>
 </template>
 
 <script>
@@ -17,10 +17,6 @@ export default {
   display: inline-block;
 }
 
-.btn-navigation:after {
-  mix-blend-mode: difference;
-}
-
 .btn-navigation-container:hover .btn-navigation-underline {
   width: 100%;
 }
@@ -31,11 +27,10 @@ export default {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  color: #FFFFFF;
+  color: #EFEFEF;
 
   letter-spacing: 0.25em;
   text-transform: uppercase;
-
 }
 
 .btn-navigation-underline {
@@ -44,7 +39,7 @@ export default {
   width: 0;
   height: 1px;
   bottom: 3px;
-  background: #FFFFFF;
+  background: #EFEFEF;
 }
 
 </style>

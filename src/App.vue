@@ -1,30 +1,37 @@
-<script setup>
-import Navigation from './components/navigation/Navigation.vue'
-import MainPage from "@/components/pages/main/Page.vue";
-</script>
-
 <template>
   <header>
 
   </header>
 
   <main>
-    <Navigation id="navigation"/>
     <div class="wrapper">
-      <MainPage />
-<!--      <MainPage />-->
-
+      <MainPage v-if="page === 'Main'"/>
+      <Page v-if="page === 'Main1'"/>
     </div>
   </main>
 </template>
 
-<style scoped>
-#navigation {
-  mix-blend-mode: difference;
-  z-index: 100;
-  position: fixed;
-}
+<script>
+import MainPage from "@/components/pages/main/Page.vue";
+import Page from "@/components/pages/foot/Page.vue";
 
+export default {
+  name: 'App',
+  data: function () {
+    return {
+      page: "Main"
+    }
+  },
+  components: {Page, MainPage},
+  beforeCreate() {
+    this.$root.onChangePage = function (page) {
+      this.page = page;
+    }
+  }
+}
+</script>
+
+<style scoped>
 .wrapper {
   min-height: 600vh;
 }
