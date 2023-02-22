@@ -8,12 +8,20 @@
     </div>
     <div class="feedback-form">
       <div class="feedback-form-raw">
-        <input class="feedback-input">
-        <input class="feedback-input">
+        <Input class="feedback-input" text="Имя" ident="name"/>
+        <Input class="feedback-input feedback-input-long" text="E-mail" ident="email"/>
       </div>
       <div class="feedback-form-raw">
-        <input class="feedback-input">
-        <input class="feedback-input">
+        <Input class="feedback-input" text="Телефон" ident="phone"/>
+        <Input class="feedback-input feedback-input-long" text="Комментарий" ident="comment"/>
+      </div>
+      <div class="feedback-form-raw ">
+        <h1 class="feedback-text-description feedback-input feedback-input-long">
+          Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования платформой
+        </h1>
+        <div class="feedback-input">
+          <DarkButton text="Отправить"/>
+        </div>
       </div>
     </div>
   </div>
@@ -21,10 +29,12 @@
 
 <script>
 import PartName from "@/components/pages/main/PartName.vue";
+import Input from "@/components/ui/Input.vue";
+import DarkButton from "@/components/ui/DarkButton.vue";
 
 export default {
   name: "ContactForm",
-  components: {PartName}
+  components: {DarkButton, Input, PartName}
 }
 </script>
 
@@ -53,8 +63,12 @@ export default {
 .feedback-input {
   width: 250px;
   height: 80px;
-  margin-left: 40px;
-  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.feedback-input-long {
+  width: 420px;
 }
 
 .feedback-text-description {

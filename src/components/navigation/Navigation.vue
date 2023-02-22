@@ -36,7 +36,6 @@ export default {
 <style scoped>
 .navigation-container {
   padding: 0;
-  width: 100%;
   min-height: 90px;
   display: flex;
   justify-content: space-between;

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mission-slide">
-      <div class="mission-text ">
+      <div class="mission-text main-outside">
         <PartName class="mission-title" text="Наша миссия"/>
         <h1 class="mission-description">
           “Мы проектируем точечные<br>
@@ -12,7 +12,7 @@
         </h1>
       </div>
 
-      <img class="mission-image" src="../../../assets/images/main-mission/Vector51.svg" alt="over mission">
+      <img class="mission-image" src="../../../../assets/images/main-mission/Vector51.svg" alt="over mission">
     </div>
   </div>
 </template>
@@ -49,12 +49,12 @@ export default {
 
 <style scoped>
 .mission-slide {
+  overflow-x: clip;
   height: 100vh;
   background-color: #EFEFEF;
 }
 
 .mission-text {
-  margin-left: 100px;
   z-index: 1;
 }
 

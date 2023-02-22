@@ -20,8 +20,7 @@ export default {
   background-repeat: no-repeat;
   border-radius: 15px;
   background-image: linear-gradient(to bottom, transparent 70%, #000000),
-  url("../../../assets/images/main-slider/1а.jpg");
-
+  url("../../../../assets/images/main-slider/1а.jpg");
 }
 
 .slide-item {

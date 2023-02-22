@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Slider from "@/components/pages/main/Slider.vue";
-import Writer from "@/components/pages/main/Writer.vue";
+import Slider from "@/components/pages/main/presentation/Slider.vue";
+import Writer from "@/components/pages/main/presentation/Writer.vue";
 
 export default {
   name: "PresentationSlide",
@@ -19,7 +19,7 @@ export default {
 .pres-text {
   position: absolute;
 
-  bottom: 200px;
+  bottom: 10%;
   width: 100%;
   text-align: center;
   z-index: 3;

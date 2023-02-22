@@ -1,8 +1,8 @@
 <template>
   <div style="background-color: #EFEFEF; height: 100vh">
-    <PartName class="project-title" text="Наши проекты" style="margin-left: 100px"/>
+    <PartName class="main-outside project-title" text="Наши проекты"/>
     <div class="project-slider">
-      <img class="project-slider-button left" src="../../../assets/images/slider-controller.svg">
+      <img class="project-slider-button left" src="../../../../assets/images/slider-controller.svg">
       <div class="project-slider-car">
         <ProjectSlideItem class="project-slider-item"/>
         <ProjectSlideItem class="project-slider-item"/>
@@ -12,14 +12,14 @@
         <ProjectSlideItem class="project-slider-item"/>
         <ProjectSlideItem class="project-slider-item"/>
       </div>
-      <img class="project-slider-button right" src="../../../assets/images/slider-controller.svg">
+      <img class="project-slider-button right" src="../../../../assets/images/slider-controller.svg">
     </div>
   </div>
 </template>
 
 <script>
 import PartName from "@/components/pages/main/PartName.vue";
-import ProjectSlideItem from "@/components/pages/main/ProjectSlideItem.vue";
+import ProjectSlideItem from "@/components/pages/main/projects/ProjectSlideItem.vue";
 
 export default {
   name: "ProjectSlide",
@@ -55,7 +55,8 @@ export default {
 }
 
 .project-slider {
-  min-height: 50vh;
+  overflow-x: clip;
+  min-height: 520px;
 }
 
 .project-slider-car {

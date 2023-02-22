@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "LightButton",
+  name: "DarkButton",
   props: ["text"]
 }
 </script>
@@ -17,9 +17,9 @@ export default {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  border-color:#EFEFEF;
+  border-color: #02001A;
   border-style:solid;
-  background: #EFEFEF;
+  background: #02001A;
   transition: 500ms;
 }
 
@@ -30,20 +30,12 @@ export default {
 
 
 .btn-text {
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: #06004E;
+  color: #EFEFEF;
   transition: 500ms;
 }
 
 .btn:hover .btn-text {
-  color: #EFEFEF;
+  color: #02001A;
 }
 
 </style>

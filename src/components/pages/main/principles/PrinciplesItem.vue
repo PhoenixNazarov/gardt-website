@@ -1,15 +1,14 @@
 <template>
   <div class="principles-item-container">
     <div class="principles-item-image">
-      <img src="../../../assets/images/main-principles/VectorBackground.svg" alt="" style="position:absolute; left: 10px; z-index: 0; top: 10px">
+      <img src="../../../../assets/images/main-principles/VectorBackground.svg" alt="" style="position:absolute; left: 10px; z-index: 0; top: 10px">
 
-      <img src="../../../assets/images/main-principles/approve-user1.svg" alt="" v-if="image === 'user'">
-      <img src="../../../assets/images/main-principles/growth-graph.svg" alt="" v-if="image === 'growth'">
-      <img src="../../../assets/images/main-principles/light-bulb.svg" alt="" v-if="image === 'light'">
-      <img src="../../../assets/images/main-principles/process.svg" alt="" v-if="image === 'process'">
-      <img src="../../../assets/images/main-principles/scenery.svg" alt="" v-if="image === 'sce'">
-      <img src="../../../assets/images/main-principles/trees.svg" alt="" v-if="image === 'tree'">
-
+      <img src="../../../../assets/images/main-principles/approve-user1.svg" alt="" v-if="image === 'user'">
+      <img src="../../../../assets/images/main-principles/growth-graph.svg" alt="" v-if="image === 'growth'">
+      <img src="../../../../assets/images/main-principles/light-bulb.svg" alt="" v-if="image === 'light'">
+      <img src="../../../../assets/images/main-principles/process.svg" alt="" v-if="image === 'process'">
+      <img src="../../../../assets/images/main-principles/scenery.svg" alt="" v-if="image === 'sce'">
+      <img src="../../../../assets/images/main-principles/trees.svg" alt="" v-if="image === 'tree'">
 
     </div>
     <div class="principles-item-text">

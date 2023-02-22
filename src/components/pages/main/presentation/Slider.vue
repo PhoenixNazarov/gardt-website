@@ -1,12 +1,9 @@
 <template>
   <div>
     <div class="main-slider-container">
-      <img class="main-slider-image" src="../../../assets/images/main-slider/1а.jpg" alt="" width=""
-           style="max-width: 100%"/>
-      <img class="main-slider-image" src="../../../assets/images/main-slider/2а.jpg" alt="" width=""
-           style="max-width: 100%"/>
-      <img class="main-slider-image" src="../../../assets/images/main-slider/3.jpg" alt="" width=""
-           style="max-width: 100%"/>
+      <div class="main-slider-image" src=""></div>
+      <div class="main-slider-image" src="../../../../assets/images/main-slider/2а.jpg"></div>
+      <div class="main-slider-image" src="../../../../assets/images/main-slider/3.jpg"></div>
     </div>
   </div>
 </template>
@@ -51,11 +48,26 @@ export default {
 
 <style scoped>
 .main-slider-container {
-  line-height: 0;
+min-height: 100vh;
+}
+
+.main-slider-image:nth-child(1) {
+  background-image:  url("../../../../assets/images/main-slider/1а.jpg");
+}
+
+.main-slider-image:nth-child(2) {
+  background-image:  url("../../../../assets/images/main-slider/2а.jpg");
+}
+
+.main-slider-image:nth-child(3) {
+  background-image:  url("../../../../assets/images/main-slider/3.jpg");
 }
 
 .main-slider-image {
-
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-width: 100%;
 }
 
 </style>
