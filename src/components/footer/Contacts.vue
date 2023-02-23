@@ -1,20 +1,22 @@
 <template>
   <div class="footer-contacts-container">
     <div class="footer-contacts-text">
-      <img src="../../assets/logo_black..svg" width="47" alt="Gardt logo">
+      <img class="navigation-logo" src="../../assets/logo.svg" width="47" @click.prevent="changePage('Main')"
+           alt="gardt logo"/>
       <h1 class="footer-contacts-text-inner">Мы проецируем природу на городскую среду</h1>
     </div>
     <div class="navigation">
       <div class="navigation-button">
-        <FooterNavigationButton text="Блог" class="navigation-button-item"/>
-        <FooterNavigationButton text="О нас" class="navigation-button-item"/>
-        <FooterNavigationButton text="Портфолио" class="navigation-button-item"/>
-        <FooterNavigationButton text="Контакты" class="navigation-button-item"/>
+        <FooterNavigationButton text="Блог" class="navigation-button-item" :theme="theme"/>
+        <FooterNavigationButton text="О нас" class="navigation-button-item" :theme="theme"/>
+        <FooterNavigationButton text="Портфолио" class="navigation-button-item" :theme="theme"/>
+        <FooterNavigationButton text="Контакты" class="navigation-button-item" :theme="theme"/>
       </div>
     </div>
     <div class="footer-contacts-names">
-      <h1 class="footer-contacts-names-inner">Дизайн: <span style="text-decoration: underline">Боровиков Юрий</span></h1>
-      <img src="../../assets/logo_black..svg" width="47" alt="Gardt logo">
+      <h1 class="footer-contacts-names-inner">Дизайн: <span style="text-decoration: underline">Боровиков Юрий</span>
+      </h1>
+<!--      <img src="../../assets/logo_black..svg" width="47" alt="Gardt logo">-->
     </div>
   </div>
 </template>
@@ -24,7 +26,33 @@ import FooterNavigationButton from "@/components/footer/FooterNavigationButton.v
 
 export default {
   name: "Contacts",
-  components: {FooterNavigationButton}
+  components: {FooterNavigationButton},
+  props: ["theme"],
+  methods: {
+    getElems: function () {
+      return this.$el.querySelectorAll(".footer-contacts-text-inner, .navigation-logo, .footer-contacts-names-inner");
+    },
+    clear: function () {
+      let elems = this.getElems();
+      elems.forEach((i) => i.classList.remove("dark"))
+      elems.forEach((i) => i.classList.remove("light"))
+    },
+    light: function () {
+      this.clear();
+      this.getElems().forEach((i) => i.classList.add("light"))
+    },
+    dark: function () {
+      this.clear();
+      this.getElems().forEach((i) => i.classList.add("dark"))
+    }
+  },
+  mounted() {
+    if (this.theme === 'light') {
+      this.light();
+    } else {
+      this.dark();
+    }
+  },
 }
 </script>
 
@@ -69,10 +97,17 @@ export default {
   font-style: normal;
   font-weight: 500;
   font-size: 1.25em;
-  line-height: 24px;
-  color: #02001A;
+  line-height: 1.5em;
   margin-top: 40px;
+}
 
+.footer-contacts-text-inner.light {
+  color: var(--vt-c-white)
+}
+
+
+.footer-contacts-text-inner.dark {
+  color: var(--vt-c-black)
 }
 
 .footer-contacts-names-inner {
@@ -86,6 +121,19 @@ export default {
   text-transform: uppercase;
 
   color: #02001A;
+}
+
+.footer-contacts-names-inner.dark {
+  color: var(--vt-c-black)
+}
+
+
+.footer-contacts-names-inner.light {
+  color: var(--vt-c-white)
+}
+
+.navigation-logo.dark {
+  filter: invert(1);
 }
 
 </style>

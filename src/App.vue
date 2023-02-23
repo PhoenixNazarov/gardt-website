@@ -6,14 +6,14 @@
   <main>
     <div class="wrapper">
       <MainPage v-if="page === 'Main'"/>
-      <Page v-if="page === 'Main1'"/>
+      <AboutPage v-if="page === 'About'"/>
     </div>
   </main>
 </template>
 
 <script>
-import MainPage from "@/components/pages/main/Page.vue";
-import Page from "@/components/pages/foot/Page.vue";
+import MainPage from "@/components/pages/main/MainPage.vue";
+import AboutPage from "@/components/pages/aboutUs/AboutPage.vue";
 
 export default {
   name: 'App',
@@ -22,7 +22,7 @@ export default {
       page: "Main"
     }
   },
-  components: {Page, MainPage},
+  components: {AboutPage, MainPage},
   beforeCreate() {
     this.$root.onChangePage = function (page) {
       this.page = page;

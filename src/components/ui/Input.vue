@@ -8,7 +8,30 @@
 <script>
 export default {
   name: "Input",
-  props: ["text", "ident"]
+  props: ["text", "ident", "theme"],
+  methods: {
+    getElems: function () {
+      return this.$el.querySelectorAll("input, label");
+    },
+    clear: function () {
+      let elems = this.getElems();
+      elems.forEach((i) => i.classList.remove("dark"));
+      elems.forEach((i) => i.classList.remove("light"));
+    },
+    setTheme: function () {
+      this.clear();
+      console.log(this.theme);
+      this.getElems().forEach((i) => i.classList.add(this.theme));
+    }
+  },
+  mounted() {
+    this.setTheme();
+  },
+  watch: {
+    theme: function (newVal, oldVal) {
+      this.setTheme();
+    }
+  }
 }
 </script>
 
@@ -16,20 +39,19 @@ export default {
 input {
   height: 100%;
   width: 100%;
-  background-color: var(--vt-c-white);
-  border-color: #02001A;
+  background-color: transparent;
   border-radius: 10px;
+  border: 1px solid;
   padding-left: 20px;
   padding-right: 20px;
-  transition: 200ms;
-}
+  outline: none;
 
-input {
+  transition: 200ms;
+
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 1.25em;
-  color: #02001A;
 }
 
 input::placeholder {
@@ -47,26 +69,48 @@ input:not(:placeholder-shown) ~ label {
 }
 
 input:focus,
+input:active,
 input:not(:placeholder-shown) {
+  border-radius: 10px;
   border-color: #888888;
 }
-
 
 label {
   top: 50%;
   left: 20px;
   position: absolute;
-
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 1.25em;
-  font-variant: small-caps;
-
   transition: 200ms;
-
-  color: #02001A;
 }
 
+
+input.dark {
+  border-color: var(--vt-c-black);
+  color: var(--vt-c-black);
+}
+
+label.dark {
+  color: var(--vt-c-black);
+}
+
+input.light {
+  border-color: var(--vt-c-white);
+  color: var(--vt-c-white);
+}
+
+label.light {
+  color: var(--vt-c-white);
+}
+
+input.success {
+  border-color: var(--vt-c-green);
+}
+
+input.danger {
+  border-color: var(--vt-c-danger);
+}
 
 </style>

@@ -2,7 +2,7 @@
   <div>
     <div class="mission-slide">
       <div class="mission-text main-outside">
-        <PartName class="mission-title" text="Наша миссия"/>
+        <PartName class="mission-title" text="Наша миссия" theme="dark"/>
         <h1 class="mission-description">
           “Мы проектируем точечные<br>
           ландшафтные решения для<br>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import PartName from "@/components/pages/main/PartName.vue";
+import PartName from "@/components/ui/PartName.vue";
 
 export default {
   name: "MissionSlide",

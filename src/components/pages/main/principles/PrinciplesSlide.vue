@@ -8,7 +8,7 @@
     <div class="principles-container">
       <div class="main-outside">
         <div class="principles-title">
-          <PartName text="Наши принципы работы"/>
+          <PartName text="Наши принципы работы" theme="dark"/>
         </div>
         <div class="principles-row">
           <PrinciplesItem class="principles-item" title="Фокус на человека" image="user"
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import PartName from "@/components/pages/main/PartName.vue";
+import PartName from "@/components/ui/PartName.vue";
 import PrinciplesItem from "@/components/pages/main/principles/PrinciplesItem.vue";
 
 export default {

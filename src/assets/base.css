@@ -3,6 +3,9 @@
   --vt-c-white: #efefef;
   --vt-c-black: #02001A;
   --vt-c-green: #C8FF29;
+
+  --vt-c-danger: #FF3838;
+
 }
 
 *,
@@ -23,7 +26,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /*overflow-x:hidden;*/
+  overflow-x:hidden;
   background-color: var(--vt-c-white);
 }
 

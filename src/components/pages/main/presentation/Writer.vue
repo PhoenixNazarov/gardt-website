@@ -79,13 +79,15 @@ export default {
     }
   },
   mounted() {
-    if (this.$el.querySelector(".main-writer-rect") !== undefined) {
+    if (this.$el.querySelector(".main-writer-rect") !== null) {
       this.write();
     }
   },
   unmounted() {
-    this.$el.querySelectorAll(".main-writer-letter").forEach((i) => i.style.display="inline");
-    this.$el.querySelector(".main-writer-rect").remove();
+    if (this.$el.querySelector(".main-writer-rect") !== null) {
+      this.$el.querySelectorAll(".main-writer-letter").forEach((i) => i.style.display = "inline");
+      this.$el.querySelector(".main-writer-rect").remove();
+    }
   }
 }
 </script>
@@ -115,7 +117,6 @@ export default {
   line-height: 1.2em;
   display: none;
   color: var(--vt-c-white);
-
 }
 
 </style>

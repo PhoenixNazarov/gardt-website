@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PartName class="main-outside project-title" text="Наши проекты"/>
+    <PartName class="main-outside project-title" text="Наши проекты" theme="dark"/>
     <div class="project-slider">
       <img class="project-slider-button left" src="../../../../assets/images/slider-controller.svg">
       <div class="project-slider-car">
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import PartName from "@/components/pages/main/PartName.vue";
+import PartName from "@/components/ui/PartName.vue";
 import ProjectSlideItem from "@/components/pages/main/projects/ProjectSlideItem.vue";
 
 export default {

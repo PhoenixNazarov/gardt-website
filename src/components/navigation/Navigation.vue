@@ -5,7 +5,7 @@
     </div>
     <div>
       <NavigationButton text="Блог" :theme="theme" class="navigation-button" @click.prevent="changePage('Main1')"/>
-      <NavigationButton text="О нас" :theme="theme" class="navigation-button"/>
+      <NavigationButton text="О нас" :theme="theme" class="navigation-button" @click.prevent="changePage('About')"/>
       <NavigationButton text="Портфолио" :theme="theme" class="navigation-button"/>
       <NavigationButton text="Контакты" :theme="theme" class="navigation-button" @click.prevent="toDownPage()"/>
     </div>
@@ -25,6 +25,7 @@ export default {
   components: {Button, NavigationButton},
   methods: {
     changePage: function (page) {
+      window.scrollTo({top: 0});
       this.$root.onChangePage(page);
     },
     toDownPage: function () {
@@ -32,7 +33,6 @@ export default {
     },
     light: function () {
       this.$el.querySelector(".navigation-logo").style.filter = 'invert(0)';
-
     },
     dark: function () {
       this.$el.querySelector(".navigation-logo").style.filter = 'invert(1)';

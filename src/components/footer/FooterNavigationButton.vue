@@ -8,7 +8,33 @@
 <script>
 export default {
   name: "FooterNavigationButton",
-  props: ['text']
+  props: ['text', "theme"],
+  methods: {
+    light: function () {
+      this.$el.querySelector(".btn-navigation").style.color="var(--vt-c-white)"
+      this.$el.querySelector(".btn-navigation-underline").style.background="var(--vt-c-white)"
+    },
+    dark: function () {
+      this.$el.querySelector(".btn-navigation").style.color="#02001A";
+      this.$el.querySelector(".btn-navigation-underline").style.background="#02001A";
+    }
+  },
+  mounted() {
+    if (this.theme === 'light') {
+      this.light();
+    } else {
+      this.dark();
+    }
+  },
+  watch: {
+    theme: function (newVal, oldVal) {
+      if (newVal === 'light') {
+        this.light();
+      } else {
+        this.dark();
+      }
+    }
+  }
 }
 </script>
 

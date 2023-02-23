@@ -11,40 +11,44 @@ export default {
   name: "Button",
   props: ["text", "theme"],
   methods: {
-    light: function () {
-      let button = this.$el.querySelector(".btn");
-      let buttonText = this.$el.querySelector(".btn-text");
-
-      button.classList.remove("btn-dark");
-      button.classList.add("btn-light");
-      buttonText.classList.remove("btn-text-dark");
-      buttonText.classList.add("btn-text-light");
+    getElems: function () {
+      return this.$el.querySelectorAll(".btn, .btn-text");
+    },
+    clear: function() {
+      let elems = this.getElems();
+      elems.forEach((i) => i.classList.remove("dark"));
+      elems.forEach((i) => i.classList.remove("light"));
+      elems.forEach((i) => i.classList.remove("accent"));
 
     },
+    light: function () {
+      this.clear();
+      this.getElems().forEach((i) => i.classList.add("light"))
+    },
     dark: function () {
-      let button = this.$el.querySelector(".btn");
-      let buttonText = this.$el.querySelector(".btn-text");
-
-      button.classList.remove("btn-light");
-      button.classList.add("btn-dark");
-      buttonText.classList.remove("btn-text-light");
-      buttonText.classList.add("btn-text-dark");
-    }
-  },
-  mounted() {
-    if (this.theme === 'light') {
-      this.light();
-    } else {
-      this.dark();
-    }
-  },
-  watch: {
-    theme: function (newVal, oldVal) {
-      if (newVal === 'light') {
+      this.clear();
+      this.getElems().forEach((i) => i.classList.add("dark"))
+    },
+    accent: function () {
+      this.clear();
+      this.getElems().forEach((i) => i.classList.add("accent"))
+    },
+    setTheme: function () {
+      if (this.theme === 'light') {
         this.light();
+      } else if (this.theme === 'accent') {
+        this.accent();
       } else {
         this.dark();
       }
+    }
+  },
+  mounted() {
+    this.setTheme();
+  },
+  watch: {
+    theme: function (newVal, oldVal) {
+      this.setTheme();
     }
   }
 }
@@ -64,14 +68,19 @@ export default {
   transition: 500ms;
 }
 
-.btn-dark {
+.btn.dark {
   border-color: var(--vt-c-black);
   background: var(--vt-c-black);
 }
 
-.btn-light {
+.btn.light {
   border-color: var(--vt-c-white);
   background: var(--vt-c-white);
+}
+
+.btn.accent {
+  border-color: var(--vt-c-green);
+  background: var(--vt-c-green);
 }
 
 .btn:hover {
@@ -85,27 +94,33 @@ export default {
   font-style: normal;
   font-weight: 500;
   font-size: 1em;
-  line-height: 24px;
-
   letter-spacing: 0.25em;
   text-transform: uppercase;
   transition: 500ms;
 }
 
-.btn-text-dark {
+.btn-text.dark {
   color: var(--vt-c-white);
 }
 
-.btn-text-light {
+.btn-text.light {
   color: var(--vt-c-black);
 }
 
-.btn:hover .btn-text-dark {
+.btn-text.accent {
   color: var(--vt-c-black);
 }
 
-.btn:hover .btn-text-light {
+.btn:hover .btn-text.dark {
+  color: var(--vt-c-black);
+}
+
+.btn:hover .btn-text.light {
   color: var(--vt-c-white);
+}
+
+.btn:hover .btn-text.accent {
+  color: var(--vt-c-green);
 }
 
 </style>
