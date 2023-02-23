@@ -1,6 +1,8 @@
 <template>
   <div style="">
-    <input type="text" :id="ident" name="ident" :placeholder="text"/>
+    <input type="text" :id="ident" name="ident"
+           :value="model"
+           :placeholder="text"/>
     <label :for="ident">{{ text }}</label>
   </div>
 </template>
@@ -8,7 +10,7 @@
 <script>
 export default {
   name: "Input",
-  props: ["text", "ident", "theme"],
+  props: ["text", "ident", "theme", "model"],
   methods: {
     getElems: function () {
       return this.$el.querySelectorAll("input, label");
@@ -17,6 +19,8 @@ export default {
       let elems = this.getElems();
       elems.forEach((i) => i.classList.remove("dark"));
       elems.forEach((i) => i.classList.remove("light"));
+      elems.forEach((i) => i.classList.remove("danger"));
+      elems.forEach((i) => i.classList.remove("success"));
     },
     setTheme: function () {
       this.clear();
