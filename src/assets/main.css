@@ -12,6 +12,13 @@
     cursor: default;
 }
 
+@font-face {
+    font-family: 'NeueMatana';
+    src: url('fonts/NeueMetanaNext-SemiBold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .main-outside {
     margin-left: 5vw;
     width: 90vw;

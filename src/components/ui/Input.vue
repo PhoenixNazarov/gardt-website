@@ -16,7 +16,7 @@ export default {
 input {
   height: 100%;
   width: 100%;
-  background-color: #efefef;
+  background-color: var(--vt-c-white);
   border-color: #02001A;
   border-radius: 10px;
   padding-left: 20px;

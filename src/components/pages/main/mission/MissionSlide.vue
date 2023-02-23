@@ -12,7 +12,7 @@
         </h1>
       </div>
 
-      <img class="mission-image" src="../../../../assets/images/main-mission/Vector51.svg" alt="over mission">
+      <img class="mission-image" width="570" src="../../../../assets/images/main-mission/Vector51.svg" alt="over mission">
     </div>
   </div>
 </template>
@@ -50,8 +50,7 @@ export default {
 <style scoped>
 .mission-slide {
   overflow-x: clip;
-  height: 100vh;
-  background-color: #EFEFEF;
+  background-color: var(--vt-c-white);
 }
 
 .mission-text {
@@ -140,7 +139,7 @@ export default {
 
 .mission-image {
   position: absolute;
-  top: -150px;
+  top: -30px;
   right: -400px;
   transform: rotate(20deg);
 }

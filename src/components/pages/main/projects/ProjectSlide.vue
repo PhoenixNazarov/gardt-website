@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: #EFEFEF; height: 100vh">
+  <div>
     <PartName class="main-outside project-title" text="Наши проекты"/>
     <div class="project-slider">
       <img class="project-slider-button left" src="../../../../assets/images/slider-controller.svg">
@@ -74,13 +74,14 @@ export default {
   position: absolute;
   z-index: 1;
   top: 50%;
+  transform: translate(0, -50%);
 
   filter: opacity(50%) drop-shadow(0px 0px 2px rgb(0 0 0 / 0.4));
 }
 
 .project-slider-button.left {
   left: 0;
-  transform: rotate(180deg);
+  transform: rotate(180deg) translate(0, +50%);
 }
 
 .project-slider-button.right {

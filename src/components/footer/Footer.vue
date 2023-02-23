@@ -46,7 +46,7 @@ export default {
   font-weight: 500;
   font-size: 1.25em;
 
-  color: #01000E;
+  color: #02001A;
   margin-bottom: auto;
   margin-top: auto;
 }

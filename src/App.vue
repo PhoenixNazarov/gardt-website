@@ -33,7 +33,7 @@ export default {
 
 <style scoped>
 .wrapper {
-  min-height: 600vh;
+  /*min-height: 600vh;*/
 }
 
 </style>

@@ -9,7 +9,33 @@
 <script>
 export default {
   name: "NavigationButton",
-  props: ['text']
+  props: ['text', "theme"],
+  methods: {
+    light: function () {
+      this.$el.querySelector(".btn-navigation").style.color="var(--vt-c-white)"
+      this.$el.querySelector(".btn-navigation-underline").style.background="var(--vt-c-white)"
+    },
+    dark: function () {
+      this.$el.querySelector(".btn-navigation").style.color="#02001A";
+      this.$el.querySelector(".btn-navigation-underline").style.background="#02001A";
+    }
+  },
+  mounted() {
+    if (this.theme === 'light') {
+      this.light();
+    } else {
+      this.dark();
+    }
+  },
+  watch: {
+    theme: function (newVal, oldVal) {
+      if (newVal === 'light') {
+        this.light();
+      } else {
+        this.dark();
+      }
+    }
+  }
 }
 </script>
 
@@ -30,7 +56,8 @@ export default {
 
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #01000E;
+  color: #02001A;
+  transition: 500ms;
 }
 
 .btn-navigation-underline {
@@ -39,7 +66,7 @@ export default {
   width: 0;
   height: 1px;
   bottom: 0;
-  background: #EFEFEF;
+  background: #02001A;
 }
 
 </style>

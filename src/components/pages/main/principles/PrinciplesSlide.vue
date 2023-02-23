@@ -45,6 +45,7 @@ export default {
   created() {
     window.addEventListener('scroll', this.handleScroll);
     this.fixed = false;
+    this.show = true;
   },
   unmounted() {
     window.removeEventListener('scroll', this.handleScroll);
@@ -58,12 +59,18 @@ export default {
       if (!this.fixed && hgParent.y <= 0) {
         this.$el.querySelector(".principles-image-inner").style.position = "fixed";
         this.$el.querySelector(".principles-image-inner").style.top = "0px";
-
         this.fixed = true;
       } else if (this.fixed && hgParent.y > 0) {
         this.$el.querySelector(".principles-image-inner").style.position = "absolute";
         this.$el.querySelector(".principles-image-inner").style.top = null;
         this.fixed = false;
+      }
+      if (this.show && hgParent.y + hgParent.height + 100 < 0) {
+        this.$el.querySelector(".principles-image-inner").style.display = "none";
+        this.show = false;
+      } else if (!this.show && hgParent.y + hgParent.height + 100 > 0) {
+        this.$el.querySelector(".principles-image-inner").style.display = null;
+        this.show = true;
       }
     }
   }
@@ -72,8 +79,7 @@ export default {
 
 <style scoped>
 .principles-container {
-  min-height: 100vh;
-  background-color: #EFEFEF;
+  background-color: var(--vt-c-white);
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   padding-top: 100px;
@@ -90,7 +96,7 @@ export default {
 }
 
 .principles-item:nth-child(2n) {
-  margin-left: 5vw;
+  margin-left: 3em;
 }
 
 </style>

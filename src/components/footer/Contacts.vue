@@ -70,7 +70,7 @@ export default {
   font-weight: 500;
   font-size: 1.25em;
   line-height: 24px;
-  color: #01000E;
+  color: #02001A;
   margin-top: 40px;
 
 }
@@ -85,7 +85,7 @@ export default {
   letter-spacing: 0.25em;
   text-transform: uppercase;
 
-  color: #01000E;
+  color: #02001A;
 }
 
 </style>

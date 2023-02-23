@@ -34,7 +34,7 @@ export default {
 
   opacity: 0;
 
-  color: #FFFFFF;
+  color: var(--vt-c-white);
   animation: pres-text 1s ease forwards;
 }
 

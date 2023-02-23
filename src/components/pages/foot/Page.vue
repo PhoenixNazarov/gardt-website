@@ -3,7 +3,7 @@
     <div>
       <Navigation id="navigation" class="main-outside"/>
     </div>
-    <div style="background-color: #EFEFEF">
+    <div style="background-color: var(--vt-c-white)">
       <Footer class="main-outside"/>
     </div>
   </div>

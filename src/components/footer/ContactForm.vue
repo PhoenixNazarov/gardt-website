@@ -20,7 +20,7 @@
           Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования платформой
         </h1>
         <div class="feedback-input">
-          <DarkButton text="Отправить"/>
+          <Button text="Отправить" theme="dark"/>
         </div>
       </div>
     </div>
@@ -30,11 +30,11 @@
 <script>
 import PartName from "@/components/pages/main/PartName.vue";
 import Input from "@/components/ui/Input.vue";
-import DarkButton from "@/components/ui/DarkButton.vue";
+import Button from "@/components/ui/Button.vue";
 
 export default {
   name: "ContactForm",
-  components: {DarkButton, Input, PartName}
+  components: {Button, Input, PartName}
 }
 </script>
 

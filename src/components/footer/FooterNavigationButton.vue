@@ -31,7 +31,7 @@ export default {
   letter-spacing: 0.25em;
   text-transform: uppercase;
 
-  color: #01000E;
+  color: #02001A;
 }
 
 .btn-navigation-underline {
@@ -40,7 +40,7 @@ export default {
   width: 0;
   height: 1px;
   bottom: 3px;
-  background: #01000E;
+  background: #02001A;
 }
 
 </style>

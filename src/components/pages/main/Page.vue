@@ -1,25 +1,25 @@
 <template>
-  <div>
+  <div style="background-color: var(--vt-c-white)">
     <div>
-      <Navigation id="navigation" class="main-outside"/>
+      <Navigation id="navigation" :theme="this.theme" class="main-outside"/>
     </div>
 
-    <div>
+    <div class="pres-slide">
       <PresentationSlide/>
     </div>
     <div>
       <ScrollSlide/>
     </div>
-    <div>
+    <div style="margin-bottom: 20em;">
       <MissionSlide/>
     </div>
-    <div>
+    <div style="background-color: var(--vt-c-white)">
       <PrinciplesSlide/>
     </div>
-    <div>
+    <div style="background-color: var(--vt-c-white); margin-bottom: 20em;">
       <ProjectSlide/>
     </div>
-    <div style="background-color: #EFEFEF">
+    <div style="background-color: var(--vt-c-white)">
       <Footer class="main-outside"/>
     </div>
   </div>
@@ -36,6 +36,28 @@ import Navigation from "@/components/navigation/Navigation.vue";
 
 export default {
   name: "MainPage",
+  data() {
+    return {
+      theme: "light",
+    }
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  unmounted() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll(event) {
+      let pres = this.$el.querySelector(".pres-slide").getBoundingClientRect();
+      let offset = pres.y + pres.height;
+      if (offset < 0) {
+        this.theme = "dark"
+      } else {
+        this.theme = "light"
+      }
+    }
+  },
   components: {Navigation, Footer, ProjectSlide, PrinciplesSlide, MissionSlide, ScrollSlide, PresentationSlide}
 }
 </script>
@@ -45,7 +67,6 @@ export default {
   z-index: 100;
   position: fixed;
 }
-
 
 
 </style>
