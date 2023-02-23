@@ -117,15 +117,6 @@ export default {
   }
 }
 
-
-.mission-title nav {
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 64px;
-  line-height: 78px;
-}
-
 .mission-title {
   /* identical to box height */
   color: #02001A;
@@ -141,7 +132,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 48px;
+  font-size: 3em;
   line-height: 59px;
   color: #02001A;
   opacity: 0;

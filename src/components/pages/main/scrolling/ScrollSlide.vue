@@ -66,7 +66,7 @@ export default {
 
 <style scoped>
 .main-scroll-container {
-  min-height: 180vh;
+  min-height: 170vh;
   background-color: #EFEFEF;
 }
 
@@ -84,7 +84,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 76px;
+  font-size: 4.75em;
   line-height: 96px;
   text-align: center;
   /*color: #181818;*/

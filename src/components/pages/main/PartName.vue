@@ -16,11 +16,18 @@ export default {
   display: flex;
 }
 
-.part-first-name, .part-second-name {
+.part-second-name {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 64px;
-  line-height: 78px;
+  font-size: 4em;
+  line-height: 1.3em;
 }
+
+.part-first-name {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+}
+
+
 </style>

@@ -86,7 +86,7 @@ export default {
 }
 
 .principles-item {
-  max-width: 35vw;
+  width: 35vw;
 }
 
 .principles-item:nth-child(2n) {

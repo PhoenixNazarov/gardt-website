@@ -24,10 +24,10 @@ export default {
   text-align: center;
   z-index: 3;
 
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
-  font-weight: 150;
-  font-size: 36px;
+  font-weight: 300;
+  font-size: 2em;
   line-height: 36px;
 
   font-variant: small-caps;

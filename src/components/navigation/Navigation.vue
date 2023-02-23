@@ -1,6 +1,6 @@
 <template>
   <div class="navigation-container">
-    <div>
+    <div style="width: 250px">
       <img src="../../assets/logo.svg" @click.prevent="changePage('Main')"/>
     </div>
     <div>

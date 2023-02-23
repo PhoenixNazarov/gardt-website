@@ -75,8 +75,8 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 31px;
+  font-size: 1.25em;
+  line-height: 24px;
   color: #02001A;
 }
 </style>

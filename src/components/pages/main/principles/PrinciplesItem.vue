@@ -39,7 +39,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 36px;
+  font-size: 2.25em;
   line-height: 44px;
   color: #02001A;
 }
@@ -48,7 +48,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.5em;
   line-height: 29px;
   color: #06004E;
 }

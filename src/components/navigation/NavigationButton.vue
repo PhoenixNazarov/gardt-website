@@ -1,7 +1,8 @@
 <template>
   <div class="btn-navigation-container">
-    <a class="btn-navigation">{{ text }}</a>
-    <div class="btn-navigation-underline"></div>
+    <a class="btn-navigation">{{ text }}
+      <div class="btn-navigation-underline"></div>
+    </a>
   </div>
 </template>
 
@@ -22,23 +23,22 @@ export default {
 }
 
 .btn-navigation {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: #EFEFEF;
+  font-size: 1em;
 
   letter-spacing: 0.25em;
   text-transform: uppercase;
+  color: #01000E;
 }
 
 .btn-navigation-underline {
   transition: 500ms;
-  position: relative;
+  position: absolute;
   width: 0;
   height: 1px;
-  bottom: 3px;
+  bottom: 0;
   background: #EFEFEF;
 }
 

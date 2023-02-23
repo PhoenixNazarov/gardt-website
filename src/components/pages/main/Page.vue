@@ -42,7 +42,6 @@ export default {
 
 <style scoped>
 #navigation {
-  mix-blend-mode: difference;
   z-index: 100;
   position: fixed;
 }

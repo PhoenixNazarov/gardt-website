@@ -28,7 +28,7 @@ input {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 1.25em;
   color: #02001A;
 }
 
@@ -41,7 +41,7 @@ input:not(:placeholder-shown) ~ label {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.875em;
   color: #888888;
   top: 15px;
 }
@@ -60,7 +60,7 @@ label {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 1.25em;
   font-variant: small-caps;
 
   transition: 200ms;

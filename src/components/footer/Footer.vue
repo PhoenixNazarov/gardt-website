@@ -23,7 +23,7 @@ export default {
 <style scoped>
 
 .footer-contact-form {
-  margin-bottom: 160px;
+  margin-bottom: 6em;
 }
 
 .hr {
@@ -44,8 +44,8 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 1.25em;
+
   color: #01000E;
   margin-bottom: auto;
   margin-top: auto;

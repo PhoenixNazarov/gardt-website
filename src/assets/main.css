@@ -2,7 +2,6 @@
 
 /* Fonts */
 @import './fonts/montserrat/montserrat.css';
-@import './fonts/raleway/stylesheet.css';
 
 #app {
     font-weight: normal;
@@ -14,7 +13,65 @@
 }
 
 .main-outside {
-    margin-left: 13vw;
-    width: 74vw;
-    margin-right: 13vw;
+    margin-left: 5vw;
+    width: 90vw;
+    margin-right: 5vw;
+}
+
+
+@media (max-width: 576px) {
+    body {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    body {
+        font-size: 13px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+    body {
+        font-size: 13px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+    body {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    body {
+        font-size: 13px;
+    }
+}
+
+
+@media (min-width: 1200px) and (max-width: 1800px) {
+    body {
+        font-size: 13px;
+    }
+    .main-outside {
+        margin-left: 15vw;
+        width: 70vw;
+        margin-right: 15vw;
+    }
+}
+
+
+
+@media (min-width: 1800px) {
+    body {
+        font-size: 15px;
+    }
+    .main-outside {
+        margin-left: 20vw;
+        width: 60vw;
+        margin-right: 20vw;
+    }
 }

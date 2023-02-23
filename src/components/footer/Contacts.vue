@@ -52,7 +52,7 @@ export default {
 }
 
 .navigation-button-item:not(:last-child) {
-  margin-bottom: 15px;
+  margin-bottom: 0.85em;
 }
 
 .footer-contacts-names {
@@ -68,7 +68,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 24px;
   color: #01000E;
   margin-top: 40px;
@@ -79,7 +79,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1em;
   line-height: 18px;
 
   letter-spacing: 0.25em;
