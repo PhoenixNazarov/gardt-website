@@ -20,7 +20,6 @@ export default {
     },
     setTheme: function () {
       this.clear();
-      console.log(this.theme);
       this.getElems().forEach((i) => i.classList.add(this.theme));
     }
   },

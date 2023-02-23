@@ -1,5 +1,8 @@
 <template>
   <div class="main-gradient">
+    <div class="diamond-gradient">
+
+    </div>
     <div>
       <Navigation theme="light" class="navigation main-outside"/>
     </div>
@@ -62,7 +65,28 @@ export default {
 .navigation {
   z-index: 100;
   position: fixed;
+}
 
+
+@keyframes gradient-animate2 {
+  to {
+    /*filter: blur(5px);*/
+    transform: scale(1.1, 1.1);
+  }
+}
+
+.diamond-gradient {
+  width: 798px;
+  height: 1121px;
+  left: -400px;
+  top: 408px;
+
+  position: absolute;
+  background: radial-gradient(50% 50% at 50% 50%, #C8FF29 0%, transparent 100%);
+  /*backdrop-filter: blur(3px);*/
+
+  transform: rotate(28.77deg);
+  animation: gradient-animate2 2s infinite alternate;
 }
 
 </style>

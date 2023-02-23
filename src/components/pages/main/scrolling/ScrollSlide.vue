@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import {handleError} from "vue";
+
 export default {
   name: "ScrollSlide",
   created() {
@@ -45,7 +47,11 @@ export default {
       }
 
       let hgParent = this.$container.getBoundingClientRect();
-      if (!this.fixed && (hgParent.y <= 0 && hgParent.y >= -(hgParent.height - window.innerHeight))) {
+      if (hgParent.y > 0) {
+        this.$carriage.style.position = "absolute";
+        this.$carriage.style.top = null;
+        this.fixed = false;
+      } else if (!this.fixed && (hgParent.y <= 0 && hgParent.y >= -(hgParent.height - window.innerHeight))) {
         this.$carriage.style.position = "fixed";
         this.$carriage.style.top = "0px";
         this.fixed = true;
@@ -58,7 +64,6 @@ export default {
         this.$carriage.style.top = (hgParent.height - window.innerHeight) + "px";
         this.fixed = false;
       }
-
     }
   }
 }
