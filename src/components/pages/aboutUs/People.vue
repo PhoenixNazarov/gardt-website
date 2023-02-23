@@ -1,9 +1,9 @@
 <template>
   <div class="people-container">
     <div class="image">
-      <img class="image-people" src="../../../assets/images/about-peoples/Svetlana.svg" v-if="image === 'Svetlana'"
+      <img class="image-people" src="../../../assets/images/about-peoples/Svetlana.png" v-if="image === 'Svetlana'"
            alt="GARDT Svetlana"/>
-      <img class="image-people" src="../../../assets/images/about-peoples/Sergey.svg" v-if="image === 'Sergey'"
+      <img class="image-people" src="../../../assets/images/about-peoples/Sergey.png" v-if="image === 'Sergey'"
            alt="GARDT Sergey"/>
       <img class="image-background" src="../../../assets/images/about-peoples/Background.svg" alt="GARDT Svetlana"/>
 

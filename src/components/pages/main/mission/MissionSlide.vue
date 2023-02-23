@@ -11,8 +11,7 @@
           экологические аспекты города”
         </h1>
       </div>
-
-      <img class="mission-image" width="570" src="../../../../assets/images/main-mission/Vector51.svg" alt="over mission">
+      <img class="mission-image" width="570" src="../../../../assets/images/main-mission/Vector51.png" alt="over mission">
     </div>
   </div>
 </template>
