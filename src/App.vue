@@ -7,7 +7,7 @@
     <div class="wrapper">
       <MainPage v-if="page === 'Main'"/>
       <AboutPage v-if="page === 'About'"/>
-      <Test v-if="page === 'Test'"/>
+      <Test v-if="page === 'Ui'"/>
     </div>
   </main>
 </template>
@@ -15,7 +15,7 @@
 <script>
 import MainPage from "@/components/pages/main/MainPage.vue";
 import AboutPage from "@/components/pages/aboutUs/AboutPage.vue";
-import Test from "@/components/pages/test/Test.vue";
+import Test from "@/components/pages/ui/UiPage.vue";
 
 export default {
   name: 'App',

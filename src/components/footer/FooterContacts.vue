@@ -1,9 +1,10 @@
 <template>
   <div class="footer-contacts-container">
     <div class="footer-contacts-text">
-      <img class="navigation-logo" src="../../assets/logo.svg" width="47" @click.prevent="changePage('Main')"
+      <img class="navigation-logo" :class="theme" src="../../assets/logo.svg" width="47"
+           @click.prevent="changePage('Main')"
            alt="gardt logo"/>
-      <h1 class="footer-contacts-text-inner">Мы проецируем природу на городскую среду</h1>
+      <h1 class="footer-contacts-text-inner" :class="theme">Мы проецируем природу на городскую среду</h1>
     </div>
     <div class="navigation">
       <div class="navigation-button">
@@ -14,9 +15,9 @@
       </div>
     </div>
     <div class="footer-contacts-names">
-      <h1 class="footer-contacts-names-inner">Дизайн: <span style="text-decoration: underline">Боровиков Юрий</span>
+      <h1 class="footer-contacts-names-inner" :class="theme">Дизайн: <span style="text-decoration: underline">Боровиков Юрий</span>
       </h1>
-<!--      <img src="../../assets/logo_black..svg" width="47" alt="Gardt logo">-->
+      <!--      <img src="../../assets/logo_black..svg" width="47" alt="Gardt logo">-->
     </div>
   </div>
 </template>
@@ -28,31 +29,6 @@ export default {
   name: "FooterContacts",
   components: {FooterNavigationButton},
   props: ["theme"],
-  methods: {
-    getElems: function () {
-      return this.$el.querySelectorAll(".footer-contacts-text-inner, .navigation-logo, .footer-contacts-names-inner");
-    },
-    clear: function () {
-      let elems = this.getElems();
-      elems.forEach((i) => i.classList.remove("dark"))
-      elems.forEach((i) => i.classList.remove("light"))
-    },
-    light: function () {
-      this.clear();
-      this.getElems().forEach((i) => i.classList.add("light"))
-    },
-    dark: function () {
-      this.clear();
-      this.getElems().forEach((i) => i.classList.add("dark"))
-    }
-  },
-  mounted() {
-    if (this.theme === 'light') {
-      this.light();
-    } else {
-      this.dark();
-    }
-  },
 }
 </script>
 

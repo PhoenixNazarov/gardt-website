@@ -2,7 +2,7 @@
   <div>
     <div class="principles-image">
       <img class="principles-image-inner" src="../../../assets/images/main-slider/1.png" alt=""
-           style="max-width: 100%; position: absolute">
+           style="width: 100%; position: absolute">
       <img src="../../../assets/images/main-slider/1.png" alt="" style="max-width: 100%; opacity: 0">
     </div>
     <div class="principles-container">

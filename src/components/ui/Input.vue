@@ -1,45 +1,61 @@
 <template>
-  <div style="">
-    <input type="text" :id="ident" name="ident"
-           :value="model"
-           :placeholder="text"/>
-    <label :for="ident">{{ text }}</label>
+  <div class="input-container">
+    <input class="input"
+           :class="theme + ' ' + status"
+           :id="ident"
+           type="text"
+           :name="ident"
+           :placeholder="text"
+           v-model="message"
+           @input="onInput"
+    />
+    <label class="label"
+           :class="theme"
+           :for="ident">
+      {{ text }}
+    </label>
   </div>
 </template>
 
 <script>
 export default {
   name: "Input",
-  props: ["text", "ident", "theme", "model"],
-  methods: {
-    getElems: function () {
-      return this.$el.querySelectorAll("input, label");
-    },
-    clear: function () {
-      let elems = this.getElems();
-      elems.forEach((i) => i.classList.remove("dark"));
-      elems.forEach((i) => i.classList.remove("light"));
-      elems.forEach((i) => i.classList.remove("danger"));
-      elems.forEach((i) => i.classList.remove("success"));
-    },
-    setTheme: function () {
-      this.clear();
-      this.getElems().forEach((i) => i.classList.add(this.theme));
+  data() {
+    return {
+      message: ''
     }
   },
-  mounted() {
-    this.setTheme();
+  props: {
+    text: String,
+    ident: String,
+    theme: String,
+    maxLength: {
+      type: Number,
+      default: 64
+    },
+    status: {
+      type: String,
+      default: "none"
+    }
   },
-  watch: {
-    theme: function (newVal, oldVal) {
-      this.setTheme();
+  methods: {
+    onInput(event) {
+      if (this.message.length > this.maxLength) {
+        this.message = this.message.trim().substring(0, this.maxLength);
+      }
+      this.$emit('message-input', this.message);
     }
   }
 }
 </script>
 
 <style scoped>
-input {
+.input-container {
+  width: 100%;
+  height: 100%;
+}
+
+.input {
   height: 100%;
   width: 100%;
   background-color: transparent;
@@ -57,12 +73,12 @@ input {
   font-size: 1.25em;
 }
 
-input::placeholder {
+.input::placeholder {
   color: transparent;
 }
 
-input:focus ~ label,
-input:not(:placeholder-shown) ~ label {
+.input:focus ~ .label,
+.input:not(:placeholder-shown) ~ .label {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -71,14 +87,14 @@ input:not(:placeholder-shown) ~ label {
   top: 15px;
 }
 
-input:focus,
-input:active,
-input:not(:placeholder-shown) {
+.input:focus,
+.input:active,
+.input:not(:placeholder-shown) {
   border-radius: 10px;
   border-color: #888888;
 }
 
-label {
+.label {
   top: 50%;
   left: 20px;
   position: absolute;
@@ -90,29 +106,29 @@ label {
 }
 
 
-input.dark {
+.input.dark {
   border-color: var(--vt-c-black);
   color: var(--vt-c-black);
 }
 
-label.dark {
+.label.dark {
   color: var(--vt-c-black);
 }
 
-input.light {
+.input.light {
   border-color: var(--vt-c-white);
   color: var(--vt-c-white);
 }
 
-label.light {
+.label.light {
   color: var(--vt-c-white);
 }
 
-input.success {
+.input.success {
   border-color: var(--vt-c-green);
 }
 
-input.danger {
+.input.danger {
   border-color: var(--vt-c-danger);
 }
 

@@ -2,29 +2,56 @@
   <div class="feedback-container">
     <div class="feedback-text">
       <PartName text="Связаться с нами" :theme="theme" class="feedback-text-title"/>
-      <h1 class="feedback-text-description">
+      <h1 class="feedback-text-description" :class="theme">
         Если вы хотите начать проект или заказать консультацию, оставьте свой номер - мы позвоним
       </h1>
     </div>
-    <div class="feedback-form" v-if="!showForm()">
-      <div class="feedback-form-raw">
-        <Input class="feedback-input" text="Имя" ident="name" :theme="nameTheme" @input="inputName"/>
-        <Input class="feedback-input feedback-input-long" text="E-mail" ident="email" :theme="mailTheme"
-               @input="inputMail"/>
-      </div>
-      <div class="feedback-form-raw">
-        <Input class="feedback-input" text="Телефон" ident="phone" :theme="phoneTheme" @input="inputPhone"/>
-        <Input class="feedback-input feedback-input-long" text="Комментарий" ident="comment" :theme="commentTheme"
-               @input="inputComment"/>
-      </div>
-      <div class="feedback-form-raw">
-        <h1 class="feedback-text-description feedback-input feedback-input-long">
-          Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования платформой
-        </h1>
-        <div class="feedback-input">
-          <Button text="Отправить" :theme="theme === 'light'?'accent':'dark'" @click.prevent="validate"/>
+    <div class="feedback-form">
+      <div class="feedback-form-write">
+        <div class="feedback-form-raw">
+          <Input class="feedback-input"
+                 text="Имя"
+                 ident="name"
+                 :theme="theme"
+                 :status="form.name.status"
+                 :max-length=16
+                 @message-input="onInputName"/>
+          <Input class="feedback-input feedback-input-long"
+                 text="E-mail"
+                 ident="email"
+                 :theme="theme"
+                 :status="form.mail.status"
+                 :max-length=32
+                 @message-input="onInputMail"/>
+        </div>
+        <div class="feedback-form-raw">
+          <Input class="feedback-input"
+                 text="Телефон"
+                 ident="phone"
+                 :status="form.phone.status"
+                 :theme="theme"
+                 :max-length=16
+                 @message-input="onInputPhone"/>
+          <Input class="feedback-input feedback-input-long"
+                 text="Комментарий"
+                 ident="comment"
+                 :status="form.comment.status"
+                 :theme="theme"
+                 :max-length=32
+                 @message-input="onInputComment"/>
+        </div>
+        <div class="feedback-form-raw">
+          <h1 class="feedback-text-description feedback-input feedback-input-long" :class="theme">
+            Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования платформой
+          </h1>
+          <div class="feedback-input">
+            <Button text="Отправить" :theme="theme === 'light'?'accent':'dark'" @click.prevent="validate"/>
+          </div>
         </div>
       </div>
+      <h1 class="feedback-text-description feedback-text-send hide" :class="theme">
+        Спасибо за заявку! Мы свяжемся с вами в ближайшее время.
+      </h1>
     </div>
   </div>
 </template>
@@ -38,97 +65,88 @@ import {setCookie, getCookie, deleteCookie} from "@/assets/js/cookie.js";
 export default {
   name: "FooterContactForm.vue",
   components: {Button, Input, PartName},
-  props: ["theme"],
+  props: {
+    theme: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
-      nameValue: "",
-      nameTheme: this.theme,
-      mailValue: "",
-      mailTheme: this.theme,
-      phoneValue: "",
-      phoneTheme: this.theme,
-      commentValue: "",
-      commentTheme: this.theme,
+      form: {
+        name: {
+          status: 'none',
+          value: ''
+        },
+        mail: {
+          status: 'none',
+          value: ''
+        },
+        phone: {
+          status: 'none',
+          value: ''
+        },
+        comment: {
+          status: 'none',
+          value: ''
+        },
+      },
       phoneRe: /^((\+7|7|8)+([0-9]){10})$/,
       mailRe: /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/
     }
   },
   methods: {
-    getElems: function () {
-      return this.$el.querySelectorAll(".feedback-text-description");
+    onInputName: function (s) {
+      this.form.name.value = s;
+      this.form.name.status = 'none';
     },
-    clear: function () {
-      let elems = this.getElems();
-      elems.forEach((i) => i.classList.remove("dark"))
-      elems.forEach((i) => i.classList.remove("light"))
+    onInputMail: function (s) {
+      this.form.mail.value = s;
+      this.form.mail.status = 'none';
     },
-    light: function () {
-      this.clear();
-      this.getElems().forEach((i) => i.classList.add("light"))
+    onInputPhone: function (s) {
+      this.form.phone.value = s;
+      this.form.phone.status = 'none';
     },
-    dark: function () {
-      this.clear();
-      this.getElems().forEach((i) => i.classList.add("dark"))
-    },
-
-    inputName: function (event) {
-      if (event.target.value.length >= 16) {
-        event.target.value = event.target.value.trim().substring(0, 16);
-      }
-      this.nameTheme = this.theme;
-      this.nameValue = event.target.value;
-    },
-    inputMail: function (event) {
-      if (event.target.value.length >= 26) {
-        event.target.value = event.target.value.trim().substring(0, 26);
-      }
-      this.mailTheme = this.theme;
-      this.mailValue = event.target.value;
-    },
-    inputPhone: function (event) {
-      if (event.target.value.length >= 16) {
-        event.target.value = event.target.value.trim().substring(0, 16);
-      }
-      this.phoneTheme = this.theme;
-      this.phoneValue = event.target.value;
-    },
-    inputComment: function (event) {
-      if (event.target.value.length >= 26) {
-        event.target.value = event.target.value.trim().substring(0, 26);
-      }
-      this.commentTheme = this.theme;
-      this.commentValue = event.target.value;
+    onInputComment: function (s) {
+      this.form.comment.value = s;
+      this.form.comment.status = 'none';
     },
     validate: function (event) {
       let error = false;
-      if (this.nameValue.trim().length < 4) {
-        this.nameTheme = 'danger';
-        error=true;
+      if (this.form.name.value.trim().length < 4) {
+        this.form.name.status = 'danger';
+        error = true;
       }
-      if (!this.phoneRe.test(this.phoneValue)) {
-        this.phoneTheme = 'danger';
-        error=true;
+      if (!this.phoneRe.test(this.form.phone.value)) {
+        this.form.phone.status = 'danger';
+        error = true;
       }
-      if (!this.mailRe.test(this.mailValue)) {
-        this.mailTheme = 'danger';
-        error=true;
+      if (!this.mailRe.test(this.form.mail.value)) {
+        this.form.mail.status = 'danger';
+        error = true;
       }
 
       if (!error) {
         if (getCookie("contact") === undefined) {
-          setCookie("contact", "1", {'max-age': 60 * 60})
+          setCookie("contact", "1", {'max-age': 60 * 60});
+          this.hideForm();
         }
       }
     },
+    hideForm: function (smooth) {
+      let form = this.$el.querySelector(".feedback-form-write")
+      let status = this.$el.querySelector(".feedback-text-send")
+
+      form.classList.add('hide');
+      status.classList.remove('hide');
+    },
     showForm: function () {
-      return getCookie('contact') !== undefined
-    }
-  },
-  mounted() {
-    if (this.theme === 'light') {
-      this.light();
-    } else {
-      this.dark();
+      let form = this.$el.querySelector(".feedback-form-write")
+      let status = this.$el.querySelector(".feedback-text-send")
+
+      form.classList.remove('hide');
+      status.classList.add('hide');
     }
   },
 }
@@ -179,9 +197,30 @@ export default {
   color: var(--vt-c-black);
 }
 
+.feedback-form {
+  opacity: 1;
+}
 
 .feedback-text-description.light {
   color: var(--vt-c-white);
+}
+
+.feedback-text-send {
+  position: absolute;
+  top: calc(50% - 1em);
+  left: 20px;
+  transition: 500ms;
+  z-index: 0;
+}
+
+.feedback-form-write {
+  transition: 500ms;
+  z-index: 1;
+}
+
+
+.hide {
+  opacity: 0;
 }
 
 </style>

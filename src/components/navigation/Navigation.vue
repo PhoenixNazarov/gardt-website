@@ -4,7 +4,7 @@
       <img class="navigation-logo" src="../../assets/logo.svg" @click.prevent="changePage('Main')" alt="gardt logo"/>
     </div>
     <div>
-      <NavigationButton text="Блог" :theme="theme" class="navigation-button" @click.prevent="changePage('Test')"/>
+      <NavigationButton text="Блог" :theme="theme" class="navigation-button" @click.prevent="changePage('Ui')"/>
       <NavigationButton text="О нас" :theme="theme" class="navigation-button" @click.prevent="changePage('About')"/>
       <NavigationButton text="Портфолио" :theme="theme" class="navigation-button"/>
       <NavigationButton text="Контакты" :theme="theme" class="navigation-button" @click.prevent="toDownPage()"/>

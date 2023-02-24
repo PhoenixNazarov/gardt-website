@@ -1,7 +1,10 @@
 <template>
   <div class="btn-container">
-    <button class="btn">
-      <h1 class="btn-text">{{ text }}</h1>
+    <button
+        class="btn"
+        :class="theme">
+      <h1 class="btn-text"
+          :class="theme">{{ text }}</h1>
     </button>
   </div>
 </template>
@@ -10,47 +13,6 @@
 export default {
   name: "Button",
   props: ["text", "theme"],
-  methods: {
-    getElems: function () {
-      return this.$el.querySelectorAll(".btn, .btn-text");
-    },
-    clear: function() {
-      let elems = this.getElems();
-      elems.forEach((i) => i.classList.remove("dark"));
-      elems.forEach((i) => i.classList.remove("light"));
-      elems.forEach((i) => i.classList.remove("accent"));
-
-    },
-    light: function () {
-      this.clear();
-      this.getElems().forEach((i) => i.classList.add("light"))
-    },
-    dark: function () {
-      this.clear();
-      this.getElems().forEach((i) => i.classList.add("dark"))
-    },
-    accent: function () {
-      this.clear();
-      this.getElems().forEach((i) => i.classList.add("accent"))
-    },
-    setTheme: function () {
-      if (this.theme === 'light') {
-        this.light();
-      } else if (this.theme === 'accent') {
-        this.accent();
-      } else {
-        this.dark();
-      }
-    }
-  },
-  mounted() {
-    this.setTheme();
-  },
-  watch: {
-    theme: function (newVal, oldVal) {
-      this.setTheme();
-    }
-  }
 }
 </script>
 
@@ -59,6 +21,7 @@ export default {
   width: 100%;
   height: 100%;
 }
+
 .btn {
   padding: 0;
   width: 100%;
