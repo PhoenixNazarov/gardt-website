@@ -3,7 +3,7 @@
     <div class="principles-image">
       <img class="principles-image-inner" src="../../../assets/images/main-slider/1.png" alt=""
            style="width: 100%; position: absolute">
-      <img src="../../../assets/images/main-slider/1.png" alt="" style="max-width: 100%; opacity: 0">
+      <img src="../../../assets/images/main-slider/1.png" alt="" style="max-width: 100%; opacity: 0; visibility: hidden;">
     </div>
     <div class="principles-container">
       <div class="main-outside">
@@ -64,8 +64,7 @@ export default {
         this.$el.querySelector(".principles-image-inner").style.position = "absolute";
         this.$el.querySelector(".principles-image-inner").style.top = null;
         this.fixed = false;
-      }
-      if (this.show && hgParent.y + hgParent.height + 100 < 0) {
+      } else if (this.show && hgParent.y + hgParent.height + 100 < 0) {
         this.$el.querySelector(".principles-image-inner").style.display = "none";
         this.show = false;
       } else if (!this.show && hgParent.y + hgParent.height + 100 > 0) {

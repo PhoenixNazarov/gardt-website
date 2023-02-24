@@ -2,7 +2,7 @@
   <div>
     <div class="mission-slide">
       <div class="mission-text main-outside">
-        <PartName class="mission-title" text="Наша миссия" theme="dark"/>
+        <PartName class="mission-title" text="Наша миссия" theme="dark" :show=15 />
         <h1 class="mission-description">
           “Мы проектируем точечные<br>
           ландшафтные решения для<br>
@@ -35,7 +35,6 @@ export default {
       }
       let hgParent = this.$mission.getBoundingClientRect();
       if (hgParent.y - window.innerHeight <= -200) {
-        this.$el.querySelector(".mission-title").classList.add("mission-title-animate");
         this.$el.querySelector(".mission-image").classList.add("mission-image-animate");
         this.$el.querySelector(".mission-description").classList.add("mission-description-animate");
 
@@ -56,16 +55,6 @@ export default {
   z-index: 1;
 }
 
-@keyframes title-animate {
-  from {
-    opacity: 0;
-    transform: translateX(-200px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
 
 @keyframes description-animate {
   from {
@@ -102,10 +91,6 @@ export default {
 
 
 @media (prefers-reduced-motion: no-preference) {
-  .mission-title-animate {
-    animation: title-animate 1s forwards;
-  }
-
   .mission-description-animate {
     animation: description-animate 1s forwards;
   }
@@ -116,12 +101,6 @@ export default {
 }
 
 .mission-title {
-  /* identical to box height */
-  color: #02001A;
-  opacity: 0;
-
-  transform: matrix(1, 0, 0, 1, -10, 0);
-
   margin-bottom: 70px;
 }
 

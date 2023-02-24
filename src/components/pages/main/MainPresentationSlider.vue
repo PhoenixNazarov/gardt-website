@@ -4,7 +4,6 @@
       <div class="main-slider-image"></div>
       <div class="main-slider-image"></div>
       <div class="main-slider-image"></div>
-      <div class="main-slider-image"></div>
     </div>
   </div>
 </template>
@@ -77,11 +76,6 @@ export default {
 .main-slider-image:nth-child(2) {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 24.81%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
   url("../../../assets/images/main-slider/2.jpg");
-}
-
-.main-slider-image:nth-child(3) {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 24.81%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-  url("../../../assets/images/main-slider/3.jpg");
 }
 
 .main-slider-image:nth-child(4) {

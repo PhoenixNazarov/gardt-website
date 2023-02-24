@@ -94,7 +94,7 @@ export default {
 
 <style scoped>
 .main-writer {
-  top: 150px;
+  top: calc(150px);
 
   position: absolute;
   z-index: 10;

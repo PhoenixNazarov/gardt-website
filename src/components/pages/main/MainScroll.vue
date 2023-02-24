@@ -75,7 +75,7 @@ export default {
 
 <style scoped>
 .main-scroll-container {
-  min-height: 170vh;
+  min-height: 120vh;
   background-color: var(--vt-c-white);
 }
 
@@ -100,7 +100,7 @@ export default {
 }
 
 .main-scroll-outside {
-  height: 70vh;
+  height: 20vh;
 }
 
 </style>

@@ -93,7 +93,7 @@ import Navigation from "@/components/navigation/Navigation.vue";
 import Button from "@/components/ui/Button.vue";
 
 export default {
-  name: "Test",
+  name: "UiPage",
   components: {Button, Navigation, Input},
   data() {
     return {

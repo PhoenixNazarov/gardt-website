@@ -1,13 +1,25 @@
 <template>
   <div class="navigation-container">
     <div class="navigation-logo-container">
-      <img class="navigation-logo" src="../../assets/logo.svg" @click.prevent="changePage('Main')" alt="gardt logo"/>
+      <img class="navigation-logo" :class="theme" src="../../assets/logo.svg" @click.prevent="changePage('Main')" alt="gardt logo"/>
     </div>
     <div>
-      <NavigationButton text="Блог" :theme="theme" class="navigation-button" @click.prevent="changePage('Ui')"/>
-      <NavigationButton text="О нас" :theme="theme" class="navigation-button" @click.prevent="changePage('About')"/>
-      <NavigationButton text="Портфолио" :theme="theme" class="navigation-button"/>
-      <NavigationButton text="Контакты" :theme="theme" class="navigation-button" @click.prevent="toDownPage()"/>
+      <NavigationButton text="Блог"
+                        :theme="theme"
+                        class="navigation-button"
+                        @click.prevent="changePage('Ui')"/>
+      <NavigationButton text="О нас"
+                        :theme="theme"
+                        class="navigation-button"
+                        @click.prevent="changePage('About')"/>
+      <NavigationButton text="Портфолио"
+                        :theme="theme"
+                        class="navigation-button"
+                        @click.prevent="changePage('Portfolio')"/>
+      <NavigationButton text="Контакты"
+                        :theme="theme"
+                        class="navigation-button"
+                        @click.prevent="toDownPage()"/>
     </div>
     <div class="navigation-button-inner">
       <Button text="Оставить заявку" :theme="theme" @click.prevent="toDownPage()"/>
@@ -30,35 +42,12 @@ export default {
     },
     toDownPage: function () {
       window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
-    },
-    light: function () {
-      this.$el.querySelector(".navigation-logo").style.filter = 'invert(0)';
-    },
-    dark: function () {
-      this.$el.querySelector(".navigation-logo").style.filter = 'invert(1)';
-    }
-  },
-  mounted() {
-    if (this.theme === 'light') {
-      this.light();
-    } else {
-      this.dark();
-    }
-  },
-  watch: {
-    theme: function (newVal, oldVal) {
-      if (newVal === 'light') {
-        this.light();
-      } else {
-        this.dark();
-      }
     }
   }
 }
 </script>
 
 <style scoped>
-
 
 
 @media (max-width: 1450px) {
@@ -87,6 +76,7 @@ export default {
   .navigation-button:not(:last-child) {
     margin-right: 60px;
   }
+
   .navigation-button-inner {
     width: 250px;
     height: 50px;
@@ -98,6 +88,7 @@ export default {
   .navigation-button:not(:last-child) {
     margin-right: 15px;
   }
+
   .navigation-button-inner {
     width: 150px;
     height: 50px;
@@ -106,6 +97,10 @@ export default {
 
 .navigation-logo {
   transition: 500ms;
+}
+
+.navigation-logo.dark {
+  filter: invert(1);
 }
 
 </style>

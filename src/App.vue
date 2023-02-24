@@ -7,7 +7,8 @@
     <div class="wrapper">
       <MainPage v-if="page === 'Main'"/>
       <AboutPage v-if="page === 'About'"/>
-      <Test v-if="page === 'Ui'"/>
+      <UiPage v-if="page === 'Ui'"/>
+      <PortfolioPage v-if="page === 'Portfolio'"/>
     </div>
   </main>
 </template>
@@ -15,7 +16,8 @@
 <script>
 import MainPage from "@/components/pages/main/MainPage.vue";
 import AboutPage from "@/components/pages/aboutUs/AboutPage.vue";
-import Test from "@/components/pages/ui/UiPage.vue";
+import UiPage from "@/components/pages/ui/UiPage.vue";
+import PortfolioPage from "@/components/pages/portfolio/PortfolioPage.vue";
 
 export default {
   name: 'App',
@@ -24,11 +26,14 @@ export default {
       page: "Main"
     }
   },
-  components: {Test, AboutPage, MainPage},
+  components: {PortfolioPage, UiPage, AboutPage, MainPage},
   beforeCreate() {
     this.$root.onChangePage = function (page) {
       this.page = page;
     }
+    window.addEventListener('scroll', (e) => {
+      document.body.style.cssText=`--scrollTop: ${window.scrollY}px`;
+    })
   }
 }
 </script>

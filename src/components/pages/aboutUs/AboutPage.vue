@@ -12,6 +12,7 @@
     <div class="main-outside">
       <PartName class="bottom-outside-low"
                 text="Основатели"
+                :show=15
                 theme="light"/>
       <AboutPeople class="bottom-outside"
                    name="Светлана ГАРДТ"

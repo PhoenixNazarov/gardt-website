@@ -1,24 +1,73 @@
 <template>
-  <div class="part-name">
-    <nav class="part-second-name"><span style="color: var(--vt-c-green); padding-right: 20px" class="part-first-name">—</span>{{ text }}</nav>
+  <div>
+    <div class="part-name">
+      <h1 class="part-second-name" :class="theme">
+      <span style="color: var(--vt-c-green); padding-right: 20px"
+            class="part-first-name">—</span>{{ text }}
+      </h1>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "PartName",
-  props: ["text", "theme"],
+  props: {
+    text: String,
+    theme: {
+      type: String,
+      default: 'light'
+    },
+    show: {
+      type: Number,
+      default: -1
+    }
+  },
+  methods: {
+    waitShow: function (e) {
+      let $part = this.$el.querySelector('.part-name');
+      let partY = $part.getBoundingClientRect().y;
+      if ((partY - window.innerHeight * (100 - this.show) / 100) <= 0) {
+        $part.classList.add("play-show")
+        document.removeEventListener('scroll', this.waitShow);
+      }
+    }
+  },
   mounted() {
-    if (this.theme === "light") {
-      this.$el.querySelector('.part-second-name').classList.add("part-light");
-    } else {
-      this.$el.querySelector('.part-second-name').classList.add("part-dark");
+    if (this.show !== -1) {
+      this.$el.querySelector('.part-name').classList.add("hide");
+      document.addEventListener('scroll', this.waitShow)
+    }
+  },
+  unmounted() {
+    if (this.listener !== undefined) {
+      document.removeEventListener('scroll', this.waitShow)
     }
   }
 }
 </script>
 
 <style scoped>
+@keyframes title-animate {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.hide {
+  opacity: 0;
+  transform: translateX(-200px);
+}
+
+.play-show {
+  animation: title-animate 1s forwards;
+}
+
 .part-name {
   display: flex;
 }
@@ -31,11 +80,11 @@ export default {
   line-height: 1.3em;
 }
 
-.part-light {
+.part-second-name.light {
   color: var(--vt-c-white)
 }
 
-.part-dark {
+.part-second-name.dark {
   color: var(--vt-c-black)
 }
 
