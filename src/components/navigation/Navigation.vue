@@ -1,16 +1,16 @@
 <template>
   <div class="navigation-container">
-    <div style="width: 250px">
+    <div class="navigation-logo-container">
       <img class="navigation-logo" src="../../assets/logo.svg" @click.prevent="changePage('Main')" alt="gardt logo"/>
     </div>
     <div>
-      <NavigationButton text="Блог" :theme="theme" class="navigation-button" @click.prevent="changePage('Main1')"/>
+      <NavigationButton text="Блог" :theme="theme" class="navigation-button" @click.prevent="changePage('Test')"/>
       <NavigationButton text="О нас" :theme="theme" class="navigation-button" @click.prevent="changePage('About')"/>
       <NavigationButton text="Портфолио" :theme="theme" class="navigation-button"/>
       <NavigationButton text="Контакты" :theme="theme" class="navigation-button" @click.prevent="toDownPage()"/>
     </div>
-    <div>
-      <Button text="Оставить заявку" :theme="theme" style="width: 250px; height: 50px" @click.prevent="toDownPage()"/>
+    <div class="navigation-button-inner">
+      <Button text="Оставить заявку" :theme="theme" @click.prevent="toDownPage()"/>
     </div>
   </div>
 </template>
@@ -58,6 +58,22 @@ export default {
 </script>
 
 <style scoped>
+
+
+
+@media (max-width: 1450px) {
+  .navigation-logo-container {
+    /*width: 250px;*/
+  }
+}
+
+@media (min-width: 1450px) {
+  .navigation-logo-container {
+    width: 250px;
+  }
+}
+
+
 .navigation-container {
   padding: 0;
   min-height: 90px;
@@ -66,8 +82,26 @@ export default {
   align-items: center;
 }
 
-.navigation-button:not(:last-child) {
-  margin-right: 60px;
+
+@media (min-width: 1000px) {
+  .navigation-button:not(:last-child) {
+    margin-right: 60px;
+  }
+  .navigation-button-inner {
+    width: 250px;
+    height: 50px;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .navigation-button:not(:last-child) {
+    margin-right: 15px;
+  }
+  .navigation-button-inner {
+    width: 150px;
+    height: 50px;
+  }
 }
 
 .navigation-logo {

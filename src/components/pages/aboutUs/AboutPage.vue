@@ -7,17 +7,24 @@
       <Navigation theme="light" class="navigation main-outside"/>
     </div>
     <div>
-      <Presentation class="main-outside bottom-outside"/>
+      <AboutPresentation class="main-outside bottom-outside"/>
     </div>
     <div class="main-outside">
-      <PartName class="bottom-outside-low" text="Основатели" theme="light"/>
-      <People class="bottom-outside" name="Светлана ГАРДТ" job="Основатель, генеральный директор" image="Svetlana"
-              description="“Мы создаем пространства, в которых вы хотите жить. Создавая проект,
+      <PartName class="bottom-outside-low"
+                text="Основатели"
+                theme="light"/>
+      <AboutPeople class="bottom-outside"
+                   name="Светлана ГАРДТ"
+                   job="Основатель, генеральный директор"
+                   image="Svetlana"
+                   description="“Мы создаем пространства, в которых вы хотите жить. Создавая проект,
               мы ставим во главу угла человека и его потребности. Заботясь о здоровье наших клиентов
               и окружающей среде, мы предлагаем уникальные решения, основанные на естественных подходах.”"/>
-
-      <People class="bottom-outside" name="Сергей ВАСИНГИН" job="Соучредитель" image="Sergey"
-              description="“Наши ландшафты создают выгодное преимущество для вашей собственности.
+      <AboutPeople class="bottom-outside"
+                   name="Сергей ВАСИНГИН"
+                   job="Соучредитель"
+                   image="Sergey"
+                   description="“Наши ландшафты создают выгодное преимущество для вашей собственности.
               Для наших клиентов мы предлагаем уникальные проекты с учетом экономической эффективности, помогаем инвестировать в ландшафтные
               проекты, которые принесут прибыль в будущем. Предоставляя полный цикл проекта “под ключ”, мы уважаем время наших клиентов”"/>
     </div>
@@ -29,14 +36,14 @@
 
 <script>
 import Navigation from "@/components/navigation/Navigation.vue";
-import Presentation from "@/components/pages/aboutUs/Presentation.vue";
+import AboutPresentation from "@/components/pages/aboutUs/AboutPresentation.vue";
 import PartName from "@/components/ui/PartName.vue";
-import People from "@/components/pages/aboutUs/People.vue";
+import AboutPeople from "@/components/pages/aboutUs/AboutPeople.vue";
 import Footer from "@/components/footer/Footer.vue";
 
 export default {
   name: "AboutPage",
-  components: {Footer, People, PartName, Presentation, Navigation}
+  components: {Footer, AboutPeople, PartName, AboutPresentation, Navigation}
 }
 </script>
 

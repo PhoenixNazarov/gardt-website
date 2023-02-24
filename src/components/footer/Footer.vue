@@ -1,8 +1,8 @@
 <template>
   <div class="footer-container">
-    <ContactForm class="footer-contact-form" :theme="theme"/>
+    <FooterContactForm class="footer-contact-form" :theme="theme"/>
     <div class="hr"></div>
-    <Contacts :theme="theme"/>
+    <FooterContacts :theme="theme"/>
     <div class="hr"></div>
     <div class="footer-info">
       <h1 class="footer-artifact">© 2022, GARDT Landscape Architects</h1>
@@ -11,12 +11,12 @@
 </template>
 
 <script>
-import ContactForm from "@/components/footer/ContactForm.vue";
-import Contacts from "@/components/footer/Contacts.vue";
+import FooterContactForm from "@/components/footer/FooterContactForm.vue";
+import FooterContacts from "@/components/footer/FooterContacts.vue";
 
 export default {
   name: "Footer",
-  components: {Contacts, ContactForm},
+  components: {FooterContacts, FooterContactForm},
   props: ["theme"],
   methods: {
     getElems: function () {

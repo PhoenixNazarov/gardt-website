@@ -5,19 +5,19 @@
     </div>
 
     <div class="pres-slide">
-      <PresentationSlide/>
+      <MainPresentation/>
     </div>
     <div>
-      <ScrollSlide/>
+      <MainScroll/>
     </div>
     <div style="margin-bottom: 20em;">
-      <MissionSlide/>
+      <MainMission/>
     </div>
     <div style="background-color: var(--vt-c-white)">
-      <PrinciplesSlide/>
+      <MainPrinciples/>
     </div>
     <div style="background-color: var(--vt-c-white); margin-bottom: 20em;">
-      <ProjectSlide/>
+      <MainProject/>
     </div>
     <div style="background-color: var(--vt-c-white)">
       <Footer class="main-outside" theme="dark"/>
@@ -26,16 +26,17 @@
 </template>
 
 <script>
-import PresentationSlide from "@/components/pages/main/presentation/PresentationSlide.vue";
-import ScrollSlide from "@/components/pages/main/scrolling/ScrollSlide.vue";
-import MissionSlide from "@/components/pages/main/mission/MissionSlide.vue";
-import PrinciplesSlide from "@/components/pages/main/principles/PrinciplesSlide.vue";
-import ProjectSlide from "@/components/pages/main/projects/ProjectSlide.vue";
+import MainPresentation from "@/components/pages/main/MainPresentation.vue";
+import MainScroll from "@/components/pages/main/MainScroll.vue";
+import MainMission from "@/components/pages/main/MainMission.vue";
+import MainPrinciples from "@/components/pages/main/MainPrinciples.vue";
+import MainProject from "@/components/pages/main/MainProject.vue";
 import Footer from "@/components/footer/Footer.vue";
 import Navigation from "@/components/navigation/Navigation.vue";
 
 export default {
   name: "MainPage",
+  components: {Navigation, Footer, MainProject, MainPrinciples, MainMission, MainScroll, MainPresentation},
   data() {
     return {
       theme: "light",
@@ -57,8 +58,7 @@ export default {
         this.theme = "light"
       }
     }
-  },
-  components: {Navigation, Footer, ProjectSlide, PrinciplesSlide, MissionSlide, ScrollSlide, PresentationSlide}
+  }
 }
 </script>
 

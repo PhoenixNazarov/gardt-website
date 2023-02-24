@@ -7,6 +7,7 @@
     <div class="wrapper">
       <MainPage v-if="page === 'Main'"/>
       <AboutPage v-if="page === 'About'"/>
+      <Test v-if="page === 'Test'"/>
     </div>
   </main>
 </template>
@@ -14,6 +15,7 @@
 <script>
 import MainPage from "@/components/pages/main/MainPage.vue";
 import AboutPage from "@/components/pages/aboutUs/AboutPage.vue";
+import Test from "@/components/pages/test/Test.vue";
 
 export default {
   name: 'App',
@@ -22,7 +24,7 @@ export default {
       page: "Main"
     }
   },
-  components: {AboutPage, MainPage},
+  components: {Test, AboutPage, MainPage},
   beforeCreate() {
     this.$root.onChangePage = function (page) {
       this.page = page;
