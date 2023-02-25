@@ -19,7 +19,7 @@ import MainPage from "@/components/pages/main/MainPage.vue";
 import AboutPage from "@/components/pages/aboutUs/AboutPage.vue";
 import UiPage from "@/components/pages/ui/UiPage.vue";
 import PortfolioPage from "@/components/pages/portfolio/PortfolioPage.vue";
-import MainPageLight from "@/components/pages/main2/MainPage.vue";
+import MainPageLight from "@/components/pages/mainLight/MainPage.vue";
 
 export default {
   name: 'App',

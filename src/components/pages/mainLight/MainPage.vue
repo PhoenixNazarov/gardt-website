@@ -26,11 +26,11 @@
 </template>
 
 <script>
-import MainPresentation from "@/components/pages/main2/MainPresentation.vue";
-import MainScroll from "@/components/pages/main2/MainScroll.vue";
-import MainMission from "@/components/pages/main2/MainMission.vue";
-import MainPrinciples from "@/components/pages/main2/MainPrinciples.vue";
-import MainProject from "@/components/pages/main2/MainProject.vue";
+import MainPresentation from "@/components/pages/mainLight/MainPresentation.vue";
+import MainScroll from "@/components/pages/mainLight/MainScroll.vue";
+import MainMission from "@/components/pages/mainLight/MainMission.vue";
+import MainPrinciples from "@/components/pages/mainLight/MainPrinciples.vue";
+import MainProject from "@/components/pages/mainLight/MainProject.vue";
 import Footer from "@/components/footer/Footer.vue";
 import Navigation from "@/components/navigation/Navigation.vue";
 

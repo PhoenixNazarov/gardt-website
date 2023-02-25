@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import MainPresentationSlider from "@/components/pages/main2/MainPresentationSlider.vue";
-import MainPresentationWriter from "@/components/pages/main2/MainPresentationWriter.vue";
+import MainPresentationSlider from "@/components/pages/mainLight/MainPresentationSlider.vue";
+import MainPresentationWriter from "@/components/pages/mainLight/MainPresentationWriter.vue";
 
 export default {
   name: "MainPresentation",

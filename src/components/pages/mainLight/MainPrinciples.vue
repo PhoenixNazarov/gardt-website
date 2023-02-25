@@ -37,7 +37,7 @@
 
 <script>
 import PartName from "@/components/ui/PartName.vue";
-import MainPrinciplesItem from "@/components/pages/main2/MainPrinciplesItem.vue";
+import MainPrinciplesItem from "@/components/pages/mainLight/MainPrinciplesItem.vue";
 
 export default {
   name: "MainPrinciples",

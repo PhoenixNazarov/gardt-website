@@ -19,7 +19,7 @@
 
 <script>
 import PartName from "@/components/ui/PartName.vue";
-import MainProjectItem from "@/components/pages/main2/MainProjectItem.vue";
+import MainProjectItem from "@/components/pages/mainLight/MainProjectItem.vue";
 
 export default {
   name: "MainProject",
