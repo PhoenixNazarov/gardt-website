@@ -1,8 +1,9 @@
 <template>
-  <div class="drop-photo-container">
-    <div class="drop-photo-image"></div>
-    <h1 class="drop-photo-text">Функциональное пространство с обеденной зоной</h1>
-
+  <div>
+    <div class="drop-photo-container">
+      <div class="drop-photo-image"></div>
+      <h1 class="drop-photo-text">Функциональное пространство с обеденной зоной</h1>
+    </div>
   </div>
 </template>
 
@@ -10,6 +11,19 @@
 
 export default {
   name: "AnimationDropPhoto",
+  mounted() {
+    let bodyRect = document.body.getBoundingClientRect();
+    let elemRect = this.$el.querySelector(".drop-photo-image")
+    let offset   = elemRect.getBoundingClientRect().top - bodyRect.top;
+
+    window.addEventListener("scroll", (e) => {
+      let offset = this.$el.querySelector(".drop-photo-container").getBoundingClientRect();
+      if (offset.y < 0) {
+        this.$el.querySelector(".drop-photo-image").classList.add("play-photo")
+        this.$el.querySelector(".drop-photo-text").classList.add("play-text")
+      }
+    })
+  }
 }
 </script>
 
@@ -19,7 +33,7 @@ export default {
   background-size: cover;
   background-position: center;
   background-image: url("../../assets/images/main-slider/1.jpg");
-  animation: drop-animation 4.5s infinite;
+  opacity: 1;
 }
 
 .drop-photo-text {
@@ -34,12 +48,21 @@ export default {
   font-size: 6em;
   line-height: 1.15em;
   color: var(--vt-c-white);
-  animation: drop-text-animation 4.5s infinite;
+  opacity: 0;
 }
+
+.play-photo {
+  animation: drop-animation 4.5s forwards;
+}
+
+.play-text {
+  animation: drop-text-animation 4.5s forwards;
+}
+
 
 @keyframes drop-animation {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
   22% {
     transform: scale(0.6);

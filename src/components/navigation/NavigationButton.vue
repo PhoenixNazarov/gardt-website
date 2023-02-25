@@ -58,6 +58,7 @@ export default {
   text-transform: uppercase;
   color: #02001A;
   transition: 500ms;
+  cursor: pointer;
 }
 
 .btn-navigation-underline {

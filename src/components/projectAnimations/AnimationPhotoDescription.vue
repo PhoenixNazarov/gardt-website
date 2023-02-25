@@ -10,17 +10,6 @@
 <script>
 export default {
   name: "AnimationPhotoDescription",
-  mounted() {
-    let $image = this.$el.querySelector('.drop-photo-image');
-    let $body = document.body.getBoundingClientRect();
-    let offset = $image.getBoundingClientRect().top - $body.top
-
-
-    $image.style.position = 'fixed';
-    $image.style.top = '0';
-    // offset=1200;
-    $image.style.transform = `translateX(clamp(-100vw, calc( var(--scrollTop) - ${offset}px ), 200px)`
-  }
 }
 </script>
 
@@ -31,9 +20,9 @@ export default {
   background-size: cover;
   background-position: center;
   background-image: url("../../assets/images/main-slider/1.jpg");
-  /*animation: drop-animation 5s infinite;*/
-  /*transform-origin: bottom left;*/
-  /*transform: translate(min(calc(var(--scrollTop)), 200px), 100px);*/
+  animation: drop-animation 5s infinite;
+  transform-origin: bottom left;
+  transform: translateX(-100vw);
 }
 
 .drop-photo-text {
@@ -53,35 +42,25 @@ export default {
 }
 
 @keyframes drop-animation {
-  /*0% {*/
-  /*  opacity: 0;*/
-  /*  transform-origin: center;*/
-  /*}*/
-  /*22% {*/
-  /*  transform: scale(0.6);*/
-  /*  opacity: 1;*/
-  /*  transform-origin: center;*/
-  /*}*/
+  0% {
+    opacity: 0;
+    transform: scale(1);
+    margin-left: 0;
+  }
   33% {
-    margin-left: 20vw;
-    /*transform: scale(0.6) translate(50%, calc(-50%));*/
     opacity: 1;
-    /*filter: saturate(100%);*/
-    transform-origin: bottom left;
+    transform: scale(1);
+    margin-left: 10vw;
   }
   66% {
-    margin-left: 20vw;
-    /*transform: scale(0.6) translate(50%, calc(-50%));*/
     opacity: 1;
-    /*filter: saturate(100%);*/
-    transform-origin: bottom left;
-    transform: scale(1);
+    transform: scale(0.6);
+    margin-left: 10vw;
   }
   100% {
-    margin-left: 20vw;
-    transform: scale(0.5);
-
-    /*filter: saturate(70%);*/
+    opacity: 1;
+    transform: scale(0.6);
+    margin-left: 10vw;
   }
 }
 

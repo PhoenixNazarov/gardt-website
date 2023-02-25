@@ -48,6 +48,16 @@ export default {
 </script>
 
 <style scoped>
+.navigation-logo {
+  cursor: pointer;
+}
+.navigation-logo-container {
+  transition: 500ms;
+}
+.navigation-logo-container:hover {
+  transform: scale(1.1);
+  transform-origin: center center;
+}
 
 
 @media (max-width: 1450px) {
@@ -70,7 +80,6 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-
 
 @media (min-width: 1000px) {
   .navigation-button:not(:last-child) {
