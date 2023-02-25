@@ -68,7 +68,7 @@ export default {
   font-weight: 600;
   font-size: 2.25em;
   line-height: 44px;
-  color: #02001A;
+  color: var(--vt-c-white);
 }
 
 .principles-item-description {
