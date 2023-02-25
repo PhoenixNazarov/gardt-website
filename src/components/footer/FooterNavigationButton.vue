@@ -22,6 +22,7 @@ export default {
 }
 
 .btn-navigation {
+  cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;

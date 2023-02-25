@@ -1,7 +1,7 @@
 <template>
-  <div style="background-color: var(--vt-c-white)">
+  <div style="background-color: var(--vt-c-black)">
     <div>
-      <Navigation id="navigation" :theme="this.theme" class="main-outside"/>
+      <Navigation id="navigation" :theme="this.theme"/>
     </div>
 
     <div class="pres-slide">
@@ -13,14 +13,14 @@
     <div style="margin-bottom: 20em;">
       <MainMission/>
     </div>
-    <div style="background-color: var(--vt-c-white)">
+    <div style="background-color: var(--vt-c-black)">
       <MainPrinciples/>
     </div>
-    <div style="background-color: var(--vt-c-white); margin-bottom: 20em;">
+    <div style="background-color: var(--vt-c-black); margin-bottom: 20em;">
       <MainProject/>
     </div>
-    <div style="background-color: var(--vt-c-white)">
-      <Footer class="main-outside" theme="dark"/>
+    <div style="background-color: var(--vt-c-black)">
+      <Footer class="main-outside" theme="light"/>
     </div>
   </div>
 </template>
@@ -52,11 +52,11 @@ export default {
     handleScroll(event) {
       let pres = this.$el.querySelector(".pres-slide").getBoundingClientRect();
       let offset = pres.y + pres.height;
-      if (offset < 0) {
-        this.theme = "dark"
-      } else {
-        this.theme = "light"
-      }
+      // if (offset < 0) {
+      //   this.theme = "dark"
+      // } else {
+      //   this.theme = "light"
+      // }
     }
   }
 }

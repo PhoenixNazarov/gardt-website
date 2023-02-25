@@ -8,10 +8,14 @@
     </div>
     <div class="navigation">
       <div class="navigation-button">
-        <FooterNavigationButton text="Блог" class="navigation-button-item" :theme="theme"/>
-        <FooterNavigationButton text="О нас" class="navigation-button-item" :theme="theme"/>
-        <FooterNavigationButton text="Портфолио" class="navigation-button-item" :theme="theme"/>
-        <FooterNavigationButton text="Контакты" class="navigation-button-item" :theme="theme"/>
+        <FooterNavigationButton text="Блог" class="navigation-button-item" :theme="theme"
+                                @click.prevent="changePage('Blog')"/>
+        <FooterNavigationButton text="О нас" class="navigation-button-item" :theme="theme"
+                                @click.prevent="changePage('About')"/>
+        <FooterNavigationButton text="Портфолио" class="navigation-button-item" :theme="theme"
+                                @click.prevent="changePage('Portfolio')"/>
+        <FooterNavigationButton text="Контакты" class="navigation-button-item" :theme="theme"
+                                @click.prevent="toDownPage()"/>
       </div>
     </div>
     <div class="footer-contacts-names">
@@ -29,6 +33,14 @@ export default {
   name: "FooterContacts",
   components: {FooterNavigationButton},
   props: ["theme"],
+  methods: {
+    changePage: function (page) {
+      this.$root.onChangePage(page);
+    },
+    toDownPage: function () {
+      window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+    }
+  }
 }
 </script>
 

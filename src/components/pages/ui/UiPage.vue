@@ -1,10 +1,10 @@
 <template>
   <div class="white">
     <div>
-      <Navigation theme="dark" class="main-outside"/>
+      <Navigation theme="dark" class=""/>
     </div>
     <div class="black">
-      <Navigation theme="light" class="main-outside"/>
+      <Navigation theme="light" class=""/>
     </div>
     <div style="margin-top:50px; margin-left:50px"></div>
 

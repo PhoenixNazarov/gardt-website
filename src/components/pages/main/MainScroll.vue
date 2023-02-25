@@ -8,14 +8,14 @@
       <div class="main-scroll-outside">
 
       </div>
-      <div class="main-scroll-gradient" style="background-color: #02001A">
+      <div class="main-scroll-gradient" style="background-color: var(--vt-c-black)">
         <!--        <div style="position: absolute; height: 55vh; width: 100%; top: 0;-->
         <!--          background: radial-gradient(160% 155% at top, var(&#45;&#45;vt-c-white) 30%, rgba(200,255,41,0.5) 45%, transparent 60%);">-->
         <!--        </div>-->
         <!--        <div style="position: absolute; height: 55vh; width: 100%; bottom: 0;-->
         <!--          background: radial-gradient(160% 155% at bottom, var(&#45;&#45;vt-c-white) 30%, rgba(200,255,41,0.5) 45%, transparent 60%);">-->
         <!--        </div>-->
-        <img src="../../../assets/images/main-scrolling.png" width="100%" style="z-index: 0">
+        <img src="../../../assets/images/main-scrolling-dark.png" width="100%" style="z-index: 0">
 
       </div>
 
@@ -76,7 +76,7 @@ export default {
 <style scoped>
 .main-scroll-container {
   min-height: 120vh;
-  background-color: var(--vt-c-white);
+  background-color: var(--vt-c-black);
 }
 
 .main-scroll-carriage {
@@ -96,7 +96,7 @@ export default {
   font-size: 4.75em;
   line-height: 96px;
   text-align: center;
-  color: var(--vt-c-white);
+  color: var(--vt-c-black);
 }
 
 .main-scroll-outside {

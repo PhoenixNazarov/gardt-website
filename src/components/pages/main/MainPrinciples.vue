@@ -8,7 +8,7 @@
     <div class="principles-container">
       <div class="main-outside">
         <div class="principles-title">
-          <PartName text="Наши принципы работы" theme="dark"/>
+          <PartName text="Наши принципы работы" theme="light"/>
         </div>
         <div class="principles-row">
           <MainPrinciplesItem class="principles-item" title="Фокус на человека" image="user"
@@ -78,7 +78,7 @@ export default {
 
 <style scoped>
 .principles-container {
-  background-color: var(--vt-c-white);
+  background-color: var(--vt-c-black);
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   padding-top: 100px;

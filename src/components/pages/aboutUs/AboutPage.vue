@@ -4,7 +4,7 @@
 
     </div>
     <div>
-      <Navigation theme="light" class="navigation main-outside"/>
+      <Navigation theme="light" class="navigation"/>
     </div>
     <div>
       <AboutPresentation class="main-outside bottom-outside"/>

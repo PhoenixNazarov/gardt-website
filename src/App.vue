@@ -29,6 +29,7 @@ export default {
   components: {PortfolioPage, UiPage, AboutPage, MainPage},
   beforeCreate() {
     this.$root.onChangePage = function (page) {
+      window.scrollTo({top: 0});
       this.page = page;
     }
     window.addEventListener('scroll', (e) => {

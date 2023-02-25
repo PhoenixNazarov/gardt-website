@@ -78,7 +78,7 @@ export default {
   url("../../../assets/images/main-slider/2.jpg");
 }
 
-.main-slider-image:nth-child(4) {
+.main-slider-image:nth-child(3) {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 24.81%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
   url("../../../assets/images/main-slider/4.jpg");
 }

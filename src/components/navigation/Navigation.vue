@@ -1,28 +1,31 @@
 <template>
-  <div class="navigation-container">
-    <div class="navigation-logo-container">
-      <img class="navigation-logo" :class="theme" src="../../assets/logo.svg" @click.prevent="changePage('Main')" alt="gardt logo"/>
-    </div>
-    <div>
-      <NavigationButton text="Блог"
-                        :theme="theme"
-                        class="navigation-button"
-                        @click.prevent="changePage('Ui')"/>
-      <NavigationButton text="О нас"
-                        :theme="theme"
-                        class="navigation-button"
-                        @click.prevent="changePage('About')"/>
-      <NavigationButton text="Портфолио"
-                        :theme="theme"
-                        class="navigation-button"
-                        @click.prevent="changePage('Portfolio')"/>
-      <NavigationButton text="Контакты"
-                        :theme="theme"
-                        class="navigation-button"
-                        @click.prevent="toDownPage()"/>
-    </div>
-    <div class="navigation-button-inner">
-      <Button text="Оставить заявку" :theme="theme" @click.prevent="toDownPage()"/>
+  <div style="backdrop-filter: blur(40px);">
+    <div class="navigation-container main-outside">
+      <div class="navigation-logo-container">
+        <img class="navigation-logo" :class="theme" src="../../assets/logo.svg" @click.prevent="changePage('Main')"
+             alt="gardt logo"/>
+      </div>
+      <div>
+        <NavigationButton text="Блог"
+                          :theme="theme"
+                          class="navigation-button"
+                          @click.prevent="changePage('Ui')"/>
+        <NavigationButton text="О нас"
+                          :theme="theme"
+                          class="navigation-button"
+                          @click.prevent="changePage('About')"/>
+        <NavigationButton text="Портфолио"
+                          :theme="theme"
+                          class="navigation-button"
+                          @click.prevent="changePage('Portfolio')"/>
+        <NavigationButton text="Контакты"
+                          :theme="theme"
+                          class="navigation-button"
+                          @click.prevent="toDownPage()"/>
+      </div>
+      <div class="navigation-button-inner">
+        <Button text="Оставить заявку" :theme="theme" @click.prevent="toDownPage()"/>
+      </div>
     </div>
   </div>
 </template>
@@ -37,7 +40,6 @@ export default {
   components: {Button, NavigationButton},
   methods: {
     changePage: function (page) {
-      window.scrollTo({top: 0});
       this.$root.onChangePage(page);
     },
     toDownPage: function () {
@@ -51,9 +53,11 @@ export default {
 .navigation-logo {
   cursor: pointer;
 }
+
 .navigation-logo-container {
   transition: 500ms;
 }
+
 .navigation-logo-container:hover {
   transform: scale(1.1);
   transform-origin: center center;

@@ -15,13 +15,13 @@
         </div>
         <div class="car-frame-2-container">
           <div class="frame-2-image">
-            <img class="frame-2-image-inner" src="../../assets/images/portfolio-principles/approve-user%202.svg"/>
+            <img class="frame-2-image-inner" src="../../assets/images/portfolio-principles/approve-user.svg"/>
             <h1 class="image-desc">Подобранные растения требуют минимального ухода, не аллергенны, не имеют ярких
               ароматов. Кашпо с туями и гортензиями создают уединенное пространство на нижней террасе, закрытое от
               посторонних глаз.</h1>
           </div>
           <div class="frame-2-image">
-            <img class="frame-2-image-inner" src="../../assets/images/portfolio-principles/process%202.svg"/>
+            <img class="frame-2-image-inner" src="../../assets/images/portfolio-principles/process.svg"/>
             <h1 class="image-desc">Подобранные растения требуют минимального ухода, не аллергенны, не имеют ярких
               ароматов. Кашпо с туями и гортензиями создают уединенное пространство на нижней террасе, закрытое от
               посторонних глаз.</h1>

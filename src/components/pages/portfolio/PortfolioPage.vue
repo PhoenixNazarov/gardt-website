@@ -1,7 +1,7 @@
 <template>
   <div class="main-gradient">
     <div>
-      <Navigation theme="light" class="navigation main-outside"/>
+      <Navigation theme="light" class="navigation"/>
     </div>
 
     <div class="portfolio-navigation main-outside">

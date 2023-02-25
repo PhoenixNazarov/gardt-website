@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PartName class="main-outside project-title" text="Наши проекты" theme="dark" :show=15 />
+    <PartName class="main-outside project-title" text="Наши проекты" theme="light" :show=15 />
     <div class="project-slider">
       <img class="project-slider-button left" src="../../../assets/images/slider-controller.svg">
       <div class="project-slider-car">

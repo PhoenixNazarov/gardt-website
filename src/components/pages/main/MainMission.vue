@@ -2,7 +2,7 @@
   <div>
     <div class="mission-slide">
       <div class="mission-text main-outside">
-        <PartName class="mission-title" text="Наша миссия" theme="dark" :show=15 />
+        <PartName class="mission-title" text="Наша миссия" theme="light" :show=15 />
         <h1 class="mission-description">
           “Мы проектируем точечные<br>
           ландшафтные решения для<br>
@@ -48,7 +48,7 @@ export default {
 <style scoped>
 .mission-slide {
   overflow-x: clip;
-  background-color: var(--vt-c-white);
+  background-color: var(--vt-c-black);
 }
 
 .mission-text {
@@ -111,7 +111,7 @@ export default {
   font-weight: 500;
   font-size: 3em;
   line-height: 59px;
-  color: #02001A;
+  color: var(--vt-c-white);
   opacity: 0;
 }
 

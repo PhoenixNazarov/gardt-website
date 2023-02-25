@@ -21,6 +21,7 @@ export default {
   border-radius: 15px;
   background-image: linear-gradient(to bottom, transparent 70%, #000000),
   url("../../../assets/images/main-projects/1.jpg");
+  border: 1px solid var(--vt-c-white);
 }
 
 .slide-item {

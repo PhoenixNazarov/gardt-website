@@ -23,6 +23,7 @@ export default {
 }
 
 .btn {
+  cursor: pointer;
   padding: 0;
   width: 100%;
   height: 100%;
@@ -53,6 +54,7 @@ export default {
 
 
 .btn-text {
+  cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;

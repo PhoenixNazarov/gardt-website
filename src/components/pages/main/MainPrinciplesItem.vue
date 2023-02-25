@@ -2,33 +2,33 @@
   <div class="principles-item-container">
     <div class="principles-item-image">
       <div v-if="image === 'user'">
-        <img src="../../../assets/images/main-principles/back-user.svg" class="principles-item-back-image" alt="">
-        <img src="../../../assets/images/main-principles/approve-user.svg" alt="">
+        <img src="../../../assets/images/main-principles/light/back-user.svg" class="principles-item-back-image" alt="">
+        <img class="principles-item-image-inner" src="../../../assets/images/main-principles/light/approve-user.svg" alt="">
       </div>
 
       <div v-if="image === 'growth'">
-        <img src="../../../assets/images/main-principles/back-growth.svg" class="principles-item-back-image" alt="">
-        <img src="../../../assets/images/main-principles/growth-graph.svg" alt="">
+        <img src="../../../assets/images/main-principles/light/back-growth.svg" class="principles-item-back-image" alt="">
+        <img class="principles-item-image-inner" src="../../../assets/images/main-principles/light/growth-graph.svg" alt="">
       </div>
 
       <div v-if="image === 'light'">
-        <img src="../../../assets/images/main-principles/back-light.svg" class="principles-item-back-image" alt="">
-        <img src="../../../assets/images/main-principles/light-bulb.svg" alt="">
+        <img src="../../../assets/images/main-principles/light/back-light.svg" class="principles-item-back-image" alt="">
+        <img class="principles-item-image-inner" src="../../../assets/images/main-principles/light/light-bulb.svg" alt="">
       </div>
 
       <div v-if="image === 'process'">
-        <img src="../../../assets/images/main-principles/back-process.svg" class="principles-item-back-image" alt="">
-        <img src="../../../assets/images/main-principles/process.svg" alt="">
+        <img src="../../../assets/images/main-principles/light/back-process.svg" class="principles-item-back-image" alt="">
+        <img class="principles-item-image-inner" src="../../../assets/images/main-principles/light/process.svg" alt="">
       </div>
 
       <div v-if="image === 'sce'">
-        <img src="../../../assets/images/main-principles/back-scenery.svg" class="principles-item-back-image" alt="" style="top:15px">
-        <img src="../../../assets/images/main-principles/scenery.svg" alt="">
+        <img src="../../../assets/images/main-principles/light/back-scenery.svg" class="principles-item-back-image" alt="" style="top:15px">
+        <img class="principles-item-image-inner" src="../../../assets/images/main-principles/light/scenery.svg" alt="">
       </div>
 
       <div v-if="image === 'tree'">
-        <img src="../../../assets/images/main-principles/back-trees.svg" class="principles-item-back-image" alt="" style="top:15px">
-        <img src="../../../assets/images/main-principles/trees.svg" alt="">
+        <img src="../../../assets/images/main-principles/light/back-trees.svg" class="principles-item-back-image" alt="" style="top:15px">
+        <img class="principles-item-image-inner" src="../../../assets/images/main-principles/light/trees.svg" alt="">
       </div>
     </div>
     <div class="principles-item-text">
@@ -77,6 +77,11 @@ export default {
   font-weight: 400;
   font-size: 1.5em;
   line-height: 29px;
-  color: #06004E;
+  color: var(--vt-c-white);
 }
+
+.principles-item-image-inner {
+  fill: red;
+}
+
 </style>
