@@ -85,16 +85,22 @@
       </div>
     </div>
   </div>
+  <AnimationDropPhoto/>
+  <AnimationDropPhotoScroll/>
+<!--  <AnimationPhotoDescription/>-->
 </template>
 
 <script>
 import Input from "@/components/ui/Input.vue";
 import Navigation from "@/components/navigation/Navigation.vue";
 import Button from "@/components/ui/Button.vue";
+import AnimationDropPhoto from "@/components/projectAnimations/AnimationDropPhoto.vue";
+import AnimationPhotoDescription from "@/components/projectAnimations/AnimationPhotoDescription.vue";
+import AnimationDropPhotoScroll from "@/components/projectAnimations/AnimationDropPhotoScroll.vue";
 
 export default {
   name: "UiPage",
-  components: {Button, Navigation, Input},
+  components: {AnimationDropPhotoScroll, AnimationPhotoDescription, AnimationDropPhoto, Button, Navigation, Input},
   data() {
     return {
       form: {
