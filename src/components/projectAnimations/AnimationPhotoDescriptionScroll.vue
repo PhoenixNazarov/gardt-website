@@ -1,5 +1,5 @@
 <template>
-  <div style="min-height: 600vh">
+  <div style="min-height: 400vh">
     <div class="drop-photo-container" style="min-height: 400vh">
       <div class="car">
         <div class="car-frame-1-container">

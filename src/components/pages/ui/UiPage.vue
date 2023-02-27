@@ -87,9 +87,13 @@
   </div>
   <div class="black">
     <AnimationDropPhoto/>
-    <!--  <AnimationDropPhotoScroll/>-->
-    <!--  <AnimationPhotoDescription/>-->
-    <AnimationPhotoDescriptionScroll/>
+<!--    <AnimationDropPhotoScroll/>-->
+<!--    <AnimationPhotoDescription/>-->
+<!--    <AnimationPhotoDescriptionScroll/>-->
+    <AnimationThreePhotos style="margin-bottom: 20vh"/>
+    <AnimationMagnifier/>
+    <AnimationThreePhotosDoubleOne/>
+    <AnimationFourPhotos/>
   </div>
 </template>
 
@@ -101,10 +105,18 @@ import AnimationDropPhoto from "@/components/projectAnimations/AnimationDropPhot
 import AnimationPhotoDescription from "@/components/projectAnimations/AnimationPhotoDescription.vue";
 import AnimationDropPhotoScroll from "@/components/projectAnimations/AnimationDropPhotoScroll.vue";
 import AnimationPhotoDescriptionScroll from "@/components/projectAnimations/AnimationPhotoDescriptionScroll.vue";
+import AnimationThreePhotos from "@/components/projectAnimations/AnimationThreePhotos.vue";
+import AnimationMagnifier from "@/components/projectAnimations/AnimationMagnifier.vue";
+import AnimationThreePhotosDoubleOne from "@/components/projectAnimations/AnimationThreePhotosDoubleOne.vue";
+import AnimationFourPhotos from "@/components/projectAnimations/AnimationFourPhotos.vue";
 
 export default {
   name: "UiPage",
   components: {
+    AnimationFourPhotos,
+    AnimationThreePhotosDoubleOne,
+    AnimationMagnifier,
+    AnimationThreePhotos,
     AnimationPhotoDescriptionScroll,
     AnimationDropPhotoScroll, AnimationPhotoDescription, AnimationDropPhoto, Button, Navigation, Input
   },

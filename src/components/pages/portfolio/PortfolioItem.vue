@@ -30,7 +30,6 @@ export default {
   background-size: cover;
   filter: drop-shadow(0px 10px 50px rgba(0, 0, 0, 0.2));
   border-radius: 10px;
-  border: 1px solid var(--vt-c-white);
 }
 
 .portfolio-item-name {
