@@ -78,6 +78,7 @@ export default {
 }
 
 .portfolio-navigation-item:not(:nth-child(1)) {
+  cursor: pointer;
   margin-left: 4em;
 }
 

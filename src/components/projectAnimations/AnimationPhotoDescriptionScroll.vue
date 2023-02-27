@@ -78,7 +78,6 @@ export default {
 
     let height = this.$container.getBoundingClientRect().height - this.$car.getBoundingClientRect().height;
 
-    console.log(0.1 * height)
     let offsets = [
       new CSSUnitValue(offset, 'px'), // start
       new CSSUnitValue(offset + 0.1 * height, 'px'), // image right 1500
