@@ -21,7 +21,7 @@
         <NavigationButton text="Контакты"
                           :theme="theme"
                           class="navigation-button"
-                          @click.prevent="changePage('MainLight')"/>
+                          @click.prevent="toDownPage()"/>
       </div>
       <div class="navigation-button-inner">
         <Button text="Оставить заявку" :theme="theme" @click.prevent="toDownPage()"/>

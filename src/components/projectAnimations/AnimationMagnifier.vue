@@ -5,17 +5,20 @@
 
       <div class="image-loop">
         <img class="big-image" src="../../assets/images/main-slider/1.jpg"/>
-        <div
-            style="position: absolute; top: calc(50% - 2px); left: calc(50% - 2px); width: 2px; height: 2px; background: #FF3838"></div>
+<!--        <div-->
+<!--            style="position: absolute; top: calc(50% - 2px); left: calc(50% - 2px); width: 2px; height: 2px; background: #FF3838"></div>-->
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import PartName from "@/components/ui/PartName.vue";
+
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 export default {
   name: "AnimationMagnifier",
+  components: {PartName},
   mounted() {
     this.$el.querySelector('.image').onmousemove = this.onMove;
 
