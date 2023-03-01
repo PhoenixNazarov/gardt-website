@@ -1,21 +1,51 @@
 <template>
-  <div class="portfolio-item-container">
+  <div class="portfolio-item-container" :style="'background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 57.07%, #000000 100%),url('+image +');'">
     <div class="portfolio-property-container">
-      <div class="portfolio-property">
+      <div class="portfolio-property" v-if="principles.includes('user')">
         <img class="portfolio-property-image" src="../../../assets/images/main-principles/approve-user.svg">
       </div>
-      <div class="portfolio-property">
+      <div class="portfolio-property" v-if="principles.includes('trees')">
         <img class="portfolio-property-image" src="../../../assets/images/main-principles/trees.svg">
       </div>
+      <div class="portfolio-property" v-if="principles.includes('process')">
+        <img class="portfolio-property-image" src="../../../assets/images/main-principles/process.svg">
+      </div>
+      <div class="portfolio-property" v-if="principles.includes('scenery')">
+        <img class="portfolio-property-image" src="../../../assets/images/main-principles/scenery.svg">
+      </div>
+      <div class="portfolio-property" v-if="principles.includes('light')">
+        <img class="portfolio-property-image" src="../../../assets/images/main-principles/light-bulb.svg">
+      </div>
+      <div class="portfolio-property" v-if="principles.includes('growth')">
+        <img class="portfolio-property-image" src="../../../assets/images/main-principles/growth-graph.svg">
+      </div>
     </div>
-    <h1 class="portfolio-item-name">Озеленение терассы</h1>
-    <h1 class="portfolio-item-place">г. Зеленогорск, Россия</h1>
+    <h1 class="portfolio-item-name">{{ name }}</h1>
+    <h1 class="portfolio-item-place">{{ place }}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "PortfolioItem"
+  name: "PortfolioItem",
+  props: {
+    name: {
+      type: String,
+      required: true
+    },
+    place: {
+      type: String,
+      required: true
+    },
+    principles: {
+      type: Array,
+      required: true
+    },
+    image: {
+      type: [String, String],
+      // required: true
+    }
+  }
 }
 </script>
 
@@ -25,9 +55,8 @@ export default {
   width: 22.5em;
   height: 20.625em;
 
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 57.07%, #000000 100%),
-  url("../../../assets/images/main-slider/1.jpg");
   background-size: cover;
+  background-position: center;
   filter: drop-shadow(0px 10px 50px rgba(0, 0, 0, 0.2));
   border-radius: 10px;
 }

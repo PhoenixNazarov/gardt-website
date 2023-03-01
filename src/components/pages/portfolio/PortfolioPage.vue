@@ -6,27 +6,44 @@
     <div class="main-gradient">
 
       <div class="portfolio-navigation main-outside">
-        <h1 class="portfolio-navigation-item" @click.prevent="this.onSurfPage(0)">Частные территории</h1>
-        <h1 class="portfolio-navigation-item" @click.prevent="this.onSurfPage(1)">Жилые комплексы</h1>
-        <h1 class="portfolio-navigation-item" @click.prevent="this.onSurfPage(2)">Муниципальные объекты</h1>
+        <h1 class="portfolio-navigation-item" @click.prevent="this.onSurfPage(0)">Благоустройство</h1>
+        <h1 class="portfolio-navigation-item" @click.prevent="this.onSurfPage(1)">Комерческое озеленение</h1>
+        <h1 class="portfolio-navigation-item" @click.prevent="this.onSurfPage(2)">Частные объекты</h1>
       </div>
 
       <div class="portfolio-car play-hide-animation" style="display: flex">
         <div style="width:100vw">
           <div class="main-outside portfolio-viewer">
-            <PortfolioItem class="portfolio-item" @click.prevent="toProject('ProjectZelenogorsk')"/>
-            <PortfolioItem class="portfolio-item"/>
+            <PortfolioItem class="portfolio-item" v-for="item in portfolioItemData[0]" key="item.name"
+                           :image="item.image"
+                           :name="item.name"
+                           :place="item.place"
+                           :principles="item.principles"
+                           @click.prevent="toProject(item.nameProject)"
+            />
           </div>
         </div>
 
         <div style="width:100vw">
           <div class="main-outside portfolio-viewer">
-            <PortfolioItem class="portfolio-item"/>
+            <PortfolioItem class="portfolio-item" v-for="item in portfolioItemData[1]" key="item.name"
+                           :image="item.image"
+                           :name="item.name"
+                           :place="item.place"
+                           :principles="item.principles"
+                           @click.prevent="toProject(item.nameProject)"
+            />
           </div>
         </div>
         <div style="width:100vw">
           <div class="main-outside portfolio-viewer">
-            <PortfolioItem class="portfolio-item"/>
+            <PortfolioItem class="portfolio-item" v-for="item in portfolioItemData[2]" key="item.name"
+                           :image="item.image"
+                           :name="item.name"
+                           :place="item.place"
+                           :principles="item.principles"
+                           @click.prevent="toProject(item.nameProject)"
+            />
           </div>
         </div>
       </div>
@@ -43,8 +60,15 @@ import Navigation from "@/components/navigation/Navigation.vue";
 import Footer from "@/components/footer/Footer.vue";
 import PortfolioItem from "@/components/pages/portfolio/PortfolioItem.vue";
 
+import {portfolioItemData} from '@/assets/images/portfolio-items/import'
+
 export default {
   name: "PortfolioPage",
+  data() {
+    return {
+      portfolioItemData
+    }
+  },
   components: {PortfolioItem, Navigation, Footer},
   methods: {
     onSurfPage: function (numb) {

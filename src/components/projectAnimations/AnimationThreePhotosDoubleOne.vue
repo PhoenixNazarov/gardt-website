@@ -78,7 +78,7 @@ export default {
   margin-left: 40%;
   width: 60%;
   background-image: url("../../assets/images/main-slider/1.jpg");
-  animation: animation-1 4s infinite alternate;
+  /*animation: animation-1 4s infinite alternate;*/
   z-index: 3;
 }
 

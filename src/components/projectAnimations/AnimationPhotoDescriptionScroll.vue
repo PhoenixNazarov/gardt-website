@@ -3,36 +3,18 @@
     <div class="drop-photo-container" style="min-height: 400vh">
       <div class="car">
         <div class="car-frame-1-container">
-          <div class="drop-photo-image"></div>
+          <div class="drop-photo-image" :style="'background-image: url('+data.image+')'"></div>
           <div class="drop-photo-text-container">
-            <h1 class="drop-photo-text">Зоны разделены таким образом, что функционал нижней террасы плавно переходит в
-              зону отдыха верхней.</h1>
-            <h1 class="drop-photo-text-title">Озеленение</h1>
-            <h1 class="drop-photo-text-desc">Ассортимент растений подобран с учетом особенностей каждой зоны:
-              на нижней - пряные травы и декоративные цветочные композиции;
-              на верхней - декоративно лиственные растения, попеременно цветущие в течение весенне-осеннего сезона</h1>
+            <h1 class="drop-photo-text">{{ data.description1 }}</h1>
+            <h1 class="drop-photo-text-title">{{ data.name1 }}</h1>
+            <h1 class="drop-photo-text-desc">{{ data.description2 }}</h1>
           </div>
         </div>
         <div class="car-frame-2-container">
-          <div class="frame-2-image">
-            <img class="frame-2-image-inner" src="../../assets/images/portfolio-principles/approve-user.svg"/>
-            <h1 class="image-desc">Подобранные растения требуют минимального ухода, не аллергенны, не имеют ярких
-              ароматов. Кашпо с туями и гортензиями создают уединенное пространство на нижней террасе, закрытое от
-              посторонних глаз.</h1>
+          <div class="frame-2-image" v-for="item in data.principles" :key="item">
+            <img class="frame-2-image-inner" :src="item[0]" :alt="item[1]"/>
+            <h1 class="image-desc">{{ item[2] }}</h1>
           </div>
-          <div class="frame-2-image">
-            <img class="frame-2-image-inner" src="../../assets/images/portfolio-principles/process.svg"/>
-            <h1 class="image-desc">Подобранные растения требуют минимального ухода, не аллергенны, не имеют ярких
-              ароматов. Кашпо с туями и гортензиями создают уединенное пространство на нижней террасе, закрытое от
-              посторонних глаз.</h1>
-          </div>
-          <div class="frame-2-image">
-            <img class="frame-2-image-inner" src="../../assets/images/portfolio-principles/Vector.svg"/>
-            <h1 class="image-desc">Подобранные растения требуют минимального ухода, не аллергенны, не имеют ярких
-              ароматов. Кашпо с туями и гортензиями создают уединенное пространство на нижней террасе, закрытое от
-              посторонних глаз.</h1>
-          </div>
-
         </div>
       </div>
     </div>
@@ -42,6 +24,12 @@
 <script>
 export default {
   name: "AnimationPhotoDescriptionScroll",
+  props: {
+    data: {
+      type: Object,
+      required: true
+    }
+  },
   methods: {
     onScroll: function (e) {
       let offset = this.$container.getBoundingClientRect().y;
@@ -69,6 +57,7 @@ export default {
     }
   },
   mounted() {
+    this.$el.querySelector(".car")
     window.addEventListener("scroll", this.onScroll);
     this.$car = this.$el.querySelector(".car");
     this.$container = this.$el.querySelector(".drop-photo-container");
@@ -81,14 +70,14 @@ export default {
     let offsets = [
       new CSSUnitValue(offset, 'px'), // start
       new CSSUnitValue(offset + 0.1 * height, 'px'), // image right 1500
-      new CSSUnitValue(offset + 0.2 * height, 'px'), // image scale + text 500
+      new CSSUnitValue(offset + 0.15 * height, 'px'), // image scale + text 500
       new CSSUnitValue(offset + 0.3 * height, 'px'), // title 1500
       new CSSUnitValue(offset + 0.4 * height, 'px'), // desc
       new CSSUnitValue(offset + 0.5 * height, 'px'), // 6.
-      new CSSUnitValue(offset + 0.7 * height, 'px'), // 7. hide frame1
-      new CSSUnitValue(offset + 0.8 * height, 'px'), // 8. show frame2
-      new CSSUnitValue(offset + 0.9 * height, 'px'), // 9. size image principles
-      new CSSUnitValue(offset + 0.98 * height, 'px'), // 10. show text
+      new CSSUnitValue(offset + 0.6 * height, 'px'), // 7. hide frame1
+      new CSSUnitValue(offset + 0.7 * height, 'px'), // 8. show frame2
+      new CSSUnitValue(offset + 0.8 * height, 'px'), // 9. size image principles
+      new CSSUnitValue(offset + 0.9 * height, 'px'), // 10. show text
     ]
 
     let framesImage = {
@@ -120,8 +109,8 @@ export default {
 
     let framesText = {
       transform: [
-        "translateX(100vw)",
-        "translateX(100vw)",
+        "translateX(0)",
+        "translateX(0)",
         "translateX(0)",
         "translateX(0)",
         "translateX(0)",
@@ -132,8 +121,8 @@ export default {
       ],
       opacity: [
         0,
-        1,
-        1,
+        0,
+        0,
         1,
         1,
         1,
@@ -145,9 +134,9 @@ export default {
 
     let framesTitle = {
       transform: [
-        "translateX(100vw)",
-        "translateX(100vw)",
-        "translateX(100vw)",
+        "translateX(0)",
+        "translateX(0)",
+        "translateX(0)",
         "translateX(0)",
         "translateX(0)",
         "translateX(0)",
@@ -158,7 +147,7 @@ export default {
       opacity: [
         0,
         0,
-        1,
+        0,
         1,
         1,
         1,
@@ -170,10 +159,10 @@ export default {
 
     let framesDesc = {
       transform: [
-        "translateX(100vw)",
-        "translateX(100vw)",
-        "translateX(100vw)",
-        "translateX(100vw)",
+        "translateX(0)",
+        "translateX(0)",
+        "translateX(0)",
+        "translateX(0)",
         "translateX(0)",
         "translateX(0)",
         "translateX(0)",
@@ -350,6 +339,7 @@ export default {
 .car-frame-2-container {
   justify-content: space-evenly;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .drop-photo-image {
@@ -357,7 +347,6 @@ export default {
   width: 50vw;
   background-size: cover;
   background-position: center;
-  background-image: url("../../assets/images/main-slider/1.jpg");
   transform-origin: center left;
 }
 
@@ -412,18 +401,25 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 20em;
+  width: 30em;
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-top: 3em;
+}
+
+.frame-2-image-inner {
+  height: 8em;
 }
 
 .image-desc {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.25em;
+  font-size: 1.1em;
   line-height: 1.5em;
-  /* or 30px */
   margin-top: 3em;
   color: var(--vt-c-white);
+  width: 200%;
 }
 
 </style>

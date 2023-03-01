@@ -11,7 +11,8 @@
       <UiPage v-if="page === 'Ui'"/>
       <PortfolioPage v-if="page === 'Portfolio'"/>
 
-      <ProjectZelenogorsk v-if="page ==='ProjectZelenogorsk'"/>
+<!--      <ProjectZelenogorsk v-if="page ==='ProjectZelenogorsk'"/>-->
+      <ProjectBase :projectName="page" v-if="page.startsWith('Project')"/>
     </div>
   </main>
 </template>
@@ -23,6 +24,7 @@ import UiPage from "@/components/pages/ui/UiPage.vue";
 import PortfolioPage from "@/components/pages/portfolio/PortfolioPage.vue";
 import MainPageLight from "@/components/pages/mainLight/MainPage.vue";
 import ProjectZelenogorsk from "@/components/projects/ProjectZelenogorsk.vue";
+import ProjectBase from "@/components/projects/ProjectBase.vue";
 
 export default {
   name: 'App',
@@ -31,7 +33,7 @@ export default {
       page: "Main"
     }
   },
-  components: {ProjectZelenogorsk, MainPageLight, PortfolioPage, UiPage, AboutPage, MainPage},
+  components: {ProjectBase, ProjectZelenogorsk, MainPageLight, PortfolioPage, UiPage, AboutPage, MainPage},
   beforeCreate() {
     this.$root.onChangePage = function (page) {
       window.scrollTo({top: 0});

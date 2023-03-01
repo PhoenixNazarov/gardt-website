@@ -4,20 +4,20 @@
       <div class="car">
         <div class="animation-container">
           <div class="animation-1-container">
-            <div class="animation-1 image-text-left">
-              <h1 class="image-text">Обеденная зона</h1>
+            <div class="animation-1 image-text-left" :style="'background-image: url('+ data.image1 +');'">
+              <h1 class="image-text">{{ data.description1 }}</h1>
             </div>
           </div>
 
           <div class="animation-2-container">
-            <div class="animation-2 image-text-left">
-              <h1 class="image-text">Летняя кухня</h1>
+            <div class="animation-2 image-text-left" :style="'background-image: url('+ data.image2 +');'">
+              <h1 class="image-text">{{ data.description2 }}</h1>
             </div>
           </div>
 
           <div class="animation-3-container">
-            <div class="animation-3">
-              <h1 class="image-text">Лаунж зона</h1>
+            <div class="animation-3" :style="'background-image: url('+ data.image3 +');'">
+              <h1 class="image-text">{{ data.description3 }}</h1>
             </div>
           </div>
         </div>
@@ -29,6 +29,12 @@
 <script>
 export default {
   name: "AnimationThreePhotosScroll",
+  props: {
+    data: {
+      type: Object,
+      required: true
+    }
+  },
   methods: {
     onScroll: function (e) {
       let offset = this.$container.getBoundingClientRect().y;
@@ -124,6 +130,10 @@ export default {
   },
   unmounted() {
     window.removeEventListener("scroll", this.onScroll);
+    this.$car.style.position = "absolute";
+    this.$car.style.top = 0;
+    this.$car.style.bottom = null;
+    this.fixed = false;
   }
 }
 </script>
@@ -172,65 +182,20 @@ export default {
 .animation-1 {
   top: 50vh;
   height: 40vh;
-  background-image: url("../../assets/images/main-slider/1.jpg");
-  /*animation: animation-1 4s infinite alternate;*/
   z-index: 1;
-}
-
-@keyframes animation-1 {
-  0% {
-    height: 30vw;
-    width: 25vw;
-    transform: translate(20vw, -40vh);
-  }
-  50% {
-    height: 40vh;
-    width: 30vw;
-    transform: translate(0, 0);
-  }
 }
 
 .animation-2 {
   top: 15vh;
   height: 50vh;
-  background-image: url("../../assets/images/main-slider/2.jpg");
-  /*animation: animation-2 4s infinite alternate;*/
   z-index: 3;
 
-}
-
-@keyframes animation-2 {
-  0% {
-    height: 50vh;
-    width: 25vw;
-    transform: translate(20vw, 5vh);
-  }
-  50% {
-    height: 50vh;
-    width: 25vw;
-    transform: translate(0, 0);
-  }
 }
 
 .animation-3 {
   margin-top: 40vh;
   height: 25vw;
-  background-image: url("../../assets/images/main-slider/4.jpg");
-  /*animation: animation-3 4s infinite alternate;*/
   z-index: 2;
-}
-
-@keyframes animation-3 {
-  0% {
-    height: 30vw;
-    width: 25vw;
-    transform: translate(-27vw, -5vw);
-  }
-  50% {
-    height: 25vw;
-    width: 25vw;
-    transform: translate(0, 0);
-  }
 }
 
 .image-text {
@@ -243,25 +208,10 @@ export default {
   font-size: 1.25em;
 
   color: var(--vt-c-white);
-  /*animation: animation-text 4s infinite alternate;*/
-}
-
-@keyframes animation-text {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .image-text-left {
   display: flex;
   justify-content: flex-end;
 }
-
-
 </style>

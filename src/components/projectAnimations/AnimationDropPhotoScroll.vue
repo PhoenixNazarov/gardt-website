@@ -2,18 +2,24 @@
   <div>
     <div class="drop-photo-container" style="min-height: 300vh">
       <div class="car">
-        <div class="drop-photo-image"></div>
-        <h1 class="drop-photo-text">Функциональное пространство с обеденной зоной</h1>
+        <div class="drop-photo-image" :style="'background-image: url('+data.image+')'"></div>
+        <h1 class="drop-photo-text">{{ data.description }}</h1>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import 'https://rawcdn.githack.com/flackr/scroll-timeline/94866999efe41b3ccba846be7ed37c9313dd880e/dist/scroll-timeline.js';
+import '../../assets/js/scroll-timeline.js';
 
 export default {
   name: "AnimationDropPhotoScroll",
+  props: {
+    data: {
+      type: Object,
+      required: true
+    }
+  },
   methods: {
     onScroll: function (e) {
       let offset = this.$container.getBoundingClientRect().y;
