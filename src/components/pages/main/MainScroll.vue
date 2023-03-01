@@ -18,16 +18,14 @@
         <img src="../../../assets/images/main-scrolling-dark.png" width="100%" style="z-index: 0">
 
       </div>
-
     </div>
   </div>
-
 </template>
 
 <script>
 export default {
   name: "MainScroll",
-  created() {
+  mounted() {
     window.addEventListener('scroll', this.handleScroll);
     this.fixed = false;
   },
@@ -37,6 +35,7 @@ export default {
       this.$carriage.style.top = null;
       this.fixed = false;
     }
+    window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
     handleScroll(event) {

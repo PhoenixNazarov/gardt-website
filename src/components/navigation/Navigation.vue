@@ -12,10 +12,12 @@
                           @click.prevent="changePage('Ui')"/>
         <NavigationButton text="О нас"
                           :theme="theme"
+                          :active="getPage() === 'About'"
                           class="navigation-button"
                           @click.prevent="changePage('About')"/>
         <NavigationButton text="Портфолио"
                           :theme="theme"
+                          :active="getPage() === 'Portfolio'"
                           class="navigation-button"
                           @click.prevent="changePage('Portfolio')"/>
         <NavigationButton text="Контакты"
@@ -41,6 +43,10 @@ export default {
   methods: {
     changePage: function (page) {
       this.$root.onChangePage(page);
+    },
+    getPage: function () {
+      console.log(this.$root.getPage())
+      return this.$root.getPage();
     },
     toDownPage: function () {
       window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});

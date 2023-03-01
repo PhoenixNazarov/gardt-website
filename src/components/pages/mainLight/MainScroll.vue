@@ -27,8 +27,9 @@
 <script>
 export default {
   name: "MainScroll",
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
+  mounted() {
+    console.log('created');
+    document.addEventListener('scroll', this.handleScroll);
     this.fixed = false;
   },
   unmounted() {
@@ -37,6 +38,8 @@ export default {
       this.$carriage.style.top = null;
       this.fixed = false;
     }
+    console.log('remove');
+    document.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
     handleScroll(event) {

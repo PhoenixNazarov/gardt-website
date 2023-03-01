@@ -5,15 +5,15 @@
         <h1 class="main-text">{{ data.name }}</h1>
         <h1 class="main-description">{{ data.description }}</h1>
         <div class="sub-description">
-          <div>
+          <div class="sub-sub-description" v-if="data.square">
             <h1 class="sub-name">Площадь:</h1>
             <h1 class="sub-value">{{ data.square }}</h1>
           </div>
-          <div>
+          <div class="sub-sub-description" v-if="data.year">
             <h1 class="sub-name">Год:</h1>
             <h1 class="sub-value">{{ data.year }}</h1>
           </div>
-          <div v-if="data.client">
+          <div class="sub-sub-description" v-if="data.client">
             <h1 class="sub-name">Заказчик:</h1>
             <h1 class="sub-value">{{ data.client }}</h1>
           </div>
@@ -57,7 +57,7 @@ export default {
     }
   },
   unmounted() {
-    if (this.listener !== undefined) {
+    if (this.show !== -1) {
       document.removeEventListener('scroll', this.waitShow)
     }
   }
@@ -95,7 +95,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 8em;
+  font-size: 6em;
   line-height: 1.25em;
   text-align: left;
   background: linear-gradient(180deg, #E9FFA9 0%, #C8FF29 100%);
@@ -110,7 +110,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 2.5em;
+  font-size: 2em;
   line-height: 1.5em;
   color: var(--vt-c-white);
   width: 100%;
@@ -126,7 +126,19 @@ export default {
 
 .sub-description {
   display: flex;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
+}
+
+.sub-sub-description {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  /*margin*/
+}
+
+.sub-sub-description:nth-child(2) {
+  /*margin-left: 3em;*/
+  /*margin-right: 3em;*/
 }
 
 .sub-name {
@@ -148,8 +160,8 @@ export default {
 .sub-value {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
-  font-weight: 500;
-  font-size: 2.5em;
+  font-weight: 400;
+  font-size: 1.5em;
   line-height: 1em;
   color: var(--vt-c-white);
   width: 100%;

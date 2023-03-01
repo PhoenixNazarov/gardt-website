@@ -35,10 +35,20 @@ export default {
   },
   components: {ProjectBase, ProjectZelenogorsk, MainPageLight, PortfolioPage, UiPage, AboutPage, MainPage},
   beforeCreate() {
+    document._fixScrollListeners = []
     this.$root.onChangePage = function (page) {
       window.scrollTo({top: 0});
+
+      this.$nextTick(() => {
+        document._fixScrollListeners.forEach((f) => document.removeEventListener('scroll', f));
+        document._fixScrollListeners = [];
+      })
       this.page = page;
     }
+    this.$root.getPage = function () {
+      return this.page;
+    }
+
     window.addEventListener('scroll', (e) => {
       document.body.style.cssText=`--scrollTop: ${window.scrollY}px`;
     })

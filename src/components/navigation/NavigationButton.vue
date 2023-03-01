@@ -1,7 +1,7 @@
 <template>
   <div class="btn-navigation-container">
     <a class="btn-navigation">{{ text }}
-      <div class="btn-navigation-underline"></div>
+      <div class="btn-navigation-underline" :class="getActive()"></div>
     </a>
   </div>
 </template>
@@ -9,7 +9,7 @@
 <script>
 export default {
   name: "NavigationButton",
-  props: ['text', "theme"],
+  props: ['text', "theme", 'active'],
   methods: {
     light: function () {
       this.$el.querySelector(".btn-navigation").style.color="var(--vt-c-white)"
@@ -18,9 +18,18 @@ export default {
     dark: function () {
       this.$el.querySelector(".btn-navigation").style.color="#02001A";
       this.$el.querySelector(".btn-navigation-underline").style.background="#02001A";
+    },
+    getActive: function () {
+      console.log('asdasd')
+      if (this.active) {
+        return 'active';
+      } else {
+        return 'inactive'
+      }
     }
   },
   mounted() {
+    console.log(this.active);
     if (this.theme === 'light') {
       this.light();
     } else {
@@ -35,7 +44,7 @@ export default {
         this.dark();
       }
     }
-  }
+  },
 }
 </script>
 
@@ -46,6 +55,10 @@ export default {
 
 .btn-navigation-container:hover .btn-navigation-underline {
   width: 100%;
+}
+
+.active {
+  width: 100%!important;
 }
 
 .btn-navigation {

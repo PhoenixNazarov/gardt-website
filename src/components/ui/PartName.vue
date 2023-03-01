@@ -36,11 +36,11 @@ export default {
   mounted() {
     if (this.show !== -1) {
       this.$el.querySelector('.part-name').classList.add("hide");
-      document.addEventListener('scroll', this.waitShow)
+      document.addEventListener('scroll', this.waitShow);
     }
   },
   unmounted() {
-    if (this.listener !== undefined) {
+    if (this.show !== -1) {
       document.removeEventListener('scroll', this.waitShow)
     }
   }

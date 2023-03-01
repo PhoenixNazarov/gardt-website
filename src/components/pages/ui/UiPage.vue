@@ -86,6 +86,7 @@
     </div>
   </div>
   <div class="black">
+    <AnimationOpacity/>
     <AnimationDropPhoto/>
 <!--    <AnimationDropPhotoScroll/>-->
 <!--    <AnimationPhotoDescription/>-->
@@ -96,7 +97,7 @@
     <AnimationThreePhotosDoubleOne/>
 <!--    <AnimationThreePhotosDoubleOneScroll/>-->
     <AnimationFourPhotos/>
-    <AnimationFourPhotosScroll/>
+<!--    <AnimationFourPhotosScroll/>-->
   </div>
 </template>
 
@@ -116,10 +117,12 @@ import AnimationThreePhotosScroll from "@/components/projectAnimations/Animation
 import AnimationThreePhotosDoubleOneScroll
   from "@/components/projectAnimations/AnimationThreePhotosDoubleOneScroll.vue";
 import AnimationFourPhotosScroll from "@/components/projectAnimations/AnimationFourPhotosScroll.vue";
+import AnimationOpacity from "@/components/projectAnimations/AnimationOpacity.vue";
 
 export default {
   name: "UiPage",
   components: {
+    AnimationOpacity,
     AnimationFourPhotosScroll,
     AnimationThreePhotosDoubleOneScroll,
     AnimationThreePhotosScroll,

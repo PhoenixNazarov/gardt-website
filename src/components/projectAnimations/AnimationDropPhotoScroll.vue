@@ -56,17 +56,19 @@ export default {
 
     let height = this.$container.getBoundingClientRect().height - this.$car.getBoundingClientRect().height;
 
-    const myScrollTimeline = new ScrollTimeline({
+    function e() {console.log('qweqwe')};
+
+    this.myScrollTimeline = new ScrollTimeline({
       source: document.scrollingElement,
-      scrollSource: document.scrollingElement,
       orientation: 'block',
       scrollOffsets: [
         new CSSUnitValue(offset, 'px'),
         new CSSUnitValue(offset + height * 0.3, 'px'),
         new CSSUnitValue(offset + height * 0.6, 'px'),
         new CSSUnitValue(offset + height * 0.99, 'px'),
-      ],
+      ]
     });
+    let myScrollTimeline = this.myScrollTimeline;
 
     this.$el.querySelector(".drop-photo-image").animate(
         {
@@ -94,6 +96,14 @@ export default {
   },
   unmounted() {
     window.removeEventListener("scroll", this.onScroll);
+    document.removeEventListener('scroll', this.myScrollTimeline.scrollSource);
+    console.log(this.myScrollTimeline)
+    // document.removeEventListener()
+    // this.$el.querySelector(".drop-photo-image").animate(null);
+
+    // this.$el.querySelector(".drop-photo-image").animate(null);
+    // this.$el.querySelector(".drop-photo-text").animate(null);
+
   }
 }
 </script>
@@ -106,7 +116,6 @@ export default {
   height: 100vh;
   background-size: cover;
   background-position: center;
-  background-image: url("../../assets/images/main-slider/1.jpg");
 }
 
 .drop-photo-text {
@@ -118,7 +127,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 6em;
+  font-size: 5em;
   line-height: 1.15em;
   color: var(--vt-c-white);
 }

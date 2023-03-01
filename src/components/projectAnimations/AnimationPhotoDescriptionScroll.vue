@@ -317,6 +317,15 @@ export default {
   },
   unmounted() {
     window.removeEventListener("scroll", this.onScroll);
+    // this.$el.querySelector(".drop-photo-image").animate(null);
+    // this.$el.querySelector(".drop-photo-text").animate(null);
+    // this.$el.querySelector(".drop-photo-text-title").animate(null);
+    // this.$el.querySelector(".drop-photo-text-desc").animate(null);
+    // this.$el.querySelector(".car-frame-1-container").animate(null);
+    // this.$el.querySelector(".car-frame-2-container").animate(null);
+    // this.$el.querySelector(".frame-2-image-inner").animate(null);
+    // this.$el.querySelectorAll('.image-desc').forEach((el) => el.animate(null));
+
   }
 }
 </script>

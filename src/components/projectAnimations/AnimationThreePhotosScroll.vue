@@ -134,6 +134,10 @@ export default {
     this.$car.style.top = 0;
     this.$car.style.bottom = null;
     this.fixed = false;
+    // this.$el.querySelector(".animation-1").animate(null);
+    // this.$el.querySelector(".animation-2").animate(null);
+    // this.$el.querySelector(".animation-3").animate(null);
+    // this.$el.querySelectorAll(".image-text").forEach((e) => e.animate(null));
   }
 }
 </script>
