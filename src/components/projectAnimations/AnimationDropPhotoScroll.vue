@@ -1,5 +1,6 @@
 <template>
   <div>
+    <PartName v-if="data.name !== undefined" :text="data.name" show=20 theme="light" class="main-outside"/>
     <div class="drop-photo-container" style="min-height: 300vh">
       <div class="car">
         <div class="drop-photo-image" :style="'background-image: url('+data.image+')'"></div>
@@ -56,9 +57,8 @@ export default {
 
     let height = this.$container.getBoundingClientRect().height - this.$car.getBoundingClientRect().height;
 
-    function e() {console.log('qweqwe')};
 
-    this.myScrollTimeline = new ScrollTimeline({
+    let myScrollTimeline = new ScrollTimeline({
       source: document.scrollingElement,
       orientation: 'block',
       scrollOffsets: [
@@ -68,7 +68,6 @@ export default {
         new CSSUnitValue(offset + height * 0.99, 'px'),
       ]
     });
-    let myScrollTimeline = this.myScrollTimeline;
 
     this.$el.querySelector(".drop-photo-image").animate(
         {
@@ -96,14 +95,6 @@ export default {
   },
   unmounted() {
     window.removeEventListener("scroll", this.onScroll);
-    document.removeEventListener('scroll', this.myScrollTimeline.scrollSource);
-    console.log(this.myScrollTimeline)
-    // document.removeEventListener()
-    // this.$el.querySelector(".drop-photo-image").animate(null);
-
-    // this.$el.querySelector(".drop-photo-image").animate(null);
-    // this.$el.querySelector(".drop-photo-text").animate(null);
-
   }
 }
 </script>

@@ -6,6 +6,7 @@
     <div v-for="item in projectsData[projectName]">
       <div>
         <AnimationName v-if="item.animation === 'AnimationName'" :data="item.data"/>
+        <AnimationNameVideo v-if="item.animation === 'AnimationNameVideo'" :data="item.data"/>
         <AnimationDescription v-if="item.animation === 'AnimationDescription'" :data="item.data"/>
         <AnimationPhotoDescriptionScroll v-if="item.animation === 'AnimationPhotoDescriptionScroll'" :data="item.data"/>
         <AnimationMagnifierStatic v-if="item.animation === 'AnimationMagnifierStatic'" :data="item.data"/>
@@ -13,6 +14,7 @@
         <AnimationThreePhotosScroll v-if="item.animation === 'AnimationThreePhotosScroll'" :data="item.data"/>
         <AnimationThreePhotosDoubleOneScroll v-if="item.animation === 'AnimationThreePhotosDoubleOneScroll'" :data="item.data"/>
         <AnimationFourPhotosScroll v-if="item.animation === 'AnimationFourPhotosScroll'" :data="item.data"/>
+        <AnimationOpacityScroll v-if="item.animation === 'AnimationOpacityScroll'" :data="item.data"/>
       </div>
     </div>
 
@@ -41,9 +43,13 @@ import AnimationThreePhotosDoubleOneScroll
   from "@/components/projectAnimations/AnimationThreePhotosDoubleOneScroll.vue";
 import AnimationFourPhotosScroll from "@/components/projectAnimations/AnimationFourPhotosScroll.vue";
 import Button from "@/components/ui/Button.vue";
+import AnimationOpacityScroll from "@/components/projectAnimations/AnimationOpacityScroll.vue";
+import AnimationNameVideo from "@/components/projectAnimations/AnimationNameVideo.vue";
 
 export default {
   components: {
+    AnimationNameVideo,
+    AnimationOpacityScroll,
     Button,
     AnimationFourPhotosScroll,
     AnimationThreePhotosDoubleOneScroll,

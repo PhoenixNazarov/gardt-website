@@ -1,14 +1,8 @@
 <template>
   <div class="container" style="min-height: 100vh">
-    <div class="anim-1">
-
-    </div>
-    <div class="anim-2">
-
-    </div>
-    <div class="anim-3">
-
-    </div>
+    <img class="anim-1" src='../../assets/images/test/image1.png'/>
+    <img class="anim-2" src='../../assets/images/test/image2.png'/>
+    <img class="anim-3" src='../../assets/images/test/image3.png'/>
   </div>
 </template>
 
@@ -23,7 +17,6 @@ export default {
 
 }
 .anim-1, .anim-2, .anim-3 {
-  width: 50vw;
   height: 50vh;
   position: absolute;
   background-size: cover;
@@ -43,7 +36,7 @@ export default {
 }
 
 .anim-1 {
-  background-image: url('../../assets/images/test/image1.png');
+  /*background-image: url('../../assets/images/test/image1.png');*/
   animation: anim1 4s linear infinite alternate;
 }
 
@@ -60,7 +53,7 @@ export default {
 }
 
 .anim-2 {
-  background-image: url('../../assets/images/test/image2.png');
+  /*background-image: url('../../assets/images/test/image2.png');*/
   animation: anim2 4s linear infinite alternate;
 }
 
@@ -78,7 +71,7 @@ export default {
 }
 
 .anim-3 {
-  background-image: url('../../assets/images/test/image3.png');
+  /*background-image: url('../../assets/images/test/image3.png');*/
   animation: anim3 4s linear infinite alternate;
 }
 

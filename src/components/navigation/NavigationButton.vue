@@ -20,7 +20,6 @@ export default {
       this.$el.querySelector(".btn-navigation-underline").style.background="#02001A";
     },
     getActive: function () {
-      console.log('asdasd')
       if (this.active) {
         return 'active';
       } else {
@@ -29,7 +28,6 @@ export default {
     }
   },
   mounted() {
-    console.log(this.active);
     if (this.theme === 'light') {
       this.light();
     } else {

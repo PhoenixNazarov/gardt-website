@@ -16,9 +16,6 @@ export default {
       type: Object,
       required: true
     }
-  },
-  mounted() {
-    console.log(this.name)
   }
 }
 </script>
@@ -44,6 +41,7 @@ export default {
 }
 
 .name-text {
+  width: 75vw;
   position: absolute;
   top: 50%;
   left: 50%;

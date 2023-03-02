@@ -45,7 +45,6 @@ export default {
       this.$root.onChangePage(page);
     },
     getPage: function () {
-      console.log(this.$root.getPage())
       return this.$root.getPage();
     },
     toDownPage: function () {

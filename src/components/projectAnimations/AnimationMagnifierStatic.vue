@@ -4,15 +4,11 @@
 
       <div class="container">
         <div style="display: flex; flex-direction: column;">
-          <PartName :text="data.name" show=20 theme="light"/>
-          <img class="image" :src="data.image"/>
+          <PartName v-if="data.name !== undefined" :text="data.name" show=20 theme="light"/>
+          <div class="image" :style="`background-image: url(${data.image})`"/>
         </div>
         <div class="image-loop">
-<!--          <div style="display: flex">-->
             <img class="big-image" :src="data.bigImage"/>
-            <!--        <div-->
-            <!--            style="position: absolute; top: calc(50% - 2px); left: calc(50% - 2px); width: 2px; height: 2px; background: #FF3838"></div>-->
-<!--          </div>-->
         </div>
       </div>
     </div>
@@ -63,13 +59,12 @@ export default {
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+  align-items: center;
 }
 
 .big-image {
   position: absolute;
   height: 50vh;
-  object-fit: cover;
-  object-position: center;
 }
 
 </style>

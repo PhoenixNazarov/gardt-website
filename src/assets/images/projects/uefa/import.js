@@ -18,12 +18,27 @@ import image8 from './image8.png';
 import image9 from './image9.png';
 import image10 from './image10.png';
 import image11 from './image11.png';
+import image13 from './image13.png';
+import image14 from './image14.png';
+import image15 from './image15.png';
+import image16 from './image16.png';
+import image17 from './image17.png';
+
+import image18 from './image18.png';
+import image19 from './image19.png';
+import image20 from './image20.png';
+
+import video1 from './video1.mp4';
 
 export const uefaData = [
     {
-        animation: 'AnimationName',
+        animation: 'AnimationNameVideo',
         data: {
-            'name': ['Концепция', 'Благоустройства', 'Жилого комплекса']
+            'name': ['Концепция', 'Благоустройства', 'Жилого комплекса'],
+            video: {
+                'source': video1,
+                'type:': 'video/mp4'
+            }
         }
     },
     {
@@ -94,6 +109,47 @@ export const uefaData = [
         data: {
             'image': image11,
             'description': 'Решения дворов базируются на природных ландшафтах',
+        }
+    },
+    {
+        'animation': 'AnimationThreePhotosScroll',
+        data: {
+            'image1': image18,
+            'description1': 'Открытые дворы',
+            'image2': image19,
+            'description2': 'Закрытые дворы',
+            'image3': image20,
+            'description3': 'Полузакрытые дворы'
+        }
+    },
+    {
+        animation: 'AnimationOpacityScroll',
+        data: {
+            'height': '300',
+            images: [
+                {
+                    'image': image13,
+                },
+                {
+                    'image': image14,
+                },
+                {
+                    'image': image15,
+                },
+                {
+                    'image': image16,
+                },
+                {
+                    'image': image17,
+                }
+            ],
+            'matrix': [
+                [1, 1, 1, 1, 1],
+                [0, 1, 1, 1, 1],
+                [0, 0, 1, 1, 1],
+                [0, 0, 0, 1, 1],
+                [0, 0, 0, 0, 1]
+            ],
         }
     }
 

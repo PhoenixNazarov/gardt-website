@@ -24,10 +24,10 @@ export const portfolioItemData = [
         },
         {
             'name': 'Гостиничный комплекс',
-            'place': '',
+            'place': 'Краснодарский край, Россия',
             'principles': ['user', 'growth', 'light', 'scenery'],
             'image': Hotel1,
-            'nameProject': 'ProjectUefa'
+            'nameProject': 'ProjectHotel'
         },
         {
             'name': 'Вишневый сад',
@@ -45,27 +45,27 @@ export const portfolioItemData = [
         },
         {
             'name': 'Площадь авиастар',
-            'place': '',
+            'place': 'г. Ульяновск, Россия',
             'principles': ['trees', 'light', 'scenery'],
             'image': AviastarPlace1,
-            'nameProject': 'ProjectUefa'
+            'nameProject': 'ProjectSquareAviastart'
         },
         {
             'name': 'Маф авиастар',
-            'place': '',
+            'place': 'г. Ульяновск, Россия',
             'principles': ['process', 'light'],
             'image': AviastarMaf1,
-            'nameProject': 'ProjectUefa'
+            'nameProject': 'ProjectMafAviastar'
         }
     ],
     // Комерческое озеленение
     [
         {
             'name': 'Ресторанный дворик',
-            'place': '',
+            'place': 'г. Санкт-Петербург, Россия',
             'principles': ['growth', 'light', 'scenery'],
             'image': Rest2,
-            'nameProject': 'ProjectUefa'
+            'nameProject': 'ProjectRest'
         }
     ],
     // Частные объекты
