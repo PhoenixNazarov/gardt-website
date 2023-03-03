@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "PartName",
+  name: 'PartName',
   props: {
     text: String,
     theme: {
@@ -25,21 +25,21 @@ export default {
   },
   methods: {
     waitShow: function (e) {
-      let $part = this.$el.querySelector('.part-name');
-      let partY = $part.getBoundingClientRect().y;
+      const $part = this.$el.querySelector('.part-name')
+      const partY = $part.getBoundingClientRect().y
       if ((partY - window.innerHeight * (100 - this.show) / 100) <= 0) {
-        $part.classList.add("play-show")
-        document.removeEventListener('scroll', this.waitShow);
+        $part.classList.add('play-show')
+        document.removeEventListener('scroll', this.waitShow)
       }
     }
   },
-  mounted() {
+  mounted () {
     if (this.show !== -1) {
-      this.$el.querySelector('.part-name').classList.add("hide");
-      document.addEventListener('scroll', this.waitShow);
+      this.$el.querySelector('.part-name').classList.add('hide')
+      document.addEventListener('scroll', this.waitShow)
     }
   },
-  unmounted() {
+  unmounted () {
     if (this.show !== -1) {
       document.removeEventListener('scroll', this.waitShow)
     }
@@ -92,6 +92,5 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
 }
-
 
 </style>

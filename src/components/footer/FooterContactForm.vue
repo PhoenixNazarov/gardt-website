@@ -57,21 +57,21 @@
 </template>
 
 <script>
-import PartName from "@/components/ui/PartName.vue";
-import Input from "@/components/ui/Input.vue";
-import Button from "@/components/ui/Button.vue";
-import {setCookie, getCookie, deleteCookie} from "@/assets/js/cookie.js";
+import PartName from '@/components/ui/PartName.vue'
+import Input from '@/components/ui/Input.vue'
+import Button from '@/components/ui/Button.vue'
+import { setCookie, getCookie, deleteCookie } from '@/assets/js/cookie.js'
 
 export default {
-  name: "FooterContactForm.vue",
-  components: {Button, Input, PartName},
+  name: 'FooterContactForm.vue',
+  components: { Button, Input, PartName },
   props: {
     theme: {
       type: String,
       required: true
     }
   },
-  data() {
+  data () {
     return {
       form: {
         name: {
@@ -89,7 +89,7 @@ export default {
         comment: {
           status: 'none',
           value: ''
-        },
+        }
       },
       phoneRe: /^((\+7|7|8)+([0-9]){10})$/,
       mailRe: /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/
@@ -97,58 +97,58 @@ export default {
   },
   methods: {
     onInputName: function (s) {
-      this.form.name.value = s;
-      this.form.name.status = 'none';
+      this.form.name.value = s
+      this.form.name.status = 'none'
     },
     onInputMail: function (s) {
-      this.form.mail.value = s;
-      this.form.mail.status = 'none';
+      this.form.mail.value = s
+      this.form.mail.status = 'none'
     },
     onInputPhone: function (s) {
-      this.form.phone.value = s;
-      this.form.phone.status = 'none';
+      this.form.phone.value = s
+      this.form.phone.status = 'none'
     },
     onInputComment: function (s) {
-      this.form.comment.value = s;
-      this.form.comment.status = 'none';
+      this.form.comment.value = s
+      this.form.comment.status = 'none'
     },
     validate: function (event) {
-      let error = false;
+      let error = false
       if (this.form.name.value.trim().length < 4) {
-        this.form.name.status = 'danger';
-        error = true;
+        this.form.name.status = 'danger'
+        error = true
       }
       if (!this.phoneRe.test(this.form.phone.value)) {
-        this.form.phone.status = 'danger';
-        error = true;
+        this.form.phone.status = 'danger'
+        error = true
       }
       if (!this.mailRe.test(this.form.mail.value)) {
-        this.form.mail.status = 'danger';
-        error = true;
+        this.form.mail.status = 'danger'
+        error = true
       }
 
       if (!error) {
-        if (getCookie("contact") === undefined) {
-          setCookie("contact", "1", {'max-age': 60 * 60});
-          this.hideForm();
+        if (getCookie('contact') === undefined) {
+          setCookie('contact', '1', { 'max-age': 60 * 60 })
+          this.hideForm()
         }
       }
     },
     hideForm: function (smooth) {
-      let form = this.$el.querySelector(".feedback-form-write")
-      let status = this.$el.querySelector(".feedback-text-send")
+      const form = this.$el.querySelector('.feedback-form-write')
+      const status = this.$el.querySelector('.feedback-text-send')
 
-      form.classList.add('hide');
-      status.classList.remove('hide');
+      form.classList.add('hide')
+      status.classList.remove('hide')
     },
     showForm: function () {
-      let form = this.$el.querySelector(".feedback-form-write")
-      let status = this.$el.querySelector(".feedback-text-send")
+      const form = this.$el.querySelector('.feedback-form-write')
+      const status = this.$el.querySelector('.feedback-text-send')
 
-      form.classList.remove('hide');
-      status.classList.add('hide');
+      form.classList.remove('hide')
+      status.classList.add('hide')
     }
-  },
+  }
 }
 </script>
 
@@ -217,7 +217,6 @@ export default {
   transition: 500ms;
   z-index: 1;
 }
-
 
 .hide {
   opacity: 0;

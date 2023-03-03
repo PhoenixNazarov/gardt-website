@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: "AnimationThreePhotosDoubleOne"
+  name: 'AnimationThreePhotosDoubleOne'
 }
 </script>
 
@@ -167,6 +167,5 @@ export default {
   display: flex;
   justify-content: flex-end;
 }
-
 
 </style>

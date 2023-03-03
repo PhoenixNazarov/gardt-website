@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "AnimationOpacity"
+  name: 'AnimationOpacity'
 }
 </script>
 
@@ -56,7 +56,6 @@ export default {
   /*background-image: url('../../assets/images/test/image2.png');*/
   animation: anim2 4s linear infinite alternate;
 }
-
 
 @keyframes anim3 {
   0% {

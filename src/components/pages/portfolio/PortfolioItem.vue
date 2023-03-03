@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: "PortfolioItem",
+  name: 'PortfolioItem',
   props: {
     name: {
       type: String,
@@ -42,7 +42,7 @@ export default {
       required: true
     },
     image: {
-      type: [String, String],
+      type: [String, String]
       // required: true
     }
   }

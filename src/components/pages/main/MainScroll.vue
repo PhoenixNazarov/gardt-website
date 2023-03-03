@@ -24,48 +24,48 @@
 
 <script>
 export default {
-  name: "MainScroll",
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll);
-    this.fixed = false;
+  name: 'MainScroll',
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+    this.fixed = false
   },
-  unmounted() {
+  unmounted () {
     if (this.$carriage !== undefined) {
-      this.$carriage.style.position = "absolute";
-      this.$carriage.style.top = null;
-      this.fixed = false;
+      this.$carriage.style.position = 'absolute'
+      this.$carriage.style.top = null
+      this.fixed = false
     }
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    handleScroll(event) {
+    handleScroll (event) {
       if (this.$carriage === undefined) {
-        this.$carriage = this.$el.querySelector(".main-scroll-carriage");
+        this.$carriage = this.$el.querySelector('.main-scroll-carriage')
       }
 
       if (this.$container === undefined) {
-        this.$container = this.$el.querySelector(".main-scroll-container");
+        this.$container = this.$el.querySelector('.main-scroll-container')
       }
 
-      let hgParent = this.$container.getBoundingClientRect();
-      let hgGradient = this.$el.querySelector(".main-scroll-gradient").getBoundingClientRect();
+      const hgParent = this.$container.getBoundingClientRect()
+      const hgGradient = this.$el.querySelector('.main-scroll-gradient').getBoundingClientRect()
       if (hgParent.y > 0) {
-        this.$carriage.style.position = "absolute";
-        this.$carriage.style.top = null;
-        this.fixed = false;
+        this.$carriage.style.position = 'absolute'
+        this.$carriage.style.top = null
+        this.fixed = false
       } else if (!this.fixed && (hgParent.y <= 0 && hgParent.y >= -(hgParent.height - window.innerHeight))) {
-        this.$carriage.style.position = "fixed";
-        this.$carriage.style.top = "0px";
-        this.fixed = true;
+        this.$carriage.style.position = 'fixed'
+        this.$carriage.style.top = '0px'
+        this.fixed = true
       }
       if (this.fixed && hgParent.y > 0) {
-        this.$carriage.style.position = "absolute";
-        this.$carriage.style.top = null;
-        this.fixed = false;
+        this.$carriage.style.position = 'absolute'
+        this.$carriage.style.top = null
+        this.fixed = false
       } else if (this.fixed && (hgGradient.y + (hgGradient.height - window.innerHeight) / 2) <= 0) {
-        this.$carriage.style.position = "absolute";
-        this.$carriage.style.top = (hgParent.height - window.innerHeight - (hgGradient.height - window.innerHeight) / 2) + "px";
-        this.fixed = false;
+        this.$carriage.style.position = 'absolute'
+        this.$carriage.style.top = (hgParent.height - window.innerHeight - (hgGradient.height - window.innerHeight) / 2) + 'px'
+        this.fixed = false
       }
     }
   }

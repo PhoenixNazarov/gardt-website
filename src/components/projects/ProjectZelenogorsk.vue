@@ -34,23 +34,23 @@
 </template>
 
 <script>
-import Navigation from "@/components/navigation/Navigation.vue";
-import AnimationPhotoDescriptionScroll from "@/components/projectAnimations/AnimationPhotoDescriptionScroll.vue";
-import AnimationMagnifier from "@/components/projectAnimations/AnimationMagnifier.vue";
-import PartName from "@/components/ui/PartName.vue";
-import AnimationDropPhotoScroll from "@/components/projectAnimations/AnimationDropPhotoScroll.vue";
-import AnimationThreePhotosScroll from "@/components/projectAnimations/AnimationThreePhotosScroll.vue";
-import Footer from "@/components/footer/Footer.vue";
-import AnimationName from "@/components/projectAnimations/AnimationName.vue";
-import AnimationDescription from "@/components/projectAnimations/AnimationDescription.vue";
-import AnimationBackground from "@/components/projectAnimations/AnimationBackground.vue";
+import Navigation from '@/components/navigation/Navigation.vue'
+import AnimationPhotoDescriptionScroll from '@/components/projectAnimations/AnimationPhotoDescriptionScroll.vue'
+import AnimationMagnifier from '@/components/projectAnimations/AnimationMagnifier.vue'
+import PartName from '@/components/ui/PartName.vue'
+import AnimationDropPhotoScroll from '@/components/projectAnimations/AnimationDropPhotoScroll.vue'
+import AnimationThreePhotosScroll from '@/components/projectAnimations/AnimationThreePhotosScroll.vue'
+import Footer from '@/components/footer/Footer.vue'
+import AnimationName from '@/components/projectAnimations/AnimationName.vue'
+import AnimationDescription from '@/components/projectAnimations/AnimationDescription.vue'
+import AnimationBackground from '@/components/projectAnimations/AnimationBackground.vue'
 
-import image from "../../assets/images/main-slider/1.jpg"
-import {pImageScenery, pImageUser, pImageProcess} from "../../assets/images/portfolio-principles/import.js"
-import AnimationMagnifierStatic from "@/components/projectAnimations/AnimationMagnifierStatic.vue";
+import image from '../../assets/images/main-slider/1.jpg'
+import { pImageScenery, pImageUser, pImageProcess } from '../../assets/images/portfolio-principles/import.js'
+import AnimationMagnifierStatic from '@/components/projectAnimations/AnimationMagnifierStatic.vue'
 
 export default {
-  name: "ProjectZelenogorsk",
+  name: 'ProjectZelenogorsk',
   data: function () {
     return {
       image, pImageScenery, pImageUser, pImageProcess
@@ -62,7 +62,12 @@ export default {
     AnimationDescription,
     AnimationName,
     AnimationThreePhotosScroll,
-    AnimationDropPhotoScroll, PartName, AnimationMagnifier, AnimationPhotoDescriptionScroll, Navigation, Footer
+    AnimationDropPhotoScroll,
+    PartName,
+    AnimationMagnifier,
+    AnimationPhotoDescriptionScroll,
+    Navigation,
+    Footer
   }
 }
 </script>

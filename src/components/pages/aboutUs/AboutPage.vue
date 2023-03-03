@@ -34,16 +34,16 @@
 </template>
 
 <script>
-import Navigation from "@/components/navigation/Navigation.vue";
-import AboutPresentation from "@/components/pages/aboutUs/AboutPresentation.vue";
-import PartName from "@/components/ui/PartName.vue";
-import AboutPeople from "@/components/pages/aboutUs/AboutPeople.vue";
-import Footer from "@/components/footer/Footer.vue";
-import AnimationBackground from "@/components/projectAnimations/AnimationBackground.vue";
+import Navigation from '@/components/navigation/Navigation.vue'
+import AboutPresentation from '@/components/pages/aboutUs/AboutPresentation.vue'
+import PartName from '@/components/ui/PartName.vue'
+import AboutPeople from '@/components/pages/aboutUs/AboutPeople.vue'
+import Footer from '@/components/footer/Footer.vue'
+import AnimationBackground from '@/components/projectAnimations/AnimationBackground.vue'
 
 export default {
-  name: "AboutPage",
-  components: {AnimationBackground, Footer, AboutPeople, PartName, AboutPresentation, Navigation}
+  name: 'AboutPage',
+  components: { AnimationBackground, Footer, AboutPeople, PartName, AboutPresentation, Navigation }
 }
 </script>
 

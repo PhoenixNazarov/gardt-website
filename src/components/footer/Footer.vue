@@ -11,13 +11,13 @@
 </template>
 
 <script>
-import FooterContactForm from "@/components/footer/FooterContactForm.vue";
-import FooterContacts from "@/components/footer/FooterContacts.vue";
+import FooterContactForm from '@/components/footer/FooterContactForm.vue'
+import FooterContacts from '@/components/footer/FooterContacts.vue'
 
 export default {
-  name: "Footer",
-  components: {FooterContacts, FooterContactForm},
-  props: ["theme"],
+  name: 'Footer',
+  components: { FooterContacts, FooterContactForm },
+  props: ['theme']
 }
 </script>
 
@@ -62,7 +62,6 @@ export default {
 .footer-artifact.light {
   color: var(--vt-c-white);
 }
-
 
 .footer-artifact.dark {
   color: var(--vt-c-black);

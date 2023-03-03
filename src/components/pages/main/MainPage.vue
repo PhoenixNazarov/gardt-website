@@ -26,32 +26,34 @@
 </template>
 
 <script>
-import MainPresentation from "@/components/pages/main/MainPresentation.vue";
-import MainScroll from "@/components/pages/main/MainScroll.vue";
-import MainMission from "@/components/pages/main/MainMission.vue";
-import MainPrinciples from "@/components/pages/main/MainPrinciples.vue";
-import MainProject from "@/components/pages/main/MainProject.vue";
-import Footer from "@/components/footer/Footer.vue";
-import Navigation from "@/components/navigation/Navigation.vue";
+import MainPresentation from '@/components/pages/main/MainPresentation.vue'
+import MainScroll from '@/components/pages/main/MainScroll.vue'
+import MainMission from '@/components/pages/main/MainMission.vue'
+import MainPrinciples from '@/components/pages/main/MainPrinciples.vue'
+import MainProject from '@/components/pages/main/MainProject.vue'
+import Footer from '@/components/footer/Footer.vue'
+import Navigation from '@/components/navigation/Navigation.vue'
+import axios from 'axios'
 
 export default {
-  name: "MainPage",
-  components: {Navigation, Footer, MainProject, MainPrinciples, MainMission, MainScroll, MainPresentation},
-  data() {
+  name: 'MainPage',
+  components: { Navigation, Footer, MainProject, MainPrinciples, MainMission, MainScroll, MainPresentation },
+  data () {
     return {
-      theme: "light",
+      theme: 'light'
     }
   },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
+  created () {
+    window.addEventListener('scroll', this.handleScroll)
+    console.log(axios.get('https://api.coindesk.com/v1/bpi/currentprice.json'))
   },
-  unmounted() {
-    window.removeEventListener('scroll', this.handleScroll);
+  unmounted () {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    handleScroll(event) {
-      let pres = this.$el.querySelector(".pres-slide").getBoundingClientRect();
-      let offset = pres.y + pres.height;
+    handleScroll (event) {
+      const pres = this.$el.querySelector('.pres-slide').getBoundingClientRect()
+      const offset = pres.y + pres.height
       // if (offset < 0) {
       //   this.theme = "dark"
       // } else {
@@ -67,6 +69,5 @@ export default {
   z-index: 100;
   position: fixed;
 }
-
 
 </style>

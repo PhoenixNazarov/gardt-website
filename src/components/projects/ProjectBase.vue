@@ -29,22 +29,22 @@
 </template>
 
 <script>
-import {projectsData} from "@/assets/images/projects/import";
-import AnimationBackground from "@/components/projectAnimations/AnimationBackground.vue";
-import Navigation from "@/components/navigation/Navigation.vue";
-import AnimationName from "@/components/projectAnimations/AnimationName.vue";
-import AnimationDescription from "@/components/projectAnimations/AnimationDescription.vue";
-import Footer from "@/components/footer/Footer.vue";
-import AnimationPhotoDescriptionScroll from "@/components/projectAnimations/AnimationPhotoDescriptionScroll.vue";
-import AnimationMagnifierStatic from "@/components/projectAnimations/AnimationMagnifierStatic.vue";
-import AnimationDropPhotoScroll from "@/components/projectAnimations/AnimationDropPhotoScroll.vue";
-import AnimationThreePhotosScroll from "@/components/projectAnimations/AnimationThreePhotosScroll.vue";
+import { projectsData } from '@/assets/images/projects/import'
+import AnimationBackground from '@/components/projectAnimations/AnimationBackground.vue'
+import Navigation from '@/components/navigation/Navigation.vue'
+import AnimationName from '@/components/projectAnimations/AnimationName.vue'
+import AnimationDescription from '@/components/projectAnimations/AnimationDescription.vue'
+import Footer from '@/components/footer/Footer.vue'
+import AnimationPhotoDescriptionScroll from '@/components/projectAnimations/AnimationPhotoDescriptionScroll.vue'
+import AnimationMagnifierStatic from '@/components/projectAnimations/AnimationMagnifierStatic.vue'
+import AnimationDropPhotoScroll from '@/components/projectAnimations/AnimationDropPhotoScroll.vue'
+import AnimationThreePhotosScroll from '@/components/projectAnimations/AnimationThreePhotosScroll.vue'
 import AnimationThreePhotosDoubleOneScroll
-  from "@/components/projectAnimations/AnimationThreePhotosDoubleOneScroll.vue";
-import AnimationFourPhotosScroll from "@/components/projectAnimations/AnimationFourPhotosScroll.vue";
-import Button from "@/components/ui/Button.vue";
-import AnimationOpacityScroll from "@/components/projectAnimations/AnimationOpacityScroll.vue";
-import AnimationNameVideo from "@/components/projectAnimations/AnimationNameVideo.vue";
+  from '@/components/projectAnimations/AnimationThreePhotosDoubleOneScroll.vue'
+import AnimationFourPhotosScroll from '@/components/projectAnimations/AnimationFourPhotosScroll.vue'
+import Button from '@/components/ui/Button.vue'
+import AnimationOpacityScroll from '@/components/projectAnimations/AnimationOpacityScroll.vue'
+import AnimationNameVideo from '@/components/projectAnimations/AnimationNameVideo.vue'
 
 export default {
   components: {
@@ -57,18 +57,23 @@ export default {
     AnimationDropPhotoScroll,
     AnimationMagnifierStatic,
     AnimationPhotoDescriptionScroll,
-    AnimationDescription, AnimationName, Navigation, AnimationBackground, Footer},
-  data() {
+    AnimationDescription,
+    AnimationName,
+    Navigation,
+    AnimationBackground,
+    Footer
+  },
+  data () {
     return {
       projectsData
     }
   },
   props: ['projectName'],
-  name: "ProjectBase",
+  name: 'ProjectBase',
   methods: {
     changePage: function (page) {
-      this.$root.onChangePage(page);
-    },
+      this.$root.onChangePage(page)
+    }
   }
 }
 </script>

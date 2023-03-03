@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: "AnimationThreePhotosDoubleOneScroll",
+  name: 'AnimationThreePhotosDoubleOneScroll',
   props: {
     data: {
       type: Object,
@@ -36,39 +36,39 @@ export default {
   },
   methods: {
     onScroll: function (e) {
-      let offset = this.$container.getBoundingClientRect().y;
-      let height = this.$container.getBoundingClientRect().height;
-      let carHeight = this.$car.getBoundingClientRect().height;
+      const offset = this.$container.getBoundingClientRect().y
+      const height = this.$container.getBoundingClientRect().height
+      const carHeight = this.$car.getBoundingClientRect().height
 
-      let downBorder = -height + carHeight;
+      const downBorder = -height + carHeight
 
       if (!this.fixed && (offset < 0 && offset > downBorder)) {
-        this.$car.style.position = "fixed";
-        this.$car.style.top = 0;
-        this.$car.style.bottom = null;
-        this.fixed = true;
+        this.$car.style.position = 'fixed'
+        this.$car.style.top = 0
+        this.$car.style.bottom = null
+        this.fixed = true
       } else if (this.fixed && offset > 0) {
-        this.$car.style.position = "absolute";
-        this.$car.style.top = 0;
-        this.$car.style.bottom = null;
-        this.fixed = false;
+        this.$car.style.position = 'absolute'
+        this.$car.style.top = 0
+        this.$car.style.bottom = null
+        this.fixed = false
       } else if (this.fixed && offset < downBorder) {
-        this.$car.style.position = "absolute";
-        this.$car.style.top = null;
-        this.$car.style.bottom = 0;
-        this.fixed = false;
+        this.$car.style.position = 'absolute'
+        this.$car.style.top = null
+        this.$car.style.bottom = 0
+        this.fixed = false
       }
     }
   },
-  mounted() {
-    window.addEventListener("scroll", this.onScroll);
-    this.$car = this.$el.querySelector(".car");
-    this.$container = this.$el.querySelector(".drop-photo-container");
-    this.fixed = false;
+  mounted () {
+    window.addEventListener('scroll', this.onScroll)
+    this.$car = this.$el.querySelector('.car')
+    this.$container = this.$el.querySelector('.drop-photo-container')
+    this.fixed = false
 
-    let offset = this.$container.getBoundingClientRect().top - document.body.getBoundingClientRect().top;
+    const offset = this.$container.getBoundingClientRect().top - document.body.getBoundingClientRect().top
 
-    let height = this.$container.getBoundingClientRect().height - this.$car.getBoundingClientRect().height;
+    const height = this.$container.getBoundingClientRect().height - this.$car.getBoundingClientRect().height
 
     const myScrollTimeline = new ScrollTimeline({
       source: document.scrollingElement,
@@ -77,59 +77,58 @@ export default {
       scrollOffsets: [
         new CSSUnitValue(offset, 'px'),
         new CSSUnitValue(offset + height * 0.6, 'px'), // images
-        new CSSUnitValue(offset + height * 0.9, 'px'), // text
-      ],
-    });
+        new CSSUnitValue(offset + height * 0.9, 'px') // text
+      ]
+    })
 
-    this.$el.querySelector(".animation-1").animate(
-        {
-          height: ['150%', '100%', '100%'],
-          width: ['50%', '60%', '60%'],
-          transform: ["translate(90%, 20%)", "translate(0, 0)", "translate(0, 0)"],
-        },
-        {
-          duration: 1, fill: "forwards", timeline: myScrollTimeline
-        }
-    );
+    this.$el.querySelector('.animation-1').animate(
+      {
+        height: ['150%', '100%', '100%'],
+        width: ['50%', '60%', '60%'],
+        transform: ['translate(90%, 20%)', 'translate(0, 0)', 'translate(0, 0)']
+      },
+      {
+        duration: 1, fill: 'forwards', timeline: myScrollTimeline
+      }
+    )
 
+    this.$el.querySelector('.animation-2').animate(
+      {
+        height: ['150%', '100%', '100%'],
+        width: ['50%', '60%', '60%'],
+        transform: ['translate(50%, -70%)', 'translate(0, 0)', 'translate(0, 0)']
+      },
+      {
+        duration: 1, fill: 'forwards', timeline: myScrollTimeline
+      }
+    )
 
-    this.$el.querySelector(".animation-2").animate(
-        {
-          height: ['150%', '100%', '100%'],
-          width: ['50%', '60%', '60%'],
-          transform: ["translate(50%, -70%)", "translate(0, 0)", "translate(0, 0)"],
-        },
-        {
-          duration: 1, fill: "forwards", timeline: myScrollTimeline
-        }
-    );
+    this.$el.querySelector('.animation-3').animate(
+      {
+        height: ['55vh', '50vh', '50vh'],
+        width: ['80%', '100%', '100%'],
+        transform: ['translate(-100%, 10%)', 'translate(0, 0)', 'translate(0, 0)']
+      },
+      {
+        duration: 1, fill: 'forwards', timeline: myScrollTimeline
+      }
+    )
 
-    this.$el.querySelector(".animation-3").animate(
-        {
-          height: ['55vh', '50vh', '50vh'],
-          width: ['80%', '100%', '100%'],
-          transform: ["translate(-100%, 10%)", "translate(0, 0)", "translate(0, 0)"],
-        },
-        {
-          duration: 1, fill: "forwards", timeline: myScrollTimeline
-        }
-    );
-
-    this.$el.querySelectorAll(".image-text").forEach((e) => e.animate(
-        {
-          opacity: [0, 0, 1],
-        },
-        {
-          duration: 1, fill: "forwards", timeline: myScrollTimeline
-        }
+    this.$el.querySelectorAll('.image-text').forEach((e) => e.animate(
+      {
+        opacity: [0, 0, 1]
+      },
+      {
+        duration: 1, fill: 'forwards', timeline: myScrollTimeline
+      }
     ))
   },
-  unmounted() {
-    window.removeEventListener("scroll", this.onScroll);
-    this.$car.style.position = "absolute";
-    this.$car.style.top = 0;
-    this.$car.style.bottom = null;
-    this.fixed = false;
+  unmounted () {
+    window.removeEventListener('scroll', this.onScroll)
+    this.$car.style.position = 'absolute'
+    this.$car.style.top = 0
+    this.$car.style.bottom = null
+    this.fixed = false
     // this.$el.querySelector(".animation-1").animate(null);
     // this.$el.querySelector(".animation-2").animate(null);
     // this.$el.querySelector(".animation-3").animate(null);
@@ -274,6 +273,5 @@ export default {
   display: flex;
   justify-content: flex-end;
 }
-
 
 </style>

@@ -38,55 +38,55 @@
 
 <script>
 export default {
-  name: "MainPresentationWriter",
-  data(){
+  name: 'MainPresentationWriter',
+  data () {
     return {
       create: 0
     }
   },
   methods: {
     write: function () {
-      let letters = this.$el.querySelectorAll(".main-writer-letter");
-      let rect = this.$el.querySelector(".main-writer-rect");
+      const letters = this.$el.querySelectorAll('.main-writer-letter')
+      const rect = this.$el.querySelector('.main-writer-rect')
 
-      letters[0].style.display = "inline";
-      letters[0].parentElement.appendChild(rect);
-      rect.style.display = "inline";
+      letters[0].style.display = 'inline'
+      letters[0].parentElement.appendChild(rect)
+      rect.style.display = 'inline'
 
-      function key1() {
-        rect.style.display = "none";
-        window.setTimeout(key2, 1000);
+      function key1 () {
+        rect.style.display = 'none'
+        window.setTimeout(key2, 1000)
       }
 
-      function key2() {
-        rect.style.display = "inline";
-        window.setTimeout(key3, 1000);
+      function key2 () {
+        rect.style.display = 'inline'
+        window.setTimeout(key3, 1000)
       }
 
       let index = 1
 
-      function key3() {
-        letters[index].style.display = "inline";
-        letters[index].parentElement.appendChild(rect);
-        index += 1;
+      function key3 () {
+        letters[index].style.display = 'inline'
+        letters[index].parentElement.appendChild(rect)
+        index += 1
         if (index + 1 <= letters.length) {
-          window.setTimeout(key3, 250);
+          window.setTimeout(key3, 250)
         } else {
-          window.setTimeout(() => rect.remove(), 250);
+          window.setTimeout(() => rect.remove(), 250)
         }
       }
-      window.setTimeout(key1, 1000);
+      window.setTimeout(key1, 1000)
     }
   },
-  mounted() {
-    if (this.$el.querySelector(".main-writer-rect") !== null) {
-      this.write();
+  mounted () {
+    if (this.$el.querySelector('.main-writer-rect') !== null) {
+      this.write()
     }
   },
-  unmounted() {
-    if (this.$el.querySelector(".main-writer-rect") !== null) {
-      this.$el.querySelectorAll(".main-writer-letter").forEach((i) => i.style.display = "inline");
-      this.$el.querySelector(".main-writer-rect").remove();
+  unmounted () {
+    if (this.$el.querySelector('.main-writer-rect') !== null) {
+      this.$el.querySelectorAll('.main-writer-letter').forEach((i) => i.style.display = 'inline')
+      this.$el.querySelector('.main-writer-rect').remove()
     }
   }
 }

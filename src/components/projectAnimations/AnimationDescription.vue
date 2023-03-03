@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: "AnimationDescription",
+  name: 'AnimationDescription',
   data: function () {
     return {
       show: 20
@@ -40,23 +40,23 @@ export default {
   methods: {
     waitShow: function (e) {
       if (this.sh === undefined) {
-        this.sh = this.$el.querySelector('.sub-description');
+        this.sh = this.$el.querySelector('.sub-description')
       }
 
-      let partY = this.sh.getBoundingClientRect().y;
+      const partY = this.sh.getBoundingClientRect().y
       if ((partY - window.innerHeight * (100 - this.show) / 100) <= 0) {
-        this.sh.classList.add("play-show")
-        document.removeEventListener('scroll', this.waitShow);
+        this.sh.classList.add('play-show')
+        document.removeEventListener('scroll', this.waitShow)
       }
     }
   },
-  mounted() {
+  mounted () {
     if (this.show !== -1) {
-      this.$el.querySelector('.sub-description').classList.add("hide");
+      this.$el.querySelector('.sub-description').classList.add('hide')
       document.addEventListener('scroll', this.waitShow)
     }
   },
-  unmounted() {
+  unmounted () {
     if (this.show !== -1) {
       document.removeEventListener('scroll', this.waitShow)
     }
@@ -89,7 +89,6 @@ export default {
 .page {
   height: 100vh;
 }
-
 
 .main-text {
   font-family: 'Montserrat', sans-serif;

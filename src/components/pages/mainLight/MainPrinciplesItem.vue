@@ -40,8 +40,8 @@
 
 <script>
 export default {
-  name: "PrinciplesItem",
-  props: ["title", "description", "image"]
+  name: 'PrinciplesItem',
+  props: ['title', 'description', 'image']
 }
 </script>
 

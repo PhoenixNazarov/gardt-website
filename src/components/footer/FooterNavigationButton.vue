@@ -7,8 +7,8 @@
 
 <script>
 export default {
-  name: "FooterNavigationButton",
-  props: ['text', "theme"]
+  name: 'FooterNavigationButton',
+  props: ['text', 'theme']
 }
 </script>
 
@@ -59,6 +59,5 @@ export default {
 .btn-navigation-underline.light {
   background: var(--vt-c-white);
 }
-
 
 </style>

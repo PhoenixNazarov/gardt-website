@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "AboutPresentation"
+  name: 'AboutPresentation'
 }
 </script>
 
@@ -46,6 +46,5 @@ export default {
 .show-animate {
   animation: from-down-animate ease-in-out 1s forwards;
 }
-
 
 </style>

@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import PartName from "@/components/ui/PartName.vue";
+import PartName from '@/components/ui/PartName.vue'
 
 export default {
-  name: "AnimationMagnifierStatic",
-  components: {PartName},
+  name: 'AnimationMagnifierStatic',
+  components: { PartName },
   props: {
     data: {
       type: Object,

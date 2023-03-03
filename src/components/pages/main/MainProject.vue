@@ -18,32 +18,32 @@
 </template>
 
 <script>
-import PartName from "@/components/ui/PartName.vue";
-import MainProjectItem from "@/components/pages/main/MainProjectItem.vue";
+import PartName from '@/components/ui/PartName.vue'
+import MainProjectItem from '@/components/pages/main/MainProjectItem.vue'
 
 export default {
-  name: "MainProject",
-  components: {MainProjectItem, PartName},
-  mounted() {
-    let $car = this.$el.querySelector(".project-slider-car");
+  name: 'MainProject',
+  components: { MainProjectItem, PartName },
+  mounted () {
+    const $car = this.$el.querySelector('.project-slider-car')
 
-    let x = 0;
-    let count = this.$el.querySelectorAll(".project-slider-item").length;
-    let width = $car.getBoundingClientRect().width;
-    let part = width / (count * 1.2);
-    this.$el.querySelector(".project-slider-button.left").addEventListener("click", function () {
-      x += part;
+    let x = 0
+    const count = this.$el.querySelectorAll('.project-slider-item').length
+    const width = $car.getBoundingClientRect().width
+    const part = width / (count * 1.2)
+    this.$el.querySelector('.project-slider-button.left').addEventListener('click', function () {
+      x += part
       if (x > 0) {
-        x = 0;
+        x = 0
       }
-      $car.style.transform = "translateX(" + x + "px)";
+      $car.style.transform = 'translateX(' + x + 'px)'
     })
-    this.$el.querySelector(".project-slider-button.right").addEventListener("click", function () {
-      x -= part;
+    this.$el.querySelector('.project-slider-button.right').addEventListener('click', function () {
+      x -= part
       if (x < -width + window.innerWidth) {
-        x = -width + window.innerWidth;
+        x = -width + window.innerWidth
       }
-      $car.style.transform = "translateX(" + x + "px)";
+      $car.style.transform = 'translateX(' + x + 'px)'
     })
   }
 }
@@ -87,6 +87,5 @@ export default {
 .project-slider-button.right {
   right: 0;
 }
-
 
 </style>

@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "AnimationBackground"
+  name: 'AnimationBackground'
 }
 </script>
 

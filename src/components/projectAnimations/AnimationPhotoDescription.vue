@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "AnimationPhotoDescription",
+  name: 'AnimationPhotoDescription'
 }
 </script>
 
@@ -75,6 +75,5 @@ export default {
   /*  opacity: 1;*/
   /*}*/
 }
-
 
 </style>

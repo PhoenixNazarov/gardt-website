@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import PartName from "@/components/ui/PartName.vue";
+import PartName from '@/components/ui/PartName.vue'
 
 export default {
-  name: "AnimationOpacityScroll",
-  components: {PartName},
+  name: 'AnimationOpacityScroll',
+  components: { PartName },
   props: {
     data: {
       type: Object,
@@ -25,71 +25,69 @@ export default {
   },
   methods: {
     onScroll: function (e) {
-      let offset = this.$container.getBoundingClientRect().y;
-      let height = this.$container.getBoundingClientRect().height;
-      let carHeight = this.$car.getBoundingClientRect().height;
+      const offset = this.$container.getBoundingClientRect().y
+      const height = this.$container.getBoundingClientRect().height
+      const carHeight = this.$car.getBoundingClientRect().height
 
-      let downBorder = -height + carHeight;
+      const downBorder = -height + carHeight
 
       if (!this.fixed && (offset < 0 && offset > downBorder)) {
-        this.$car.style.position = "fixed";
-        this.$car.style.top = 0;
-        this.$car.style.bottom = null;
-        this.fixed = true;
+        this.$car.style.position = 'fixed'
+        this.$car.style.top = 0
+        this.$car.style.bottom = null
+        this.fixed = true
       } else if (this.fixed && offset > 0) {
-        this.$car.style.position = "absolute";
-        this.$car.style.top = 0;
-        this.$car.style.bottom = null;
-        this.fixed = false;
+        this.$car.style.position = 'absolute'
+        this.$car.style.top = 0
+        this.$car.style.bottom = null
+        this.fixed = false
       } else if (this.fixed && offset < downBorder) {
-        this.$car.style.position = "absolute";
-        this.$car.style.top = null;
-        this.$car.style.bottom = 0;
-        this.fixed = false;
+        this.$car.style.position = 'absolute'
+        this.$car.style.top = null
+        this.$car.style.bottom = 0
+        this.fixed = false
       }
     }
   },
-  mounted() {
-    window.addEventListener("scroll", this.onScroll);
-    this.$car = this.$el.querySelector(".car");
-    this.$container = this.$el.querySelector(".drop-photo-container");
-    this.fixed = false;
+  mounted () {
+    window.addEventListener('scroll', this.onScroll)
+    this.$car = this.$el.querySelector('.car')
+    this.$container = this.$el.querySelector('.drop-photo-container')
+    this.fixed = false
 
-    let offset = this.$container.getBoundingClientRect().top - document.body.getBoundingClientRect().top;
+    const offset = this.$container.getBoundingClientRect().top - document.body.getBoundingClientRect().top
 
-    let height = this.$container.getBoundingClientRect().height - this.$car.getBoundingClientRect().height;
+    const height = this.$container.getBoundingClientRect().height - this.$car.getBoundingClientRect().height
 
-
-    let offsets = [];
+    const offsets = []
 
     for (let i = 0; i < this.data.matrix[0].length; i++) {
       offsets.push(new CSSUnitValue(offset + height * (i / this.data.matrix[0].length), 'px'))
     }
 
-    let myScrollTimeline = new ScrollTimeline({
+    const myScrollTimeline = new ScrollTimeline({
       source: document.scrollingElement,
       orientation: 'block',
       scrollOffsets: offsets
-    });
+    })
 
-    let $imgs = this.$el.querySelectorAll(".anim")
-
+    const $imgs = this.$el.querySelectorAll('.anim')
 
     for (let i = 0; i < this.data.matrix.length; i++) {
       $imgs[i].animate(
-          {
-            opacity: this.data.matrix[i]
-          },
-          {
-            duration: 1,
-            fill: "forwards",
-            timeline: myScrollTimeline
-          }
-      );
+        {
+          opacity: this.data.matrix[i]
+        },
+        {
+          duration: 1,
+          fill: 'forwards',
+          timeline: myScrollTimeline
+        }
+      )
     }
   },
-  unmounted() {
-    window.removeEventListener("scroll", this.onScroll);
+  unmounted () {
+    window.removeEventListener('scroll', this.onScroll)
   }
 }
 </script>

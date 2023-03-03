@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import MainPresentationSlider from "@/components/pages/mainLight/MainPresentationSlider.vue";
-import MainPresentationWriter from "@/components/pages/mainLight/MainPresentationWriter.vue";
+import MainPresentationSlider from '@/components/pages/mainLight/MainPresentationSlider.vue'
+import MainPresentationWriter from '@/components/pages/mainLight/MainPresentationWriter.vue'
 
 export default {
-  name: "MainPresentation",
-  components: {MainPresentationWriter, MainPresentationSlider}
+  name: 'MainPresentation',
+  components: { MainPresentationWriter, MainPresentationSlider }
 }
 </script>
 

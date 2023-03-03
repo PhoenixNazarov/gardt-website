@@ -19,8 +19,8 @@
 
 <script>
 export default {
-  name: "Input",
-  data() {
+  name: 'Input',
+  data () {
     return {
       message: ''
     }
@@ -35,15 +35,15 @@ export default {
     },
     status: {
       type: String,
-      default: "none"
+      default: 'none'
     }
   },
   methods: {
-    onInput(event) {
+    onInput (event) {
       if (this.message.length > this.maxLength) {
-        this.message = this.message.trim().substring(0, this.maxLength);
+        this.message = this.message.trim().substring(0, this.maxLength)
       }
-      this.$emit('message-input', this.message);
+      this.$emit('message-input', this.message)
     }
   }
 }
@@ -104,7 +104,6 @@ export default {
   font-size: 1.25em;
   transition: 200ms;
 }
-
 
 .input.dark {
   border-color: var(--vt-c-black);

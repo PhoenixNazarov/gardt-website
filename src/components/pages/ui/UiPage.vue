@@ -102,25 +102,25 @@
 </template>
 
 <script>
-import Input from "@/components/ui/Input.vue";
-import Navigation from "@/components/navigation/Navigation.vue";
-import Button from "@/components/ui/Button.vue";
-import AnimationDropPhoto from "@/components/projectAnimations/AnimationDropPhoto.vue";
-import AnimationPhotoDescription from "@/components/projectAnimations/AnimationPhotoDescription.vue";
-import AnimationDropPhotoScroll from "@/components/projectAnimations/AnimationDropPhotoScroll.vue";
-import AnimationPhotoDescriptionScroll from "@/components/projectAnimations/AnimationPhotoDescriptionScroll.vue";
-import AnimationThreePhotos from "@/components/projectAnimations/AnimationThreePhotos.vue";
-import AnimationMagnifier from "@/components/projectAnimations/AnimationMagnifier.vue";
-import AnimationThreePhotosDoubleOne from "@/components/projectAnimations/AnimationThreePhotosDoubleOne.vue";
-import AnimationFourPhotos from "@/components/projectAnimations/AnimationFourPhotos.vue";
-import AnimationThreePhotosScroll from "@/components/projectAnimations/AnimationThreePhotosScroll.vue";
+import Input from '@/components/ui/Input.vue'
+import Navigation from '@/components/navigation/Navigation.vue'
+import Button from '@/components/ui/Button.vue'
+import AnimationDropPhoto from '@/components/projectAnimations/AnimationDropPhoto.vue'
+import AnimationPhotoDescription from '@/components/projectAnimations/AnimationPhotoDescription.vue'
+import AnimationDropPhotoScroll from '@/components/projectAnimations/AnimationDropPhotoScroll.vue'
+import AnimationPhotoDescriptionScroll from '@/components/projectAnimations/AnimationPhotoDescriptionScroll.vue'
+import AnimationThreePhotos from '@/components/projectAnimations/AnimationThreePhotos.vue'
+import AnimationMagnifier from '@/components/projectAnimations/AnimationMagnifier.vue'
+import AnimationThreePhotosDoubleOne from '@/components/projectAnimations/AnimationThreePhotosDoubleOne.vue'
+import AnimationFourPhotos from '@/components/projectAnimations/AnimationFourPhotos.vue'
+import AnimationThreePhotosScroll from '@/components/projectAnimations/AnimationThreePhotosScroll.vue'
 import AnimationThreePhotosDoubleOneScroll
-  from "@/components/projectAnimations/AnimationThreePhotosDoubleOneScroll.vue";
-import AnimationFourPhotosScroll from "@/components/projectAnimations/AnimationFourPhotosScroll.vue";
-import AnimationOpacity from "@/components/projectAnimations/AnimationOpacity.vue";
+  from '@/components/projectAnimations/AnimationThreePhotosDoubleOneScroll.vue'
+import AnimationFourPhotosScroll from '@/components/projectAnimations/AnimationFourPhotosScroll.vue'
+import AnimationOpacity from '@/components/projectAnimations/AnimationOpacity.vue'
 
 export default {
-  name: "UiPage",
+  name: 'UiPage',
   components: {
     AnimationOpacity,
     AnimationFourPhotosScroll,
@@ -131,9 +131,14 @@ export default {
     AnimationMagnifier,
     AnimationThreePhotos,
     AnimationPhotoDescriptionScroll,
-    AnimationDropPhotoScroll, AnimationPhotoDescription, AnimationDropPhoto, Button, Navigation, Input
+    AnimationDropPhotoScroll,
+    AnimationPhotoDescription,
+    AnimationDropPhoto,
+    Button,
+    Navigation,
+    Input
   },
-  data() {
+  data () {
     return {
       form: {
         name: {
@@ -144,19 +149,19 @@ export default {
           status: 'none',
           message: ''
         }
-      },
+      }
     }
   },
   methods: {
     onNameInput: function (s) {
-      this.form.name.message = s;
+      this.form.name.message = s
       this.form.name.status = 'danger'
-      console.log(this.form.name.message);
+      console.log(this.form.name.message)
     },
     onSurnameInput: function (s) {
-      this.form.surname.message = s;
+      this.form.surname.message = s
       this.form.surname.status = 'danger'
-      console.log(this.form.surname.message);
+      console.log(this.form.surname.message)
     }
   }
 }

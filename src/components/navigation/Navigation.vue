@@ -33,22 +33,22 @@
 </template>
 
 <script>
-import NavigationButton from "@/components/navigation/NavigationButton.vue";
-import Button from "@/components/ui/Button.vue";
+import NavigationButton from '@/components/navigation/NavigationButton.vue'
+import Button from '@/components/ui/Button.vue'
 
 export default {
-  name: "Navigation",
-  props: ["theme"],
-  components: {Button, NavigationButton},
+  name: 'Navigation',
+  props: ['theme'],
+  components: { Button, NavigationButton },
   methods: {
     changePage: function (page) {
-      this.$root.onChangePage(page);
+      this.$root.onChangePage(page)
     },
     getPage: function () {
-      return this.$root.getPage();
+      return this.$root.getPage()
     },
     toDownPage: function () {
-      window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
     }
   }
 }
@@ -68,7 +68,6 @@ export default {
   transform-origin: center center;
 }
 
-
 @media (max-width: 1450px) {
   .navigation-logo-container {
     /*width: 250px;*/
@@ -80,7 +79,6 @@ export default {
     width: 250px;
   }
 }
-
 
 .navigation-container {
   padding: 0;
@@ -100,7 +98,6 @@ export default {
     height: 50px;
   }
 }
-
 
 @media (max-width: 1000px) {
   .navigation-button:not(:last-child) {

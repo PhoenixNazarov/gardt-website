@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: "AnimationFourPhotos"
+  name: 'AnimationFourPhotos'
 }
 </script>
 
@@ -231,6 +231,5 @@ export default {
   display: flex;
   justify-content: flex-end;
 }
-
 
 </style>

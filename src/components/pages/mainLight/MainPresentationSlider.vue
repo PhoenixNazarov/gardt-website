@@ -10,49 +10,48 @@
 
 <script>
 export default {
-  name: "Slider",
+  name: 'Slider',
   methods: {
     nextImage: function () {
       if (this.$images === undefined) {
-        this.$images = this.$el.querySelectorAll(".main-slider-image");
-        this.index = this.$images.length - 1;
+        this.$images = this.$el.querySelectorAll('.main-slider-image')
+        this.index = this.$images.length - 1
         this.$images.forEach((el) => {
-          el.style.opacity = 0;
-          el.style.position = "absolute";
-          el.style.zIndex = null;
-        });
+          el.style.opacity = 0
+          el.style.position = 'absolute'
+          el.style.zIndex = null
+        })
       }
 
-      let nextIndex = this.index + 1;
-      let beforeIndex = this.index - 1;
+      let nextIndex = this.index + 1
+      let beforeIndex = this.index - 1
       if (this.index + 1 >= this.$images.length) {
-        nextIndex = 0;
+        nextIndex = 0
       }
       if (beforeIndex < 0) {
-        beforeIndex = this.$images.length - 1;
+        beforeIndex = this.$images.length - 1
       }
 
-      this.$images[beforeIndex].style.zIndex = null;
-      this.$images[nextIndex].style.zIndex = null;
-      this.$images[this.index].style.zIndex = 2;
+      this.$images[beforeIndex].style.zIndex = null
+      this.$images[nextIndex].style.zIndex = null
+      this.$images[this.index].style.zIndex = 2
 
+      this.$images[nextIndex].style.transition = '0s'
+      this.$images[nextIndex].style.opacity = 1
 
-      this.$images[nextIndex].style.transition = "0s";
-      this.$images[nextIndex].style.opacity = 1;
-
-      this.$images[this.index].style.transition = "1s";
-      this.$images[this.index].style.opacity = 0;
-      this.index = nextIndex;
+      this.$images[this.index].style.transition = '1s'
+      this.$images[this.index].style.opacity = 0
+      this.index = nextIndex
     }
   },
 
-  mounted() {
-    this.nextImage();
-    this.interval = window.setInterval(this.nextImage, 2000);
+  mounted () {
+    this.nextImage()
+    this.interval = window.setInterval(this.nextImage, 2000)
   },
-  unmounted() {
+  unmounted () {
     if (this.interval !== undefined) {
-      clearInterval(this.interval);
+      clearInterval(this.interval)
     }
   }
 }

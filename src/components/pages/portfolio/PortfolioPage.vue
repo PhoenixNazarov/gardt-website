@@ -56,26 +56,26 @@
 </template>
 
 <script>
-import Navigation from "@/components/navigation/Navigation.vue";
-import Footer from "@/components/footer/Footer.vue";
-import PortfolioItem from "@/components/pages/portfolio/PortfolioItem.vue";
+import Navigation from '@/components/navigation/Navigation.vue'
+import Footer from '@/components/footer/Footer.vue'
+import PortfolioItem from '@/components/pages/portfolio/PortfolioItem.vue'
 
-import {portfolioItemData} from '@/assets/images/portfolio-items/import'
+import { portfolioItemData } from '@/assets/images/portfolio-items/import'
 
 export default {
-  name: "PortfolioPage",
-  data() {
+  name: 'PortfolioPage',
+  data () {
     return {
       portfolioItemData
     }
   },
-  components: {PortfolioItem, Navigation, Footer},
+  components: { PortfolioItem, Navigation, Footer },
   methods: {
     onSurfPage: function (numb) {
       this.$el.querySelector('.portfolio-car').style.transform = `translateX(${-numb * 100}vw)`
     },
     toProject: function (proj) {
-      this.$root.onChangePage(proj);
+      this.$root.onChangePage(proj)
     }
   }
 }

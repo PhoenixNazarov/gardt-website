@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "AnimationName",
+  name: 'AnimationName',
   props: {
     data: {
       type: Object,

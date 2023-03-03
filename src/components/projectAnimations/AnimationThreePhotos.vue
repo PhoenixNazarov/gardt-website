@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: "AnimationThreePhotos"
+  name: 'AnimationThreePhotos'
 }
 </script>
 
@@ -158,6 +158,5 @@ export default {
   display: flex;
   justify-content: flex-end;
 }
-
 
 </style>

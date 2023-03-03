@@ -18,39 +18,39 @@
 </template>
 
 <script>
-import MainPage from "@/components/pages/main/MainPage.vue";
-import AboutPage from "@/components/pages/aboutUs/AboutPage.vue";
-import UiPage from "@/components/pages/ui/UiPage.vue";
-import PortfolioPage from "@/components/pages/portfolio/PortfolioPage.vue";
-import MainPageLight from "@/components/pages/mainLight/MainPage.vue";
-import ProjectZelenogorsk from "@/components/projects/ProjectZelenogorsk.vue";
-import ProjectBase from "@/components/projects/ProjectBase.vue";
+import MainPage from '@/components/pages/main/MainPage.vue'
+import AboutPage from '@/components/pages/aboutUs/AboutPage.vue'
+import UiPage from '@/components/pages/ui/UiPage.vue'
+import PortfolioPage from '@/components/pages/portfolio/PortfolioPage.vue'
+import MainPageLight from '@/components/pages/mainLight/MainPage.vue'
+import ProjectZelenogorsk from '@/components/projects/ProjectZelenogorsk.vue'
+import ProjectBase from '@/components/projects/ProjectBase.vue'
 
 export default {
   name: 'App',
   data: function () {
     return {
-      page: "Main"
+      page: 'Main'
     }
   },
-  components: {ProjectBase, ProjectZelenogorsk, MainPageLight, PortfolioPage, UiPage, AboutPage, MainPage},
-  beforeCreate() {
+  components: { ProjectBase, ProjectZelenogorsk, MainPageLight, PortfolioPage, UiPage, AboutPage, MainPage },
+  beforeCreate () {
     document._fixScrollListeners = []
     this.$root.onChangePage = function (page) {
-      window.scrollTo({top: 0});
+      window.scrollTo({ top: 0 })
 
       this.$nextTick(() => {
-        document._fixScrollListeners.forEach((f) => document.removeEventListener('scroll', f));
-        document._fixScrollListeners = [];
+        document._fixScrollListeners.forEach((f) => document.removeEventListener('scroll', f))
+        document._fixScrollListeners = []
       })
-      this.page = page;
+      this.page = page
     }
     this.$root.getPage = function () {
-      return this.page;
+      return this.page
     }
 
     window.addEventListener('scroll', (e) => {
-      document.body.style.cssText=`--scrollTop: ${window.scrollY}px`;
+      document.body.style.cssText = `--scrollTop: ${window.scrollY}px`
     })
   }
 }

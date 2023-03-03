@@ -27,18 +27,18 @@
 </template>
 
 <script>
-import FooterNavigationButton from "@/components/footer/FooterNavigationButton.vue";
+import FooterNavigationButton from '@/components/footer/FooterNavigationButton.vue'
 
 export default {
-  name: "FooterContacts",
-  components: {FooterNavigationButton},
-  props: ["theme"],
+  name: 'FooterContacts',
+  components: { FooterNavigationButton },
+  props: ['theme'],
   methods: {
     changePage: function (page) {
-      this.$root.onChangePage(page);
+      this.$root.onChangePage(page)
     },
     toDownPage: function () {
-      window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
     }
   }
 }
@@ -79,7 +79,6 @@ export default {
   align-items: flex-end;
 }
 
-
 .footer-contacts-text-inner {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
@@ -92,7 +91,6 @@ export default {
 .footer-contacts-text-inner.light {
   color: var(--vt-c-white)
 }
-
 
 .footer-contacts-text-inner.dark {
   color: var(--vt-c-black)
@@ -114,7 +112,6 @@ export default {
 .footer-contacts-names-inner.dark {
   color: var(--vt-c-black)
 }
-
 
 .footer-contacts-names-inner.light {
   color: var(--vt-c-white)

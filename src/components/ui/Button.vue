@@ -11,8 +11,8 @@
 
 <script>
 export default {
-  name: "Button",
-  props: ["text", "theme"],
+  name: 'Button',
+  props: ['text', 'theme']
 }
 </script>
 
@@ -51,7 +51,6 @@ export default {
   border-width: 1px;
   background: transparent;
 }
-
 
 .btn-text {
   cursor: pointer;

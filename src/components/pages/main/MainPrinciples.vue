@@ -36,40 +36,40 @@
 </template>
 
 <script>
-import PartName from "@/components/ui/PartName.vue";
-import MainPrinciplesItem from "@/components/pages/main/MainPrinciplesItem.vue";
+import PartName from '@/components/ui/PartName.vue'
+import MainPrinciplesItem from '@/components/pages/main/MainPrinciplesItem.vue'
 
 export default {
-  name: "MainPrinciples",
-  components: {MainPrinciplesItem, PartName},
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
-    this.fixed = false;
-    this.show = true;
+  name: 'MainPrinciples',
+  components: { MainPrinciplesItem, PartName },
+  created () {
+    window.addEventListener('scroll', this.handleScroll)
+    this.fixed = false
+    this.show = true
   },
-  unmounted() {
-    window.removeEventListener('scroll', this.handleScroll);
+  unmounted () {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    handleScroll(event) {
+    handleScroll (event) {
       if (this.$princ === undefined) {
-        this.$princ = this.$el.querySelector(".principles-image");
+        this.$princ = this.$el.querySelector('.principles-image')
       }
-      let hgParent = this.$princ.getBoundingClientRect();
+      const hgParent = this.$princ.getBoundingClientRect()
       if (!this.fixed && hgParent.y <= 0) {
-        this.$el.querySelector(".principles-image-inner").style.position = "fixed";
-        this.$el.querySelector(".principles-image-inner").style.top = "0px";
-        this.fixed = true;
+        this.$el.querySelector('.principles-image-inner').style.position = 'fixed'
+        this.$el.querySelector('.principles-image-inner').style.top = '0px'
+        this.fixed = true
       } else if (this.fixed && hgParent.y > 0) {
-        this.$el.querySelector(".principles-image-inner").style.position = "absolute";
-        this.$el.querySelector(".principles-image-inner").style.top = null;
-        this.fixed = false;
+        this.$el.querySelector('.principles-image-inner').style.position = 'absolute'
+        this.$el.querySelector('.principles-image-inner').style.top = null
+        this.fixed = false
       } else if (this.show && hgParent.y + hgParent.height + 100 < 0) {
-        this.$el.querySelector(".principles-image-inner").style.display = "none";
-        this.show = false;
+        this.$el.querySelector('.principles-image-inner').style.display = 'none'
+        this.show = false
       } else if (!this.show && hgParent.y + hgParent.height + 100 > 0) {
-        this.$el.querySelector(".principles-image-inner").style.display = null;
-        this.show = true;
+        this.$el.querySelector('.principles-image-inner').style.display = null
+        this.show = true
       }
     }
   }

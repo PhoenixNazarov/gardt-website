@@ -24,25 +24,25 @@
 
 <script>
 export default {
-  name: "AboutPeople",
-  props: ["name", "job", "image", "description"],
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
+  name: 'AboutPeople',
+  props: ['name', 'job', 'image', 'description'],
+  created () {
+    window.addEventListener('scroll', this.handleScroll)
   },
-  unmounted() {
-    window.removeEventListener('scroll', this.handleScroll);
+  unmounted () {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    handleScroll(event) {
+    handleScroll (event) {
       if (this.$title === undefined) {
-        this.$title = this.$el.querySelector(".image-people");
+        this.$title = this.$el.querySelector('.image-people')
       }
-      let hgParent = this.$title.getBoundingClientRect();
-      if (hgParent.y - window.innerHeight / 2<= 0) {
-        this.$el.querySelector(".image").classList.add("anim");
-        this.$el.querySelector(".title").classList.add("anim2");
-        this.$el.querySelector(".description").classList.add("anim");
-        window.removeEventListener('scroll', this.handleScroll);
+      const hgParent = this.$title.getBoundingClientRect()
+      if (hgParent.y - window.innerHeight / 2 <= 0) {
+        this.$el.querySelector('.image').classList.add('anim')
+        this.$el.querySelector('.title').classList.add('anim2')
+        this.$el.querySelector('.description').classList.add('anim')
+        window.removeEventListener('scroll', this.handleScroll)
       }
     }
   }

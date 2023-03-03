@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import MainPresentationSlider from "@/components/pages/main/MainPresentationSlider.vue";
-import MainPresentationWriter from "@/components/pages/main/MainPresentationWriter.vue";
+import MainPresentationSlider from '@/components/pages/main/MainPresentationSlider.vue'
+import MainPresentationWriter from '@/components/pages/main/MainPresentationWriter.vue'
 
 export default {
-  name: "MainPresentation",
-  components: {MainPresentationWriter, MainPresentationSlider}
+  name: 'MainPresentation',
+  components: { MainPresentationWriter, MainPresentationSlider }
 }
 </script>
 
@@ -39,8 +39,12 @@ export default {
 }
 
 @keyframes pres-text {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 </style>

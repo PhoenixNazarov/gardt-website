@@ -17,28 +17,28 @@
 </template>
 
 <script>
-import PartName from "@/components/ui/PartName.vue";
+import PartName from '@/components/ui/PartName.vue'
 
 export default {
-  name: "MainMission",
-  components: {PartName},
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
+  name: 'MainMission',
+  components: { PartName },
+  created () {
+    window.addEventListener('scroll', this.handleScroll)
   },
-  unmounted() {
-    window.removeEventListener('scroll', this.handleScroll);
+  unmounted () {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    handleScroll(event) {
+    handleScroll (event) {
       if (this.$mission === undefined) {
-        this.$mission = this.$el.querySelector(".mission-description");
+        this.$mission = this.$el.querySelector('.mission-description')
       }
-      let hgParent = this.$mission.getBoundingClientRect();
+      const hgParent = this.$mission.getBoundingClientRect()
       if (hgParent.y - window.innerHeight <= -200) {
-        this.$el.querySelector(".mission-image").classList.add("mission-image-animate");
-        this.$el.querySelector(".mission-description").classList.add("mission-description-animate");
+        this.$el.querySelector('.mission-image').classList.add('mission-image-animate')
+        this.$el.querySelector('.mission-description').classList.add('mission-description-animate')
 
-        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('scroll', this.handleScroll)
       }
     }
   }
@@ -54,7 +54,6 @@ export default {
 .mission-text {
   z-index: 1;
 }
-
 
 @keyframes description-animate {
   from {
@@ -89,7 +88,6 @@ export default {
   }
 }
 
-
 @media (prefers-reduced-motion: no-preference) {
   .mission-description-animate {
     animation: description-animate 1s forwards;
@@ -103,7 +101,6 @@ export default {
 .mission-title {
   margin-bottom: 70px;
 }
-
 
 .mission-description {
   font-family: 'Montserrat', sans-serif;

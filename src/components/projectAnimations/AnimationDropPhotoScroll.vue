@@ -11,10 +11,12 @@
 </template>
 
 <script>
-import '../../assets/js/scroll-timeline.js';
+import '../../assets/js/scroll-timeline.js'
+import PartName from '@/components/ui/PartName.vue'
 
 export default {
-  name: "AnimationDropPhotoScroll",
+  name: 'AnimationDropPhotoScroll',
+  components: { PartName },
   props: {
     data: {
       type: Object,
@@ -23,78 +25,76 @@ export default {
   },
   methods: {
     onScroll: function (e) {
-      let offset = this.$container.getBoundingClientRect().y;
-      let height = this.$container.getBoundingClientRect().height;
-      let carHeight = this.$car.getBoundingClientRect().height;
+      const offset = this.$container.getBoundingClientRect().y
+      const height = this.$container.getBoundingClientRect().height
+      const carHeight = this.$car.getBoundingClientRect().height
 
-      let downBorder = -height + carHeight;
+      const downBorder = -height + carHeight
 
       if (!this.fixed && (offset < 0 && offset > downBorder)) {
-        this.$car.style.position = "fixed";
-        this.$car.style.top = 0;
-        this.$car.style.bottom = null;
-        this.fixed = true;
+        this.$car.style.position = 'fixed'
+        this.$car.style.top = 0
+        this.$car.style.bottom = null
+        this.fixed = true
       } else if (this.fixed && offset > 0) {
-        this.$car.style.position = "absolute";
-        this.$car.style.top = 0;
-        this.$car.style.bottom = null;
-        this.fixed = false;
+        this.$car.style.position = 'absolute'
+        this.$car.style.top = 0
+        this.$car.style.bottom = null
+        this.fixed = false
       } else if (this.fixed && offset < downBorder) {
-        this.$car.style.position = "absolute";
-        this.$car.style.top = null;
-        this.$car.style.bottom = 0;
-        this.fixed = false;
+        this.$car.style.position = 'absolute'
+        this.$car.style.top = null
+        this.$car.style.bottom = 0
+        this.fixed = false
       }
     }
   },
-  mounted() {
-    window.addEventListener("scroll", this.onScroll);
-    this.$car = this.$el.querySelector(".car");
-    this.$container = this.$el.querySelector(".drop-photo-container");
-    this.fixed = false;
+  mounted () {
+    window.addEventListener('scroll', this.onScroll)
+    this.$car = this.$el.querySelector('.car')
+    this.$container = this.$el.querySelector('.drop-photo-container')
+    this.fixed = false
 
-    let offset = this.$container.getBoundingClientRect().top - document.body.getBoundingClientRect().top;
+    const offset = this.$container.getBoundingClientRect().top - document.body.getBoundingClientRect().top
 
-    let height = this.$container.getBoundingClientRect().height - this.$car.getBoundingClientRect().height;
+    const height = this.$container.getBoundingClientRect().height - this.$car.getBoundingClientRect().height
 
-
-    let myScrollTimeline = new ScrollTimeline({
+    const myScrollTimeline = new ScrollTimeline({
       source: document.scrollingElement,
       orientation: 'block',
       scrollOffsets: [
         new CSSUnitValue(offset, 'px'),
         new CSSUnitValue(offset + height * 0.3, 'px'),
         new CSSUnitValue(offset + height * 0.6, 'px'),
-        new CSSUnitValue(offset + height * 0.99, 'px'),
+        new CSSUnitValue(offset + height * 0.99, 'px')
       ]
-    });
+    })
 
-    this.$el.querySelector(".drop-photo-image").animate(
-        {
-          transform: ["scale(1)", "scale(0.6)", "scale(0.6)", "scale(0.7)"],
-          opacity: [0.7, 1, 1, 0.25]
-        },
-        {
-          duration: 1,
-          fill: "forwards",
-          timeline: myScrollTimeline
-        }
-    );
+    this.$el.querySelector('.drop-photo-image').animate(
+      {
+        transform: ['scale(1)', 'scale(0.6)', 'scale(0.6)', 'scale(0.7)'],
+        opacity: [0.7, 1, 1, 0.25]
+      },
+      {
+        duration: 1,
+        fill: 'forwards',
+        timeline: myScrollTimeline
+      }
+    )
 
-    this.$el.querySelector(".drop-photo-text").animate(
-        {
-          opacity: [0, 0, 0, 1]
-        },
-        {
-          duration: 1,
-          fill: "forwards",
-          timeline: myScrollTimeline
-        }
-    );
-
+    this.$el.querySelector('.drop-photo-text').animate(
+      {
+        opacity: [0, 0, 0, 1]
+      },
+      {
+        duration: 1,
+        fill: 'forwards',
+        timeline: myScrollTimeline
+      }
+    )
   },
-  unmounted() {
-    window.removeEventListener("scroll", this.onScroll);
+  unmounted () {
+    window.removeEventListener('scroll', this.onScroll)
   }
 }
 </script>
@@ -121,6 +121,8 @@ export default {
   font-size: 5em;
   line-height: 1.15em;
   color: var(--vt-c-white);
+
+  text-align: center;
 }
 
 </style>

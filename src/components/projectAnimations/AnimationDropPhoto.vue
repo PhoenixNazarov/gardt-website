@@ -10,17 +10,17 @@
 <script>
 
 export default {
-  name: "AnimationDropPhoto",
-  mounted() {
-    let bodyRect = document.body.getBoundingClientRect();
-    let elemRect = this.$el.querySelector(".drop-photo-image")
-    let offset   = elemRect.getBoundingClientRect().top - bodyRect.top;
+  name: 'AnimationDropPhoto',
+  mounted () {
+    const bodyRect = document.body.getBoundingClientRect()
+    const elemRect = this.$el.querySelector('.drop-photo-image')
+    const offset = elemRect.getBoundingClientRect().top - bodyRect.top
 
-    window.addEventListener("scroll", (e) => {
-      let offset = this.$el.querySelector(".drop-photo-container").getBoundingClientRect();
+    window.addEventListener('scroll', (e) => {
+      const offset = this.$el.querySelector('.drop-photo-container').getBoundingClientRect()
       if (offset.y < 0) {
-        this.$el.querySelector(".drop-photo-image").classList.add("play-photo")
-        this.$el.querySelector(".drop-photo-text").classList.add("play-text")
+        this.$el.querySelector('.drop-photo-image').classList.add('play-photo')
+        this.$el.querySelector('.drop-photo-text').classList.add('play-text')
       }
     })
   }
@@ -58,7 +58,6 @@ export default {
 .play-text {
   animation: drop-text-animation 4.5s forwards;
 }
-
 
 @keyframes drop-animation {
   0% {
@@ -98,6 +97,5 @@ export default {
 /*    display: none;*/
 /*  }*/
 /*}*/
-
 
 </style>

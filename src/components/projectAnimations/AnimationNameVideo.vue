@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "AnimationNameVideo",
+  name: 'AnimationNameVideo',
   props: {
     data: {
       type: Object,
@@ -57,7 +57,6 @@ export default {
   height: 100vh;
   overflow: hidden;
 }
-
 
 .name-text {
   position: absolute;

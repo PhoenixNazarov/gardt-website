@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: "AnimationPhotoDescriptionScroll",
+  name: 'AnimationPhotoDescriptionScroll',
   props: {
     data: {
       type: Object,
@@ -32,42 +32,42 @@ export default {
   },
   methods: {
     onScroll: function (e) {
-      let offset = this.$container.getBoundingClientRect().y;
-      let height = this.$container.getBoundingClientRect().height;
-      let carHeight = this.$car.getBoundingClientRect().height;
+      const offset = this.$container.getBoundingClientRect().y
+      const height = this.$container.getBoundingClientRect().height
+      const carHeight = this.$car.getBoundingClientRect().height
 
-      let downBorder = -height + carHeight;
+      const downBorder = -height + carHeight
 
       if (!this.fixed && (offset < 0 && offset > downBorder)) {
-        this.$car.style.position = "fixed";
-        this.$car.style.top = 0;
-        this.$car.style.bottom = null;
-        this.fixed = true;
+        this.$car.style.position = 'fixed'
+        this.$car.style.top = 0
+        this.$car.style.bottom = null
+        this.fixed = true
       } else if (this.fixed && offset > 0) {
-        this.$car.style.position = "absolute";
-        this.$car.style.top = 0;
-        this.$car.style.bottom = null;
-        this.fixed = false;
+        this.$car.style.position = 'absolute'
+        this.$car.style.top = 0
+        this.$car.style.bottom = null
+        this.fixed = false
       } else if (this.fixed && offset < downBorder) {
-        this.$car.style.position = "absolute";
-        this.$car.style.top = null;
-        this.$car.style.bottom = 0;
-        this.fixed = false;
+        this.$car.style.position = 'absolute'
+        this.$car.style.top = null
+        this.$car.style.bottom = 0
+        this.fixed = false
       }
     }
   },
-  mounted() {
-    this.$el.querySelector(".car")
-    window.addEventListener("scroll", this.onScroll);
-    this.$car = this.$el.querySelector(".car");
-    this.$container = this.$el.querySelector(".drop-photo-container");
-    this.fixed = false;
+  mounted () {
+    this.$el.querySelector('.car')
+    window.addEventListener('scroll', this.onScroll)
+    this.$car = this.$el.querySelector('.car')
+    this.$container = this.$el.querySelector('.drop-photo-container')
+    this.fixed = false
 
-    let offset = this.$container.getBoundingClientRect().top - document.body.getBoundingClientRect().top;
+    const offset = this.$container.getBoundingClientRect().top - document.body.getBoundingClientRect().top
 
-    let height = this.$container.getBoundingClientRect().height - this.$car.getBoundingClientRect().height;
+    const height = this.$container.getBoundingClientRect().height - this.$car.getBoundingClientRect().height
 
-    let offsets = [
+    const offsets = [
       new CSSUnitValue(offset, 'px'), // start
       new CSSUnitValue(offset + 0.1 * height, 'px'), // image right 1500
       new CSSUnitValue(offset + 0.15 * height, 'px'), // image scale + text 500
@@ -77,25 +77,61 @@ export default {
       new CSSUnitValue(offset + 0.6 * height, 'px'), // 7. hide frame1
       new CSSUnitValue(offset + 0.7 * height, 'px'), // 8. show frame2
       new CSSUnitValue(offset + 0.8 * height, 'px'), // 9. size image principles
-      new CSSUnitValue(offset + 0.9 * height, 'px'), // 10. show text
+      new CSSUnitValue(offset + 0.9 * height, 'px') // 10. show text
     ]
 
-    let framesImage = {
+    const framesImage = {
       transform: [
-        "scale(1.2)",
-        "scale(1.2)",
-        "scale(1)",
-        "scale(1)",
-        "scale(1)",
-        "scale(1)",
-        "scale(1)",
-        "scale(1)",
-        "scale(1)",
-        "scale(1)",
+        'scale(1)',
+        'scale(1)',
+        'scale(1)',
+        'scale(1)',
+        'scale(1)',
+        'scale(1)',
+        'scale(1)',
+        'scale(1)',
+        'scale(1)',
+        'scale(1)'
 
       ],
       marginLeft: [
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+
+    const textContainer = {
+      width: [
+        '0vw',
+        '20vw',
+        '20vw',
+        '20vw',
+        '20vw',
+        '20vw',
+        '20vw',
+        '20vw',
+        '20vw'
+      ],
+      marginLeft: [
+        0,
+        '5em',
+        '5em',
+        '5em',
+        '5em',
+        '5em',
+        '5em',
+        '5em',
+        '5em'
+      ],
+      marginRight: [
+        '0vw',
         '10vw',
         '10vw',
         '10vw',
@@ -105,19 +141,19 @@ export default {
         '10vw',
         '10vw'
       ]
-    };
+    }
 
-    let framesText = {
+    const framesText = {
       transform: [
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)"
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)'
       ],
       opacity: [
         0,
@@ -130,19 +166,19 @@ export default {
         1,
         1
       ]
-    };
+    }
 
-    let framesTitle = {
+    const framesTitle = {
       transform: [
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)"
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)'
       ],
       opacity: [
         0,
@@ -155,19 +191,19 @@ export default {
         1,
         1
       ]
-    };
+    }
 
-    let framesDesc = {
+    const framesDesc = {
       transform: [
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)",
-        "translateX(0)"
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)'
       ],
       opacity: [
         0,
@@ -180,9 +216,9 @@ export default {
         1,
         1
       ]
-    };
+    }
 
-    let framesFrame1 = {
+    const framesFrame1 = {
       opacity: [
         1,
         1,
@@ -195,8 +231,8 @@ export default {
         0,
         0
       ]
-    };
-    let framesFrame2 = {
+    }
+    const framesFrame2 = {
       opacity: [
         0,
         0,
@@ -209,22 +245,22 @@ export default {
         1,
         1
       ]
-    };
+    }
 
-    let frames2Image = {
+    const frames2Image = {
       transform: [
-        "scale(0)",
-        "scale(0)",
-        "scale(0)",
-        "scale(0)",
-        "scale(0.5)",
-        "scale(0.5)",
-        "scale(0.5)",
-        "scale(1)",
-        "scale(1)"
-      ],
-    };
-    let frames2Desc = {
+        'scale(0)',
+        'scale(0)',
+        'scale(0)',
+        'scale(0)',
+        'scale(0.5)',
+        'scale(0.5)',
+        'scale(0.5)',
+        'scale(1)',
+        'scale(1)'
+      ]
+    }
+    const frames2Desc = {
       opacity: [
         0,
         0,
@@ -235,88 +271,96 @@ export default {
         0,
         0,
         0,
-        1,
+        1
       ]
-    };
-
+    }
 
     const myScrollTimeline = new ScrollTimeline({
       source: document.scrollingElement,
       scrollSource: document.scrollingElement,
       orientation: 'block',
-      scrollOffsets: offsets,
-    });
+      scrollOffsets: offsets
+    })
 
-    this.$el.querySelector(".drop-photo-image").animate(
-        framesImage,
-        {
-          duration: 1,
-          fill: "forwards",
-          timeline: myScrollTimeline
-        }
-    );
+    this.$el.querySelector('.drop-photo-image').animate(
+      framesImage,
+      {
+        duration: 1,
+        fill: 'forwards',
+        timeline: myScrollTimeline
+      }
+    )
 
-    this.$el.querySelector(".drop-photo-text").animate(
-        framesText,
-        {
-          duration: 1,
-          fill: "forwards",
-          timeline: myScrollTimeline
-        }
-    );
+    this.$el.querySelector('.drop-photo-text-container').animate(
+      textContainer,
+      {
+        duration: 1,
+        fill: 'forwards',
+        timeline: myScrollTimeline
+      }
+    )
 
-    this.$el.querySelector(".drop-photo-text-title").animate(
-        framesTitle,
-        {
-          duration: 1,
-          fill: "forwards",
-          timeline: myScrollTimeline
-        }
-    );
+    this.$el.querySelector('.drop-photo-text').animate(
+      framesText,
+      {
+        duration: 1,
+        fill: 'forwards',
+        timeline: myScrollTimeline
+      }
+    )
 
-    this.$el.querySelector(".drop-photo-text-desc").animate(
-        framesDesc,
-        {
-          duration: 1,
-          fill: "forwards",
-          timeline: myScrollTimeline
-        }
-    );
-    this.$el.querySelector(".car-frame-1-container").animate(
-        framesFrame1,
-        {
-          duration: 1,
-          fill: "forwards",
-          timeline: myScrollTimeline
-        }
-    );
-    this.$el.querySelector(".car-frame-2-container").animate(
-        framesFrame2,
-        {
-          duration: 1,
-          fill: "forwards",
-          timeline: myScrollTimeline
-        }
-    );
+    this.$el.querySelector('.drop-photo-text-title').animate(
+      framesTitle,
+      {
+        duration: 1,
+        fill: 'forwards',
+        timeline: myScrollTimeline
+      }
+    )
+
+    this.$el.querySelector('.drop-photo-text-desc').animate(
+      framesDesc,
+      {
+        duration: 1,
+        fill: 'forwards',
+        timeline: myScrollTimeline
+      }
+    )
+    this.$el.querySelector('.car-frame-1-container').animate(
+      framesFrame1,
+      {
+        duration: 1,
+        fill: 'forwards',
+        timeline: myScrollTimeline
+      }
+    )
+    this.$el.querySelector('.car-frame-2-container').animate(
+      framesFrame2,
+      {
+        duration: 1,
+        fill: 'forwards',
+        timeline: myScrollTimeline
+      }
+    )
     this.$el.querySelectorAll('.frame-2-image-inner').forEach((el) => el.animate(
-        frames2Image,
-        {
-          duration: 1,
-          fill: "forwards",
-          timeline: myScrollTimeline
-        }
-    ));
+      frames2Image,
+      {
+        duration: 1,
+        fill: 'forwards',
+        timeline: myScrollTimeline
+      }
+    ))
     this.$el.querySelectorAll('.image-desc').forEach((el) => el.animate(
-        frames2Desc,
-        {
-          duration: 1,
-          fill: "forwards",
-          timeline: myScrollTimeline
-        }
-    ));
+      frames2Desc,
+      {
+        duration: 1,
+        fill: 'forwards',
+        timeline: myScrollTimeline
+      }
+    ))
   },
-  unmounted() {
-    window.removeEventListener("scroll", this.onScroll);
+  unmounted () {
+    window.removeEventListener('scroll', this.onScroll)
     // this.$el.querySelector(".drop-photo-image").animate(null);
     // this.$el.querySelector(".drop-photo-text").animate(null);
     // this.$el.querySelector(".drop-photo-text-title").animate(null);
@@ -325,7 +369,6 @@ export default {
     // this.$el.querySelector(".car-frame-2-container").animate(null);
     // this.$el.querySelector(".frame-2-image-inner").animate(null);
     // this.$el.querySelectorAll('.image-desc').forEach((el) => el.animate(null));
-
   }
 }
 </script>
@@ -343,6 +386,11 @@ export default {
   display: flex;
   align-items: center;
   /*width: 60vw;*/
+}
+
+.car-frame-1-container {
+  width: 100vw;
+  justify-content: center;
 }
 
 .car-frame-2-container {
@@ -393,7 +441,7 @@ export default {
   font-size: 1.15em;
   line-height: 1.5em;
 
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.11) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.4) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
