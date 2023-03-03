@@ -1,6 +1,14 @@
 <template>
-  <div>
+  <div style="overflow: hidden">
     <AnimationBackground/>
+    <div class="diamond-gradient">
+    </div>
+
+    <div class="diamond-gradient2">
+    </div>
+
+    <div class="diamond-gradient3">
+    </div>
     <div>
       <Navigation theme="light" class="navigation"/>
     </div>
@@ -59,6 +67,57 @@ export default {
 .navigation {
   z-index: 100;
   position: fixed;
+}
+
+@keyframes gradient-animate2 {
+  to {
+    /*filter: blur(5px);*/
+    transform: scale(1.1, 1.1);
+  }
+}
+
+.diamond-gradient {
+  width: 700px;
+  height: 1100px;
+  left: -400px;
+  top: 408px;
+
+  position: absolute;
+  background: radial-gradient(50% 50% at 50% 50%, #C8FF29 0%, transparent 100%);
+  /*backdrop-filter: blur(3px);*/
+
+  transform: rotate(28.77deg);
+  z-index: 1;
+  animation: gradient-animate2 2s infinite alternate;
+}
+
+.diamond-gradient2 {
+  width: 600px;
+  height: 1000px;
+  right: -400px;
+  top: 100vh;
+
+  position: absolute;
+  background: radial-gradient(50% 50% at 50% 50%, #C8FF29 0%, transparent 100%);
+  /*backdrop-filter: blur(3px);*/
+
+  transform: rotate(-28.77deg);
+  z-index: 1;
+  animation: gradient-animate2 3s infinite alternate;
+}
+
+.diamond-gradient3 {
+  width: 600px;
+  height: 1000px;
+  right: 50vw;
+  bottom: -700px;
+
+  position: absolute;
+  background: radial-gradient(50% 50% at 50% 50%, #C8FF29 0%, transparent 100%);
+  /*backdrop-filter: blur(3px);*/
+
+  transform: rotate(60.77deg);
+  z-index: 1;
 }
 
 </style>

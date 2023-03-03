@@ -11,7 +11,7 @@
       <UiPage v-if="page === 'Ui'"/>
       <PortfolioPage v-if="page === 'Portfolio'"/>
 
-<!--      <ProjectZelenogorsk v-if="page ==='ProjectZelenogorsk'"/>-->
+      <!--      <ProjectZelenogorsk v-if="page ==='ProjectZelenogorsk'"/>-->
       <ProjectBase :projectName="page" v-if="page.startsWith('Project')"/>
     </div>
   </main>
@@ -33,11 +33,11 @@ export default {
       page: 'Main'
     }
   },
-  components: { ProjectBase, ProjectZelenogorsk, MainPageLight, PortfolioPage, UiPage, AboutPage, MainPage },
-  beforeCreate () {
+  components: {ProjectBase, MainPageLight, PortfolioPage, UiPage, AboutPage, MainPage},
+  beforeCreate() {
     document._fixScrollListeners = []
     this.$root.onChangePage = function (page) {
-      window.scrollTo({ top: 0 })
+      window.scrollTo({top: 0})
 
       this.$nextTick(() => {
         document._fixScrollListeners.forEach((f) => document.removeEventListener('scroll', f))

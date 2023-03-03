@@ -60,18 +60,19 @@
 import PartName from '@/components/ui/PartName.vue'
 import Input from '@/components/ui/Input.vue'
 import Button from '@/components/ui/Button.vue'
-import { setCookie, getCookie, deleteCookie } from '@/assets/js/cookie.js'
+import {setCookie, getCookie, deleteCookie} from '@/assets/js/cookie.js'
+import axios from "axios";
 
 export default {
   name: 'FooterContactForm.vue',
-  components: { Button, Input, PartName },
+  components: {Button, Input, PartName},
   props: {
     theme: {
       type: String,
       required: true
     }
   },
-  data () {
+  data() {
     return {
       form: {
         name: {
@@ -128,9 +129,16 @@ export default {
       }
 
       if (!error) {
+        this.hideForm()
         if (getCookie('contact') === undefined) {
-          setCookie('contact', '1', { 'max-age': 60 * 60 })
-          this.hideForm()
+          setCookie('contact', '1', {'max-age': 5})
+          axios.post("/api/contact/send",
+              {
+                name: this.form.name.value,
+                email: this.form.mail.value,
+                phone: this.form.phone.value,
+                comment: this.form.comment.value
+              })
         }
       }
     },

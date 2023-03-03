@@ -7,7 +7,7 @@
       <Navigation theme="light" class=""/>
     </div>
     <div style="margin-top:50px; margin-left:50px"></div>
-
+    <FigureBackground1 style="right: 0vw; top:70vh; z-index: 1"/>
     <div class="inline">
       <div class="btn-example">
         <Input
@@ -88,16 +88,16 @@
   <div class="black">
     <AnimationOpacity/>
     <AnimationDropPhoto/>
-<!--    <AnimationDropPhotoScroll/>-->
-<!--    <AnimationPhotoDescription/>-->
-<!--    <AnimationPhotoDescriptionScroll/>-->
+    <!--    <AnimationDropPhotoScroll/>-->
+    <!--    <AnimationPhotoDescription/>-->
+    <!--    <AnimationPhotoDescriptionScroll/>-->
     <AnimationThreePhotos style="margin-bottom: 20vh"/>
-<!--    <AnimationThreePhotosScroll/>-->
+    <!--    <AnimationThreePhotosScroll/>-->
     <AnimationMagnifier/>
     <AnimationThreePhotosDoubleOne/>
-<!--    <AnimationThreePhotosDoubleOneScroll/>-->
+    <!--    <AnimationThreePhotosDoubleOneScroll/>-->
     <AnimationFourPhotos/>
-<!--    <AnimationFourPhotosScroll/>-->
+    <!--    <AnimationFourPhotosScroll/>-->
   </div>
 </template>
 
@@ -118,10 +118,12 @@ import AnimationThreePhotosDoubleOneScroll
   from '@/components/projectAnimations/AnimationThreePhotosDoubleOneScroll.vue'
 import AnimationFourPhotosScroll from '@/components/projectAnimations/AnimationFourPhotosScroll.vue'
 import AnimationOpacity from '@/components/projectAnimations/AnimationOpacity.vue'
+import FigureBackground1 from "@/components/figures/FigureBackground1.vue"
 
 export default {
   name: 'UiPage',
   components: {
+    FigureBackground1,
     AnimationOpacity,
     AnimationFourPhotosScroll,
     AnimationThreePhotosDoubleOneScroll,
@@ -138,7 +140,7 @@ export default {
     Navigation,
     Input
   },
-  data () {
+  data() {
     return {
       form: {
         name: {

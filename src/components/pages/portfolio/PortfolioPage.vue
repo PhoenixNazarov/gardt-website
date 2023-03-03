@@ -4,6 +4,8 @@
       <Navigation theme="dark" class="navigation"/>
     </div>
     <div class="main-gradient">
+      <FigureBackground2 style="top:-15vh; height: 20vh; width: 20vw; left: -15vw"/>
+      <FigureBackground3 style="top: 40vh; height: 20vh; width: 20vw; right: -10vw"/>
 
       <div class="portfolio-navigation main-outside">
         <h1 class="portfolio-navigation-item" @click.prevent="this.onSurfPage(0)">Благоустройство</h1>
@@ -61,6 +63,8 @@ import Footer from '@/components/footer/Footer.vue'
 import PortfolioItem from '@/components/pages/portfolio/PortfolioItem.vue'
 
 import { portfolioItemData } from '@/assets/images/portfolio-items/import'
+import FigureBackground2 from "@/components/figures/FigureBackground2.vue";
+import FigureBackground3 from "@/components/figures/FigureBackground3.vue";
 
 export default {
   name: 'PortfolioPage',
@@ -69,7 +73,7 @@ export default {
       portfolioItemData
     }
   },
-  components: { PortfolioItem, Navigation, Footer },
+  components: {FigureBackground3, FigureBackground2, PortfolioItem, Navigation, Footer },
   methods: {
     onSurfPage: function (numb) {
       this.$el.querySelector('.portfolio-car').style.transform = `translateX(${-numb * 100}vw)`

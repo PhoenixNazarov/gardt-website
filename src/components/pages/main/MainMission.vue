@@ -11,17 +11,19 @@
           экологические аспекты города”
         </h1>
       </div>
-      <img class="mission-image" width="570" src="../../../assets/images/main-mission/Vector51.png" alt="over mission">
+      <FigureBackground1 class="mission-image" style="right: -10vw; height: 40vh; top:-10vh; width: 30vw; z-index: 0"/>
+
     </div>
   </div>
 </template>
 
 <script>
 import PartName from '@/components/ui/PartName.vue'
+import FigureBackground1 from "@/components/figures/FigureBackground1.vue";
 
 export default {
   name: 'MainMission',
-  components: { PartName },
+  components: {FigureBackground1, PartName },
   created () {
     window.addEventListener('scroll', this.handleScroll)
   },
@@ -35,7 +37,7 @@ export default {
       }
       const hgParent = this.$mission.getBoundingClientRect()
       if (hgParent.y - window.innerHeight <= -200) {
-        this.$el.querySelector('.mission-image').classList.add('mission-image-animate')
+        // this.$el.querySelector('.mission-image').classList.add('mission-image-animate')
         this.$el.querySelector('.mission-description').classList.add('mission-description-animate')
 
         window.removeEventListener('scroll', this.handleScroll)
@@ -113,10 +115,6 @@ export default {
 }
 
 .mission-image {
-  position: absolute;
-  top: -30px;
-  right: -400px;
-  transform: scale(0.5) rotate(-25deg);
 }
 
 </style>

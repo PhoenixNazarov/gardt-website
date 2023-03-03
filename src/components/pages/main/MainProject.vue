@@ -4,13 +4,14 @@
     <div class="project-slider">
       <img class="project-slider-button left" src="../../../assets/images/slider-controller.svg">
       <div class="project-slider-car">
-        <MainProjectItem class="project-slider-item"/>
-        <MainProjectItem class="project-slider-item"/>
-        <MainProjectItem class="project-slider-item"/>
-        <MainProjectItem class="project-slider-item"/>
-        <MainProjectItem class="project-slider-item"/>
-        <MainProjectItem class="project-slider-item"/>
-        <MainProjectItem class="project-slider-item"/>
+        <MainProjectItem class="project-slider-item"
+                         v-for="item in [...portfolioItemData[0], ...portfolioItemData[1], ...portfolioItemData[2]]"
+                         :image="item.image"
+                         :name="item.name"
+                         :place="item.place"
+                         :principles="item.principles"
+                         @click.prevent="toProject(item.nameProject)"
+        />
       </div>
       <img class="project-slider-button right" src="../../../assets/images/slider-controller.svg">
     </div>
@@ -20,10 +21,21 @@
 <script>
 import PartName from '@/components/ui/PartName.vue'
 import MainProjectItem from '@/components/pages/main/MainProjectItem.vue'
+import {portfolioItemData} from "@/assets/images/portfolio-items/import";
 
 export default {
   name: 'MainProject',
   components: { MainProjectItem, PartName },
+  data () {
+    return {
+      portfolioItemData
+    }
+  },
+  methods: {
+    toProject: function (proj) {
+      this.$root.onChangePage(proj)
+    }
+  },
   mounted () {
     const $car = this.$el.querySelector('.project-slider-car')
 
@@ -66,6 +78,7 @@ export default {
 }
 
 .project-slider-item {
+  cursor: pointer;
   margin-right: 50px;
   margin-left: 50px;
 }
@@ -76,16 +89,16 @@ export default {
   top: 50%;
   transform: translate(0, -50%);
 
-  filter: opacity(50%) drop-shadow(0px 0px 2px rgb(0 0 0 / 0.4));
+  filter: opacity(70%) drop-shadow(0px 0px 2px rgb(0 0 0 / 0.4));
 }
 
 .project-slider-button.left {
-  left: 0;
+  left: 80px;
   transform: rotate(180deg) translate(0, +50%);
 }
 
 .project-slider-button.right {
-  right: 0;
+  right: 80px;
 }
 
 </style>
