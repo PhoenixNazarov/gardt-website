@@ -127,12 +127,16 @@ export default {
         this.form.mail.status = 'danger'
         error = true
       }
+      if (this.form.comment.value.length < 5) {
+        this.form.comment.status = 'danger'
+        error = true
+      }
 
       if (!error) {
         this.hideForm()
         if (getCookie('contact') === undefined) {
           setCookie('contact', '1', {'max-age': 5})
-          axios.post("/api/contact/send",
+          axios.post("https://gardtlandscape.com/api/contact/send/",
               {
                 name: this.form.name.value,
                 email: this.form.mail.value,

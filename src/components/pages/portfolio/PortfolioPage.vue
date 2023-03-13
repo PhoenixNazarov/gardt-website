@@ -4,8 +4,8 @@
       <Navigation theme="dark" class="navigation"/>
     </div>
     <div class="main-gradient">
-      <FigureBackground2 style="top:-15vh; height: 20vh; width: 20vw; left: -15vw"/>
-      <FigureBackground3 style="top: 40vh; height: 20vh; width: 20vw; right: -10vw"/>
+      <FigureBackground2 style="top: 16vh; height: 20vh; width: 20vw; left: -15vw"/>
+      <FigureBackground3 style="top: 80vh; height: 20vh; width: 20vw; right: -10vw"/>
 
       <div class="portfolio-navigation main-outside">
         <h1 class="portfolio-navigation-item" @click.prevent="this.onSurfPage(0)">Благоустройство</h1>
@@ -108,6 +108,7 @@ export default {
   padding-top: 9em;
   margin-bottom: 3em;
   display: flex;
+  justify-content: center;
 }
 
 .portfolio-navigation-item:not(:nth-child(1)) {

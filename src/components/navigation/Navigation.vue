@@ -6,10 +6,6 @@
              alt="gardt logo"/>
       </div>
       <div>
-        <NavigationButton text="Блог"
-                          :theme="theme"
-                          class="navigation-button"
-                          @click.prevent="changePage('Ui')"/>
         <NavigationButton text="О нас"
                           :theme="theme"
                           :active="getPage() === 'About'"
@@ -20,6 +16,10 @@
                           :active="getPage() === 'Portfolio'"
                           class="navigation-button"
                           @click.prevent="changePage('Portfolio')"/>
+        <NavigationButton text="Блог"
+                          :theme="theme"
+                          class="navigation-button"/>
+<!--                          @click.prevent="changePage('Ui')"-->
         <NavigationButton text="Контакты"
                           :theme="theme"
                           class="navigation-button"
