@@ -113,7 +113,8 @@ export default {
 
 @media (max-width: 576px) {
   .main-writer {
-    margin-top: 10em;
+    margin-left: 10vw;
+    margin-top: 5em;
   }
 }
 

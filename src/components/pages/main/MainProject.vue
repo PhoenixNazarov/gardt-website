@@ -41,8 +41,13 @@ export default {
 
     let x = 0
     const count = this.$el.querySelectorAll('.project-slider-item').length
-    const width = $car.getBoundingClientRect().width
-    const part = width / (count * 1.2)
+    let width = $car.getBoundingClientRect().width
+
+    let part = width / count
+
+    if (window.innerWidth < 576) {
+      part = (width + 50) / count
+    }
     this.$el.querySelector('.project-slider-button.left').addEventListener('click', function () {
       x += part
       if (x > 0) {
@@ -95,6 +100,25 @@ export default {
 .project-slider-button.left {
   left: 80px;
   transform: rotate(180deg) translate(0, +50%);
+}
+
+@media (max-width: 576px) {
+  .project-slider-button.left {
+    left: 10px;
+  }
+
+  .project-slider-button.right {
+    right: 10px !important;
+  }
+
+  .project-slider-item:nth-child(1) {
+    margin-left: calc((100vw - 370px) / 2);
+  }
+
+  .project-slider-item:last-child {
+    margin-right: calc((100vw - 370px) / 2);
+  }
+
 }
 
 .project-slider-button.right {

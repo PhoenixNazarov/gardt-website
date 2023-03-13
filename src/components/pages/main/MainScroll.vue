@@ -15,7 +15,7 @@
         <!--        <div style="position: absolute; height: 55vh; width: 100%; bottom: 0;-->
         <!--          background: radial-gradient(160% 155% at bottom, var(&#45;&#45;vt-c-white) 30%, rgba(200,255,41,0.5) 45%, transparent 60%);">-->
         <!--        </div>-->
-        <img src="../../../assets/images/main-scrolling-dark.png" width="100%" style="z-index: 0">
+        <img class="g-image" src="../../../assets/images/main-scrolling-dark.png" width="100%" style="z-index: 0">
 
       </div>
     </div>
@@ -74,7 +74,7 @@ export default {
 
 <style scoped>
 .main-scroll-container {
-  min-height: 120vh;
+  /*height: 200vh;*/
   background-color: var(--vt-c-black);
 }
 
@@ -88,14 +88,25 @@ export default {
   z-index: 1;
 }
 
+.g-image {
+  height: 100vh;
+}
+
 .main-scroll-text {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 4.75em;
-  line-height: 96px;
+  line-height: 1.7em;
   text-align: center;
   color: var(--vt-c-black);
+}
+
+@media (max-width: 576px) {
+  .main-scroll-text {
+    font-size: 4.3em;
+    line-height: 1.2em;
+  }
 }
 
 .main-scroll-outside {

@@ -117,4 +117,11 @@ export default {
 .mission-image {
 }
 
+@media (max-width: 576px) {
+  .mission-description {
+    font-size: 2em;
+    line-height: 1.2em;
+  }
+}
+
 </style>

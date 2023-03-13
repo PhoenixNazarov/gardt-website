@@ -37,8 +37,8 @@ export default {
 }
 
 @media (max-width: 576px) {
-  .main-writer {
-    margin-top: 10em;
+  .pres-text {
+    bottom: 35%;
   }
 }
 
