@@ -118,7 +118,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 5em;
+  font-size: 7vw;
   line-height: 1.15em;
   color: var(--vt-c-white);
 

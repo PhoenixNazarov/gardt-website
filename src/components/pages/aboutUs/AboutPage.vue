@@ -87,7 +87,7 @@ export default {
   /*backdrop-filter: blur(3px);*/
 
   transform: rotate(28.77deg);
-  z-index: 1;
+  z-index: 0;
   animation: gradient-animate2 2s infinite alternate;
 }
 
@@ -102,7 +102,7 @@ export default {
   /*backdrop-filter: blur(3px);*/
 
   transform: rotate(-28.77deg);
-  z-index: 1;
+  z-index: 0;
   animation: gradient-animate2 3s infinite alternate;
 }
 
@@ -117,7 +117,7 @@ export default {
   /*backdrop-filter: blur(3px);*/
 
   transform: rotate(60.77deg);
-  z-index: 1;
+  z-index: 0;
 }
 
 </style>

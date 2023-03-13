@@ -106,14 +106,14 @@ export default {
 
 .main-writer-row {
   /*margin-bottom: 40px;*/
-  min-height: 120px;
+  /*min-height: 10%;*/
   display: flex;
   align-items: flex-end;
 }
 
 .main-writer-letter, .main-writer-rect {
   font-family: 'NeueMatana', sans-serif;
-  font-size: 10em;
+  font-size: 10vw;
   line-height: 1.2em;
   display: none;
   color: var(--vt-c-white);

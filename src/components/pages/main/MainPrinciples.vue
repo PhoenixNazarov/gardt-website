@@ -3,7 +3,8 @@
     <div class="principles-image">
       <img class="principles-image-inner" src="../../../assets/images/main-slider/1.png" alt=""
            style="width: 100%; position: absolute">
-      <img src="../../../assets/images/main-slider/1.png" alt="" style="max-width: 100%; opacity: 0; visibility: hidden;">
+      <img src="../../../assets/images/main-slider/1.png" alt=""
+           style="max-width: 100vw; opacity: 0; visibility: hidden;">
     </div>
     <div class="principles-container">
       <div class="main-outside">
@@ -41,17 +42,17 @@ import MainPrinciplesItem from '@/components/pages/main/MainPrinciplesItem.vue'
 
 export default {
   name: 'MainPrinciples',
-  components: { MainPrinciplesItem, PartName },
-  created () {
+  components: {MainPrinciplesItem, PartName},
+  created() {
     window.addEventListener('scroll', this.handleScroll)
     this.fixed = false
     this.show = true
   },
-  unmounted () {
+  unmounted() {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    handleScroll (event) {
+    handleScroll(event) {
       if (this.$princ === undefined) {
         this.$princ = this.$el.querySelector('.principles-image')
       }
@@ -85,17 +86,31 @@ export default {
   padding-bottom: 100px;
 }
 
-.principles-row {
-  display: flex;
-  margin-top: 40px;
+@media (max-width: 768px) {
+  .principles-row {
+    display: flex;
+    margin-top: 40px;
+    flex-direction: column;
+  }
+  .principles-item:nth-child(2n) {
+    margin-top: 40px;
+  }
 }
 
-.principles-item {
-  width: 35vw;
+@media (min-width: 768px) {
+  .principles-row {
+    display: flex;
+    margin-top: 40px;
+  }
+
+  .principles-item {
+    width: 35vw;
+  }
+
+  .principles-item:nth-child(2n) {
+    margin-left: 3em;
+  }
 }
 
-.principles-item:nth-child(2n) {
-  margin-left: 3em;
-}
 
 </style>

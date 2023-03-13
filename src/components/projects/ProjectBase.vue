@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AnimationBackground/>
+    <AnimationBackground style="overflow-x: clip"/>
     <Navigation theme="light" class="navigation"/>
 
     <div v-for="item in projectsData[projectName]">

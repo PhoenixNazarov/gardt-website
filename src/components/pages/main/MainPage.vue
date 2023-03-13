@@ -45,7 +45,6 @@ export default {
   },
   created () {
     window.addEventListener('scroll', this.handleScroll)
-    console.log(axios.get('https://api.coindesk.com/v1/bpi/currentprice.json'))
   },
   unmounted () {
     window.removeEventListener('scroll', this.handleScroll)

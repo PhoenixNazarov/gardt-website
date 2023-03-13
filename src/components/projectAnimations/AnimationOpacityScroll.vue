@@ -3,7 +3,7 @@
     <PartName v-if="data.name !== undefined" :text="data.name" show=20 theme="light" class="main-outside"/>
     <div class="drop-photo-container" :style="'height: '+data.height+'vh'">
       <div class="car">
-        <div class="container" style="height: 100vh">
+        <div class="container" style="height: 100vh; overflow-x: clip">
           <img class="anim" :src=item.image v-for="item in data.images"/>
         </div>
       </div>

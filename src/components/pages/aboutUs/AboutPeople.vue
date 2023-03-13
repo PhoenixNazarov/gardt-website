@@ -26,14 +26,14 @@
 export default {
   name: 'AboutPeople',
   props: ['name', 'job', 'image', 'description'],
-  created () {
+  created() {
     window.addEventListener('scroll', this.handleScroll)
   },
-  unmounted () {
+  unmounted() {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    handleScroll (event) {
+    handleScroll(event) {
       if (this.$title === undefined) {
         this.$title = this.$el.querySelector('.image-people')
       }
@@ -60,6 +60,23 @@ export default {
 
 .people-container {
   display: flex;
+}
+
+@media (max-width: 768px) {
+  .people-container {
+    flex-direction: column;
+  }
+
+  .image-people {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+  }
+
+  .image-background {
+    left: calc(50% + 0.2em) !important;
+    transform: translateX(-50%);
+  }
 }
 
 .image-background {
@@ -131,6 +148,7 @@ export default {
 .image-people {
   max-height: 32em;
 }
+
 .image-background {
   max-height: 31em;
 }

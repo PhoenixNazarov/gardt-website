@@ -98,14 +98,16 @@ export default {
 
 .portfolio-car {
   transition: 1s;
+  /*overflow-x: clip;*/
 }
 
 .main-gradient {
   background-color: var(--vt-c-white);
+  overflow-x: clip;
 }
 
 .portfolio-navigation {
-  padding-top: 9em;
+  padding-top: 20vh;
   margin-bottom: 3em;
   display: flex;
   justify-content: center;
@@ -132,6 +134,7 @@ export default {
   margin-bottom: 5em;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .portfolio-item {
