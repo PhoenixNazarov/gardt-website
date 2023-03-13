@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="overflow-x: clip">
     <div class="mission-slide">
       <div class="mission-text main-outside">
         <PartName class="mission-title" text="Наша миссия" theme="light" :show=15 />

@@ -62,12 +62,14 @@ export default {
   components: {Button, NavigationButton},
   methods: {
     changePage: function (page) {
+      this.close();
       this.$root.onChangePage(page)
     },
     getPage: function () {
       return this.$root.getPage()
     },
     toDownPage: function () {
+      this.close();
       window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})
     },
 
@@ -128,13 +130,19 @@ export default {
 
 .hr {
   height: 2px;
-  width: 50%;
   background-color: var(--vt-c-black);
+  border-radius: 3px;
+}
+
+.hr:nth-child(1), .hr:nth-child(3) {
+  width: 40%;
 }
 
 .hr:nth-child(2) {
-  margin-top: 7px;
-  margin-bottom: 7px;
+  width: 50%;
+  margin-left: 10%;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .curtain {
@@ -157,12 +165,14 @@ export default {
   position: fixed;
   width: 100vw;
   height: 100vh;
+  display: none;
   background-color: var(--vt-c-black);
   transition: 1s;
 }
 
 .mob-curtain.open {
   opacity: 0.3;
+  display: block;
 }
 
 .mob-btn-nav:nth-child(1) {
@@ -177,7 +187,7 @@ export default {
   line-height: 1em;
 
   margin-left: 1em;
-  margin-top: 1em;
+  margin-top: 2em;
 
   letter-spacing: 0.25em;
   text-transform: uppercase;

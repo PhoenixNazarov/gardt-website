@@ -1,10 +1,10 @@
 import { pImageProcess, pImageScenery, pImageUser } from '@/assets/images/portfolio-principles/import'
 
-import image1 from './image1.png'
-import image2 from './image2.png'
-import image3 from './image3.png'
-import image4 from './image4.png'
-import image5 from './image5.png'
+import image1 from './1.jpeg'
+import image2 from './2.jpeg'
+import image3 from './3.jpeg'
+import image4 from './4.jpeg'
+import image5 from './5.jpeg'
 
 export const bloggersData = [
   {
