@@ -30,12 +30,16 @@ export default {
   font-size: 2em;
   line-height: 36px;
 
-  font-variant: small-caps;
-
   opacity: 0;
 
   color: var(--vt-c-white);
   animation: pres-text 1s ease forwards;
+}
+
+@media (max-width: 576px) {
+  .main-writer {
+    margin-top: 10em;
+  }
 }
 
 @keyframes pres-text {

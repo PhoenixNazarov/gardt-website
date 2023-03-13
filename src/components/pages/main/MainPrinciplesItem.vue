@@ -55,7 +55,7 @@ export default {
 
 .principles-item-container {
   display: flex;
-
+  /*justify-content: flex-end;*/
 }
 
 .principles-item-image {
@@ -80,8 +80,14 @@ export default {
   color: var(--vt-c-white);
 }
 
+@media (max-width: 576px) {
+  .principles-item-image {
+    transform: scale(0.5);
+  }
+}
+
 .principles-item-image-inner {
-  fill: red;
+  width: 60px;
 }
 
 </style>

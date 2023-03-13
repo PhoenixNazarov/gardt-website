@@ -111,6 +111,12 @@ export default {
   align-items: flex-end;
 }
 
+@media (max-width: 576px) {
+  .main-writer {
+    margin-top: 10em;
+  }
+}
+
 .main-writer-letter, .main-writer-rect {
   font-family: 'NeueMatana', sans-serif;
   font-size: 10vw;
