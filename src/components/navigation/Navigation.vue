@@ -147,7 +147,7 @@ export default {
 
 .curtain {
   position: absolute;
-  height: 100dvh;
+  height: 100vh;
   width: 60vw;
   background-color: var(--vt-c-green);
   transition: 1s;
