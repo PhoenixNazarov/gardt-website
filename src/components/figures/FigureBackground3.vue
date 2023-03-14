@@ -24,7 +24,7 @@ export default {
 }
 .background-figure {
   position: absolute;
-  height: 40vh;
+  height: 20em;
   top: 10vh;
   right: -10vw;
 }

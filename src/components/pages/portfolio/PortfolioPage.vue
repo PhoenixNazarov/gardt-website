@@ -89,6 +89,7 @@ export default {
 .navigation {
   z-index: 100;
   position: fixed;
+  background-color: #0000002e;
 }
 
 .play-hide-animation {

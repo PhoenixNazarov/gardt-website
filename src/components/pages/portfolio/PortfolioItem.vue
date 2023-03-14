@@ -1,23 +1,42 @@
 <template>
-  <div class="portfolio-item-container" :style="'background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 57.07%, #000000 100%),url('+image +');'">
+  <div class="portfolio-item-container"
+       :style="'background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 57.07%, #000000 100%),url('+image +');'">
     <div class="portfolio-property-container">
       <div class="portfolio-property" v-if="principles.includes('user')">
-        <img class="portfolio-property-image" src="../../../assets/images/main-principles/approve-user.svg">
+        <div class="tooltip">
+          <img class="portfolio-property-image" src="../../../assets/images/main-principles/approve-user.svg">
+          <span class="tooltiptext">Фокус на человека</span>
+        </div>
       </div>
       <div class="portfolio-property" v-if="principles.includes('trees')">
-        <img class="portfolio-property-image" src="../../../assets/images/main-principles/trees.svg">
+        <div class="tooltip">
+          <img class="portfolio-property-image" src="../../../assets/images/main-principles/trees.svg">
+          <span class="tooltiptext">Рентабельность</span>
+        </div>
       </div>
       <div class="portfolio-property" v-if="principles.includes('process')">
-        <img class="portfolio-property-image" src="../../../assets/images/main-principles/process.svg">
+        <div class="tooltip">
+          <img class="portfolio-property-image" src="../../../assets/images/main-principles/process.svg">
+          <span class="tooltiptext">Экоустойчивые материалы</span>
+        </div>
       </div>
       <div class="portfolio-property" v-if="principles.includes('scenery')">
-        <img class="portfolio-property-image" src="../../../assets/images/main-principles/scenery.svg">
+        <div class="tooltip">
+          <img class="portfolio-property-image" src="../../../assets/images/main-principles/scenery.svg">
+          <span class="tooltiptext">Природоподобные решения</span>
+        </div>
       </div>
       <div class="portfolio-property" v-if="principles.includes('light')">
-        <img class="portfolio-property-image" src="../../../assets/images/main-principles/light-bulb.svg">
+        <div class="tooltip">
+          <img class="portfolio-property-image" src="../../../assets/images/main-principles/light-bulb.svg">
+          <span class="tooltiptext">Айдентика</span>
+        </div>
       </div>
       <div class="portfolio-property" v-if="principles.includes('growth')">
-        <img class="portfolio-property-image" src="../../../assets/images/main-principles/growth-graph.svg">
+        <div class="tooltip">
+          <img class="portfolio-property-image" src="../../../assets/images/main-principles/growth-graph.svg">
+          <span class="tooltiptext">Экология и окружающая среда</span>
+        </div>
       </div>
     </div>
     <h1 class="portfolio-item-name">{{ name }}</h1>
@@ -110,5 +129,54 @@ export default {
   top: calc(50% - 1em);
   width: 2em;
 }
+
+.tooltip {
+  width: 100%;
+  height: 100%;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  height: 2em;
+  vertical-align: middle;
+  background-color: #555;
+  color: var(--vt-c-white);
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 0 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+@media (max-width: 576px) {
+  .portfolio-item-container {
+    width: 35em;
+    height: 30em;
+  }
+}
+
 
 </style>
