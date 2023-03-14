@@ -66,7 +66,7 @@ export default {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 8vw;
+  font-size: 7vw;
   line-height: 1.5em;
 
   text-align: center;

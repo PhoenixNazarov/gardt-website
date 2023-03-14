@@ -17,8 +17,8 @@ export const bloggersData = [
     animation: 'AnimationDescription',
     data: {
       name: 'Санкт-Петербург',
-      description: 'Пентхаус',
-      square: '',
+      description: 'Загородная терраса пентхауса, расположенная на территории нового ЖК в городе Санкт-Петербург   ',
+      square: '18 м²',
       year: '2020',
       client: 'Частное лицо'
     }
@@ -26,12 +26,12 @@ export const bloggersData = [
   {
     animation: 'AnimationPhotoDescriptionScroll',
     data: {
-      description1: 'Пространство площадки позволяет проявлять активность разных возрастных групп: детей младшего возраста, подростков и пенсионеров.',
-      name1: 'Комьюнити',
-      description2: 'Территория площадки является единственным пространством для объединения жителей, детей, подростков. По итогам реализации проекта местные жители стали больше коммуницировать друг с другом.',
+      description1: 'Терраса служит местом отдыха и важным дополнением пространст пентхауса.',
+      name1: 'Сезонность',
+      description2: 'Особенностью террасы является ее использование круглый год. Высаженные растения подобраны в соответствии с климатическими особенностями разных сезонов.',
       image: image1,
       principles: [
-        [pImageUser, 'todo', '']
+        [pImageUser, 'todo', 'Наши решения нацелены на создания комфортной среды для возможности отдыха на этой террасе']
       ]
     }
   },
@@ -39,13 +39,13 @@ export const bloggersData = [
     animation: 'AnimationFourPhotosScroll',
     data: {
       image1: image2,
-      description1: '',
+      description1: 'Пряный сад в обеденной зоне',
       image2: image3,
-      description2: '',
+      description2: 'Декоративный сад в зоне отдыха',
       image3: image4,
-      description3: '',
+      description3: 'Злаки и лианы',
       image4: image5,
-      description4: ''
+      description4: 'Зеленая стена в зоне отдыха'
     }
   }
 ]

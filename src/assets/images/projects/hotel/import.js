@@ -27,7 +27,7 @@ import image17 from './17.jpg'
 
 import image18 from './18.jpg'
 import image19 from './19.jpg'
-import image20 from './19.jpg'
+import image20 from './20.jpg'
 
 export const hotelData = [
   {
@@ -40,24 +40,23 @@ export const hotelData = [
     animation: 'AnimationDescription',
     data: {
       name: 'Краснодарский край',
-      description: 'Созданное общественное пространство объединяет жителей коттеджного поселка "Вишневый сад 2". Обустройство площадки позволяет вести активный образ жизни в рамках ограниченного пространства поселка.',
-      square: '700 м²',
-      year: '2020',
-      client: 'Администрация коттеджного посёлка'
+      description: 'Разработанная концепция территории гостиничного комплекса состоит из единства системы пространств, объединенных общей навигацией.',
+      square: '8400 м²',
+      year: '2022',
     }
   },
   {
     animation: 'AnimationPhotoDescriptionScroll',
     data: {
-      description1: 'Пространство площадки позволяет проявлять активность разных возрастных групп: детей младшего возраста, подростков и пенсионеров.',
-      name1: 'Водоем',
-      description2: 'Предложенные решения адаптированы под условия изменения уровня воды в период весеннего половодья и сильных дождей. Корректируем направление воды в ручье создавая пространство для людей, птиц, насекомых.',
+      description1: 'Территория гостиницы ориентирована на отдых семей с детьми, поэтому решения создавались именно для них.',
+      name1: 'Пространство',
+      description2: 'Пространство гостиницы разделено на определенные зоны, позволяющие гостям пользоваться всеми видами отдыха на территории комплекса.',
       image: image1,
       principles: [
-        [pImageUser, 'todo', ''],
-        [pImageGrowth, 'todo', ''],
-        [pImageLight, 'todo', ''],
-        [pImageScenery, 'todo', '']
+        [pImageUser, 'todo', 'Планировка дорожек позволяет распределить потоки людей, направляющихся на море, бассейн, спортивную или игровые зоны'],
+        [pImageGrowth, 'todo', 'В проекте предусмотрены взаимосвязанные разноплановые локации, таким образом посетители могут провести целый день на территории отеля'],
+        [pImageLight, 'todo', 'Уникальные решения создают узнаваемый стиль бренда и отеля'],
+        [pImageScenery, 'todo', 'В нижней части территории расположен ландшафтный парк с системой ручьев, которые выполняют функцию сбора и фильтрации дождевой воды']
       ]
     }
   },
@@ -73,18 +72,18 @@ export const hotelData = [
     animation: 'AnimationDropPhotoScroll',
     data: {
       image: image4,
-      description: 'Текст'
+      description: 'Группа бассейнов для отдыхающих всех возрастов'
     }
   },
   {
     animation: 'AnimationThreePhotosScroll',
     data: {
       image1: image5,
-      description1: 'Открытые дворы',
-      image2: image6,
-      description2: 'Закрытые дворы',
+      description1: 'Вид на бассейны',
+      image2: null,
+      description2: '',
       image3: image7,
-      description3: 'Полузакрытые дворы'
+      description3: 'Пергола в зоне бассейнов'
     }
   },
   {
@@ -99,20 +98,20 @@ export const hotelData = [
     animation: 'AnimationDropPhotoScroll',
     data: {
       image: image10,
-      description: 'Текст'
+      description: 'Система ручьев выполняет функцию сбора и фильтрации воды'
     }
   },
   {
     animation: 'AnimationFourPhotosScroll',
     data: {
       image1: image11,
-      description1: '',
+      description1: 'Зона отдыха',
       image2: image12,
-      description2: '',
+      description2: 'Вид на бассейн',
       image3: image13,
-      description3: '',
+      description3: 'Снек бар',
       image4: image14,
-      description4: ''
+      description4: 'Ландшафтный парк'
     }
   },
   {
@@ -127,18 +126,18 @@ export const hotelData = [
     animation: 'AnimationDropPhotoScroll',
     data: {
       image: image17,
-      description: 'Текст'
+      description: 'Парк разделен на 4 зоны: океан, море, горы и пустыня'
     }
   },
   {
     animation: 'AnimationThreePhotosDoubleOneScroll',
     data: {
       image1: image18,
-      description1: '',
+      description1: 'Маяк в "Океане"',
       image2: image19,
-      description2: '',
+      description2: 'Канатный парк в "Пустыне"',
       image3: image20,
-      description3: ''
+      description3: '"Пустыня" для детей 7-14'
     }
   }
 ]
