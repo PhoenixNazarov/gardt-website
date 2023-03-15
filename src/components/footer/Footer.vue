@@ -3,7 +3,7 @@
     <div style="z-index: 1;">
       <FooterContactForm class="footer-contact-form" :theme="theme"/>
       <div class="hr" :class="theme"></div>
-      <FooterContacts :theme="theme"/>
+      <FooterContacts class="footer-contacts-m" :theme="theme"/>
       <div class="hr" :class="theme"></div>
       <div class="footer-info">
         <h1 class="footer-artifact" :class="theme">© 2022, GARDT Landscape Architects</h1>
@@ -79,6 +79,15 @@ export default {
 
 .footer-artifact.dark {
   color: var(--vt-c-black);
+}
+
+@media (max-width: 576px) {
+  .footer-info {
+    height: 40px;
+  }
+  .footer-contact-form {
+    display: none;
+  }
 }
 
 </style>

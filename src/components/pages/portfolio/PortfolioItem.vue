@@ -11,7 +11,7 @@
       <div class="portfolio-property" v-if="principles.includes('trees')">
         <div class="tooltip">
           <img class="portfolio-property-image" src="../../../assets/images/main-principles/trees.svg">
-          <span class="tooltiptext">Рентабельность</span>
+          <span class="tooltiptext">Природоподобные решения</span>
         </div>
       </div>
       <div class="portfolio-property" v-if="principles.includes('process')">
@@ -23,7 +23,7 @@
       <div class="portfolio-property" v-if="principles.includes('scenery')">
         <div class="tooltip">
           <img class="portfolio-property-image" src="../../../assets/images/main-principles/scenery.svg">
-          <span class="tooltiptext">Природоподобные решения</span>
+          <span class="tooltiptext">Экология и окружающая среда</span>
         </div>
       </div>
       <div class="portfolio-property" v-if="principles.includes('light')">
@@ -35,10 +35,15 @@
       <div class="portfolio-property" v-if="principles.includes('growth')">
         <div class="tooltip">
           <img class="portfolio-property-image" src="../../../assets/images/main-principles/growth-graph.svg">
-          <span class="tooltiptext">Экология и окружающая среда</span>
+          <span class="tooltiptext">Рентабельность</span>
         </div>
       </div>
     </div>
+
+    <div class="portfolio-click"
+         @click.prevent="toProject(nameProject)"
+    ></div>
+
     <h1 class="portfolio-item-name">{{ name }}</h1>
     <h1 class="portfolio-item-place">{{ place }}</h1>
   </div>
@@ -49,6 +54,10 @@ export default {
   name: 'PortfolioItem',
   props: {
     name: {
+      type: String,
+      required: true
+    },
+    nameProject: {
       type: String,
       required: true
     },
@@ -64,11 +73,21 @@ export default {
       type: [String, String]
       // required: true
     }
+  },
+  methods: {
+    toProject: function (proj) {
+      this.$root.onChangePage(proj)
+    }
   }
 }
 </script>
 
 <style scoped>
+.portfolio-click {
+  width: 100%;
+  height: calc(100% - 4em);
+  cursor: pointer;
+}
 
 .portfolio-item-container {
   width: 22.5em;

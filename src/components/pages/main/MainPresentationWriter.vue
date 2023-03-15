@@ -121,7 +121,7 @@ export default {
 .main-writer-letter, .main-writer-rect {
   font-family: 'NeueMatana', sans-serif;
   font-size: 10vw;
-  line-height: 1.2em;
+  line-height: 1em;
   display: none;
   color: var(--vt-c-white);
 }

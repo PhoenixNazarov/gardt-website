@@ -60,4 +60,8 @@ export default {
   background: var(--vt-c-white);
 }
 
+@media (max-width: 576px) {
+
+}
+
 </style>

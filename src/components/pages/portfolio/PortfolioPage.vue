@@ -8,9 +8,18 @@
       <FigureBackground3 style="top: 80vh; height: 20vh; width: 20vw; right: -10vw"/>
 
       <div class="portfolio-navigation main-outside">
-        <h1 class="portfolio-navigation-item" @click.prevent="this.onSurfPage(0)">Благоустройство</h1>
-        <h1 class="portfolio-navigation-item" @click.prevent="this.onSurfPage(1)">Комерческое озеленение</h1>
-        <h1 class="portfolio-navigation-item" @click.prevent="this.onSurfPage(2)">Частные объекты</h1>
+        <NavigationButton class="portfolio-navigation-item"
+                          @click.prevent="this.onSurfPage(0)"
+                          text="Благоустройство"
+                          :active="activeNavigation === 0"/>
+        <NavigationButton class="portfolio-navigation-item"
+                          @click.prevent="this.onSurfPage(1)"
+                          text="Комерческое озеленение"
+                          :active="activeNavigation === 1"/>
+        <NavigationButton class="portfolio-navigation-item"
+                          @click.prevent="this.onSurfPage(2)"
+                          text="Частные объекты"
+                          :active="activeNavigation === 2"/>
       </div>
 
       <div class="portfolio-car play-hide-animation" style="display: flex">
@@ -21,8 +30,7 @@
                            :name="item.name"
                            :place="item.place"
                            :principles="item.principles"
-                           @click.prevent="toProject(item.nameProject)"
-            />
+                           :name-project="item.nameProject"/>
           </div>
         </div>
 
@@ -33,7 +41,7 @@
                            :name="item.name"
                            :place="item.place"
                            :principles="item.principles"
-                           @click.prevent="toProject(item.nameProject)"
+                           :name-project="item.nameProject"
             />
           </div>
         </div>
@@ -44,7 +52,7 @@
                            :name="item.name"
                            :place="item.place"
                            :principles="item.principles"
-                           @click.prevent="toProject(item.nameProject)"
+                           :name-project="item.nameProject"
             />
           </div>
         </div>
@@ -62,24 +70,24 @@ import Navigation from '@/components/navigation/Navigation.vue'
 import Footer from '@/components/footer/Footer.vue'
 import PortfolioItem from '@/components/pages/portfolio/PortfolioItem.vue'
 
-import { portfolioItemData } from '@/assets/images/portfolio-items/import'
+import {portfolioItemData} from '@/assets/images/portfolio-items/import'
 import FigureBackground2 from "@/components/figures/FigureBackground2.vue";
 import FigureBackground3 from "@/components/figures/FigureBackground3.vue";
+import NavigationButton from "@/components/navigation/NavigationButton.vue";
 
 export default {
   name: 'PortfolioPage',
-  data () {
+  data() {
     return {
-      portfolioItemData
+      portfolioItemData,
+      activeNavigation: 0
     }
   },
-  components: {FigureBackground3, FigureBackground2, PortfolioItem, Navigation, Footer },
+  components: {NavigationButton, FigureBackground3, FigureBackground2, PortfolioItem, Navigation, Footer},
   methods: {
     onSurfPage: function (numb) {
-      this.$el.querySelector('.portfolio-car').style.transform = `translateX(${-numb * 100}vw)`
-    },
-    toProject: function (proj) {
-      this.$root.onChangePage(proj)
+      this.$el.querySelector('.portfolio-car').style.transform = `translateX(${-numb * 100}vw)`;
+      this.activeNavigation=numb;
     }
   }
 }
@@ -118,7 +126,13 @@ export default {
   margin-left: 4em;
 }
 
+.portfolio-navigation-item.active {
+  text-decoration: underline;
+}
+
 .portfolio-navigation-item {
+  transition: 0.5s;
+  line-height: 1em;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
@@ -139,10 +153,24 @@ export default {
 }
 
 .portfolio-item {
-  cursor: pointer;
   margin-top: 3em;
   margin-left: 1.5em;
   margin-right: 1.5em;
+}
+
+@media (max-width: 576px) {
+  .portfolio-navigation {
+    padding-top: 13vh !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em !important;
+  }
+  .portfolio-navigation-item {
+    margin-left: 0 !important;
+    margin-top: 1em !important;
+    font-size: 1.2em;
+  }
 }
 
 </style>

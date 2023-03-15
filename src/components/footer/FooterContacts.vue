@@ -21,7 +21,10 @@
     <div class="footer-contacts-names">
       <h1 class="footer-contacts-names-inner" :class="theme">Дизайн: <span style="text-decoration: underline">Боровиков Юрий</span>
       </h1>
-      <!--      <img src="../../assets/logo_black..svg" width="47" alt="Gardt logo">-->
+      <div style="margin-bottom: 1em">
+        <img style="margin-right: 2em" src="../../assets/images/Telegram.svg" width="22" alt="Gardt logo">
+        <img src="../../assets/images/VK.svg" width="22" alt="Gardt logo">
+      </div>
     </div>
   </div>
 </template>
@@ -31,14 +34,14 @@ import FooterNavigationButton from '@/components/footer/FooterNavigationButton.v
 
 export default {
   name: 'FooterContacts',
-  components: { FooterNavigationButton },
+  components: {FooterNavigationButton},
   props: ['theme'],
   methods: {
     changePage: function (page) {
       this.$root.onChangePage(page)
     },
     toDownPage: function () {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+      window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})
     }
   }
 }
@@ -119,6 +122,25 @@ export default {
 
 .navigation-logo.dark {
   filter: invert(1);
+}
+
+@media (max-width: 576px) {
+  .footer-contacts-container {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  .footer-contacts-text-inner {
+    display: none;
+  }
+  .footer-contacts-text {
+    width: 20%;
+  }
+  .navigation-logo {
+    width: 35px;
+  }
+  .navigation-button-item {
+    margin-bottom: 0 !important;
+  }
 }
 
 </style>
