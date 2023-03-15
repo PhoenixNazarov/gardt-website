@@ -65,6 +65,7 @@ export default {
 .main-slider-image {
   background: black;
   mix-blend-mode: normal;
+  background-position: center;
 }
 
 .main-slider-image:nth-child(1) {

@@ -21,7 +21,7 @@ export default {
 .presentation-row {
   padding-left: 5%;
   font-family: 'NeueMatana', sans-serif;
-  font-size: 10vw;
+  font-size: 7.5vw;
   line-height: 1.2em;
   background-image: linear-gradient(180deg, #EAFFAC 0%, #C8FF29 100%);
   -webkit-background-clip: text;

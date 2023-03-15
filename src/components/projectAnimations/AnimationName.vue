@@ -41,7 +41,7 @@ export default {
 }
 
 .name-text {
-  width: 75vw;
+  /*width: 75vw;*/
   position: absolute;
   top: 50%;
   left: 50%;

@@ -7,14 +7,14 @@ import {
   pImageLight
 } from '@/assets/images/portfolio-principles/import'
 
-import image1 from './1.jpg'
-import image2 from './7.jpg'
-import image31 from './31.jpg'
+import image1 from './image1.png'
+import image2 from './image2.png'
+import image31 from './image31.png'
 import image32 from './32.jpg'
 import image4 from './image4.png'
 import image5 from './image5.png'
 import image6 from './image6.png'
-import image7 from './7.jpg'
+import image7 from './image7.png'
 import image8 from './image8.png'
 import image9 from './image9.png'
 import image10 from './image10.png'
