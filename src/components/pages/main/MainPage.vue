@@ -3,7 +3,7 @@
     <div>
       <Navigation id="navigation" :theme="this.theme"/>
     </div>
-
+    <NavigationLogo/>
     <div class="pres-slide">
       <MainPresentation/>
     </div>
@@ -34,10 +34,11 @@ import MainProject from '@/components/pages/main/MainProject.vue'
 import Footer from '@/components/footer/Footer.vue'
 import Navigation from '@/components/navigation/Navigation.vue'
 import axios from 'axios'
+import NavigationLogo from "@/components/ui/NavigationLogo.vue";
 
 export default {
   name: 'MainPage',
-  components: { Navigation, Footer, MainProject, MainPrinciples, MainMission, MainScroll, MainPresentation },
+  components: {NavigationLogo, Navigation, Footer, MainProject, MainPrinciples, MainMission, MainScroll, MainPresentation },
   data () {
     return {
       theme: 'light'

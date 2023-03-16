@@ -1,6 +1,6 @@
 <template>
-  <div style="min-height: 400vh">
-    <div class="drop-photo-container" style="min-height: 400vh">
+  <div>
+    <div class="drop-photo-container" style="min-height: 500vh">
       <div class="car">
         <div class="car-frame-1-container">
           <div class="drop-photo-image" :style="'background-image: url('+data.image+')'"></div>
@@ -11,9 +11,15 @@
           </div>
         </div>
         <div class="car-frame-2-container">
-          <div class="frame-2-image" v-for="item in data.principles" :key="item">
+          <div class="frame-2-image" v-for="item in data.principles.slice(0, 3)" :key="item">
             <img class="frame-2-image-inner" :src="item[0]" :alt="item[1]"/>
             <h1 class="image-desc">{{ item[2] }}</h1>
+          </div>
+        </div>
+        <div class="car-frame-3-container">
+          <div class="frame-3-image" v-for="item in data.principles.slice(3)" :key="item">
+            <img class="frame-3-image-inner" :src="item[0]" :alt="item[1]"/>
+            <h1 class="image-2-desc">{{ item[2] }}</h1>
           </div>
         </div>
       </div>
@@ -25,30 +31,33 @@
 import {BindScroll, BindScrollTimeline} from "@/components/projectAnimations/animationTools";
 
 export default {
-  name: 'AnimationPhotoDescriptionScroll',
+  name: 'AnimationPhotoDescriptionScrollDouble',
   props: {
     data: {
       type: Object,
       required: true
     }
   },
-  mounted() {
+  mounted () {
     this.$car = this.$el.querySelector('.car')
     this.$container = this.$el.querySelector('.drop-photo-container')
     this.bindScroll = new BindScroll(this.$container, this.$car);
 
-
     const offsets = [
       0, // start
-      0.1, // image right 1500
-      0.15, // image scale + text 500
-      0.3, // title 1500
-      0.4, // desc
-      0.5, // 6.
-      0.6, // 7. hide frame1
-      0.7, // 8. show frame2
-      0.8, // 9. size image principles
-      0.9 // 10. show text
+      1/14, // image right 1500
+      2/14, // image scale + text 500
+      3/14, // title 1500
+      4/14, // desc
+      5/14, // 6.
+      6/14, // 7. hide frame1
+      7/14, // 8. show frame2
+      8/14, // 9. size image principles
+      9/14, // 10. show text
+      10/14, // 11. hide frame2
+      11/14, // 12. show frame3
+      12/14, // 13. size image principles
+      13/14 // 14. show text
     ]
 
     const framesImage = {
@@ -62,10 +71,17 @@ export default {
         'scale(1)',
         'scale(1)',
         'scale(1)',
+        'scale(1)',
+        'scale(1)',
+        'scale(1)',
+        'scale(1)',
         'scale(1)'
-
       ],
       marginLeft: [
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -88,6 +104,10 @@ export default {
         '20vw',
         '20vw',
         '20vw',
+        '20vw',
+        '20vw',
+        '20vw',
+        '20vw',
         '20vw'
       ],
       marginLeft: [
@@ -99,10 +119,18 @@ export default {
         '5em',
         '5em',
         '5em',
+        '5em',
+        '5em',
+        '5em',
+        '5em',
         '5em'
       ],
       marginRight: [
         '0vw',
+        '10vw',
+        '10vw',
+        '10vw',
+        '10vw',
         '10vw',
         '10vw',
         '10vw',
@@ -124,12 +152,20 @@ export default {
         'translateX(0)',
         'translateX(0)',
         'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
         'translateX(0)'
       ],
       opacity: [
         0,
         0,
         0,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -149,12 +185,20 @@ export default {
         'translateX(0)',
         'translateX(0)',
         'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
         'translateX(0)'
       ],
       opacity: [
         0,
         0,
         0,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -174,12 +218,20 @@ export default {
         'translateX(0)',
         'translateX(0)',
         'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
+        'translateX(0)',
         'translateX(0)'
       ],
       opacity: [
         0,
         0,
         0,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -200,6 +252,10 @@ export default {
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
         0
       ]
     }
@@ -214,7 +270,11 @@ export default {
         0,
         1,
         1,
-        1
+        1,
+        0,
+        0,
+        0,
+        0
       ]
     }
 
@@ -227,6 +287,10 @@ export default {
         'scale(0.5)',
         'scale(0.5)',
         'scale(0.5)',
+        'scale(1)',
+        'scale(1)',
+        'scale(1)',
+        'scale(1)',
         'scale(1)',
         'scale(1)'
       ]
@@ -242,9 +306,70 @@ export default {
         0,
         0,
         0,
+        1,
+        0,
+        0,
+        0,
         1
       ]
     }
+
+
+    const framesFrame3 = {
+      opacity: [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ]
+    }
+
+    const frames3Image = {
+      transform: [
+        'scale(0)',
+        'scale(0)',
+        'scale(0)',
+        'scale(0)',
+        'scale(0)',
+        'scale(0)',
+        'scale(0)',
+        'scale(0)',
+        'scale(1)',
+        'scale(0.5)',
+        'scale(0.5)',
+        'scale(1)',
+        'scale(1)'
+      ]
+    }
+    const frames3Desc = {
+      opacity: [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    }
+
     this.bindScrollTimeline = new BindScrollTimeline(
         this.$container,
         this.$car,
@@ -286,10 +411,22 @@ export default {
             $elements: this.$el.querySelectorAll('.image-desc'),
             keyframes: frames2Desc
           },
+          {
+            $elements: [this.$el.querySelector('.car-frame-3-container')],
+            keyframes: framesFrame3
+          },
+          {
+            $elements: this.$el.querySelectorAll('.frame-3-image-inner'),
+            keyframes: frames3Image
+          },
+          {
+            $elements: this.$el.querySelectorAll('.image-2-desc'),
+            keyframes: frames3Desc
+          },
         ]
     )
   },
-  unmounted() {
+  unmounted () {
     this.bindScroll.unbind();
     this.bindScrollTimeline.unbind();
   }
@@ -304,7 +441,7 @@ export default {
   align-items: center;
 }
 
-.car-frame-1-container, .car-frame-2-container {
+.car-frame-1-container, .car-frame-2-container, .car-frame-3-container {
   position: absolute;
   display: flex;
   align-items: center;
@@ -316,7 +453,7 @@ export default {
   justify-content: center;
 }
 
-.car-frame-2-container {
+.car-frame-2-container, .car-frame-3-container {
   justify-content: space-evenly;
   width: 100%;
   flex-wrap: wrap;
@@ -378,7 +515,7 @@ export default {
   margin-right: 10vw;
 }
 
-.frame-2-image {
+.frame-2-image, .frame-3-image {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -388,11 +525,11 @@ export default {
   margin-top: 3em;
 }
 
-.frame-2-image-inner {
+.frame-2-image-inner, .frame-3-image-inner {
   height: 8em;
 }
 
-.image-desc {
+.image-desc, .image-2-desc {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;

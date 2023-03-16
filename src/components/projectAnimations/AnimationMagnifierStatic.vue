@@ -4,7 +4,7 @@
 
       <div class="container">
         <div style="display: flex; flex-direction: column;">
-          <PartName v-if="data.name !== undefined" :text="data.name" show=20 theme="light"/>
+          <PartName v-if="data.name !== undefined" :text="data.name" :tire="false" show=20 theme="accent"/>
           <div class="image" :style="`background-image: url(${data.image})`"/>
         </div>
         <div class="image-loop">
@@ -49,6 +49,7 @@ export default {
   height: 50vh;
   background-size: cover;
   background-position: center;
+  border-radius: 10px;
 }
 
 .image-loop {
@@ -60,11 +61,24 @@ export default {
   justify-content: flex-end;
   flex-direction: column;
   align-items: center;
+  border-radius: 10px;
 }
 
 .big-image {
   position: absolute;
   height: 50vh;
+  border-radius: 10px;
+}
+
+@media (max-width: 576px) {
+  .image-loop {
+    display: none;
+  }
+  .image {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 </style>

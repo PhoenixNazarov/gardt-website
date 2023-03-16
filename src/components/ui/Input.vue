@@ -131,4 +131,18 @@ export default {
   border-color: var(--vt-c-danger);
 }
 
+@media (max-width: 576px) {
+  .label {
+    left: 10px;
+  }
+  .input {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .input:focus ~ .label,
+  .input:not(:placeholder-shown) ~ .label {
+    top: 8px;
+  }
+}
+
 </style>

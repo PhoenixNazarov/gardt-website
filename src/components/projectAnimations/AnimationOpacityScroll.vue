@@ -1,9 +1,12 @@
 <template>
   <div>
-    <PartName v-if="data.name !== undefined" :text="data.name" show=20 theme="light" class="main-outside"/>
     <div class="drop-photo-container" :style="'height: '+data.height+'vh'">
       <div class="car">
         <div class="container" style="height: 100vh; overflow-x: clip">
+          <PartName v-if="data.name !== undefined" :text="data.name" show=20 theme="accent" :tire="false"
+                    class="name"/>
+          <h1 class="description">{{ data.description }}</h1>
+
           <img class="anim" :src=item.image v-for="item in data.images"/>
         </div>
       </div>
@@ -13,81 +16,48 @@
 
 <script>
 import PartName from '@/components/ui/PartName.vue'
+import {BindScroll, BindScrollTimeline} from "@/components/projectAnimations/animationTools";
 
 export default {
   name: 'AnimationOpacityScroll',
-  components: { PartName },
+  components: {PartName},
   props: {
     data: {
       type: Object,
       required: true
     }
   },
-  methods: {
-    onScroll: function (e) {
-      const offset = this.$container.getBoundingClientRect().y
-      const height = this.$container.getBoundingClientRect().height
-      const carHeight = this.$car.getBoundingClientRect().height
-
-      const downBorder = -height + carHeight
-
-      if (!this.fixed && (offset < 0 && offset > downBorder)) {
-        this.$car.style.position = 'fixed'
-        this.$car.style.top = 0
-        this.$car.style.bottom = null
-        this.fixed = true
-      } else if (this.fixed && offset > 0) {
-        this.$car.style.position = 'absolute'
-        this.$car.style.top = 0
-        this.$car.style.bottom = null
-        this.fixed = false
-      } else if (this.fixed && offset < downBorder) {
-        this.$car.style.position = 'absolute'
-        this.$car.style.top = null
-        this.$car.style.bottom = 0
-        this.fixed = false
-      }
-    }
-  },
-  mounted () {
-    window.addEventListener('scroll', this.onScroll)
+  mounted() {
     this.$car = this.$el.querySelector('.car')
     this.$container = this.$el.querySelector('.drop-photo-container')
-    this.fixed = false
-
-    const offset = this.$container.getBoundingClientRect().top - document.body.getBoundingClientRect().top
-
-    const height = this.$container.getBoundingClientRect().height - this.$car.getBoundingClientRect().height
-
+    this.bindScroll = new BindScroll(this.$container, this.$car);
     const offsets = []
-
-    for (let i = 0; i < this.data.matrix[0].length; i++) {
-      offsets.push(new CSSUnitValue(offset + height * (i / this.data.matrix[0].length), 'px'))
-    }
-
-    const myScrollTimeline = new ScrollTimeline({
-      source: document.scrollingElement,
-      orientation: 'block',
-      scrollOffsets: offsets
-    })
-
+    const binds = []
     const $imgs = this.$el.querySelectorAll('.anim')
 
-    for (let i = 0; i < this.data.matrix.length; i++) {
-      $imgs[i].animate(
-        {
-          opacity: this.data.matrix[i]
-        },
-        {
-          duration: 1,
-          fill: 'forwards',
-          timeline: myScrollTimeline
-        }
-      )
+    for (let i = 0; i < this.data.matrix[0].length; i++) {
+      offsets.push(i / this.data.matrix[0].length)
     }
+
+    for (let i = 0; i < this.data.matrix.length; i++) {
+      binds.push({
+        $elements: [$imgs[i]],
+        keyframes: {
+          opacity: this.data.matrix[i]
+        }
+      })
+    }
+
+    this.bindScrollTimeline = new BindScrollTimeline(
+        this.$container,
+        this.$car,
+        offsets,
+        binds
+    )
   },
-  unmounted () {
-    window.removeEventListener('scroll', this.onScroll)
+  unmounted() {
+    this.bindScroll.unbind();
+    this.bindScrollTimeline.unbind();
   }
 }
 </script>
@@ -98,11 +68,33 @@ export default {
 }
 
 .anim {
-  height: 70vh;
+  width: 80vw;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 60%;
   transform: translate(-50%, -50%);
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  top: 8em;
+  /*width: 90vw;*/
+}
+
+.description {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2em;
+  line-height: 1em;
+  color: var(--vt-c-white);
+  text-align: center;
+  top: 4em;
+  margin-right: 10vw;
+  margin-left: 10vw;
+
+  width: 80vw;
 }
 
 </style>

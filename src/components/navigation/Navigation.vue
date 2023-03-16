@@ -152,8 +152,10 @@ export default {
   background-color: var(--vt-c-green);
   transition: 1s;
   left: calc(100vw);
-  top: 0px;
+  top: 0;
   border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+
 }
 
 .curtain.open {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="page">
+    <div class="page page-m">
       <h1 class="name-text show-animate">
         {{ data.name.join("\n") }}
       </h1>
@@ -62,6 +62,16 @@ export default {
   text-fill-color: transparent;
 
   text-shadow: 0 4px 46px rgba(239, 239, 239, 0.15);
+}
+
+@media (max-width: 576px) {
+  .page-m {
+    height: 40vh;
+  }
+
+  .name-text {
+    top:65%;
+  }
 }
 
 </style>

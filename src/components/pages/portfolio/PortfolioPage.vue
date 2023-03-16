@@ -2,8 +2,9 @@
   <div>
     <div>
       <Navigation theme="dark" class="navigation"/>
+      <NavigationLogo :background="true"/>
     </div>
-    <div class="main-gradient">
+    <div class="main-gradient" style="overflow-y: clip">
       <FigureBackground2 style="top: 16vh; height: 20vh; width: 20vw; left: -15vw"/>
       <FigureBackground3 style="top: 80vh; height: 20vh; width: 20vw; right: -10vw"/>
 
@@ -74,6 +75,7 @@ import {portfolioItemData} from '@/assets/images/portfolio-items/import'
 import FigureBackground2 from "@/components/figures/FigureBackground2.vue";
 import FigureBackground3 from "@/components/figures/FigureBackground3.vue";
 import NavigationButton from "@/components/navigation/NavigationButton.vue";
+import NavigationLogo from "@/components/ui/NavigationLogo.vue";
 
 export default {
   name: 'PortfolioPage',
@@ -83,7 +85,7 @@ export default {
       activeNavigation: 0
     }
   },
-  components: {NavigationButton, FigureBackground3, FigureBackground2, PortfolioItem, Navigation, Footer},
+  components: {NavigationLogo, NavigationButton, FigureBackground3, FigureBackground2, PortfolioItem, Navigation, Footer},
   methods: {
     onSurfPage: function (numb) {
       this.$el.querySelector('.portfolio-car').style.transform = `translateX(${-numb * 100}vw)`;
@@ -116,7 +118,7 @@ export default {
 }
 
 .portfolio-navigation {
-  padding-top: 20vh;
+  padding-top: 12em;
   margin-bottom: 3em;
   display: flex;
   justify-content: center;
@@ -160,7 +162,7 @@ export default {
 
 @media (max-width: 576px) {
   .portfolio-navigation {
-    padding-top: 13vh !important;
+    padding-top: 10em !important;
     display: flex;
     flex-direction: column;
     align-items: center;

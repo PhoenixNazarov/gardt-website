@@ -7,14 +7,30 @@
       <div>
         <AnimationName v-if="item.animation === 'AnimationName'" :data="item.data"/>
         <AnimationNameVideo v-if="item.animation === 'AnimationNameVideo'" :data="item.data"/>
+
         <AnimationDescription v-if="item.animation === 'AnimationDescription'" :data="item.data"/>
-        <AnimationPhotoDescriptionScroll v-if="item.animation === 'AnimationPhotoDescriptionScroll'" :data="item.data"/>
+
+        <AnimationPhotoDescriptionScroll
+            v-if="item.animation === 'AnimationPhotoDescriptionScroll' && !isMobile && item.data.principles.length <= 3"
+            :data="item.data"/>
+        <AnimationPhotoDescriptionScrollDouble
+            v-if="item.animation === 'AnimationPhotoDescriptionScroll' && !isMobile && item.data.principles.length > 3"
+            :data="item.data"/>
+
+        <AnimationPhotoDescriptionMobile
+            v-if="item.animation === 'AnimationPhotoDescriptionScroll' && isMobile"
+            :data="item.data"/>
+
         <AnimationMagnifierStatic v-if="item.animation === 'AnimationMagnifierStatic'" :data="item.data"/>
         <AnimationDropPhotoScroll v-if="item.animation === 'AnimationDropPhotoScroll'" :data="item.data"/>
         <AnimationThreePhotosScroll v-if="item.animation === 'AnimationThreePhotosScroll'" :data="item.data"/>
-        <AnimationThreePhotosDoubleOneScroll v-if="item.animation === 'AnimationThreePhotosDoubleOneScroll'" :data="item.data"/>
+        <AnimationThreePhotosDoubleOneScroll v-if="item.animation === 'AnimationThreePhotosDoubleOneScroll'"
+                                             :data="item.data"/>
         <AnimationFourPhotosScroll v-if="item.animation === 'AnimationFourPhotosScroll'" :data="item.data"/>
         <AnimationOpacityScroll v-if="item.animation === 'AnimationOpacityScroll'" :data="item.data"/>
+
+        <AnimationAviastarFacade v-if="item.animation === 'AnimationAviastarFacade'" :data="item.data"/>
+
       </div>
     </div>
 
@@ -29,7 +45,7 @@
 </template>
 
 <script>
-import { projectsData } from '@/assets/images/projects/import'
+import {projectsData} from '@/assets/images/projects/import'
 import AnimationBackground from '@/components/projectAnimations/AnimationBackground.vue'
 import Navigation from '@/components/navigation/Navigation.vue'
 import AnimationName from '@/components/projectAnimations/AnimationName.vue'
@@ -45,9 +61,16 @@ import AnimationFourPhotosScroll from '@/components/projectAnimations/AnimationF
 import Button from '@/components/ui/Button.vue'
 import AnimationOpacityScroll from '@/components/projectAnimations/AnimationOpacityScroll.vue'
 import AnimationNameVideo from '@/components/projectAnimations/AnimationNameVideo.vue'
+import AnimationPhotoDescriptionMobile from "@/components/projectAnimations/AnimationPhotoDescriptionMobile.vue";
+import AnimationAviastarFacade from "@/components/projectAnimations/AnimationAviastarFacade.vue";
+import AnimationPhotoDescriptionScrollDouble
+  from "@/components/projectAnimations/AnimationPhotoDescriptionScrollDouble.vue";
 
 export default {
   components: {
+    AnimationPhotoDescriptionScrollDouble,
+    AnimationAviastarFacade,
+    AnimationPhotoDescriptionMobile,
     AnimationNameVideo,
     AnimationOpacityScroll,
     Button,
@@ -63,9 +86,10 @@ export default {
     AnimationBackground,
     Footer
   },
-  data () {
+  data() {
     return {
-      projectsData
+      projectsData,
+      isMobile: window.screen.width <= 576
     }
   },
   props: ['projectName'],
@@ -90,6 +114,12 @@ export default {
   margin-bottom: 5em;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 576px) {
+  .back-btn {
+    width: 75%;
+  }
 }
 
 </style>

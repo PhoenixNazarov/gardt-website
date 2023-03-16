@@ -41,7 +41,7 @@
                  @message-input="onInputComment"/>
         </div>
         <div class="feedback-form-raw">
-          <h1 class="feedback-text-description feedback-input feedback-input-long" :class="theme">
+          <h1 class="feedback-text-description feedback-input feedback-input-long accept-rules" :class="theme">
             Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования платформой
           </h1>
           <div class="feedback-input">
@@ -232,6 +232,36 @@ export default {
 
 .hide {
   opacity: 0;
+}
+
+@media (max-width: 576px) {
+  .feedback-input {
+    height: 40px;
+  }
+  .accept-rules {
+    display: none;
+  }
+  .feedback-form-raw {
+    flex-wrap: wrap;
+  }
+  .feedback-text-title {
+    font-size: 0.6em;
+    margin-bottom: 4em;
+  }
+  .input-container, .feedback-input {
+    margin-left: 1em;
+    margin-bottom: 1em;
+  }
+  .feedback-text-description {
+    font-size: 1.2em;
+    line-height: 1.2em;
+  }
+  .feedback-text {
+    width: 50%;
+  }
+  .feedback-form {
+    width: 50%;
+  }
 }
 
 </style>

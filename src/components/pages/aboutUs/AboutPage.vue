@@ -11,6 +11,8 @@
     </div>
     <div>
       <Navigation theme="light" class="navigation"/>
+      <NavigationLogo/>
+
     </div>
     <div>
       <AboutPresentation class="main-outside bottom-outside"/>
@@ -48,10 +50,11 @@ import PartName from '@/components/ui/PartName.vue'
 import AboutPeople from '@/components/pages/aboutUs/AboutPeople.vue'
 import Footer from '@/components/footer/Footer.vue'
 import AnimationBackground from '@/components/projectAnimations/AnimationBackground.vue'
+import NavigationLogo from "@/components/ui/NavigationLogo.vue";
 
 export default {
   name: 'AboutPage',
-  components: { AnimationBackground, Footer, AboutPeople, PartName, AboutPresentation, Navigation }
+  components: {NavigationLogo, AnimationBackground, Footer, AboutPeople, PartName, AboutPresentation, Navigation }
 }
 </script>
 

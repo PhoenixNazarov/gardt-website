@@ -25,12 +25,13 @@ import PortfolioPage from '@/components/pages/portfolio/PortfolioPage.vue'
 import MainPageLight from '@/components/pages/mainLight/MainPage.vue'
 import ProjectZelenogorsk from '@/components/projects/ProjectZelenogorsk.vue'
 import ProjectBase from '@/components/projects/ProjectBase.vue'
+import {getPage, setPage} from "@/pages";
 
 export default {
   name: 'App',
   data: function () {
     return {
-      page: 'Main'
+      page: getPage()
     }
   },
   components: {ProjectBase, MainPageLight, PortfolioPage, UiPage, AboutPage, MainPage},
@@ -44,9 +45,10 @@ export default {
         document._fixScrollListeners = []
       })
       this.page = page
+      setPage(page);
     }
     this.$root.getPage = function () {
-      return this.page
+      return this.page;
     }
 
     window.addEventListener('scroll', (e) => {

@@ -13,7 +13,6 @@ export const projectsData = {
   ProjectCherryGarden: cherryGardenData,
   ProjectSquareAviastart: squareAviastarData,
   ProjectMafAviastar: mafAviastarData,
-
   ProjectRest: restData,
   ProjectBloggers: bloggersData,
   ProjectHotel: hotelData

@@ -86,7 +86,7 @@ export default {
     height: 40px;
   }
   .footer-contact-form {
-    display: none;
+    margin-bottom: 1.5em;
   }
 }
 

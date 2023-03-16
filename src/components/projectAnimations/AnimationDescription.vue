@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="page">
+    <div class="page page-m">
       <div class="car">
         <h1 class="main-text">{{ data.name }}</h1>
         <h1 class="main-description">{{ data.description }}</h1>
@@ -91,6 +91,7 @@ export default {
 }
 
 .main-text {
+  width: 100%;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -167,6 +168,44 @@ export default {
   margin-top: 0.5em;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 576px) {
+  .main-text {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+    transform: none;
+    width: calc(100vw - 1em);
+  }
+  .main-description {
+    font-size: 1.2em;
+    width: 76vw;
+  }
+
+  .page-m {
+    margin-top: 5em;
+    height: auto;
+  }
+
+  .car {
+    position: static;
+    transform: none;
+    top: 0;
+    left: 0;
+  }
+
+  .sub-description {
+    width: 76vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sub-name {
+    font-size: 1.3em;
+  }
+  .sub-value {
+    font-size: 1.2em;
+  }
 }
 
 </style>

@@ -9,7 +9,7 @@
     <div class="navigation">
       <div class="navigation-button">
         <FooterNavigationButton text="Блог" class="navigation-button-item" :theme="theme"
-                                @click.prevent="changePage('Blog')"/>
+                                />
         <FooterNavigationButton text="О нас" class="navigation-button-item" :theme="theme"
                                 @click.prevent="changePage('About')"/>
         <FooterNavigationButton text="Портфолио" class="navigation-button-item" :theme="theme"
@@ -22,8 +22,13 @@
       <h1 class="footer-contacts-names-inner" :class="theme">Дизайн: <span style="text-decoration: underline">Боровиков Юрий</span>
       </h1>
       <div style="margin-bottom: 1em">
-        <img style="margin-right: 2em" src="../../assets/images/Telegram.svg" width="22" alt="Gardt logo">
-        <img src="../../assets/images/VK.svg" width="22" alt="Gardt logo">
+        <img style="margin-right: 2em" v-if="theme === 'dark'" src="../../assets/images/Telegram.svg" width="22" alt="Gardt logo">
+        <img v-if="theme === 'dark'" src="../../assets/images/VK.svg" width="22" alt="Gardt logo">
+
+
+        <img style="margin-right: 2em" v-if="theme === 'light'" src="../../assets/images/TelegramLight.svg" width="22" alt="Gardt logo">
+        <img v-if="theme === 'light'" src="../../assets/images/VKLight.svg" width="22" alt="Gardt logo">
+
       </div>
     </div>
   </div>

@@ -23,7 +23,7 @@ export default {
   /*background: rebeccapurple;*/
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  height: 130vh;
   background: radial-gradient(87.55% 171.44% at 19.97% 22.27%, #02001A 36.2%, #060043 100%) top right/200% 200%;
   animation: gradient-animate 7s infinite alternate;
 }

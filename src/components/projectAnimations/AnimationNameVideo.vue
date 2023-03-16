@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="page">
+    <div class="page page-m">
       <div class="background-video-frame">
         <video class="background-video" autoplay loop muted playsinline style="background-color: black">
           <source :src='data.video.source' :type='data.video.type'>
@@ -79,6 +79,23 @@ export default {
   text-fill-color: transparent;
 
   text-shadow: 0 4px 46px rgba(239, 239, 239, 0.15);
+}
+
+@media (max-width: 576px) {
+  .page-m {
+    height: 40vh;
+  }
+  .background-video-frame {
+    height: 40vh;
+  }
+
+  .name-text {
+    top:65%;
+  }
+  .background-video {
+    top: 65%;
+  }
+
 }
 
 </style>

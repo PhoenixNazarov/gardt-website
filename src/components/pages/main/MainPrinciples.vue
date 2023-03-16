@@ -4,7 +4,7 @@
       <img class="principles-image-inner" src="../../../assets/images/main-slider/1.png" alt=""
            style="width: 100%; position: absolute">
       <img src="../../../assets/images/main-slider/1.png" alt=""
-           style="max-width: 100vw; opacity: 0; visibility: hidden;">
+           style="max-width: 100%; opacity: 0; visibility: hidden;">
     </div>
     <div class="principles-container">
       <div class="main-outside">

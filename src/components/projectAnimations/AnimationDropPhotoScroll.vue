@@ -1,7 +1,7 @@
 <template>
   <div>
     <PartName v-if="data.name !== undefined" :text="data.name" show=20 theme="light" class="main-outside"/>
-    <div class="drop-photo-container" style="min-height: 300vh">
+    <div class="drop-photo-container" style="min-height: 200vh">
       <div class="car">
         <div class="drop-photo-image" :style="'background-image: url('+data.image+')'"></div>
         <h1 class="drop-photo-text">{{ data.description }}</h1>
@@ -13,88 +13,46 @@
 <script>
 import '../../assets/js/scroll-timeline.js'
 import PartName from '@/components/ui/PartName.vue'
+import {BindScroll, BindScrollTimeline} from "@/components/projectAnimations/animationTools";
 
 export default {
   name: 'AnimationDropPhotoScroll',
-  components: { PartName },
+  components: {PartName},
   props: {
     data: {
       type: Object,
       required: true
     }
   },
-  methods: {
-    onScroll: function (e) {
-      const offset = this.$container.getBoundingClientRect().y
-      const height = this.$container.getBoundingClientRect().height
-      const carHeight = this.$car.getBoundingClientRect().height
-
-      const downBorder = -height + carHeight
-
-      if (!this.fixed && (offset < 0 && offset > downBorder)) {
-        this.$car.style.position = 'fixed'
-        this.$car.style.top = 0
-        this.$car.style.bottom = null
-        this.fixed = true
-      } else if (this.fixed && offset > 0) {
-        this.$car.style.position = 'absolute'
-        this.$car.style.top = 0
-        this.$car.style.bottom = null
-        this.fixed = false
-      } else if (this.fixed && offset < downBorder) {
-        this.$car.style.position = 'absolute'
-        this.$car.style.top = null
-        this.$car.style.bottom = 0
-        this.fixed = false
-      }
-    }
-  },
-  mounted () {
-    window.addEventListener('scroll', this.onScroll)
+  mounted() {
     this.$car = this.$el.querySelector('.car')
     this.$container = this.$el.querySelector('.drop-photo-container')
-    this.fixed = false
 
-    const offset = this.$container.getBoundingClientRect().top - document.body.getBoundingClientRect().top
-
-    const height = this.$container.getBoundingClientRect().height - this.$car.getBoundingClientRect().height
-
-    const myScrollTimeline = new ScrollTimeline({
-      source: document.scrollingElement,
-      orientation: 'block',
-      scrollOffsets: [
-        new CSSUnitValue(offset, 'px'),
-        new CSSUnitValue(offset + height * 0.3, 'px'),
-        new CSSUnitValue(offset + height * 0.6, 'px'),
-        new CSSUnitValue(offset + height * 0.99, 'px')
-      ]
-    })
-
-    this.$el.querySelector('.drop-photo-image').animate(
-      {
-        transform: ['scale(1)', 'scale(0.6)', 'scale(0.6)', 'scale(0.7)'],
-        opacity: [0.7, 1, 1, 0.25]
-      },
-      {
-        duration: 1,
-        fill: 'forwards',
-        timeline: myScrollTimeline
-      }
-    )
-
-    this.$el.querySelector('.drop-photo-text').animate(
-      {
-        opacity: [0, 0, 0, 1]
-      },
-      {
-        duration: 1,
-        fill: 'forwards',
-        timeline: myScrollTimeline
-      }
+    this.bindScroll = new BindScroll(this.$container, this.$car);
+    this.bindScrollTimeline = new BindScrollTimeline(
+        this.$container,
+        this.$car,
+        [0, 0.3, 0.5, 0.9],
+        [
+          {
+            $elements: [this.$el.querySelector('.drop-photo-image')],
+            keyframes: {
+              transform: ['scale(1)', 'scale(0.6)', 'scale(0.6)', 'scale(0.7)'],
+              opacity: [0.7, 1, 1, 0.25]
+            }
+          },
+          {
+            $elements: [this.$el.querySelector('.drop-photo-text')],
+            keyframes: {
+              opacity: [0, 0, 0, 1]
+            }
+          }
+        ]
     )
   },
-  unmounted () {
-    window.removeEventListener('scroll', this.onScroll)
+  unmounted() {
+    this.bindScroll.unbind();
+    this.bindScrollTimeline.unbind();
   }
 }
 </script>
@@ -103,10 +61,12 @@ export default {
 .car {
   width: 100vw;
 }
+
 .drop-photo-image {
   height: 100vh;
   background-size: cover;
   background-position: center;
+  border-radius: 10px;
 }
 
 .drop-photo-text {

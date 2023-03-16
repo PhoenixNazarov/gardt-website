@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import {BindScroll, BindScrollTimeline} from "@/components/projectAnimations/animationTools";
+
 export default {
   name: 'AnimationFourPhotosScroll',
   props: {
@@ -44,117 +46,59 @@ export default {
       required: true
     }
   },
-  methods: {
-    onScroll: function (e) {
-      const offset = this.$container.getBoundingClientRect().y
-      const height = this.$container.getBoundingClientRect().height
-      const carHeight = this.$car.getBoundingClientRect().height
-
-      const downBorder = -height + carHeight
-
-      if (!this.fixed && (offset < 0 && offset > downBorder)) {
-        this.$car.style.position = 'fixed'
-        this.$car.style.top = 0
-        this.$car.style.bottom = null
-        this.fixed = true
-      } else if (this.fixed && offset > 0) {
-        this.$car.style.position = 'absolute'
-        this.$car.style.top = 0
-        this.$car.style.bottom = null
-        this.fixed = false
-      } else if (this.fixed && offset < downBorder) {
-        this.$car.style.position = 'absolute'
-        this.$car.style.top = null
-        this.$car.style.bottom = 0
-        this.fixed = false
-      }
-    }
-  },
-  mounted () {
-    window.addEventListener('scroll', this.onScroll)
+  mounted() {
     this.$car = this.$el.querySelector('.car')
     this.$container = this.$el.querySelector('.drop-photo-container')
-    this.fixed = false
-
-    const offset = this.$container.getBoundingClientRect().top - document.body.getBoundingClientRect().top
-
-    const height = this.$container.getBoundingClientRect().height - this.$car.getBoundingClientRect().height
-
-    const myScrollTimeline = new ScrollTimeline({
-      source: document.scrollingElement,
-      scrollSource: document.scrollingElement,
-      orientation: 'block',
-      scrollOffsets: [
-        new CSSUnitValue(offset, 'px'),
-        new CSSUnitValue(offset + height * 0.6, 'px'), // images
-        new CSSUnitValue(offset + height * 0.9, 'px') // text
-      ]
-    })
-
-    this.$el.querySelector('.animation-1').animate(
-      {
-        height: ['100%', '100%', '100%'],
-        width: ['55%', '40%', '40%'],
-        transform: ['translate(40%, 15%)', 'translate(0, 0)', 'translate(0, 0)']
-      },
-      {
-        duration: 1, fill: 'forwards', timeline: myScrollTimeline
-      }
+    this.bindScroll = new BindScroll(this.$container, this.$car);
+    this.bindScrollTimeline = new BindScrollTimeline(
+        this.$container,
+        this.$car,
+        [0, 0.6, 0.9],
+        [
+          {
+            $elements: [this.$el.querySelector('.animation-1')],
+            keyframes: {
+              height: ['100%', '100%', '100%'],
+              width: ['55%', '40%', '40%'],
+              transform: ['translate(40%, 15%)', 'translate(0, 0)', 'translate(0, 0)']
+            }
+          },
+          {
+            $elements: [this.$el.querySelector('.animation-2')],
+            keyframes: {
+              height: ['115%', '100%', '100%'],
+              width: ['35%', '60%', '60%'],
+              transform: ['translate(50%, -10%)', 'translate(0, 0)', 'translate(0, 0)']
+            }
+          },
+          {
+            $elements: [this.$el.querySelector('.animation-3')],
+            keyframes: {
+              height: ['100%', '100%', '100%'],
+              width: ['90%', '90%', '90%'],
+              transform: ['translate(20%, 80%)', 'translate(0, 0)', 'translate(0, 0)']
+            }
+          },
+          {
+            $elements: [this.$el.querySelector('.animation-4')],
+            keyframes: {
+              height: ['110%', '100%', '100%'],
+              width: ['90%', '100%', '100%'],
+              transform: ['translate(-170%, -40%)', 'translate(0, 0)', 'translate(0, 0)']
+            }
+          },
+          {
+            $elements: this.$el.querySelectorAll('.image-text'),
+            keyframes: {
+              opacity: [0, 0, 1]
+            }
+          },
+        ]
     )
-
-    this.$el.querySelector('.animation-2').animate(
-      {
-        height: ['115%', '100%', '100%'],
-        width: ['35%', '60%', '60%'],
-        transform: ['translate(50%, -10%)', 'translate(0, 0)', 'translate(0, 0)']
-      },
-      {
-        duration: 1, fill: 'forwards', timeline: myScrollTimeline
-      }
-    )
-
-    this.$el.querySelector('.animation-3').animate(
-      {
-        height: ['100%', '100%', '100%'],
-        width: ['90%', '90%', '90%'],
-        transform: ['translate(20%, 80%)', 'translate(0, 0)', 'translate(0, 0)']
-      },
-      {
-        duration: 1, fill: 'forwards', timeline: myScrollTimeline
-      }
-    )
-
-    this.$el.querySelector('.animation-4').animate(
-      {
-        height: ['110%', '100%', '100%'],
-        width: ['90%', '100%', '100%'],
-        transform: ['translate(-170%, -40%)', 'translate(0, 0)', 'translate(0, 0)']
-      },
-      {
-        duration: 1, fill: 'forwards', timeline: myScrollTimeline
-      }
-    )
-
-    this.$el.querySelectorAll('.image-text').forEach((e) => e.animate(
-      {
-        opacity: [0, 0, 1]
-      },
-      {
-        duration: 1, fill: 'forwards', timeline: myScrollTimeline
-      }
-    ))
   },
-  unmounted () {
-    window.removeEventListener('scroll', this.onScroll)
-    this.$car.style.position = 'absolute'
-    this.$car.style.top = 0
-    this.$car.style.bottom = null
-    this.fixed = false
-    // this.$el.querySelector(".animation-1").animate(null);
-    // this.$el.querySelector(".animation-2").animate(null);
-    // this.$el.querySelector(".animation-3").animate(null);
-    // this.$el.querySelector(".animation-4").animate(null);
-    // this.$el.querySelectorAll(".image-text").forEach((e) => e.animate(null));
+  unmounted() {
+    this.bindScroll.unbind();
+    this.bindScrollTimeline.unbind();
   }
 }
 </script>
