@@ -1,23 +1,23 @@
 <template>
   <div class="feedback-container">
     <div class="feedback-text">
-      <PartName text="Связаться с нами" :theme="theme" class="feedback-text-title"/>
+      <PartName :text="translate('Связаться с нами')" :theme="theme" class="feedback-text-title"/>
       <h1 class="feedback-text-description" :class="theme">
-        Если вы хотите начать проект или заказать консультацию, оставьте свой номер - мы позвоним
+        {{ translate('Если вы хотите начать проект или заказать консультацию, оставьте свой номер - мы позвоним') }}
       </h1>
     </div>
     <div class="feedback-form">
       <div class="feedback-form-write">
         <div class="feedback-form-raw">
           <Input class="feedback-input"
-                 text="Имя"
+                 :text="translate('Имя') "
                  ident="name"
                  :theme="theme"
                  :status="form.name.status"
                  :max-length=16
                  @message-input="onInputName"/>
           <Input class="feedback-input feedback-input-long"
-                 text="E-mail"
+                 :text="translate('E-mail')"
                  ident="email"
                  :theme="theme"
                  :status="form.mail.status"
@@ -26,14 +26,14 @@
         </div>
         <div class="feedback-form-raw">
           <Input class="feedback-input"
-                 text="Телефон"
+                 :text="translate('Телефон')"
                  ident="phone"
                  :status="form.phone.status"
                  :theme="theme"
                  :max-length=16
                  @message-input="onInputPhone"/>
           <Input class="feedback-input feedback-input-long"
-                 text="Комментарий"
+                 :text="translate('Комментарий')"
                  ident="comment"
                  :status="form.comment.status"
                  :theme="theme"
@@ -42,15 +42,15 @@
         </div>
         <div class="feedback-form-raw">
           <h1 class="feedback-text-description feedback-input feedback-input-long accept-rules" :class="theme">
-            Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования платформой
+            {{ translate('Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования платформой') }}
           </h1>
           <div class="feedback-input">
-            <Button text="Отправить" :theme="theme === 'light'?'accent':'dark'" @click.prevent="validate"/>
+            <Button :text="translate('Отправить')" :theme="theme === 'light'?'accent':'dark'" @click.prevent="validate"/>
           </div>
         </div>
       </div>
       <h1 class="feedback-text-description feedback-text-send hide" :class="theme">
-        Спасибо за заявку! Мы свяжемся с вами в ближайшее время.
+        {{ translate('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.') }}
       </h1>
     </div>
   </div>
@@ -62,6 +62,7 @@ import Input from '@/components/ui/Input.vue'
 import Button from '@/components/ui/Button.vue'
 import {setCookie, getCookie, deleteCookie} from '@/assets/js/cookie.js'
 import axios from "axios";
+import {translate} from "../../assets/js/i18n";
 
 export default {
   name: 'FooterContactForm.vue',
@@ -97,6 +98,7 @@ export default {
     }
   },
   methods: {
+    translate,
     onInputName: function (s) {
       this.form.name.value = s
       this.form.name.status = 'none'
@@ -238,27 +240,34 @@ export default {
   .feedback-input {
     height: 40px;
   }
+
   .accept-rules {
     display: none;
   }
+
   .feedback-form-raw {
     flex-wrap: wrap;
   }
+
   .feedback-text-title {
     font-size: 0.6em;
     margin-bottom: 4em;
   }
+
   .input-container, .feedback-input {
     margin-left: 1em;
     margin-bottom: 1em;
   }
+
   .feedback-text-description {
     font-size: 1.2em;
     line-height: 1.2em;
   }
+
   .feedback-text {
     width: 50%;
   }
+
   .feedback-form {
     width: 50%;
   }

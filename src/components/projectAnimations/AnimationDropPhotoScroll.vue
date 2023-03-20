@@ -1,10 +1,12 @@
 <template>
   <div>
-    <PartName v-if="data.name !== undefined" :text="data.name" show=20 theme="light" class="main-outside"/>
+    <PartName v-if="data.name !== undefined" :text="data.name" show=20 theme="accent" class="main-outside"/>
     <div class="drop-photo-container" style="min-height: 200vh">
       <div class="car">
-        <div class="drop-photo-image" :style="'background-image: url('+data.image+')'"></div>
-        <h1 class="drop-photo-text">{{ data.description }}</h1>
+        <div style="height: 100vh">
+          <div class="drop-photo-image" :style="'background-image: url('+data.image+')'"></div>
+          <h1 class="drop-photo-text">{{ data.description }}</h1>
+        </div>
       </div>
     </div>
   </div>
@@ -28,6 +30,17 @@ export default {
     this.$car = this.$el.querySelector('.car')
     this.$container = this.$el.querySelector('.drop-photo-container')
 
+    let _keyframes = {
+      transform: ['scale(1)', 'scale(0.6)', 'scale(0.6)', 'scale(0.7)'],
+      opacity: [0.7, 1, 1, 0.25]
+    };
+    if (window.innerWidth < 576) {
+      _keyframes = {
+        height: ['100vh', '100vh', '50vh', '50vh'],
+        opacity: [0.7, 1, 1, 0.25]
+      };
+    }
+
     this.bindScroll = new BindScroll(this.$container, this.$car);
     this.bindScrollTimeline = new BindScrollTimeline(
         this.$container,
@@ -36,10 +49,7 @@ export default {
         [
           {
             $elements: [this.$el.querySelector('.drop-photo-image')],
-            keyframes: {
-              transform: ['scale(1)', 'scale(0.6)', 'scale(0.6)', 'scale(0.7)'],
-              opacity: [0.7, 1, 1, 0.25]
-            }
+            keyframes: _keyframes
           },
           {
             $elements: [this.$el.querySelector('.drop-photo-text')],
@@ -68,6 +78,17 @@ export default {
   background-position: center;
   border-radius: 10px;
 }
+
+@media (max-width: 576px) {
+  .drop-photo-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+  }
+}
+
 
 .drop-photo-text {
   position: absolute;

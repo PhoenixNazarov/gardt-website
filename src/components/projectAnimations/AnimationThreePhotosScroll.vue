@@ -42,34 +42,60 @@ export default {
     this.$container = this.$el.querySelector('.drop-photo-container')
 
     this.bindScroll = new BindScroll(this.$container, this.$car);
-    this.bindScrollTimeline = new BindScrollTimeline(
+
+    let keyframes1 = {
+      height: ['30vw', '40vh', '40vh'],
+      width: ['25vw', '30vw', '30vw'],
+      transform: ['translate(20vw, -40vh)', 'translate(0, 0)', 'translate(0, 0)']
+    }
+    let keyframes2 = {
+      height: ['50vh', '50vh', '50vh'],
+      width: ['25vw', '25vw', '25vw'],
+      transform: ['translate(20vw, 5vh)', 'translate(0, 0)', 'translate(0, 0)']
+    }
+    let keyframes3 = {
+      height: ['30vw', '25vw', '25vw'],
+      width: ['25vw', '25vw', '25vw'],
+      transform: ['translate(-27vw, -5vh)', 'translate(0, 0)', 'translate(0, 0)']
+    }
+
+    if (window.innerWidth < 576) {
+      keyframes1 = {
+        height: ['25vh', '20vh', '20vh'],
+        width: ['60vw', '40vw', '40vw'],
+        transform: ['translate(15vw, -35vh)', 'translate(0, 0)', 'translate(0, 0)']
+      }
+      keyframes2 = {
+        height: ['25vh', '20vh', '20vh'],
+        width: ['40vw', '40vw', '40vw'],
+        transform: ['translate(15vw, 10vh)', 'translate(0, 0)', 'translate(0, 0)']
+      }
+      keyframes3 = {
+        height: ['50vw', '20vh', '20vh'],
+        width: ['50vw', '40vw', '40vw'],
+        transform: ['translate(-35vw, 5vh)', 'translate(-20vw, -1vh)', 'translate(-20vw, -1vh)']
+      }
+
+    }
+
+
+
+      this.bindScrollTimeline = new BindScrollTimeline(
         this.$container,
         this.$car,
         [0, 0.6, 0.9],
         [
           {
             $elements: [this.$el.querySelector('.animation-1')],
-            keyframes: {
-              height: ['30vw', '40vh', '40vh'],
-              width: ['25vw', '30vw', '30vw'],
-              transform: ['translate(20vw, -40vh)', 'translate(0, 0)', 'translate(0, 0)']
-            }
+            keyframes: keyframes1
           },
           {
             $elements: [this.$el.querySelector('.animation-2')],
-            keyframes: {
-              height: ['50vh', '50vh', '50vh'],
-              width: ['25vw', '25vw', '25vw'],
-              transform: ['translate(20vw, 5vh)', 'translate(0, 0)', 'translate(0, 0)']
-            }
+            keyframes: keyframes2
           },
           {
             $elements: [this.$el.querySelector('.animation-3')],
-            keyframes: {
-              height: ['30vw', '25vw', '25vw'],
-              width: ['25vw', '25vw', '25vw'],
-              transform: ['translate(-27vw, -5vh)', 'translate(0, 0)', 'translate(0, 0)']
-            }
+            keyframes: keyframes3
           },
           {
             $elements: this.$el.querySelectorAll('.image-text'),
@@ -163,4 +189,44 @@ export default {
   display: flex;
   justify-content: flex-end;
 }
+
+@media (max-width: 576px) {
+  .animation-1-container {
+    width: 30vw;
+  }
+
+  .animation-2-container {
+    margin-left: 2em;
+    width: 25vw;
+  }
+
+  .animation-3-container {
+    margin-left: 2em;
+    width: 25vw;
+  }
+
+  .animation-1 {
+    top: 50vh;
+    height: 40vh;
+    z-index: 1;
+  }
+
+  .animation-2 {
+    top: 15vh;
+    height: 50vh;
+    z-index: 3;
+
+  }
+
+  .animation-3 {
+    margin-top: 40vh;
+    height: 25vw;
+    z-index: 2;
+  }
+
+  .image-text {
+    line-height: 1em;
+  }
+}
+
 </style>

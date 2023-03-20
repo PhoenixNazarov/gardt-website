@@ -11,13 +11,13 @@
           </div>
         </div>
         <div class="car-frame-2-container">
-          <div class="frame-2-image" v-for="item in data.principles.slice(0, 3)" :key="item">
+          <div class="frame-2-image" v-for="item in data.principles.slice(0, sliceIndex)" :key="item">
             <img class="frame-2-image-inner" :src="item[0]" :alt="item[1]"/>
             <h1 class="image-desc">{{ item[2] }}</h1>
           </div>
         </div>
         <div class="car-frame-3-container">
-          <div class="frame-3-image" v-for="item in data.principles.slice(3)" :key="item">
+          <div class="frame-3-image" v-for="item in data.principles.slice(sliceIndex)" :key="item">
             <img class="frame-3-image-inner" :src="item[0]" :alt="item[1]"/>
             <h1 class="image-2-desc">{{ item[2] }}</h1>
           </div>
@@ -36,6 +36,16 @@ export default {
     data: {
       type: Object,
       required: true
+    }
+  },
+  data: function () {
+    return {
+      sliceIndex: 3
+    }
+  },
+  beforeMount() {
+    if (this.data.principles.length === 4) {
+      this.sliceIndex = 2;
     }
   },
   mounted () {

@@ -78,6 +78,10 @@ export default {
     width: 80vw;
     margin-left: auto;
     margin-right: auto;
+    height: 30vh;
+  }
+  .main-container {
+    height: 70vh;
   }
 }
 

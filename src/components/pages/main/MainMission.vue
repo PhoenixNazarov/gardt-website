@@ -2,17 +2,12 @@
   <div style="overflow-x: clip">
     <div class="mission-slide">
       <div class="mission-text main-outside">
-        <PartName class="mission-title" text="Наша миссия" theme="light" :show=15 />
-        <h1 class="mission-description">
-          “Мы проектируем точечные<br>
-          ландшафтные решения для<br>
-          людей, которые влияют на<br>
-          социальные, экономические и<br>
-          экологические аспекты города”
+        <PartName class="mission-title" :text="translate('Наша миссия')" theme="light" :show=15 />
+        <h1 class="mission-description" style="white-space: pre">
+          {{ desc }}
         </h1>
       </div>
       <FigureBackground1 class="mission-image" style="right: -10vw; height: 40vh; top:-10vh; width: 30vw; z-index: 0"/>
-
     </div>
   </div>
 </template>
@@ -20,18 +15,29 @@
 <script>
 import PartName from '@/components/ui/PartName.vue'
 import FigureBackground1 from "@/components/figures/FigureBackground1.vue";
+import {translate} from "../../../assets/js/i18n";
 
 export default {
   name: 'MainMission',
-  components: {FigureBackground1, PartName },
-  created () {
+  components: {FigureBackground1, PartName},
+  created() {
     window.addEventListener('scroll', this.handleScroll)
   },
-  unmounted () {
+  unmounted() {
     window.removeEventListener('scroll', this.handleScroll)
   },
+  data: function () {
+    return {
+      desc: translate('“Мы проектируем точечные\n' +
+          'ландшафтные решения для\n' +
+          'людей, которые влияют на\n' +
+          'социальные, экономические и\n' +
+          'экологические аспекты города”')
+    }
+  },
   methods: {
-    handleScroll (event) {
+    translate,
+    handleScroll(event) {
       if (this.$mission === undefined) {
         this.$mission = this.$el.querySelector('.mission-description')
       }

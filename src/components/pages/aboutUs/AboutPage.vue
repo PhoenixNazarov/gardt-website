@@ -19,23 +19,23 @@
     </div>
     <div class="main-outside">
       <PartName class="bottom-outside-low"
-                text="Основатели"
+                :text="translate('Основатели')"
                 :show=15
                 theme="light"/>
       <AboutPeople class="bottom-outside"
-                   name="Светлана ГАРДТ"
-                   job="Основатель, генеральный директор"
+                   :name="translate('Светлана ГАРДТ')"
+                   :job="translate('Основатель, генеральный директор')"
                    image="Svetlana"
-                   description="“Мы создаем пространства, в которых вы хотите жить. Создавая проект,
-              мы ставим во главу угла человека и его потребности. Заботясь о здоровье наших клиентов
-              и окружающей среде, мы предлагаем уникальные решения, основанные на естественных подходах.”"/>
+                   :description="translate('“Мы создаем пространства, в которых вы хотите жить. Создавая проект, ' +
+                    'мы ставим во главу угла человека и его потребности. Заботясь о здоровье наших клиентов ' +
+                    'и окружающей среде, мы предлагаем уникальные решения, основанные на естественных подходах.”')"/>
       <AboutPeople class="bottom-outside"
-                   name="Сергей ВАСИНГИН"
-                   job="Соучредитель"
+                   :name="translate('Сергей ВАСИНГИН')"
+                   :job="translate('Соучредитель')"
                    image="Sergey"
-                   description="“Наши ландшафты создают выгодное преимущество для вашей собственности.
-              Для наших клиентов мы предлагаем уникальные проекты с учетом экономической эффективности, помогаем инвестировать в ландшафтные
-              проекты, которые принесут прибыль в будущем. Предоставляя полный цикл проекта “под ключ”, мы уважаем время наших клиентов”"/>
+                   :description="translate('“Наши ландшафты создают выгодное преимущество для вашей собственности.' +
+              'Для наших клиентов мы предлагаем уникальные проекты с учетом экономической эффективности, помогаем инвестировать в ландшафтные' +
+              'проекты, которые принесут прибыль в будущем. Предоставляя полный цикл проекта “под ключ”, мы уважаем время наших клиентов”')"/>
     </div>
     <div class="main-outside">
       <Footer theme="light"/>
@@ -51,10 +51,12 @@ import AboutPeople from '@/components/pages/aboutUs/AboutPeople.vue'
 import Footer from '@/components/footer/Footer.vue'
 import AnimationBackground from '@/components/projectAnimations/AnimationBackground.vue'
 import NavigationLogo from "@/components/ui/NavigationLogo.vue";
+import {translate} from "@/assets/js/i18n";
 
 export default {
   name: 'AboutPage',
-  components: {NavigationLogo, AnimationBackground, Footer, AboutPeople, PartName, AboutPresentation, Navigation }
+  methods: {translate},
+  components: {NavigationLogo, AnimationBackground, Footer, AboutPeople, PartName, AboutPresentation, Navigation}
 }
 </script>
 

@@ -1,15 +1,19 @@
 <template>
   <div class="presentation-container show-animate">
-    <h1 class="presentation-row">GARDT</h1>
-    <h1 class="presentation-row">Landscape</h1>
-    <h1 class="presentation-row">Architects</h1>
-    <h1 class="presentation-text">Международное бюро городского планирования и ландшафтного дизайна</h1>
+    <h1 class="presentation-row">{{ translate('GARDT') }}</h1>
+    <h1 class="presentation-row">{{ translate('Landscape') }}</h1>
+    <h1 class="presentation-row">{{ translate('Architects') }}</h1>
+    <h1 class="presentation-text">
+      {{ translate('Международное бюро городского планирования и ландшафтного дизайна') }}</h1>
   </div>
 </template>
 
 <script>
+import {translate} from "@/assets/js/i18n";
+
 export default {
-  name: 'AboutPresentation'
+  name: 'AboutPresentation',
+  methods: {translate}
 }
 </script>
 

@@ -9,6 +9,7 @@ import Rest2 from './2-rest.jpg'
 
 import Zelenogorsk3 from './3-zelenogorsk.jpg'
 import Blog3 from './3-bloggers.jpg'
+import {translate} from "@/assets/js/i18n";
 
 // 1,2,3,4,5,6 = ['user', 'growth', 'process', 'trees', 'light', 'scenery']
 
@@ -16,36 +17,36 @@ export const portfolioItemData = [
   // Благоустройство
   [
     {
-      name: 'Концепция благоустройства ЖК',
-      place: 'г. Уфа, Россия',
+      name: translate('Концепция благоустройства ЖК'),
+      place: translate('г. Уфа, Россия'),
       principles: ['user', 'growth', 'process', 'trees', 'light', 'scenery'],
       image: Uefa1,
       nameProject: 'ProjectUefa'
     },
     {
-      name: 'Гостиничный комплекс',
-      place: 'Краснодарский край, Россия',
+      name: translate('Гостиничный комплекс'),
+      place: translate('Краснодарский край, Россия'),
       principles: ['user', 'growth', 'light', 'scenery'],
       image: Hotel1,
       nameProject: 'ProjectHotel'
     },
     {
-      name: 'Вишневый сад',
-      place: 'Калужская область, Россия',
+      name: translate('Вишневый сад'),
+      place: translate('Калужская область, Россия'),
       principles: ['user', 'process'],
       image: Garden1,
       nameProject: 'ProjectCherryGarden'
     },
     {
-      name: 'Площадь авиастар',
-      place: 'г. Ульяновск, Россия',
+      name: translate('Площадь авиастар'),
+      place: translate('г. Ульяновск, Россия'),
       principles: ['trees', 'light', 'scenery'],
       image: AviastarPlace1,
       nameProject: 'ProjectSquareAviastart'
     },
     {
-      name: 'Маф авиастар',
-      place: 'г. Ульяновск, Россия',
+      name: translate('Маф авиастар'),
+      place: translate('г. Ульяновск, Россия'),
       principles: ['process', 'light'],
       image: AviastarMaf1,
       nameProject: 'ProjectMafAviastar'
@@ -54,8 +55,8 @@ export const portfolioItemData = [
   // Комерческое озеленение
   [
     {
-      name: 'Ресторанный дворик',
-      place: 'г. Санкт-Петербург, Россия',
+      name: translate('Ресторанный дворик'),
+      place: translate('г. Санкт-Петербург, Россия'),
       principles: ['growth', 'light', 'scenery'],
       image: Rest2,
       nameProject: 'ProjectRest'
@@ -65,15 +66,15 @@ export const portfolioItemData = [
   [
 
     {
-      name: 'Двухуровневая загородная терраса',
-      place: 'г. Зеленогорск, Россия',
+      name: translate('Двухуровневая загородная терраса'),
+      place: translate('г. Зеленогорск, Россия'),
       principles: ['user', 'process', 'scenery'],
       image: Zelenogorsk3,
       nameProject: 'ProjectZelenogorsk'
     },
     {
-      name: 'Терраса для блогеров',
-      place: 'г. Санкт-Петербург, Россия',
+      name: translate('Терраса для блогеров'),
+      place: translate('г. Санкт-Петербург, Россия'),
       principles: ['user'],
       image: Blog3,
       nameProject: 'ProjectBloggers'

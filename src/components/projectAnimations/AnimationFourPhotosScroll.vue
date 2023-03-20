@@ -50,6 +50,58 @@ export default {
     this.$car = this.$el.querySelector('.car')
     this.$container = this.$el.querySelector('.drop-photo-container')
     this.bindScroll = new BindScroll(this.$container, this.$car);
+
+    let keyframes1 = {
+      height: ['100%', '100%', '100%'],
+      width: ['55%', '40%', '40%'],
+      transform: ['translate(40%, 15%)', 'translate(0, 0)', 'translate(0, 0)']
+    }
+
+    let keyframes2 = {
+      height: ['115%', '100%', '100%'],
+      width: ['35%', '60%', '60%'],
+      transform: ['translate(50%, -10%)', 'translate(0, 0)', 'translate(0, 0)']
+    }
+
+    let keyframes3 = {
+      height: ['100%', '100%', '100%'],
+      width: ['90%', '90%', '90%'],
+      transform: ['translate(20%, 80%)', 'translate(0, 0)', 'translate(0, 0)']
+    }
+
+    let keyframes4 = {
+      height: ['110%', '100%', '100%'],
+      width: ['90%', '100%', '100%'],
+      transform: ['translate(-170%, -40%)', 'translate(0, 0)', 'translate(0, 0)']
+    }
+
+    if (window.innerWidth < 576) {
+      keyframes1 = {
+        height: ['40%', '60%', '60%'],
+        width: ['110%', '90%', '90%'],
+        transform: ['translate(70%, 80%)', 'translate(0, 0)', 'translate(0, 0)']
+      };
+
+      keyframes2 = {
+        height: ['100%', '60%', '60%'],
+        width: ['110%', '90%', '90%'],
+        transform: ['translate(20%, -10%)', 'translate(0, 1vh)', 'translate(0, 1vh)']
+      }
+
+      keyframes3 = {
+        height: ['100%', '100%', '100%'],
+        width: ['100%', '90%', '90%'],
+        transform: ['translate(10%, 60%)', 'translate(0, 0)', 'translate(0, 0)']
+      }
+
+      keyframes4 = {
+        height: ['100%', '80%', '80%'],
+        width: ['120%', '100%', '100%'],
+        transform: ['translate(-100%, -50%)', 'translate(0, 1vh)', 'translate(0, 1vh)']
+      }
+    }
+
+
     this.bindScrollTimeline = new BindScrollTimeline(
         this.$container,
         this.$car,
@@ -57,35 +109,19 @@ export default {
         [
           {
             $elements: [this.$el.querySelector('.animation-1')],
-            keyframes: {
-              height: ['100%', '100%', '100%'],
-              width: ['55%', '40%', '40%'],
-              transform: ['translate(40%, 15%)', 'translate(0, 0)', 'translate(0, 0)']
-            }
+            keyframes: keyframes1
           },
           {
             $elements: [this.$el.querySelector('.animation-2')],
-            keyframes: {
-              height: ['115%', '100%', '100%'],
-              width: ['35%', '60%', '60%'],
-              transform: ['translate(50%, -10%)', 'translate(0, 0)', 'translate(0, 0)']
-            }
+            keyframes: keyframes2
           },
           {
             $elements: [this.$el.querySelector('.animation-3')],
-            keyframes: {
-              height: ['100%', '100%', '100%'],
-              width: ['90%', '90%', '90%'],
-              transform: ['translate(20%, 80%)', 'translate(0, 0)', 'translate(0, 0)']
-            }
+            keyframes: keyframes3
           },
           {
             $elements: [this.$el.querySelector('.animation-4')],
-            keyframes: {
-              height: ['110%', '100%', '100%'],
-              width: ['90%', '100%', '100%'],
-              transform: ['translate(-170%, -40%)', 'translate(0, 0)', 'translate(0, 0)']
-            }
+            keyframes: keyframes4
           },
           {
             $elements: this.$el.querySelectorAll('.image-text'),
@@ -206,6 +242,49 @@ export default {
 .image-text-left {
   display: flex;
   justify-content: flex-end;
+}
+
+
+@media (max-width: 576px) {
+  .animation-1-container {
+    height: 55%;
+    margin-bottom: 3em;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .animation-1 {
+    margin-left: 10%;
+  }
+
+  .animation-2-container {
+    height: calc(45% - 3em);
+    width: 100%;
+  }
+
+  .animation-2 {
+    margin-left: 10%;
+  }
+
+  .animation-3-container {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 3em;
+    width: 40vw;
+    height: 30%;
+    margin-bottom: 3em;
+  }
+
+  .animation-4-container {
+    height: 30%;
+    width: 40vw;
+  }
+
+
+  .image-text {
+    line-height: 1em;
+  }
 }
 
 </style>

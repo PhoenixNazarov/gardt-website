@@ -6,7 +6,7 @@
       <FooterContacts class="footer-contacts-m" :theme="theme"/>
       <div class="hr" :class="theme"></div>
       <div class="footer-info">
-        <h1 class="footer-artifact" :class="theme">© 2022, GARDT Landscape Architects</h1>
+        <h1 class="footer-artifact" :class="theme">{{ translate('© 2023, GARDT Landscape Architects') }}</h1>
       </div>
     </div>
     <img class="background-figure" src="../../assets/images/background/circle5.png" alt="gardt circle background" v-if="theme === 'dark'"/>
@@ -16,9 +16,11 @@
 <script>
 import FooterContactForm from '@/components/footer/FooterContactForm.vue'
 import FooterContacts from '@/components/footer/FooterContacts.vue'
+import {translate} from "../../assets/js/i18n";
 
 export default {
   name: 'Footer',
+  methods: {translate},
   components: {FooterContacts, FooterContactForm},
   props: ['theme']
 }

@@ -1,17 +1,21 @@
 <template>
   <MainPresentationSlider/>
   <MainPresentationWriter/>
-  <h1 class="pres-text">Мы проецируем природу на городскую среду</h1>
+  <h1 class="pres-text">{{ translate('Мы проецируем природу на городскую среду') }}</h1>
 
 </template>
 
 <script>
 import MainPresentationSlider from '@/components/pages/main/MainPresentationSlider.vue'
 import MainPresentationWriter from '@/components/pages/main/MainPresentationWriter.vue'
+import {translate} from "@/assets/js/i18n";
 
 export default {
   name: 'MainPresentation',
-  components: { MainPresentationWriter, MainPresentationSlider }
+  methods: {
+    translate
+  },
+  components: {MainPresentationWriter, MainPresentationSlider}
 }
 </script>
 

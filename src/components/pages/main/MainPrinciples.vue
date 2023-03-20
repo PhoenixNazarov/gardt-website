@@ -9,27 +9,27 @@
     <div class="principles-container">
       <div class="main-outside">
         <div class="principles-title">
-          <PartName text="Наши принципы работы" theme="light"/>
+          <PartName :text="translate('Наши принципы работы')" theme="light"/>
         </div>
         <div class="principles-row">
-          <MainPrinciplesItem class="principles-item" title="Фокус на человека" image="user"
-                              description="Формируем комфортную среду для человека, продумывая все детали: функционал, эстетику, эмоции и чувства"/>
-          <MainPrinciplesItem class="principles-item" title="Рентабельность" image="growth"
-                              description="Создаем дополнительную ценность архитектурного проекта и увеличиваем его доходность"/>
-        </div>
-
-        <div class="principles-row">
-          <MainPrinciplesItem class="principles-item" title="Экоустойчивые материалы" image="process"
-                              description="Внедряем в наши проекты экологически устойчивые материалы"/>
-          <MainPrinciplesItem class="principles-item" title="Природоподобные решения" image="tree"
-                              description="Применяем уникальные решения, базирующиеся на природных"/>
+          <MainPrinciplesItem class="principles-item" :title="translate('Фокус на человека')" image="user"
+                              :description="translate('Формируем комфортную среду для человека, продумывая все детали: функционал, эстетику, эмоции и чувства')"/>
+          <MainPrinciplesItem class="principles-item" :title="translate('Рентабельность')" image="growth"
+                              :description="translate('Создаем дополнительную ценность архитектурного проекта и увеличиваем его доходность')"/>
         </div>
 
         <div class="principles-row">
-          <MainPrinciplesItem class="principles-item" title="Айдентика" image="light"
-                              description="Придаем каждому проекту уникальность, сохраняя историческую ценность и создавая новую"/>
-          <MainPrinciplesItem class="principles-item" title="Экология и окружающая среда" image="sce"
-                              description="Учитываем уникальные особенности окружающей среды и преобразуем их в сильные стороны"/>
+          <MainPrinciplesItem class="principles-item" :title="translate('Экоустойчивые материалы')" image="process"
+                              :description="translate('Внедряем в наши проекты экологически устойчивые материалы')"/>
+          <MainPrinciplesItem class="principles-item" :title="translate('Природоподобные решения')" image="tree"
+                              :description="translate('Применяем уникальные решения, базирующиеся на природных')"/>
+        </div>
+
+        <div class="principles-row">
+          <MainPrinciplesItem class="principles-item" :title="translate('Айдентика')" image="light"
+                              :description="translate('Придаем каждому проекту уникальность, сохраняя историческую ценность и создавая новую')"/>
+          <MainPrinciplesItem class="principles-item" :title="translate('Экология и окружающая среда')" image="sce"
+                              :description="translate('Учитываем уникальные особенности окружающей среды и преобразуем их в сильные стороны')"/>
         </div>
       </div>
     </div>
@@ -39,6 +39,7 @@
 <script>
 import PartName from '@/components/ui/PartName.vue'
 import MainPrinciplesItem from '@/components/pages/main/MainPrinciplesItem.vue'
+import {translate} from "@/assets/js/i18n";
 
 export default {
   name: 'MainPrinciples',
@@ -52,6 +53,7 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
+    translate,
     handleScroll(event) {
       if (this.$princ === undefined) {
         this.$princ = this.$el.querySelector('.principles-image')

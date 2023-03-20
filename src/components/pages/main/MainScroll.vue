@@ -2,7 +2,7 @@
   <div>
     <div class="main-scroll-container">
       <div class="main-scroll-carriage">
-        <h1 class="main-scroll-text">Мы создаем<br>пространства,<br>наполненные<br>смыслом</h1>
+        <h1 class="main-scroll-text" style="white-space: pre">{{ translate("Мы создаем\nпространства,\nнаполненные\nсмыслом") }}</h1>
       </div>
 
       <div class="main-scroll-outside">
@@ -15,7 +15,7 @@
         <!--        <div style="position: absolute; height: 55vh; width: 100%; bottom: 0;-->
         <!--          background: radial-gradient(160% 155% at bottom, var(&#45;&#45;vt-c-white) 30%, rgba(200,255,41,0.5) 45%, transparent 60%);">-->
         <!--        </div>-->
-        <img class="g-image" src="../../../assets/images/main-scrolling-dark.png" width="100%" style="z-index: 0">
+        <img class="g-image" src="../../../assets/images/main-scrolling-dark.png" style="z-index: 0">
 
       </div>
     </div>
@@ -23,8 +23,15 @@
 </template>
 
 <script>
+import {translate} from "@/assets/js/i18n.js";
+
 export default {
   name: 'MainScroll',
+  data: function () {
+    return {
+      text: translate("Мы создаем\nпространства,\nнаполненные\nсмыслом")
+    }
+  },
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
     this.fixed = false
@@ -38,6 +45,7 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
+    translate,
     handleScroll (event) {
       if (this.$carriage === undefined) {
         this.$carriage = this.$el.querySelector('.main-scroll-carriage')
@@ -90,6 +98,7 @@ export default {
 
 .g-image {
   height: 100vh;
+  width: 100%;
 }
 
 .main-scroll-text {

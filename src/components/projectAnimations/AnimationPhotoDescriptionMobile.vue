@@ -10,12 +10,20 @@
             <h1 class="drop-photo-text-desc">{{ data.description2 }}</h1>
           </div>
         </div>
-<!--        <div class="car-frame-2-container">-->
-<!--          <div class="frame-2-image" v-for="item in data.principles" :key="item">-->
-<!--            <img class="frame-2-image-inner" :src="item[0]" :alt="item[1]"/>-->
-<!--            <h1 class="image-desc">{{ item[2] }}</h1>-->
-<!--          </div>-->
-<!--        </div>-->
+        <div class="car-frame-2-container">
+          <div class="frame-2-image" v-for="(item, index) in data.principles" :key="item">
+            <img class="frame-2-image-inner" @click.prevent="this.setVisible(index)" :src="item[0]" :alt="item[1]"/>
+          </div>
+        </div>
+
+        <div class="car-frame-3-container">
+          <div class="frame-3-text-container hidden" v-for="item in data.principles" :key="item">
+            <h1 class="description-i">
+              {{ item[2] }}
+            </h1>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -30,6 +38,24 @@ export default {
       required: true
     }
   },
+  methods: {
+    setVisible: function (index) {
+      this.$el.querySelectorAll('.frame-3-text-container').forEach(
+          (el) => el.classList.add("hidden")
+      )
+      this.$el.querySelectorAll('.frame-3-text-container')[index].classList.remove("hidden")
+
+
+      this.$el.querySelectorAll('.frame-2-image-inner').forEach(
+          (el) => el.classList.remove("active")
+      )
+      this.$el.querySelectorAll('.frame-2-image-inner')[index].classList.add("active")
+
+    }
+  },
+  mounted() {
+    this.setVisible(0);
+  }
 }
 </script>
 
@@ -39,7 +65,7 @@ export default {
 }
 
 .drop-photo-image {
-  height: 60vh;
+  height: 30vh;
   width: 80vw;
   border-radius: 10px;
   margin-left: auto;
@@ -94,6 +120,60 @@ export default {
   margin-top: 3em;
   margin-left: auto;
   margin-right: auto;
+}
+
+.car-frame-1-container {
+  margin-bottom: 3em;
+}
+
+.car-frame-2-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 66vw;
+  margin-left: 14vw;
+  margin-right: auto;
+}
+
+.frame-2-image-inner {
+  height: 35px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+  transition: 0.5s;
+}
+
+.frame-2-image-inner.active {
+  transform: scale(1.1);
+}
+
+.frame-2-image {
+  width: calc(66vw / 3);
+}
+
+.car-frame-3-container {
+  height: 12em;
+}
+
+.frame-3-text-container {
+  position: absolute;
+  width: 66vw;
+  left: 17vw;
+  transition: 0.5s;
+}
+
+.description-i {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.15em;
+  line-height: 1.5em;
+  color: var(--vt-c-white)
+}
+
+.hidden {
+  opacity: 0;
 }
 
 </style>

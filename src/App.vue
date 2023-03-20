@@ -6,7 +6,6 @@
   <main>
     <div class="wrapper">
       <MainPage v-if="page === 'Main'"/>
-      <MainPageLight v-if="page === 'MainLight'"/>
       <AboutPage v-if="page === 'About'"/>
       <UiPage v-if="page === 'Ui'"/>
       <PortfolioPage v-if="page === 'Portfolio'"/>
@@ -22,10 +21,9 @@ import MainPage from '@/components/pages/main/MainPage.vue'
 import AboutPage from '@/components/pages/aboutUs/AboutPage.vue'
 import UiPage from '@/components/pages/ui/UiPage.vue'
 import PortfolioPage from '@/components/pages/portfolio/PortfolioPage.vue'
-import MainPageLight from '@/components/pages/mainLight/MainPage.vue'
-import ProjectZelenogorsk from '@/components/projects/ProjectZelenogorsk.vue'
 import ProjectBase from '@/components/projects/ProjectBase.vue'
 import {getPage, setPage} from "@/pages";
+import {setLanguage} from "@/assets/js/i18n";
 
 export default {
   name: 'App',
@@ -34,7 +32,7 @@ export default {
       page: getPage()
     }
   },
-  components: {ProjectBase, MainPageLight, PortfolioPage, UiPage, AboutPage, MainPage},
+  components: {ProjectBase, PortfolioPage, UiPage, AboutPage, MainPage},
   beforeCreate() {
     document._fixScrollListeners = []
     this.$root.onChangePage = function (page) {

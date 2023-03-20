@@ -11,15 +11,15 @@
       <div class="portfolio-navigation main-outside">
         <NavigationButton class="portfolio-navigation-item"
                           @click.prevent="this.onSurfPage(0)"
-                          text="Благоустройство"
+                          :text="translate('Благоустройство')"
                           :active="activeNavigation === 0"/>
         <NavigationButton class="portfolio-navigation-item"
                           @click.prevent="this.onSurfPage(1)"
-                          text="Комерческое озеленение"
+                          :text="translate('Комерческое озеленение')"
                           :active="activeNavigation === 1"/>
         <NavigationButton class="portfolio-navigation-item"
                           @click.prevent="this.onSurfPage(2)"
-                          text="Частные объекты"
+                          :text="translate('Частные объекты')"
                           :active="activeNavigation === 2"/>
       </div>
 
@@ -76,6 +76,7 @@ import FigureBackground2 from "@/components/figures/FigureBackground2.vue";
 import FigureBackground3 from "@/components/figures/FigureBackground3.vue";
 import NavigationButton from "@/components/navigation/NavigationButton.vue";
 import NavigationLogo from "@/components/ui/NavigationLogo.vue";
+import {translate} from "@/assets/js/i18n";
 
 export default {
   name: 'PortfolioPage',
@@ -87,6 +88,7 @@ export default {
   },
   components: {NavigationLogo, NavigationButton, FigureBackground3, FigureBackground2, PortfolioItem, Navigation, Footer},
   methods: {
+    translate,
     onSurfPage: function (numb) {
       this.$el.querySelector('.portfolio-car').style.transform = `translateX(${-numb * 100}vw)`;
       this.activeNavigation=numb;

@@ -28,19 +28,20 @@ import image17 from './image17.png'
 import image18 from './18.jpg'
 import image19 from './19.jpg'
 import image20 from './20.jpg'
+import {translate} from "@/assets/js/i18n";
 
 export const hotelData = [
   {
     animation: 'AnimationName',
     data: {
-      name: ['Благоустройство территории гостиницы']
+      name: [translate('Благоустройство территории гостиницы')]
     }
   },
   {
     animation: 'AnimationDescription',
     data: {
-      name: 'Краснодарский край',
-      description: 'Разработанная концепция территории гостиничного комплекса состоит из единства системы пространств, объединенных общей навигацией.',
+      name: translate('Краснодарский край'),
+      description: translate('Разработанная концепция территории гостиничного комплекса состоит из единства системы пространств, объединенных общей навигацией.'),
       square: '8400 м²',
       year: '2022',
     }
@@ -48,22 +49,22 @@ export const hotelData = [
   {
     animation: 'AnimationPhotoDescriptionScroll',
     data: {
-      description1: 'Территория гостиницы ориентирована на отдых семей с детьми, поэтому решения создавались именно для них.',
-      name1: 'Пространство',
-      description2: 'Пространство гостиницы разделено на определенные зоны, позволяющие гостям пользоваться всеми видами отдыха на территории комплекса.',
+      description1: translate('Территория гостиницы ориентирована на отдых семей с детьми, поэтому решения создавались именно для них.'),
+      name1: translate('Пространство'),
+      description2: translate('Пространство гостиницы разделено на определенные зоны, позволяющие гостям пользоваться всеми видами отдыха на территории комплекса.'),
       image: image1,
       principles: [
-        [pImageUser, 'todo', 'Планировка дорожек позволяет распределить потоки людей, направляющихся на море, бассейн, спортивную или игровые зоны'],
-        [pImageGrowth, 'todo', 'В проекте предусмотрены взаимосвязанные разноплановые локации, таким образом посетители могут провести целый день на территории отеля'],
-        [pImageLight, 'todo', 'Уникальные решения создают узнаваемый стиль бренда и отеля'],
-        [pImageScenery, 'todo', 'В нижней части территории расположен ландшафтный парк с системой ручьев, которые выполняют функцию сбора и фильтрации дождевой воды']
+        [pImageUser, 'todo', translate('Планировка дорожек позволяет распределить потоки людей, направляющихся на море, бассейн, спортивную или игровые зоны')],
+        [pImageGrowth, 'todo', translate('В проекте предусмотрены взаимосвязанные разноплановые локации, таким образом посетители могут провести целый день на территории отеля')],
+        [pImageLight, 'todo', translate('Уникальные решения создают узнаваемый стиль бренда и отеля')],
+        [pImageScenery, 'todo', translate('В нижней части территории расположен ландшафтный парк с системой ручьев, которые выполняют функцию сбора и фильтрации дождевой воды')]
       ]
     }
   },
   {
     animation: 'AnimationMagnifierStatic',
     data: {
-      name: 'Группа бассейнов',
+      name: translate('Группа бассейнов'),
       image: image2,
       bigImage: image3
     }
@@ -72,24 +73,24 @@ export const hotelData = [
     animation: 'AnimationDropPhotoScroll',
     data: {
       image: image4,
-      description: 'Группа бассейнов для отдыхающих всех возрастов'
+      description: translate('Группа бассейнов для отдыхающих всех возрастов')
     }
   },
   {
     animation: 'AnimationThreePhotosScroll',
     data: {
       image1: image5,
-      description1: 'Вид на бассейны',
+      description1: translate('Вид на бассейны'),
       image2: null,
-      description2: '',
+      description2: translate(''),
       image3: image7,
-      description3: 'Пергола в зоне бассейнов'
+      description3: translate('Пергола в зоне бассейнов')
     }
   },
   {
     animation: 'AnimationMagnifierStatic',
     data: {
-      name: 'Ландшафтный парк',
+      name: translate('Ландшафтный парк'),
       image: image8,
       bigImage: image9
     }
@@ -98,26 +99,26 @@ export const hotelData = [
     animation: 'AnimationDropPhotoScroll',
     data: {
       image: image10,
-      description: 'Система ручьев выполняет функцию сбора и фильтрации воды'
+      description: translate('Система ручьев выполняет функцию сбора и фильтрации воды')
     }
   },
   {
     animation: 'AnimationFourPhotosScroll',
     data: {
       image1: image11,
-      description1: 'Зона отдыха',
+      description1: translate('Зона отдыха'),
       image2: image12,
-      description2: 'Вид на бассейн',
+      description2: translate('Вид на бассейн'),
       image3: image13,
-      description3: 'Снек бар',
+      description3: translate('Снек бар'),
       image4: image14,
-      description4: 'Ландшафтный парк'
+      description4: translate('Ландшафтный парк')
     }
   },
   {
     animation: 'AnimationMagnifierStatic',
     data: {
-      name: 'Детский тематический парк',
+      name: translate('Детский тематический парк'),
       image: image15,
       bigImage: image16
     }
@@ -126,18 +127,18 @@ export const hotelData = [
     animation: 'AnimationDropPhotoScroll',
     data: {
       image: image17,
-      description: 'Парк разделен на 4 зоны: океан, море, горы и пустыня'
+      description: translate('Парк разделен на 4 зоны: океан, море, горы и пустыня')
     }
   },
   {
     animation: 'AnimationThreePhotosDoubleOneScroll',
     data: {
       image1: image18,
-      description1: 'Маяк в "Океане"',
+      description1: translate('Маяк в "Океане"'),
       image2: image19,
-      description2: 'Канатный парк в "Пустыне"',
+      description2: translate('Канатный парк в "Пустыне"'),
       image3: image20,
-      description3: '"Пустыня" для детей 7-14'
+      description3: translate('"Пустыня" для детей 7-14')
     }
   }
 ]

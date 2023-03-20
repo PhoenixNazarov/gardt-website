@@ -5,37 +5,37 @@
       <div class="portfolio-property" v-if="principles.includes('user')">
         <div class="tooltip">
           <img class="portfolio-property-image" src="../../../assets/images/main-principles/approve-user.svg">
-          <span class="tooltiptext">Фокус на человека</span>
+          <span class="tooltiptext">{{ translate('Фокус на человека') }}</span>
         </div>
       </div>
       <div class="portfolio-property" v-if="principles.includes('trees')">
         <div class="tooltip">
           <img class="portfolio-property-image" src="../../../assets/images/main-principles/trees.svg">
-          <span class="tooltiptext">Природоподобные решения</span>
+          <span class="tooltiptext">{{ translate('Природоподобные решения') }}</span>
         </div>
       </div>
       <div class="portfolio-property" v-if="principles.includes('process')">
         <div class="tooltip">
           <img class="portfolio-property-image" src="../../../assets/images/main-principles/process.svg">
-          <span class="tooltiptext">Экоустойчивые материалы</span>
+          <span class="tooltiptext">{{ translate('Экоустойчивые материалы') }}</span>
         </div>
       </div>
       <div class="portfolio-property" v-if="principles.includes('scenery')">
         <div class="tooltip">
           <img class="portfolio-property-image" src="../../../assets/images/main-principles/scenery.svg">
-          <span class="tooltiptext">Экология и окружающая среда</span>
+          <span class="tooltiptext">{{ translate('Экология и окружающая среда') }}</span>
         </div>
       </div>
       <div class="portfolio-property" v-if="principles.includes('light')">
         <div class="tooltip">
           <img class="portfolio-property-image" src="../../../assets/images/main-principles/light-bulb.svg">
-          <span class="tooltiptext">Айдентика</span>
+          <span class="tooltiptext">{{ translate('Айдентика') }}</span>
         </div>
       </div>
       <div class="portfolio-property" v-if="principles.includes('growth')">
         <div class="tooltip">
           <img class="portfolio-property-image" src="../../../assets/images/main-principles/growth-graph.svg">
-          <span class="tooltiptext">Рентабельность</span>
+          <span class="tooltiptext">{{ translate('Рентабельность') }}</span>
         </div>
       </div>
     </div>
@@ -50,6 +50,8 @@
 </template>
 
 <script>
+import {translate} from "@/assets/js/i18n";
+
 export default {
   name: 'PortfolioItem',
   props: {
@@ -75,6 +77,7 @@ export default {
     }
   },
   methods: {
+    translate,
     toProject: function (proj) {
       this.$root.onChangePage(proj)
     }

@@ -30,12 +30,16 @@
         <AnimationOpacityScroll v-if="item.animation === 'AnimationOpacityScroll'" :data="item.data"/>
 
         <AnimationAviastarFacade v-if="item.animation === 'AnimationAviastarFacade'" :data="item.data"/>
+        <AnimationMafAviastar1 v-if="item.animation ==='AnimationMafAviastar1'" :data="item.data"/>
+        <AnimationMafAviastar2 v-if="item.animation ==='AnimationMafAviastar2'" :data="item.data"/>
+
+        <AnimationYard v-if="item.animation === 'AnimationYard'" :data="item.data"/>
 
       </div>
     </div>
 
     <div class="main-outside back-btn">
-      <Button text="Вернуться в портфолио" theme="accent" @click.prevent="changePage('Portfolio')"/>
+      <Button :text="translate('Вернуться в портфолио')" theme="accent" @click.prevent="changePage('Portfolio')"/>
     </div>
 
     <div class="main-outside">
@@ -65,9 +69,16 @@ import AnimationPhotoDescriptionMobile from "@/components/projectAnimations/Anim
 import AnimationAviastarFacade from "@/components/projectAnimations/AnimationAviastarFacade.vue";
 import AnimationPhotoDescriptionScrollDouble
   from "@/components/projectAnimations/AnimationPhotoDescriptionScrollDouble.vue";
+import {translate} from "@/assets/js/i18n";
+import AnimationYard from "@/components/projectAnimations/AnimationYard.vue";
+import AnimationMafAviastar1 from "@/components/projectAnimations/AnimationMafAviastar1.vue";
+import AnimationMafAviastar2 from "@/components/projectAnimations/AnimationMafAviastar2.vue";
 
 export default {
   components: {
+    AnimationMafAviastar1,
+    AnimationMafAviastar2,
+    AnimationYard,
     AnimationPhotoDescriptionScrollDouble,
     AnimationAviastarFacade,
     AnimationPhotoDescriptionMobile,
@@ -95,6 +106,7 @@ export default {
   props: ['projectName'],
   name: 'ProjectBase',
   methods: {
+    translate,
     changePage: function (page) {
       this.$root.onChangePage(page)
     }

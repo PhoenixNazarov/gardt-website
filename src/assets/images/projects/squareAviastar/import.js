@@ -16,53 +16,62 @@ import image5 from './image5.png'
 import image51 from './image51.png'
 import image52 from './image52.png'
 import image53 from './image53.png'
+import image54 from './image54.png'
+import image55 from './image56.png'
+import image56 from './image57.png'
 
 import image6 from './image6.png'
-import image61 from './image61.png'
-import image62 from './image62.png'
-import image63 from './image63.png'
-import image64 from './image64.png'
+import image61 from './image61.svg'
+import image62 from './image62.svg'
+import image63 from './image63.svg'
+import image64 from './image64.svg'
 
 import image7 from './image7.png'
 import image8 from './image8.png'
 import image9 from './image9.png'
 import image10 from './image10.png'
 import image11 from './image11.png'
+import video from './video.mp4';
+import {translate} from "@/assets/js/i18n";
 
 export const squareAviastarData = [
     {
-        animation: 'AnimationName',
+        animation: 'AnimationNameVideo',
         data: {
-            name: ['РЕДИЗАЙН ПРОХОДНОЙ', '"АВИАСТАР"']
+            name: [translate('РЕДИЗАЙН ПРОХОДНОЙ "АВИАСТАР"')],
+            video: {
+                source: video,
+                'type:': 'video/mp4'
+            }
         }
     },
     {
         animation: 'AnimationDescription',
         data: {
-            name: 'Ульяновск',
-            description: 'Редизайн фасада здания проходной "Авиастар" подчеркивает элементы конструкции самолета, сохраняя при этом инновационность и технологичность в дизайне внешних деталей, придавая ему лаконичность и строгость.',
+            name: translate('Ульяновск'),
+            description: translate('Редизайн фасада здания проходной "Авиастар" подчеркивает элементы конструкции самолета, сохраняя при этом инновационность и технологичность в дизайне внешних деталей, придавая ему лаконичность и строгость.'),
             year: '2022',
-            client: '1 место в конкурсе инновационных проектов Дизайн Акт'
+            client: translate('1 место в конкурсе инновационных проектов Дизайн Акт')
         }
     },
     {
         animation: 'AnimationPhotoDescriptionScroll',
         data: {
-            description1: 'Здание проходной "Авиастар" является представителем архитектуры конструктивизма. Внешне редизайн подчеркивает элементы конструкции самолета.',
-            name1: 'Строение',
-            description2: 'Строение проходной имеет сложную форму и ярусные фасады. С целью сохранения преемственности и архитектурной ценности белый цвет фасадов остался основным. К нему добавились черные и серые цвета для создания акцента.',
+            description1: translate('Здание проходной "Авиастар" является представителем архитектуры конструктивизма. Внешне редизайн подчеркивает элементы конструкции самолета.'),
+            name1: translate('Строение'),
+            description2: translate('Строение проходной имеет сложную форму и ярусные фасады. С целью сохранения преемственности и архитектурной ценности белый цвет фасадов остался основным. К нему добавились черные и серые цвета для создания акцента.'),
             image: image1,
             principles: [
-                [pImageTrees, 'todo', 'В проектировании мы подбирали материалы лаконично вписанные в структуру окружающего ландшафта. На площади перед проходной распологаются дождевые сады.'],
-                [pImageLight, 'todo', 'Уникальное решение использования элементов конструкции самолета создает дополнительную архитектурную ценность, учитывая историческое прошлое здания.'],
-                [pImageScenery, 'todo', 'Мы использовали только современные материалы со сниженным уровнем воздействия на окружающую среду.']
+                [pImageTrees, 'todo', translate('В проектировании мы подбирали материалы лаконично вписанные в структуру окружающего ландшафта. На площади перед проходной распологаются дождевые сады.')],
+                [pImageLight, 'todo', translate('Уникальное решение использования элементов конструкции самолета создает дополнительную архитектурную ценность, учитывая историческое прошлое здания.')],
+                [pImageScenery, 'todo', translate('Мы использовали только современные материалы со сниженным уровнем воздействия на окружающую среду.')]
             ]
         }
     },
     {
         animation: 'AnimationMagnifierStatic',
         data: {
-            name: 'Редизайн фасада',
+            name: translate('Редизайн фасада'),
             image: image2,
             bigImage: image31
         }
@@ -79,7 +88,7 @@ export const squareAviastarData = [
         animation: 'AnimationDropPhotoScroll',
         data: {
             image: image4,
-            description: 'В отделке фасадов применяются современные материалы локальных производителей'
+            description: translate('В отделке фасадов применяются современные материалы локальных производителей')
         }
     },
     {
@@ -88,28 +97,43 @@ export const squareAviastarData = [
             image: image5,
             materials: [
                 {
-                    name: 'Фиброцементные плиты LATONUT',
-                    description: 'Цвет: серый\nRAL 7035',
+                    name: translate('Фиброцементные плиты LATONUT'),
+                    description: translate('Цвет: серый\nRAL 7035'),
                     image: image51
                 },
                 {
-                    name: 'Фиброцементные плиты LATONUT',
-                    description: 'Цвет: сигнально-черный\nRAL 9004',
+                    name: translate('Пластины с паттерном и встроенной подсветкой'),
+                    description: translate('Материал: алюминий'),
+                    image: image54
+                },
+                {
+                    name: translate('Фиброцементные плиты LATONUT'),
+                    description: translate('Цвет: сигнально-\nчерный\nRAL 9004'),
                     image: image52
                 },
                 {
-                    name: 'Пластины с паттерном и встроенной подсветкой',
-                    description: 'Материал: алюминий',
+                    name: translate('Фиброцементные плиты LATONUT'),
+                    description: translate('Цвет: сигнально-\nбелый\nRAL 9003'),
                     image: image53
-                }
+                },
+                {
+                    name: translate('Реечные фасадные системы GIPCA'),
+                    description: translate('Материал: алюминий'),
+                    image: image56
+                },
+                {
+                    name: translate('Керамогранит УГ 126, антискользящий'),
+                    description: translate('Цвет: серо-бежевый'),
+                    image: image55
+                },
             ]
         }
     },
     {
         animation: 'AnimationOpacityScroll',
         data: {
-            name: 'Площадь',
-            description: 'Основной функцией площади является комфортный транзит от остановочных павильонов, парковок до проходной и обратно. Организованы места отдыха под кронами деревьев и в окружении цветников',
+            name: translate('Площадь'),
+            description: translate('Основной функцией площади является комфортный транзит от остановочных павильонов, парковок до проходной и обратно. Организованы места отдыха под кронами деревьев и в окружении цветников'),
             height: '300',
             images: [
                 {
@@ -137,20 +161,20 @@ export const squareAviastarData = [
         animation: 'AnimationDropPhotoScroll',
         data: {
             image: image7,
-            description: 'Благоустройство площади перед проходной продолжает инновационный подход объекта'
+            description: translate('Благоустройство площади перед проходной продолжает инновационный подход объекта')
         }
     },
     {
         animation: 'AnimationFourPhotosScroll',
         data: {
             image1: image8,
-            description1: 'Уникальные мафы',
+            description1: translate('Уникальные мафы'),
             image2: image9,
-            description2: 'Дождевой сад',
+            description2: translate('Дождевой сад'),
             image3: image10,
-            description3: 'Входная аллея',
+            description3: translate('Входная аллея'),
             image4: image11,
-            description4: ''
+            description4: translate('')
         }
     }
 ]

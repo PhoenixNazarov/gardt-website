@@ -6,15 +6,15 @@
         <h1 class="main-description">{{ data.description }}</h1>
         <div class="sub-description">
           <div class="sub-sub-description" v-if="data.square">
-            <h1 class="sub-name">Площадь:</h1>
+            <h1 class="sub-name">{{ translate('Площадь:') }}</h1>
             <h1 class="sub-value">{{ data.square }}</h1>
           </div>
           <div class="sub-sub-description" v-if="data.year">
-            <h1 class="sub-name">Год:</h1>
+            <h1 class="sub-name">{{ translate('Год:') }}</h1>
             <h1 class="sub-value">{{ data.year }}</h1>
           </div>
           <div class="sub-sub-description" v-if="data.client">
-            <h1 class="sub-name">Заказчик:</h1>
+            <h1 class="sub-name">{{ translate('Заказчик:') }}</h1>
             <h1 class="sub-value">{{ data.client }}</h1>
           </div>
         </div>
@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import {translate} from "@/assets/js/i18n";
+
 export default {
   name: 'AnimationDescription',
   data: function () {
@@ -38,6 +40,7 @@ export default {
     }
   },
   methods: {
+    translate,
     waitShow: function (e) {
       if (this.sh === undefined) {
         this.sh = this.$el.querySelector('.sub-description')
@@ -50,13 +53,13 @@ export default {
       }
     }
   },
-  mounted () {
+  mounted() {
     if (this.show !== -1) {
       this.$el.querySelector('.sub-description').classList.add('hide')
       document.addEventListener('scroll', this.waitShow)
     }
   },
-  unmounted () {
+  unmounted() {
     if (this.show !== -1) {
       document.removeEventListener('scroll', this.waitShow)
     }
@@ -178,6 +181,7 @@ export default {
     transform: none;
     width: calc(100vw - 1em);
   }
+
   .main-description {
     font-size: 1.2em;
     width: 76vw;
@@ -200,9 +204,11 @@ export default {
     margin-left: auto;
     margin-right: auto;
   }
+
   .sub-name {
     font-size: 1.3em;
   }
+
   .sub-value {
     font-size: 1.2em;
   }
