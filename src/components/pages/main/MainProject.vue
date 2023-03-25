@@ -107,10 +107,12 @@ export default {
 @media (max-width: 576px) {
   .project-slider-button.left {
     left: 10px;
+    transform: scale(0.7) rotate(180deg) translate(0, +50%);
   }
 
   .project-slider-button.right {
     right: 10px !important;
+    transform: scale(0.7) translate(0, -50%);
   }
 
   .project-slider-item:nth-child(1) {

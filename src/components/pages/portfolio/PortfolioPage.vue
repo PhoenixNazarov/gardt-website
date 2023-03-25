@@ -6,6 +6,11 @@
     </div>
     <div class="main-gradient" style="overflow-y: clip">
       <FigureBackground2 style="top: 16vh; height: 20vh; width: 20vw; left: -15vw"/>
+
+      <FigureBackground2 style="top: 160vh; height: 20vh; width: 20vw; right: -15vw"/>
+
+      <FigureBackground3 style="top: 100vh; height: 20vh; width: 20vw; left: -10vw"/>
+
       <FigureBackground3 style="top: 80vh; height: 20vh; width: 20vw; right: -10vw"/>
 
       <div class="portfolio-navigation main-outside">

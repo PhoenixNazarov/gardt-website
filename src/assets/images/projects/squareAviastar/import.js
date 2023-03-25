@@ -174,7 +174,7 @@ export const squareAviastarData = [
             image3: image10,
             description3: translate('Входная аллея'),
             image4: image11,
-            description4: translate('')
+            description4: translate('Зона отдыха')
         }
     }
 ]

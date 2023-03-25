@@ -46,7 +46,7 @@ export const mafAviastarData = [
   {
     animation: 'AnimationName',
     data: {
-      name: [translate("ДИЗАЙН МАФ ДЛЯ ПРЕДПРИЯТИЯ ОАК")]
+      name: [translate("ДИЗАЙН ДЛЯ ПРЕДПРИЯТИЯ АВИАСТАР")]
     }
   },
   {

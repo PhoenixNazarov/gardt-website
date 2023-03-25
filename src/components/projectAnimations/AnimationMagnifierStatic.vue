@@ -8,7 +8,9 @@
           <div class="image" :style="`background-image: url(${data.image})`"/>
         </div>
         <div class="image-loop">
+          <div class="image-loop-inner">
             <img class="big-image" :src="data.bigImage"/>
+          </div>
         </div>
       </div>
     </div>
@@ -61,7 +63,15 @@ export default {
   justify-content: flex-end;
   flex-direction: column;
   align-items: center;
+}
+
+.image-loop-inner {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   border-radius: 10px;
+  overflow: clip;
 }
 
 .big-image {

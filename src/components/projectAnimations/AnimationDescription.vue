@@ -151,8 +151,6 @@ export default {
   font-size: 2.5em;
   line-height: 1em;
 
-  font-variant: small-caps;
-
   background: linear-gradient(180deg, #E9FFA9 0%, #C8FF29 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -65,16 +65,19 @@
         <div class="hr"></div>
       </div>
       <div class="curtain">
+
         <h1 class="mob-btn-nav mob-btn-nav-start" @click.prevent="changePage('Main')">{{ translate('Главная') }}</h1>
-        <h1 class="mob-btn-nav">{{ translate('БЛОГ') }}</h1>
         <h1 class="mob-btn-nav" @click.prevent="changePage('About')">{{ translate('О нас') }}</h1>
-        <h1 class="mob-btn-nav" @click.prevent="toDownPage()">{{ translate('Контакты') }}</h1>
         <h1 class="mob-btn-nav" @click.prevent="changePage('Portfolio')">{{ translate('Портфолио') }}</h1>
+        <h1 class="mob-btn-nav">{{ translate('БЛОГ') }}</h1>
+        <h1 class="mob-btn-nav" @click.prevent="toDownPage()">{{ translate('Контакты') }}</h1>
         <h1 class="mob-btn-nav" @click.prevent="toDownPage()">{{ translate('Оставить заявку') }}</h1>
 
         <div style="display: flex; margin-top: 2em">
-          <h1 class="mob-btn-nav" :class="getLanguage() === 'ru' ? 'mob-btn-nav-lang-active' : ''" @click.prevent="setLanguage('ru')">RU</h1>
-          <h1 class="mob-btn-nav" :class="getLanguage() === 'en' ? 'mob-btn-nav-lang-active' : ''" @click.prevent="setLanguage('en')">EN</h1>
+          <h1 class="mob-btn-nav" :class="getLanguage() === 'ru' ? 'mob-btn-nav-lang-active' : ''"
+              @click.prevent="setLanguage('ru')">RU</h1>
+          <h1 class="mob-btn-nav" :class="getLanguage() === 'en' ? 'mob-btn-nav-lang-active' : ''"
+              @click.prevent="setLanguage('en')">EN</h1>
         </div>
 
       </div>
@@ -157,23 +160,24 @@ export default {
   border-radius: 10px;
   display: flex;
   align-items: center;
-  border: transparent;
   transition: 0.3s;
   width: 100%;
   justify-content: center;
 
   padding-left: 1em;
   padding-right: 1em;
-
+  cursor: pointer;
+  background-color: transparent;
+  backdrop-filter: blur(40px);
 }
 
 .language-button.light {
-  background-color: var(--vt-c-white);
+  border: 1px solid var(--vt-c-white);
 }
 
 
 .language-button.dark {
-  background-color: var(--vt-c-black);
+  border: 1px solid var(--vt-c-black);
 }
 
 
@@ -184,53 +188,57 @@ export default {
   font-size: 1em;
   letter-spacing: 0.25em;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .language-button.light {
-  color: var(--vt-c-black);
+  color: var(--vt-c-white);
 }
 
 .language-button.dark {
-  color: var(--vt-c-white);
+  color: var(--vt-c-black);
 }
 
 .language-button.active:focus ~ .language-button-container-inner {
   opacity: 1;
+  /*display: block;*/
 }
 
-/*.language-button.active::after {*/
-/*  content: url("../../assets/images/caret-down.svg");*/
-/*}*/
-
 .language-button.active:focus {
+  border-bottom-width: 0;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.language-button.light:hover {
-  background-color: #ffffff;
+
+.language-button.inactive.light:hover {
+  border: 1px solid var(--vt-c-white);
 }
 
-.language-button.dark:hover {
-  background-color: #03002C;
+.language-button.inactive.dark:hover {
+  border: 1px solid var(--vt-c-black);
 }
 
 .language-button.inactive {
+  border: 1px solid transparent;
 }
 
 .language-button-container-inner {
   opacity: 0;
   transition: 0.5s;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 0 0 10px 10px;
+  border-top-width: 0 !important;
+  background: rgba(2, 0, 26, 0.01);
+  backdrop-filter: blur(40px);
+  /*display: none;*/
 }
 
 .language-button-container-inner.light {
-  background-color: var(--vt-c-white);
+  border: 1px solid var(--vt-c-white);
 }
 
 .language-button-container-inner.dark {
-  background-color: var(--vt-c-black);
+  border: 1px solid var(--vt-c-black);
 }
 
 
@@ -309,7 +317,7 @@ export default {
   font-size: 1.3em;
   line-height: 1em;
 
-  margin-left: 1em;
+  margin-left: 2em;
   margin-top: 2em;
 
   letter-spacing: 0.25em;
@@ -380,10 +388,11 @@ export default {
 
 @media (min-width: 650px) {
   .language-button.active.light::after {
-    content: url("../../assets/images/caret-down.svg");
-  }
-  .language-button.active.dark::after {
     content: url("../../assets/images/caret-down-light.svg");
+  }
+
+  .language-button.active.dark::after {
+    content: url("../../assets/images/caret-down.svg");
   }
 }
 

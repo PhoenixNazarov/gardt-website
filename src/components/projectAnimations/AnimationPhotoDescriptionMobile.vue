@@ -145,7 +145,7 @@ export default {
 }
 
 .frame-2-image-inner.active {
-  transform: scale(1.1);
+  transform: scale(1.25);
 }
 
 .frame-2-image {

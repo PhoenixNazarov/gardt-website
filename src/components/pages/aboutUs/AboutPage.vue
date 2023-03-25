@@ -33,10 +33,24 @@
                    :name="translate('Сергей ВАСИНГИН')"
                    :job="translate('Соучредитель')"
                    image="Sergey"
-                   :description="translate('“Наши ландшафты создают выгодное преимущество для вашей собственности.' +
+                   :description="translate('“Наши ландшафты создают выгодное преимущество для вашей собственности. ' +
               'Для наших клиентов мы предлагаем уникальные проекты с учетом экономической эффективности, помогаем инвестировать в ландшафтные' +
               'проекты, которые принесут прибыль в будущем. Предоставляя полный цикл проекта “под ключ”, мы уважаем время наших клиентов”')"/>
     </div>
+
+    <PartName :text="translate('Наша философия')" class="main-outside"/>
+    <h1 class="over-text main-outside">
+      {{ translate('Наш подход меняет отношение человека\n'+
+        'к природе, создавая особую связь') }}
+    </h1>
+
+    <PartName :text="translate('Наша стратегия')" class="main-outside"/>
+    <h1 class="over-text main-outside">
+      {{ translate('1. Масштабировать наш подход\n' +
+        '2. Адаптировать решения под современные веения\n' +
+        '3. Внедрять актуальные технологии') }}
+    </h1>
+
     <div class="main-outside">
       <Footer theme="light"/>
     </div>
@@ -123,6 +137,20 @@ export default {
 
   transform: rotate(60.77deg);
   z-index: 0;
+}
+
+.over-text {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2em;
+  line-height: 1em;
+
+  color: var(--vt-c-white);
+  margin-bottom: 3em;
+  padding-top: 1em;
+  padding-left: 3em;
+  white-space: break-spaces;
 }
 
 </style>

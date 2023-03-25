@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="main-scroll-container">
-      <div class="main-scroll-carriage">
+      <div class="main-scroll-carriage" style="overflow-x: clip">
         <h1 class="main-scroll-text" style="white-space: pre">{{ translate("Мы создаем\nпространства,\nнаполненные\nсмыслом") }}</h1>
       </div>
 
@@ -113,7 +113,7 @@ export default {
 
 @media (max-width: 576px) {
   .main-scroll-text {
-    font-size: 4.3em;
+    font-size: 4em;
     line-height: 1.2em;
   }
 }

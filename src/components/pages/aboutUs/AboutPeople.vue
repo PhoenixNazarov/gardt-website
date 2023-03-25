@@ -5,7 +5,8 @@
            alt="GARDT Svetlana"/>
       <img class="image-people" src="../../../assets/images/about-peoples/Sergey.png" v-if="image === 'Sergey'"
            alt="GARDT Sergey"/>
-      <img class="image-background" src="../../../assets/images/about-peoples/Background.svg" alt="GARDT Svetlana"/>
+      <img class="image-background" src="../../../assets/images/about-peoples/Background.svg" alt="GARDT Svetlana" v-if="image === 'Svetlana'"/>
+      <img class="image-background" src="../../../assets/images/about-peoples/Background2.png" alt="GARDT Sergey" v-if="image === 'Sergey'"/>
 
     </div>
     <div class="text">

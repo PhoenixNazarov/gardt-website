@@ -5,13 +5,15 @@
 
         <div class="animation-container-1">
           <div class="animation-1-container">
-            <div class="animation-1" :style="'background-image: url('+ data.image1 +');'">
+            <div class="animation-1" :style="'background-image: url('+ data.image1 +');'"
+                 @click.prevent="modalSetImage(data.image1)">
               <h1 class="image-text">{{ data.description1 }}</h1>
             </div>
           </div>
 
           <div class="animation-2-container">
-            <div class="animation-2" :style="'background-image: url('+ data.image2 +');'">
+            <div class="animation-2" :style="'background-image: url('+ data.image2 +');'"
+                 @click.prevent="modalSetImage(data.image2)">
               <h1 class="image-text">{{ data.description2 }}</h1>
             </div>
           </div>
@@ -19,31 +21,49 @@
 
         <div class="animation-container-2">
           <div class="animation-3-container">
-            <div class="animation-3" :style="'background-image: url('+ data.image3 +');'">
+            <div class="animation-3" :style="'background-image: url('+ data.image3 +');'"
+                 @click.prevent="modalSetImage(data.image3)">
               <h1 class="image-text">{{ data.description3 }}</h1>
             </div>
           </div>
           <div class="animation-4-container">
-            <div class="animation-4 image-text-left" :style="'background-image: url('+ data.image4 +');'">
+            <div class="animation-4 image-text-left" :style="'background-image: url('+ data.image4 +');'"
+                 @click.prevent="modalSetImage(data.image4)">
               <h1 class="image-text">{{ data.description4 }}</h1>
             </div>
           </div>
         </div>
-
       </div>
     </div>
+
+    <AnimationPhotoModal :image="this.modalImage" :status="this.modalStatus" @modalChangeStatus="(st) => this.modalStatus = st"/>
+
   </div>
 </template>
 
 <script>
 import {BindScroll, BindScrollTimeline} from "@/components/projectAnimations/animationTools";
+import AnimationPhotoModal from "@/components/projectAnimations/AnimationPhotoModal.vue";
 
 export default {
   name: 'AnimationFourPhotosScroll',
+  components: {AnimationPhotoModal},
+  data: function () {
+    return {
+      modalStatus: "hide",
+      modalImage: null
+    }
+  },
   props: {
     data: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    modalSetImage(image) {
+      this.modalStatus = 'show';
+      this.modalImage = image;
     }
   },
   mounted() {

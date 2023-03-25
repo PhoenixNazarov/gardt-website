@@ -23,7 +23,7 @@
       <div class="portfolio-property" v-if="principles.includes('scenery')">
         <div class="tooltip">
           <img class="portfolio-property-image" src="../../../assets/images/main-principles/scenery.svg">
-          <span class="tooltiptext">{{ translate('Экология и окружающая среда') }}</span>
+          <span class="tooltiptext">{{ translate('Экология') }}</span>
         </div>
       </div>
       <div class="portfolio-property" v-if="principles.includes('light')">
@@ -98,7 +98,7 @@ export default {
 
   background-size: cover;
   background-position: center;
-  filter: drop-shadow(0px 10px 50px rgba(0, 0, 0, 0.2));
+  /*filter: drop-shadow(0px 10px 50px rgba(0, 0, 0, 0.2));*/
   border-radius: 10px;
 }
 

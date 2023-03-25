@@ -125,7 +125,7 @@ export default {
 
 @media (max-width: 576px) {
   .mission-description {
-    font-size: 2em;
+    font-size: 1.7em;
     line-height: 1.2em;
   }
 }

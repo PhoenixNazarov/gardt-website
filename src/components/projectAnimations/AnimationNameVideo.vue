@@ -72,11 +72,13 @@ export default {
   text-align: center;
   text-transform: uppercase;
 
-  background: linear-gradient(100.14deg, var(--vt-c-white) 0.54%, rgba(239, 239, 239, 0) 114.42%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+  color: var(--vt-c-white);
+
+  /*background: linear-gradient(100.14deg, var(--vt-c-white) 0.54%, rgba(239, 239, 239, 0) 114.42%);*/
+  /*-webkit-background-clip: text;*/
+  /*-webkit-text-fill-color: transparent;*/
+  /*background-clip: text;*/
+  /*text-fill-color: transparent;*/
 
   text-shadow: 0 4px 46px rgba(239, 239, 239, 0.15);
 }

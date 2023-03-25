@@ -183,6 +183,10 @@ export default {
   .navigation-button-item {
     margin-bottom: 0 !important;
   }
+
+  .footer-contacts-names-inner {
+    opacity: 0;
+  }
 }
 
 </style>

@@ -222,15 +222,15 @@ export default {
 
 @media (max-width: 576px) {
   .yard-image-container {
-    top: 20em;
+    top: 16em;
   }
 
   .yard-image {
-    width: 80vw;
+    width: 70vw;
   }
 
   .yard-slider {
-    bottom: 8em;
+    bottom: 6em;
   }
 
   .yard-description-container {

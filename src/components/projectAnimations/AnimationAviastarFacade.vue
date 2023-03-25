@@ -3,28 +3,27 @@
     <div class="page">
       <img class="main-photo" :src="data.image">
       <div class="pole">
-        <div class="green-circle">
+        <div class="green-circle" @click.prevent="show(0)">
         </div>
 
-        <div class="green-circle">
+        <div class="green-circle" @click.prevent="show(1)">
         </div>
 
-        <div class="green-circle">
+        <div class="green-circle" @click.prevent="show(2)">
         </div>
 
-        <div class="green-circle">
+        <div class="green-circle" @click.prevent="show(3)">
         </div>
 
-        <div class="green-circle">
+        <div class="green-circle" @click.prevent="show(4)">
         </div>
 
-        <div class="green-circle">
+        <div class="green-circle" @click.prevent="show(4)">
         </div>
 
-        <div class="green-circle">
+        <div class="green-circle" @click.prevent="show(5)">
         </div>
-        <!--      </div>-->
-        <!--      <div class="pole">-->
+
         <div class="modal-page">
           <h1 class="modal-name">
             {{ data.materials[0].name }}
@@ -99,6 +98,20 @@ export default {
       required: true
     }
   },
+  mounted() {
+    if (window.innerWidth <= 576) {
+      this.show(0);
+    }
+  },
+  methods: {
+    show(ind) {
+      if (window.innerWidth <= 576) {
+        console.log(ind)
+        this.$el.querySelectorAll('.modal-page').forEach((el) => el.classList.remove('active'));
+        this.$el.querySelectorAll('.modal-page')[ind].classList.add('active');
+      }
+    }
+  }
 }
 </script>
 
@@ -135,74 +148,68 @@ export default {
 .green-circle:nth-child(1) {
   top: 12vw;
   right: 14vw;
-  background-color: red;
 }
 
 .green-circle:nth-child(2) {
   bottom: 16vw;
   right: 28vw;
-  background-color: gray;
 }
 
 .green-circle:nth-child(3) {
   top: 17vw;
   left: 9vw;
-  background-color: #060043;
 }
 
 .green-circle:nth-child(4) {
   top: 15vw;
   left: 41vw;
-  background-color: yellowgreen;
 }
 
 .green-circle:nth-child(5) {
   top: 12vw;
   left: 47vw;
-  background-color: peru;
 }
 
 .green-circle:nth-child(6) {
   top: 18vw;
   right: 11vw;
-  background-color: aqua;
 }
 
 .green-circle:nth-child(7) {
   bottom: 0vw;
   left: 39vw;
-  background-color: rosybrown;
 }
 
+@media (min-width: 576px) {
+  .modal-page:nth-child(8) {
+    right: 18vw;
+    top: 15vw;
+  }
 
-.modal-page:nth-child(8) {
-  right: 18vw;
-  top: 15vw;
-}
+  .modal-page:nth-child(9) {
+    right: 32vw;
+    bottom: 16vw;
+  }
 
-.modal-page:nth-child(9) {
-  right: 32vw;
-  bottom: 16vw;
-}
+  .modal-page:nth-child(10) {
+    left: 13vw;
+    top: 15vw;
+  }
 
-.modal-page:nth-child(10) {
-  left: 13vw;
-  top: 15vw;
-}
+  .modal-page:nth-child(11) {
+    left: 33vw;
+    top: 18vw;
+  }
 
-.modal-page:nth-child(11) {
-  left: 33vw;
-  top: 18vw;
-}
+  .modal-page:nth-child(12) {
+    right: 25vw;
+    top: 10vw;
+  }
 
-.modal-page:nth-child(12) {
-  right: 25vw;
-  top: 10vw;
-}
-
-.modal-page:nth-child(13) {
-  left: 43vw;
-  bottom: 0vw;
+  .modal-page:nth-child(13) {
+    left: 43vw;
+    bottom: 0vw;
+  }
 }
 
 
@@ -216,6 +223,11 @@ export default {
   transition: 0.5s;
   padding: 1em;
   z-index: 2;
+}
+
+.modal-page.active {
+  opacity: 1 !important;
+  z-index: 4;
 }
 
 .modal-name {
@@ -244,7 +256,7 @@ export default {
 
   background-position: center;
   background-size: cover;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid var(--vt-c-black);
 }
 
@@ -273,6 +285,7 @@ export default {
   z-index: 4;
 }
 
+.green-circle:nth-child(6):active ~ .modal-page:nth-child(12),
 .green-circle:nth-child(6):hover ~ .modal-page:nth-child(12) {
   opacity: 1;
   z-index: 4;
@@ -281,6 +294,20 @@ export default {
 .green-circle:nth-child(7):hover ~ .modal-page:nth-child(13) {
   opacity: 1;
   z-index: 4;
+}
+
+@media (max-width: 576px) {
+  .page {
+    margin-bottom: 24vh;
+  }
+  .modal-page {
+    bottom: calc(-25vh) !important;
+    left: 50vw !important;
+    transform: translateX(-50%);
+    /*height: 20vh !important;*/
+    /*right: none !important;*/
+    /*top: calc(20vw + em) !important;*/
+  }
 }
 
 </style>
